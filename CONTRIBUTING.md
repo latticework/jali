@@ -64,3 +64,62 @@ Install and configure Chef:
 ## Contribution Requirements
 
 ## Contribution Guidelines
+
+### Triage
+
+A core contributor will triage **Question** or **Idea** issues. A
+**Question** is triaged by either suggesting the user post the question on 
+StackOverflow or by answering the question. The question may result in the 
+creation of **Bug** or **Enhancement** issues; or it may simply be closed.
+
+An **Idea** is triaged by either putting it in the **Icebox** ZenHub pipeline 
+until more points accumulate or by the creation of **Bug** or **Enhancement** 
+issues.
+
+A **Bug** and **Enhancement** issue is triaged by moving it to the 
+**Icebox** or **Backlog** ZenHub pipeline or by closing it. 
+
+### Emoji
+Jali projects embrace the use of emoji in GitHub to facilitate communication. 
+The emoji sets are used to identify issue type, commit type, and issue status. 
+These emoji are placed at the end of the issue title in the order Issue Type, 
+Commit Type, Issue Status separated by a single space. Until the issue is 
+triaged only the issue type should be included. If possible, always use the 
+Unicode symbol.
+
+### Commit message guidelines
+Use the proper commit type emoji. Allowed commit types and the corresponding 
+emoji. Use the Unicode character if you can. You can copy the actual Unicode 
+character by viewing the raw version of this markdown document.
+
+| Commit Type Code | Unicode Emoji | GitHub Shortcode |
+|:--|:-:|:--|
+| feat | ✨ | `:sparkles:` |
+| fix | 🔧 | `:wrench:` |
+| docs | 📄 | `:page_facing_up:` |
+| style | 💄 | `:lipstick:` |
+| refactor | 📐 | `:triangular_ruler:` |
+| perf | 🏃 | `:running:` |
+| test | 🔬 | `:microscope:` |
+| chore | 🔨 | `:hammer:` |
+
+### Issue states
+| Issue State | Unicode Emoji | GitHub Shortcode |
+|:--|:-:|:--|
+| New | 🎁 | `:gift:` |
+| Icebox | 💤 | `:zzz:` |
+| Backlog | ☰ | N/A |
+| In Progress | 🚶 | `:walking:` |
+| Review/QA | ⚖ | N/A |
+| Done | ☑️ |`:ballot_box_with_check:` |
+| Closed | TBD | TBD |
+
+### Pull Request states
+| PR State | Unicode Emoji | GitHub Shortcode |
+|:--|:-:|:--|
+| New | 🎁 | `:gift:` |
+| Review/QA | ⚖ | N/A |
+| Merged | 💋 | `:kiss:` |
+| Closed | 🚫 | `:no_entry_sign:` |
+
+[StackOverflow]: http://stackoverflow.com/questions/tagged/jali
