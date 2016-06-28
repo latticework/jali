@@ -3,15 +3,17 @@ Provides contribution requirements, contribution guidelines, and onboarding info
 
 ## Onboarding
 ### Prerequisites
-Install and configure Chef:
+1. Install Oracle VirtualBox
+1. Install Vagrant
+1. Install and configure Chef:
 
-1. Install __ChefDK__, [here](https://downloads.chef.io/chef-dk/)
-1. Install the __Chef Vagrant-Omnibus__ plugin
+    1. Install __ChefDK__, [here](https://downloads.chef.io/chef-dk/)
+    1. Install the __Chef Vagrant-Omnibus__ plugin
 
-   > `vagrant plugin install vagrant-omnibus`
-1. Install the __Vagrant-Berkshelf__ plugin
+       > `vagrant plugin install vagrant-omnibus`
+    1. Install the __Vagrant-Berkshelf__ plugin
 
-   > `vagrant plugin install vagrant-berkshelf`
+       > `vagrant plugin install vagrant-berkshelf`
 
 
 #### Note to NodeJS users
