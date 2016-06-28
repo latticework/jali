@@ -163,6 +163,9 @@
 [//]: # (      the format is too cumbersome, Start with "In order to" but       )
 [//]: # (      include a different subsequent clause that somehow includes a    )
 [//]: # (      Jali product role an an action performed.                        )
+[//]: # (  * Tasks                                                              )
+[//]: # (    - Use a markdown task list to itemize the development tasks that   )
+[//]: # (      contribute toward completion of the Enhancement.                 )
 [//]: # (  * Acceptance criteria                                                )
 [//]: # (    - Include a task list of detailed tests that will be performed to  )
 [//]: # (      verify that the Enhancement works.                               )
@@ -178,6 +181,10 @@ I want to ...(,
 
 Whereas currently ...).
 [//]: # ( )
+
+## Tasks
+- [ ] Task 1.
+- [ ] Task 2.
 
 ## Acceptance Criteria
 - [ ] Criterion 1.
