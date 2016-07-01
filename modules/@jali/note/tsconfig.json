@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "stripInternal": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "outDir": "../../../dist/all/@jali/core/",
+    "paths": {
+      "@jali/*": ["../../../dist/all/@jali/*"]
+    },
+    "rootDir": ".",
+    "sourceMap": true,
+    "inlineSources": true,
+    "lib": ["es6", "dom"],
+    "target": "es6"
+  },
+  "files": [
+    "index.ts",
+    "src/JaliMessage.ts",
+    "src/MessageCode.ts",
+    "src/MessageEncoding.ts",
+    "src/MessageEncodingData.ts",
+    "src/MessageEncodingSegmentData.ts",
+    "src/MessageEncodingVersion.ts",
+    "src/MessagePriority.ts",
+    "src/MessageSeverity.ts",
+    "src/NotificationMessage.ts",
+    "src/StandardMessageEncoding.ts",
+    "src/StandardMessageEncodingVersion.ts"
+  ]
+}
+
+
