@@ -1,6 +1,6 @@
-import { MessageEncodingSegmentData } from './MessageEncodingSegmentData'
+import MessageEncodingSegmentData from './MessageEncodingSegmentData'
 
-export interface MessageEncodingData {
+interface MessageEncodingData {
     readonly schema: number,
     readonly schemaVersion: number,
     readonly authorityData: MessageEncodingSegmentData,
@@ -10,3 +10,5 @@ export interface MessageEncodingData {
     readonly severityData: MessageEncodingSegmentData,
     readonly baseMessageCodeData: MessageEncodingSegmentData,
 }
+
+export default MessageEncodingData;

@@ -1,7 +1,7 @@
-import { MessagePriority } from './MessagePriority'
-import { MessageSeverity } from './MessageSeverity'
+import MessagePriority from './MessagePriority'
+import MessageSeverity from './MessageSeverity'
 
-export interface NotificationMessage {
+interface NotificationMessage {
     readonly messageCode: string;
     readonly priority: MessagePriority;
     readonly severity: MessageSeverity;
@@ -9,5 +9,6 @@ export interface NotificationMessage {
     readonly args?: Object;
     readonly objectKey?: string;
     readonly propertyNames?: string[];
-
 }
+
+export default NotificationMessage;

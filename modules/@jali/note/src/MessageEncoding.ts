@@ -1,7 +1,8 @@
-import { MessagePriority } from './MessagePriority'
-import { MessageSeverity } from './MessageSeverity'
+import MessageEncodingVersion from './MessageEncodingVersion';
 
-export interface MessageEncoding {
+interface MessageEncoding {
+    versions: Iterable<MessageEncodingVersion>;
+    
     isValidCode(messageCode: string): boolean;
     getAuthorityCode(messageCode: string): number;
     getDomainCode(messageCode: string): number;
@@ -10,3 +11,5 @@ export interface MessageEncoding {
     getMessageSeverity(messageCode: string): number;
     getBaseMessageCode(messageCode: string): number;
 }
+
+export default MessageEncoding;

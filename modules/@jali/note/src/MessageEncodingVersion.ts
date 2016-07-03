@@ -1,5 +1,6 @@
 
-export interface MessageEncodingVersion {
+interface MessageEncodingVersion {
+    version: number;
     isValidCode(messageCode: string): boolean;
     getAuthorityCode(messageCode: string): number;
     getDomainCode(messageCode: string): number;
@@ -8,3 +9,5 @@ export interface MessageEncodingVersion {
     getMessageSeverity(messageCode: string): number;
     getBaseMessageCode(messageCode: string): number;
 }
+
+export default MessageEncodingVersion;

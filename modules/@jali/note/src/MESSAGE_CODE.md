@@ -1,4 +1,4 @@
-## Schema 0: SHORT
+## Schema 0: PRIVATE
 
 ```
 0123 4567
@@ -35,13 +35,13 @@ CVAA AADD LLPS BBBB
 ```
             1            2           3
 0123 4567 8901 2345 6789 0123 4567 8901
-|||       |         |      || |
-CVAA AAAA DDDD DDDD LLLL LLPS BBBB BBBB 
-|||       |         |      || |         Pos From        To        Segment Name
-|||       |         |      || |         --- ---------   --------- ----------------------
-|||       |         |      || +--------  24 0000 0000 - FFFF FFFF Base Code
-|||       |         |      |+----------  23         0 -         F Severity
-|||       |         |      +-----------  22         0 -         F Priority
+|||       |         |      |  | |
+CVAA AAAA DDDD DDDD LLLL LLPP SSBB BBBB 
+|||       |         |      |  | |       Pos From        To        Segment Name
+|||       |         |      |  | |       --- ---------   --------- ----------------------
+|||       |         |      |  | +------  26 0000 0000 -   FF FFFF Base Code
+|||       |         |      |  +--------  24        00 -        FF Severity
+|||       |         |      +-----------  22        00 -        FF Priority
 |||       |         +------------------  16   00 0000 -   FF FFFF Library
 |||       +----------------------------   8   00 0000 -   FF FFFF Domain
 ||+------------------------------------   2   00 0000 -   FF FFFF Authority (Registered)

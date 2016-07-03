@@ -1,10 +1,17 @@
-import {NotificationMessage} from './NotificationMessage'
-import { MessagePriority } from './MessagePriority'
-import { MessageSeverity } from './MessageSeverity'
+import NotificationMessage from './NotificationMessage'
+import MessageCode from './MessageCode'
+import MessagePriority from './MessagePriority'
+import MessageSeverity from './MessageSeverity'
 
-export class TypedMessage<Args> implements NotificationMessage {
+export default class TypedMessage<Args> implements NotificationMessage {
+    private _messageCode: MessageCode;
+
+    public get messageCode(): string {
+        return this._messageCode.messageCode;
+    }
+
     get priority(): MessagePriority {
-        
+        return this._messageCode.priority;
     }
     readonly severity: MessageSeverity;
     readonly message: string;
@@ -12,11 +19,7 @@ export class TypedMessage<Args> implements NotificationMessage {
     objectKey?: string;
     propertyNames?: string[];
 
-    protected constructor(readonly messageCode: string) {
-        this.messageCode = messageCode;
+    protected constructor(messageCode: string) {
+        this._messageCode = new MessageCode(messageCode);
     }
-}
-
-export class RegisteredMessage implements TypedMessage<Object> {
-    private constructor() { }
 }
