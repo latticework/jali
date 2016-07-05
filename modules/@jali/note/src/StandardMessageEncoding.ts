@@ -1,4 +1,5 @@
-//import { toMap } from ''
+//import { toMap } from '@jail/util'
+//import { toMap } from '../../../../dist/packages-dist/util'
 import MessagePriority from './MessagePriority';
 import MessageSeverity from './MessageSeverity';
 import MessageEncoding from './MessageEncoding';
@@ -57,11 +58,6 @@ export default class StandardMessageEncoding implements MessageEncoding {
 
 function createEncodingVersionMap(encodingVersions: Iterable<MessageEncodingVersion>): 
         Map<number, MessageEncodingVersion> {
-    let encodingMap = new Map<number, MessageEncodingVersion>();
-    for (const version of encodingVersions) {
-        encodingMap.set(version.version, version);
-    }
-
-    return encodingMap;
+    return toMap(encodingVersions, v => v.version);
 }
 

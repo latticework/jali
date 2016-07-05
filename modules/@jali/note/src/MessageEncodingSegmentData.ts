@@ -3,4 +3,4 @@ interface MessageEncodingSegmentData {
     readonly length: number,
 }
 
-export default MessageEncodingSegmentData;
+export default interface MessageEncodingSegmentData

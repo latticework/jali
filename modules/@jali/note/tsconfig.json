@@ -12,14 +12,14 @@
     "noImplicitReturns": true,
     "outDir": "../../../dist/packages-dist/note/",
     "paths": {
-      "@jali/core": ["../../../dist/packages-dist/core/"],
-      "@jali/util": ["../../../dist/packages-dist/util/"]
+      "@jali/core": ["../../../dist/packages-dist/core"],
+      "@jali/util": ["../../../dist/packages-dist/util"]
     },
     "rootDir": ".",
     "sourceMap": true,
     "inlineSources": true,
-    "lib": ["es6"],
-    "target": "es6"
+    "lib": ["es2015"],
+    "target": "es2015"
   },
   "files": [
     "index.ts",
@@ -28,9 +28,6 @@
     "src/MessageEncodingData.ts",
     "src/MessageEncodingSegmentData.ts",
     "src/MessageEncodingVersion.ts",
-    "src/MessagePriority.ts",
-    "src/MessageSeverity.ts",
-    "src/NotificationMessage.ts",
     "src/StandardMessageEncoding.ts",
     "src/StandardMessageEncodingVersion.ts",
     "src/TypedMessage.ts"

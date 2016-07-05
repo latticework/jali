@@ -23,7 +23,12 @@
   },
   "files": [
     "index.ts",
-    "src/StructuredError.ts"
+    "src/MessagePriority.ts",
+    "src/MessageSeverity.ts",
+    "src/NotificationMessage.ts",
+    "src/StructuredError.ts",
+    "NotificationMessageIterables.ts",
+    "TypeGuards.ts"
   ]
 }
 

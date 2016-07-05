@@ -21,7 +21,8 @@
   },
   "files": [
     "index.ts",
-    "src/StructuredError.ts"
+    "Iterables/index.ts",
+    "TypeGuards/index.ts"
   ]
 }
 

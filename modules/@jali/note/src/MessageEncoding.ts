@@ -1,6 +1,6 @@
 import MessageEncodingVersion from './MessageEncodingVersion';
 
-interface MessageEncoding {
+export interface MessageEncoding {
     versions: Iterable<MessageEncodingVersion>;
     
     isValidCode(messageCode: string): boolean;
