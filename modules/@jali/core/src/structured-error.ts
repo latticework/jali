@@ -1,10 +1,9 @@
-//import * as UtilTypeGuards from "@jail/util/TypeGuards"
-import * as UtilTypeGuards from '../../../../dist/packages-dist/util/TypeGuards'
+import * as UtilTypeGuards from "@jail/util/type-guards"
 
-import * as TypeGuards from "../TypeGuards"
-import * as NotificationMessageIterables from "../NotificationMessageIterables";
+import * as TypeGuards from "../type-guards"
+import * as NotificationMessageIterables from "../notification-message-iterables";
 
-import NotificationMessage from "./NotificationMessage";
+import NotificationMessage from "./notification-message";
 
 export default class StructuredError extends Error {
     public readonly innerError: Error;

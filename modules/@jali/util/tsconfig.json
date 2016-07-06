@@ -21,8 +21,8 @@
   },
   "files": [
     "index.ts",
-    "Iterables/index.ts",
-    "TypeGuards/index.ts"
+    "iterables/index.ts",
+    "type-guards/index.ts"
   ]
 }
 

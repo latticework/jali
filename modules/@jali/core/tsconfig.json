@@ -12,8 +12,8 @@
     "noImplicitReturns": true,
     "outDir": "../../../dist/packages-dist/core/",
     "paths": {
-      "@jali/note": ["../../../dist/packages-dist/note/"],
-      "@jali/util": ["../../../dist/packages-dist/util/"]
+      "@jail/util/iterables": ["../../../dist/packages-dist/util/iterables"],
+      "@jail/util/type-guards": ["../../../dist/packages-dist/util/type-guards"]
     },
     "rootDir": ".",
     "sourceMap": true,
@@ -23,12 +23,8 @@
   },
   "files": [
     "index.ts",
-    "src/MessagePriority.ts",
-    "src/MessageSeverity.ts",
-    "src/NotificationMessage.ts",
-    "src/StructuredError.ts",
-    "NotificationMessageIterables.ts",
-    "TypeGuards.ts"
+    "notification-message-iterables/index.ts",
+    "type-guards/index.ts"
   ]
 }
 

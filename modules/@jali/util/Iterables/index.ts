@@ -1,1 +1,1 @@
-export * from "../src/Iterables";
+export * from "../src/iterables";

@@ -102,6 +102,9 @@ jspm_packages
 # (Angular CLI)
 typings
 
+# TypeScript
+.Trash*
+
 # Optional npm cache directory
 .npm
 

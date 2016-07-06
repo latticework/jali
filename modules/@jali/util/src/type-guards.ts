@@ -1,4 +1,4 @@
-import * as Iterables from "./Iterables";
+import * as Iterables from "./iterables";
 
 export function isError(value: any): value is Error {
     return (value as Error).message !== undefined;

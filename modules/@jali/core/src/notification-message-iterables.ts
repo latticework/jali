@@ -1,8 +1,7 @@
-//import * as Iterables from "@jail/util/Iterables";
-import * as Iterables from "../../../dist/packages-dist/util/Iterables";
+import * as Iterables from "@jail/util/iterables";
 
-import MessageSeverity from "./src/MessageSeverity";
-import NotificationMessage from "./src/NotificationMessage";
+import MessageSeverity from "./message-severity";
+import NotificationMessage from "./notification-message";
 
 export function get_Error(messages: Iterable<NotificationMessage>) : NotificationMessage {
     return Iterables.firstOrDefault(get_Errors(messages));
