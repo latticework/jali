@@ -6,7 +6,7 @@ import * as NotificationMessageIterables from "../notification-message-iterables
 import NotificationMessage from "./notification-message";
 
 export default class StructuredError extends Error {
-    public readonly innerError: Error;
+    public readonly innerError: Error | undefined;
 
     constructor()
     constructor(message: NotificationMessage)
@@ -15,8 +15,8 @@ export default class StructuredError extends Error {
     constructor(message: NotificationMessage, innerError: Error)
     constructor(messages: Iterable<NotificationMessage>, innerError: Error)
     constructor(
-        messageOrMessagesOrError: NotificationMessage | Iterable<NotificationMessage> | Error = undefined,
-        innerError: Error = undefined) {
+        messageOrMessagesOrError: NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined,
+        innerError: Error | undefined = undefined) {
         super(resolveMessage(messageOrMessagesOrError))
 
         this.innerError = innerError;
@@ -28,8 +28,8 @@ export default class StructuredError extends Error {
 }
 
 function resolveMessage(
-        messageOrMessagesOrError: NotificationMessage | Iterable<NotificationMessage> | Error = undefined): 
-        string {
+        messageOrMessagesOrError: NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined): 
+        string | undefined {
     if (TypeGuards.isNotificationMessage(messageOrMessagesOrError)) {
         return messageOrMessagesOrError.message;
     }

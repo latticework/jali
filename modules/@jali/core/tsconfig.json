@@ -2,23 +2,27 @@
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
-    "stripInternal": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "inlineSources": true,
+    "lib": ["es2017"],
     "module": "es2015",
     "moduleResolution": "node",
     "noEmitOnError": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "../../../dist/packages-dist/core/",
     "paths": {
       "@jail/util/iterables": ["../../../dist/packages-dist/util/iterables"],
       "@jail/util/type-guards": ["../../../dist/packages-dist/util/type-guards"]
     },
     "rootDir": ".",
+    "strictNullChecks": true,
+    "stripInternal": true,
     "sourceMap": true,
-    "inlineSources": true,
-    "lib": ["es6"],
     "target": "es6"
   },
   "files": [

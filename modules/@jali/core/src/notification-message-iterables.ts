@@ -3,7 +3,7 @@ import * as Iterables from "@jail/util/iterables";
 import MessageSeverity from "./message-severity";
 import NotificationMessage from "./notification-message";
 
-export function get_Error(messages: Iterable<NotificationMessage>) : NotificationMessage {
+export function get_Error(messages: Iterable<NotificationMessage>) : NotificationMessage | undefined {
     return Iterables.firstOrDefault(get_Errors(messages));
 }
 

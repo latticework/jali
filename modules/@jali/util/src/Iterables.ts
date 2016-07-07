@@ -10,13 +10,14 @@ export function toMap<TKey, TValue>(sequence: Iterable<TValue>, keySelector: (va
 
 export function has<T>(sequence: Iterable<T>): boolean {
     for (let element of sequence) {
+        element; // This quiets the compiler error for `noUnusedLocals`.
         return true;
     }
 
     return false;
 }
 
-export function firstOrDefault<T>(sequence: Iterable<T>, value?: T): T {
+export function firstOrDefault<T>(sequence: Iterable<T>, value?: T): T | undefined {
     for (let element of sequence) {
         return element;
     }
