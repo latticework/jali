@@ -9,6 +9,7 @@
     "module": "es2015",
     "moduleResolution": "node",
     "noEmitOnError": false,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -16,8 +17,7 @@
     "noUnusedParameters": true,
     "outDir": "../../../dist/packages-dist/note/",
     "paths": {
-      "@jali/core": ["../../../dist/packages-dist/core"],
-      "@jail/util/iterables": ["../../../dist/packages-dist/util/iterables"]
+      "@jali/*": ["../../../dist/packages-dist/*"]
     },
     "rootDir": ".",
     "strictNullChecks": true,

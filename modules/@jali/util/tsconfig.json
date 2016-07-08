@@ -9,6 +9,7 @@
     "module": "es2015",
     "moduleResolution": "node",
     "noEmitOnError": false,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

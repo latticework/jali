@@ -1,4 +1,4 @@
-import * as Iterables from "@jail/util/iterables";
+import * as Iterables from "@jali/util/iterables";
 
 import { MessagePriority, MessageSeverity } from "@jali/core";
 

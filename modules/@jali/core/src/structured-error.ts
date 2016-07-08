@@ -1,4 +1,4 @@
-import * as UtilTypeGuards from "@jail/util/type-guards"
+import * as UtilTypeGuards from "@jali/util/type-guards"
 
 import * as TypeGuards from "../type-guards"
 import * as NotificationMessageIterables from "../notification-message-iterables";

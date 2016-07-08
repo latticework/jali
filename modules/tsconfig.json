@@ -15,21 +15,16 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "../../../dist/packages-dist/core/",
+    "outDir": "../dist/all/",
     "paths": {
-      "@jali/*": ["../../../dist/packages-dist/*"]
+      "@jali/*": ["./@jali/*"]
     },
     "rootDir": ".",
     "strictNullChecks": true,
     "stripInternal": true,
     "sourceMap": true,
     "target": "es6"
-  },
-  "files": [
-    "index.ts",
-    "notification-message-iterables/index.ts",
-    "type-guards/index.ts"
-  ]
+  }
 }
 
 

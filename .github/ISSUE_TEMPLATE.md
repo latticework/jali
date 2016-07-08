@@ -48,7 +48,7 @@
 [//]: # (                                                                       )
 [//]: # ( Instructions:                                                         )
 [//]: # (  * Title                                                              )
-[//]: # (    - Use a short interrogative sentance (i.e. a question) that	    )
+[//]: # (    - Use a short interrogative sentance, i.e. a question, that        )
 [//]: # (      should be under 120 characters in length.                        )
 [//]: # (    - End with the emoji sequence: `❓` `<commit-type-emoji>` `🎁`      )
 [//]: # (  * Type                                                               )
