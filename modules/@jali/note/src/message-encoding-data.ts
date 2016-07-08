@@ -1,4 +1,4 @@
-import MessageEncodingSegmentData from './MessageEncodingSegmentData'
+import MessageEncodingSegmentData from "./message-encoding-segment-data"
 
 interface MessageEncodingData {
     readonly schema: number,

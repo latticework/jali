@@ -6,13 +6,13 @@
  * @author Latticework <latticework@outlook.com>
  */
 
-exports default (options) => {
-  return {
-    
-  }
-}
+exports (options) => {
+  return new Promise((resolve, reject) => {
 
-// Look in ./config folder for webpack.dev.js
+    switch options.environment {
+      case "production":
+      
+    }
 switch (process.env.NODE_ENV) {
   case 'prod':
   case 'production':
@@ -26,4 +26,8 @@ switch (process.env.NODE_ENV) {
   case 'development':
   default:
     module.exports = require('./config/webpack.dev');
+}
+
+
+  }
 }

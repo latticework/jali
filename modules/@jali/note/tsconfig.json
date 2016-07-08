@@ -2,35 +2,31 @@
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
-    "stripInternal": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "inlineSources": true,
+    "lib": ["es2017"],
     "module": "es2015",
     "moduleResolution": "node",
     "noEmitOnError": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "../../../dist/packages-dist/note/",
     "paths": {
       "@jali/core": ["../../../dist/packages-dist/core"],
-      "@jali/util": ["../../../dist/packages-dist/util"]
+      "@jail/util/iterables": ["../../../dist/packages-dist/util/iterables"]
     },
     "rootDir": ".",
+    "strictNullChecks": true,
+    "stripInternal": true,
     "sourceMap": true,
-    "inlineSources": true,
-    "lib": ["es2015"],
-    "target": "es2015"
+    "target": "es6"
   },
   "files": [
-    "index.ts",
-    "src/MessageCode.ts",
-    "src/MessageEncoding.ts",
-    "src/MessageEncodingData.ts",
-    "src/MessageEncodingSegmentData.ts",
-    "src/MessageEncodingVersion.ts",
-    "src/StandardMessageEncoding.ts",
-    "src/StandardMessageEncodingVersion.ts",
-    "src/TypedMessage.ts"
+    "index.ts"
   ]
 }
 

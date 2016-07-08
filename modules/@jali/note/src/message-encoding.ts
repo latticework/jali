@@ -1,4 +1,4 @@
-import MessageEncodingVersion from './MessageEncodingVersion';
+import MessageEncodingVersion from "./message-encoding-version";
 
 export interface MessageEncoding {
     versions: Iterable<MessageEncodingVersion>;

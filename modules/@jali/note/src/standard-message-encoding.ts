@@ -1,10 +1,10 @@
-//import { toMap } from '@jail/util'
-//import { toMap } from '../../../../dist/packages-dist/util'
-import MessagePriority from './MessagePriority';
-import MessageSeverity from './MessageSeverity';
-import MessageEncoding from './MessageEncoding';
-import MessageEncodingData from './MessageEncodingData';
-import MessageEncodingVersion from './MessageEncodingVersion';
+import * as Iterables from "@jail/util/iterables";
+
+import { MessagePriority, MessageSeverity } from "@jali/core";
+
+import MessageEncoding from "./message-encoding";
+import MessageEncodingVersion from "./message-encoding-version";
+//import MessageEncodingData from "./message-encoding-data";
 
 export default class StandardMessageEncoding implements MessageEncoding {
     private readonly _versionMap: Map<number, MessageEncodingVersion>
@@ -17,8 +17,8 @@ export default class StandardMessageEncoding implements MessageEncoding {
 //        new StandardMessageEncoding(createEncodingVersionMap())
 //    ];
 
-    public isValidCode(messageCode: string): boolean {
-        throw new Error('Not Implemented.');
+    public isValidCode(_messageCode: string): boolean {
+        throw new Error("Not Implemented.");
     }
 
     getAuthorityCode(messageCode: string): number {
@@ -36,12 +36,12 @@ export default class StandardMessageEncoding implements MessageEncoding {
         return version.getLibraryCode(messageCode);
     }
 
-    getMessagePriority(messageCode: string): number {
+    getMessagePriority(messageCode: string): MessagePriority {
         const version = this.getValidVersion(messageCode);
         return version.getMessagePriority(messageCode);
     }
 
-    getMessageSeverity(messageCode: string): number {
+    getMessageSeverity(messageCode: string): MessageSeverity {
         const version = this.getValidVersion(messageCode);
         return version.getMessageSeverity(messageCode);
     }
@@ -51,13 +51,13 @@ export default class StandardMessageEncoding implements MessageEncoding {
         return version.getBaseMessageCode(messageCode);
     }
 
-    private getValidVersion(messageCode: string): MessageEncodingVersion {
-        throw new Error('Not Implemented.');
+    private getValidVersion(_messageCode: string): MessageEncodingVersion {
+        throw new Error("Not Implemented.");
     }
 }
 
 function createEncodingVersionMap(encodingVersions: Iterable<MessageEncodingVersion>): 
         Map<number, MessageEncodingVersion> {
-    return toMap(encodingVersions, v => v.version);
+    return Iterables.toMap(encodingVersions, v => v.version);
 }
 

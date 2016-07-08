@@ -1,7 +1,6 @@
-import NotificationMessage from './NotificationMessage'
-import MessageCode from './MessageCode'
-import MessagePriority from './MessagePriority'
-import MessageSeverity from './MessageSeverity'
+import { MessagePriority, MessageSeverity, NotificationMessage } from "@jali/core";
+
+import MessageCode from './message-code'
 
 export default class TypedMessage<Args> implements NotificationMessage {
     private _messageCode: MessageCode;

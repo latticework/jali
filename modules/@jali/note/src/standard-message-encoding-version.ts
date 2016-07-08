@@ -1,8 +1,8 @@
-import MessageEncodingVersion from './MessageEncodingVersion';
-import MessageEncodingData from './MessageEncodingData';
-import MessageEncodingSegmentData from './MessageEncodingSegmentData';
-import MessagePriority from './MessagePriority';
-import MessageSeverity from './MessageSeverity';
+import { MessagePriority, MessageSeverity } from "@jali/core";
+
+import MessageEncodingVersion from "./message-encoding-version";
+import MessageEncodingData from "./message-encoding-data";
+import MessageEncodingSegmentData from "./message-encoding-segment-data";
 
 export default class StandardMessageEncodingVersion implements MessageEncodingVersion {
     public constructor(public readonly data: MessageEncodingData) {
@@ -10,7 +10,7 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
 
     public get version() { return this.data.schemaVersion }
 
-    public isValidCode(messageCode: string): boolean {
+    public isValidCode(_messageCode: string): boolean {
         throw new Error();
     }
 
@@ -26,11 +26,11 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
         return this.getSegmentValue(messageCode, this.data.libraryData);
     }
 
-    public getMessagePriority(messageCode: string): number {
+    public getMessagePriority(messageCode: string): MessagePriority {
         return this.getSegmentValue(messageCode, this.data.priorityData);
     }
 
-    public getMessageSeverity(messageCode: string): number {
+    public getMessageSeverity(messageCode: string): MessageSeverity {
         return this.getSegmentValue(messageCode, this.data.severityData);
     }
 
@@ -38,7 +38,7 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
         return this.getSegmentValue(messageCode, this.data.baseMessageCodeData);
     }
 
-    private getSegmentValue(messageCode: string, data: MessageEncodingSegmentData) : number {
+    private getSegmentValue(_messageCode: string, _data: MessageEncodingSegmentData) : number {
         throw new Error();
         // const totalLength = data.position + length;
         // if (messageCode.length < totalLength) {
