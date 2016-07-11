@@ -116,6 +116,13 @@ character by viewing the raw version of this markdown document.
 | Done | ☑️ |`:ballot_box_with_check:` |
 | Closed | TBD | TBD |
 
+### Pull Request type
+| PR State | Unicode Emoji | GitHub Shortcode |
+|:--|:-:|:--|
+| fast-forward | 🔃 | `:arrows_clockwise:` |
+| merge | 🔀 | `:twisted_rightwards_arrows:` |
+| revert | 🔄 | `:arrows_counterclockwise:` | 
+
 ### Pull Request states
 | PR State | Unicode Emoji | GitHub Shortcode |
 |:--|:-:|:--|

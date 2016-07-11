@@ -2,7 +2,7 @@ import MessageEncodingVersion from "./message-encoding-version";
 
 export interface MessageEncoding {
     versions: Iterable<MessageEncodingVersion>;
-    
+
     isValidCode(messageCode: string): boolean;
     getAuthorityCode(messageCode: string): number;
     getDomainCode(messageCode: string): number;

@@ -8,7 +8,7 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
     public constructor(public readonly data: MessageEncodingData) {
     }
 
-    public get version() { return this.data.schemaVersion }
+    public get version() { return this.data.schemaVersion; }
 
     public isValidCode(_messageCode: string): boolean {
         throw new Error();
@@ -38,7 +38,7 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
         return this.getSegmentValue(messageCode, this.data.baseMessageCodeData);
     }
 
-    private getSegmentValue(_messageCode: string, _data: MessageEncodingSegmentData) : number {
+    private getSegmentValue(_messageCode: string, _data: MessageEncodingSegmentData): number {
         throw new Error();
         // const totalLength = data.position + length;
         // if (messageCode.length < totalLength) {

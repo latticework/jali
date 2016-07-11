@@ -1,16 +1,16 @@
 import { MessagePriority, MessageSeverity, NotificationMessage } from "@jali/core";
 
-import MessageCode from './message-code'
+import MessageCode from "./message-code";
 
 export default class TypedMessage<Args> implements NotificationMessage {
-    private _messageCode: MessageCode;
+    private innerMessageCode: MessageCode;
 
     public get messageCode(): string {
-        return this._messageCode.messageCode;
+        return this.innerMessageCode.messageCode;
     }
 
     get priority(): MessagePriority {
-        return this._messageCode.priority;
+        return this.innerMessageCode.priority;
     }
     readonly severity: MessageSeverity;
     readonly message: string;
@@ -19,6 +19,6 @@ export default class TypedMessage<Args> implements NotificationMessage {
     propertyNames?: string[];
 
     protected constructor(messageCode: string) {
-        this._messageCode = new MessageCode(messageCode);
+        this.innerMessageCode = new MessageCode(messageCode);
     }
 }

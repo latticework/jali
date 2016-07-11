@@ -4,10 +4,10 @@ import { MessagePriority, MessageSeverity } from "@jali/core";
 
 import MessageEncoding from "./message-encoding";
 import MessageEncodingVersion from "./message-encoding-version";
-//import MessageEncodingData from "./message-encoding-data";
+// import MessageEncodingData from "./message-encoding-data";
 
 export default class StandardMessageEncoding implements MessageEncoding {
-    private readonly _versionMap: Map<number, MessageEncodingVersion>
+    private readonly _versionMap: Map<number, MessageEncodingVersion>;
 
     public constructor(public readonly versions: Iterable<MessageEncodingVersion>) {
         this._versionMap = createEncodingVersionMap(versions);
@@ -56,8 +56,7 @@ export default class StandardMessageEncoding implements MessageEncoding {
     }
 }
 
-function createEncodingVersionMap(encodingVersions: Iterable<MessageEncodingVersion>): 
+function createEncodingVersionMap(encodingVersions: Iterable<MessageEncodingVersion>):
         Map<number, MessageEncodingVersion> {
     return Iterables.toMap(encodingVersions, v => v.version);
 }
-

@@ -1,6 +1,7 @@
-export function toMap<TKey, TValue>(sequence: Iterable<TValue>, keySelector: (value: TValue) => TKey) {
+export function toMap<TKey, TValue>(
+        sequence: Iterable<TValue>, keySelector: (value: TValue) => TKey) {
     let map = new Map<TKey, TValue>();
-    
+
     for (const value of sequence) {
         map.set(keySelector(value), value);
     }
@@ -10,7 +11,7 @@ export function toMap<TKey, TValue>(sequence: Iterable<TValue>, keySelector: (va
 
 export function has<T>(sequence: Iterable<T>): boolean {
     for (let element of sequence) {
-        element; // This quiets the compiler error for `noUnusedLocals`.
+        element = element; // This quiets the compiler error for `noUnusedLocals`.
         return true;
     }
 

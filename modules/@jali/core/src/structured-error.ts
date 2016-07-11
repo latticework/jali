@@ -1,6 +1,6 @@
-import * as UtilTypeGuards from "@jali/util/type-guards"
+import * as UtilTypeGuards from "@jali/util/type-guards";
 
-import * as TypeGuards from "../type-guards"
+import * as TypeGuards from "../type-guards";
 import * as NotificationMessageIterables from "../notification-message-iterables";
 
 import NotificationMessage from "./notification-message";
@@ -15,9 +15,10 @@ export default class StructuredError extends Error {
     constructor(message: NotificationMessage, innerError: Error)
     constructor(messages: Iterable<NotificationMessage>, innerError: Error)
     constructor(
-        messageOrMessagesOrError: NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined,
+        messageOrMessagesOrError:
+            NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined,
         innerError: Error | undefined = undefined) {
-        super(resolveMessage(messageOrMessagesOrError))
+        super(resolveMessage(messageOrMessagesOrError));
 
         this.innerError = innerError;
 
@@ -28,12 +29,12 @@ export default class StructuredError extends Error {
 }
 
 function resolveMessage(
-        messageOrMessagesOrError: NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined): 
+        messageOrMessagesOrError:
+            NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined):
         string | undefined {
     if (TypeGuards.isNotificationMessage(messageOrMessagesOrError)) {
         return messageOrMessagesOrError.message;
-    }
-    else if (UtilTypeGuards.makeIsIterable(TypeGuards.isNotificationMessage)(
+    } else if (UtilTypeGuards.makeIsIterable(TypeGuards.isNotificationMessage)(
             messageOrMessagesOrError)) {
         let error = NotificationMessageIterables.get_Error(messageOrMessagesOrError);
 

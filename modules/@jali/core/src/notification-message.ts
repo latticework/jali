@@ -1,5 +1,5 @@
-import MessagePriority from './message-priority'
-import MessageSeverity from './message-severity'
+import MessagePriority from "./message-priority";
+import MessageSeverity from "./message-severity";
 
 interface NotificationMessage {
     readonly messageCode: string;

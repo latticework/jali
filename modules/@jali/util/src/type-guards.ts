@@ -5,7 +5,7 @@ export function isError(value: any): value is Error {
 }
 
 export function makeIsIterable<T>(
-    elementTypeGuard: (element: any) => element is T): 
+    elementTypeGuard: (element: any) => element is T):
         (value: any) => value is Iterable<T> {
     let predicate = (value: any) => {
         let iterable = value as Iterable<T>;
