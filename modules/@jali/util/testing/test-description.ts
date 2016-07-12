@@ -5,10 +5,10 @@ import { default as TestType } from "./test-type";
 
 interface TestDescription {
     readonly type: TestType,
+    readonly dispostion: TestDisposition,
     readonly epic: ProductEpic,
     readonly package: RepoPackage,
     readonly functionName: string,
-    readonly dispostion: TestDisposition,
     readonly description: string,
 }
 

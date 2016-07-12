@@ -1,18 +1,22 @@
 import test from "ava";
 //import assert from "espower";
 
-import {TestDescription, makeTitle, TestType, ProductEpic, RepoPackage, TestDisposition } from "../testing";
+import {makeTitleFunc, TestType, ProductEpic, RepoPackage, } from "../testing";
 
-import { toMap } from "../src/iterables";
+import { toMap, } from "../src/iterables";
 
-test(makeTitle({
-    type: TestType.Smoke,
-    epic: ProductEpic.Util,
-    package: RepoPackage.Util,
-    functionName: "toMap_sequence_keySelector",
-    dispostion: TestDisposition.Positive,
-    description: "string-key",
-} as TestDescription), async t => {
+////////////////////////////////////////////////////////////////////////////////////////////////////
+let title = makeTitleFunc(
+    TestType.Smoke, 
+    ProductEpic.Util, 
+    RepoPackage.Util);
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// toMap_sequence_keySelector
+
+test(title("toMap_sequence_keySelector", "string-key"), async t => {
     await Promise.resolve();
 
     // arrange
