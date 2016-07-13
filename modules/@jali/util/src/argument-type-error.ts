@@ -1,12 +1,12 @@
 import { default as ArgumentError } from "./argument-error";
 
-let Class = ArgumentTypeError;
+let Class = ArgumentTypeError; // tslint:disable-line:variable-name
 export default class ArgumentTypeError extends ArgumentError {
-    constructor(type: string, name?: string, message?: string) {
-        super(name, Class.makeTypeMessage(type, message));
-    }
+  constructor(type: string, name?: string, message?: string) {
+    super(name, Class.makeTypeMessage(type, message));
+  }
 
-    protected static makeTypeMessage(type: string, message?: string) {
-        return message || `Argument must have type '${type}'. Yours is not`;
-    }
+  protected static makeTypeMessage(type: string, message?: string) {
+    return message || `Argument must have type '${type}'. Yours is not`;
+  }
 }

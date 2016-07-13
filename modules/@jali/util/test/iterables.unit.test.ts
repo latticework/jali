@@ -1,5 +1,5 @@
 import test from "ava";
-//import assert from "espower";
+// import assert from "espower";
 
 import {makeTitleFunc, TestType, ProductEpic, RepoPackage, } from "../testing";
 
@@ -7,9 +7,9 @@ import { toMap, } from "../src/iterables";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 let title = makeTitleFunc(
-    TestType.Smoke, 
-    ProductEpic.Util, 
-    RepoPackage.Util);
+  TestType.Smoke,
+  ProductEpic.Util,
+  RepoPackage.Util);
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -17,19 +17,19 @@ let title = makeTitleFunc(
 // toMap_sequence_keySelector
 
 test(title("toMap_sequence_keySelector", "string-key"), async t => {
-    await Promise.resolve();
+  await Promise.resolve();
 
-    // arrange
-    let first = {key: "one", value: 1};
-    let second = {key: "two", value: 2};
-    let target = [first, second];
-    let expected = new Map([[first.key, first], [second.key, second]]);
+  // arrange
+  let first = {key: "one", value: 1};
+  let second = {key: "two", value: 2};
+  let target = [first, second];
+  let expected = new Map([[first.key, first], [second.key, second]]);
 
-    // act
-    let actual = toMap(target, v => v.key);
+  // act
+  let actual = toMap(target, v => v.key);
 
-    // assert
-    t.plan(1);
-    // spread used for bug in babel Map constructor.
-    t.deepEqual([...expected], [...actual]);
+  // assert
+  t.plan(1);
+  // spread used for bug in babel Map constructor.
+  t.deepEqual([...expected], [...actual]);
 });

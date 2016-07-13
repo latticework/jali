@@ -3,22 +3,22 @@ import { MessagePriority, MessageSeverity, NotificationMessage } from "@jali/cor
 import MessageCode from "./message-code";
 
 export default class TypedMessage<Args> implements NotificationMessage {
-    private innerMessageCode: MessageCode;
+  private innerMessageCode: MessageCode;
 
-    public get messageCode(): string {
-        return this.innerMessageCode.messageCode;
-    }
+  public get messageCode(): string {
+    return this.innerMessageCode.messageCode;
+  }
 
-    get priority(): MessagePriority {
-        return this.innerMessageCode.priority;
-    }
-    readonly severity: MessageSeverity;
-    readonly message: string;
-    readonly args?: Args;
-    objectKey?: string;
-    propertyNames?: string[];
+  get priority(): MessagePriority {
+    return this.innerMessageCode.priority;
+  }
+  readonly severity: MessageSeverity;
+  readonly message: string;
+  readonly args?: Args;
+  objectKey?: string;
+  propertyNames?: string[];
 
-    protected constructor(messageCode: string) {
-        this.innerMessageCode = new MessageCode(messageCode);
-    }
+  protected constructor(messageCode: string) {
+    this.innerMessageCode = new MessageCode(messageCode);
+  }
 }

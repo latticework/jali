@@ -1,3 +1,4 @@
+export { default as ArgumentEmptyStringError } from "../src/argument-empty-string-error";
 export { default as ArgumentError } from "../src/argument-error";
 export { default as ArgumentFalseError } from "../src/argument-false-error";
 export { default as ArgumentFalsyError } from "../src/argument-falsy-error";

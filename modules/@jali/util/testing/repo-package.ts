@@ -1,8 +1,8 @@
 enum RepoPackage {
-    None,
-    Core,
-    Note,
-    Util,
+  None,
+  Core,
+  Note,
+  Util,
 }
 
 export default RepoPackage;

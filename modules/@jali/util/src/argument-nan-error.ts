@@ -1,7 +1,7 @@
 import { default as ArgumentFalsyError } from "./argument-falsy-error";
 
 export default class ArgumentNanError extends ArgumentFalsyError {
-    constructor(name?: string, message?: string) {
-        super(name, ArgumentFalsyError.makeFalsyTypedMessage(message, "NaN"));
-    }
+  constructor(name?: string, message?: string) {
+    super(name, ArgumentFalsyError.makeFalsyTypedMessage(message, "NaN"));
+  }
 }

@@ -1,6 +1,6 @@
 enum TestDisposition {
-    Positive,
-    Negative,
+  Positive,
+  Negative,
 }
 
 export default TestDisposition;

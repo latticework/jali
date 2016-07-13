@@ -1,7 +1,7 @@
 enum TestType {
-    Smoke,
-    Unit,
-    Integration,
+  Smoke,
+  Unit,
+  Integration,
 }
 
 export default TestType;

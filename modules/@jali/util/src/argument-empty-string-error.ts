@@ -1,8 +1,7 @@
-import { default as ArgumentFalsyError } from "./argument-falsy-error";
+import { default as ArgumentError } from "./argument-error";
 
-let Class = ArgumentNullError;
-export default class ArgumentNullError extends ArgumentFalsyError {
-    constructor(name?: string, message?: string) {
-        super(name, ArgumentFalsyError.makeFalsyTypedMessage(message, "empty string"));
-    }
+export default class ArgumentEmptyStringError extends ArgumentError {
+  constructor(name?: string, message?: string) {
+    super(name, message || "Argument must not be an empty string. Yours is empty");
+  }
 }
