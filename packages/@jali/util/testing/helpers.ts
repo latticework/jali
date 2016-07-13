@@ -17,9 +17,10 @@ export function makeTitle(description: TestDescription): string {
   return `${scope}＿function‿${func}＿${descr}`;
 }
 
-export function makeTitleFunc(type: TestType, epic: ProductEpic, pkg: RepoPackage):
-    (functionName: string, description: string) => string {
+export function makeTitleFunc(epic: ProductEpic, pkg: RepoPackage, className?: string):
+    (type: TestType, functionName: string, description: string) => string {
   return (
+      type: TestType,
       functionName: string,
       description: string,
       disposition: TestDisposition = TestDisposition.Positive
@@ -28,7 +29,7 @@ export function makeTitleFunc(type: TestType, epic: ProductEpic, pkg: RepoPackag
       dispostion: disposition,
       epic: epic,
       package: pkg,
-      functionName: functionName,
+      functionName: `${className ? `${className}﹍` : ""}${functionName}`,
       description: description,
     } as TestDescription);
 }

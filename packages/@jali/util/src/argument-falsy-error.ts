@@ -1,6 +1,5 @@
 import { default as ArgumentError } from "./argument-error";
 
-let Class = ArgumentFalsyError; // tslint:disable-line:variable-name
 export default class ArgumentFalsyError extends ArgumentError {
   public constructor(name?: string, message?: string) {
     super(name, Class.makeFalsyTypedMessage(message));
@@ -11,3 +10,4 @@ export default class ArgumentFalsyError extends ArgumentError {
       `Argument must have a truthy value. Yours ${type ? `is 'type'` : "does not"}`;
   }
 }
+const Class = ArgumentFalsyError; // tslint:disable-line:variable-name
