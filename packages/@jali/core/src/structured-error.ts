@@ -1,9 +1,9 @@
-import * as UtilTypeGuards from "@jali/util/type-guards";
+import * as UtilTypeGuards from '@jali/util/type-guards';
 
-import * as TypeGuards from "../type-guards";
-import * as NotificationMessageIterables from "../notification-message-iterables";
+import * as TypeGuards from '../type-guards';
+import * as NotificationMessageIterables from '../notification-message-iterables';
 
-import NotificationMessage from "./notification-message";
+import NotificationMessage from './notification-message';
 
 export default class StructuredError extends Error {
   public readonly innerError: Error | undefined;

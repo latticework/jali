@@ -1,4 +1,4 @@
-import NotificationMessage from "./notification-message";
+import NotificationMessage from './notification-message';
 
 export function isNotificationMessage(arg: any): arg is NotificationMessage {
   var message = arg as NotificationMessage;

@@ -1,9 +1,9 @@
-import * as ArgumentValidators from "./argument-validators";
+import * as ArgumentValidators from './argument-validators';
 
 export function toMap<TKey, TValue>(
     sequence: Iterable<TValue>, keySelector: (value: TValue) => TKey) {
-  ArgumentValidators.verifyIterable("sequence", sequence);
-  ArgumentValidators.verifyFunction("keySelector", keySelector);
+  ArgumentValidators.verifyIterable('sequence', sequence);
+  ArgumentValidators.verifyFunction('keySelector', keySelector);
 
   let map = new Map<TKey, TValue>();
 
@@ -20,7 +20,7 @@ export function has<T>(sequence: Iterable<T>, test: (value: T) => boolean): bool
 export function has<T>(
     sequence: Iterable<T>, valueOrTest?: (value: T) => boolean | T, looseValue = false):
     boolean {
-  ArgumentValidators.verifyIterable("sequence", sequence);
+  ArgumentValidators.verifyIterable('sequence', sequence);
 
   if (valueOrTest === undefined) {
     for (let element of sequence) {
@@ -31,7 +31,7 @@ export function has<T>(
     return false;
   }
 
-  if (typeof valueOrTest === "function") {
+  if (typeof valueOrTest === 'function') {
     for (let element of sequence) {
       if (valueOrTest(element)) {
         return true;
@@ -41,7 +41,7 @@ export function has<T>(
     return false;
   }
 
-  ArgumentValidators.verifyBoolean("looseValue", looseValue);
+  ArgumentValidators.verifyBoolean('looseValue', looseValue);
 
   for (let element of sequence) {
     if (looseValue && element == valueOrTest || element === valueOrTest) {
@@ -53,7 +53,7 @@ export function has<T>(
 }
 
 export function firstOrDefault<T>(sequence: Iterable<T>, value?: T): T | undefined {
-  ArgumentValidators.verifyIterable("sequence", sequence);
+  ArgumentValidators.verifyIterable('sequence', sequence);
 
   for (let element of sequence) {
     return element;
@@ -63,8 +63,8 @@ export function firstOrDefault<T>(sequence: Iterable<T>, value?: T): T | undefin
 }
 
 export function* where<T>(sequence: Iterable<T>, test: (element: T) => boolean): Iterable<T> {
-  ArgumentValidators.verifyIterable("sequence", sequence);
-  ArgumentValidators.verifyFunction("test", test);
+  ArgumentValidators.verifyIterable('sequence', sequence);
+  ArgumentValidators.verifyFunction('test', test);
 
   for (let element of sequence) {
     if (test(element)) {

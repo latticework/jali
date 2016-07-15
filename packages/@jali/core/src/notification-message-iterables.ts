@@ -1,7 +1,7 @@
-import * as Iterables from "@jali/util/iterables";
+import * as Iterables from '@jali/util/iterables';
 
-import MessageSeverity from "./message-severity";
-import NotificationMessage from "./notification-message";
+import MessageSeverity from './message-severity';
+import NotificationMessage from './notification-message';
 
 export function get_Error(messages: Iterable<NotificationMessage>):
     NotificationMessage | undefined {

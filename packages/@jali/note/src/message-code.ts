@@ -1,7 +1,7 @@
-import { MessagePriority } from "@jali/core";
+import { MessagePriority } from '@jali/core';
 
-import MessageEncoding from "./message-encoding";
-import * as StandardEncodings from "./standard-encodings";
+import MessageEncoding from './message-encoding';
+import * as StandardEncodings from './standard-encodings';
 
 export default class MessageCode {
   protected readonly messageEncoding: MessageEncoding;

@@ -1,28 +1,31 @@
-import { ContextualTestContext } from "ava";
+import { ContextualTestContext } from 'ava';
 
-export interface TestContext {
+export interface TestContext<TError extends Error> {
   test: ContextualTestContext
-  classContructor: any,
+  classConstructor: new (name?: string, message?: string) => TError,
+  error?: TError,
   parameterName?: string,
   errorMessage?: string,
   defaultMessage?: string,
 }
 
-export function testArgumentError(context: TestContext) {
+export function testArgumentError<TError extends Error>(context: TestContext<TError>) {
   // arrange
   const t = context.test;
   const name = context.parameterName;
   const message = context.errorMessage || context.defaultMessage;
 
-  const expected =
-    `Error in argument${name ? ` '${name}'` : ""}${(message) ? `: ${message}` : ""}`;
-  const target = context.classContructor;
+  const expectedMessage = (context.error)
+    ? context.errorMessage
+    : `Error in argument${name ? ` '${name}'` : ''}${(message) ? `: ${message}` : ''}`;
+  const target = context.classConstructor;
 
   // act
-  const result = new target(name, message);
-  const actual = result.message;
+  const result = context.error || new target(name, message);
 
   // assert
-  t.plan(1);
-  t.is(actual, expected);
+  t.true(result instanceof context.classConstructor);
+
+  const actualMessage = result.message;
+  t.is(actualMessage, expectedMessage);
 }

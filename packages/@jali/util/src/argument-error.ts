@@ -5,7 +5,7 @@ export default class ArgumentError extends Error {
   }
 
   private static makeMessage(name?: string, message?: string) {
-    return `Error in argument${name ? ` '${name}'` : ""}${(message) ? `: ${message}` : ""}`;
+    return `Error in argument${name ? ` '${name}'` : ''}${(message) ? `: ${message}` : ''}`;
   }
 }
 const Class = ArgumentError; // tslint:disable-line:variable-name

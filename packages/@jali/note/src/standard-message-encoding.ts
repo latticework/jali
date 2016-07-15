@@ -1,10 +1,10 @@
-import * as Iterables from "@jali/util/iterables";
+import * as Iterables from '@jali/util/iterables';
 
-import { MessagePriority, MessageSeverity } from "@jali/core";
+import { MessagePriority, MessageSeverity } from '@jali/core';
 
-import MessageEncoding from "./message-encoding";
-import MessageEncodingVersion from "./message-encoding-version";
-// import MessageEncodingData from "./message-encoding-data";
+import MessageEncoding from './message-encoding';
+import MessageEncodingVersion from './message-encoding-version';
+// import MessageEncodingData from './message-encoding-data';
 
 export default class StandardMessageEncoding implements MessageEncoding {
   private readonly _versionMap: Map<number, MessageEncodingVersion>;
@@ -18,7 +18,7 @@ export default class StandardMessageEncoding implements MessageEncoding {
 //    ];
 
   public isValidCode(_messageCode: string): boolean {
-    throw new Error("Not Implemented.");
+    throw new Error('Not Implemented.');
   }
 
   getAuthorityCode(messageCode: string): number {
@@ -52,7 +52,7 @@ export default class StandardMessageEncoding implements MessageEncoding {
   }
 
   private getValidVersion(_messageCode: string): MessageEncodingVersion {
-    throw new Error("Not Implemented.");
+    throw new Error('Not Implemented.');
   }
 }
 

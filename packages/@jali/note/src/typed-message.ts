@@ -1,6 +1,6 @@
-import { MessagePriority, MessageSeverity, NotificationMessage } from "@jali/core";
+import { MessagePriority, MessageSeverity, NotificationMessage } from '@jali/core';
 
-import MessageCode from "./message-code";
+import MessageCode from './message-code';
 
 export default class TypedMessage<Args> implements NotificationMessage {
   private innerMessageCode: MessageCode;

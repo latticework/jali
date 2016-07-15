@@ -1,12 +1,12 @@
-import { default as ProductEpic } from "./product-epic";
-import { default as RepoPackage } from "./repo-package";
-import { default as TestDescription } from "./test-description";
-import { default as TestDisposition} from "./test-disposition";
-import { default as TestType } from "./test-type";
+import { default as ProductEpic } from './product-epic';
+import { default as RepoPackage } from './repo-package';
+import { default as TestDescription } from './test-description';
+import { default as TestDisposition} from './test-disposition';
+import { default as TestType } from './test-type';
 
 export function makeTitle(description: TestDescription): string {
   const type: string = TestType[description.type];
-  const polarity = TestDisposition[description.dispostion];
+  const polarity = TestDisposition[description.disposition];
   const epic: string = ProductEpic[description.epic];
   const pkg = RepoPackage[description.package];
   const func = description.functionName;
@@ -17,8 +17,8 @@ export function makeTitle(description: TestDescription): string {
   return `${scope}＿function‿${func}＿${descr}`;
 }
 
-export function makeTitleFunc(epic: ProductEpic, pkg: RepoPackage, className?: string):
-    (type: TestType, functionName: string, description: string) => string {
+export function makeTitleFunc(epic: ProductEpic, pkg: RepoPackage, targetName: string):
+    (type: TestType, functionName: string, description: string, disposition?: TestDisposition) => string {
   return (
       type: TestType,
       functionName: string,
@@ -26,10 +26,10 @@ export function makeTitleFunc(epic: ProductEpic, pkg: RepoPackage, className?: s
       disposition: TestDisposition = TestDisposition.Positive
     ) => makeTitle({
       type: type,
-      dispostion: disposition,
+      disposition: disposition,
       epic: epic,
       package: pkg,
-      functionName: `${className ? `${className}﹍` : ""}${functionName}`,
+      functionName: `${targetName ? `${targetName}﹍` : ''}${functionName}`,
       description: description,
     } as TestDescription);
 }

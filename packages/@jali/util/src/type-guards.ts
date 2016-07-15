@@ -1,6 +1,6 @@
-import * as ArgumentValidators from "./argument-validators";
+import * as ArgumentValidators from './argument-validators';
 
-import * as Iterables from "./iterables";
+import * as Iterables from './iterables';
 
 export function isError(value: any): value is Error {
   return (value as Error).message !== undefined;
@@ -9,7 +9,7 @@ export function isError(value: any): value is Error {
 export function makeIsIterable<T>(
   elementTypeGuard: (element: any) => element is T):
     (value: any) => value is Iterable<T> {
-  ArgumentValidators.verifyFunction("elementTypeGuard", elementTypeGuard);
+  ArgumentValidators.verifyFunction('elementTypeGuard', elementTypeGuard);
 
   let predicate = (value: any) => {
     let iterable = value as Iterable<T>;

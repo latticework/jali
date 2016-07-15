@@ -1,4 +1,4 @@
-import StandardMessageEncoding from "./standard-message-encoding";
+import StandardMessageEncoding from './standard-message-encoding';
 
 
 export var local = new StandardMessageEncoding([]);

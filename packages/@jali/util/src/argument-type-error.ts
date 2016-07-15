@@ -1,4 +1,4 @@
-import { default as ArgumentError } from "./argument-error";
+import { default as ArgumentError } from './argument-error';
 
 export default class ArgumentTypeError extends ArgumentError {
   constructor(type: string, name?: string, message?: string) {

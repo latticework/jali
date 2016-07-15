@@ -1,8 +1,8 @@
-import { MessagePriority, MessageSeverity } from "@jali/core";
+import { MessagePriority, MessageSeverity } from '@jali/core';
 
-import MessageEncodingVersion from "./message-encoding-version";
-import MessageEncodingData from "./message-encoding-data";
-import MessageEncodingSegmentData from "./message-encoding-segment-data";
+import MessageEncodingVersion from './message-encoding-version';
+import MessageEncodingData from './message-encoding-data';
+import MessageEncodingSegmentData from './message-encoding-segment-data';
 
 export default class StandardMessageEncodingVersion implements MessageEncodingVersion {
   public constructor(public readonly data: MessageEncodingData) {

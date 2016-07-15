@@ -1,1 +1,1 @@
-export * from "../src/notification-message-iterables"
+export * from '../src/notification-message-iterables'
