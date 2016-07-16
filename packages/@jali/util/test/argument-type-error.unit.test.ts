@@ -1,9 +1,9 @@
-import test, { ContextualTestContext } from 'ava';
+import test from 'ava';
 //import * as assert from 'assert';
 
 import { makeTitleFunc, TestType, ProductEpic, RepoPackage, } from '../testing';
 
-import ArgumentTypeError from '../src/argument-type-error';
+import { testArgumentTypeError, } from '../testing/argument-error-helpers'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 const title = makeTitleFunc(
@@ -11,35 +11,6 @@ const title = makeTitleFunc(
   RepoPackage.Util, 
   'ArgumentTypeError');
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-interface ArgumentTypeErrorTestContext {
-  test: ContextualTestContext
-  type: string,
-  parameterName?: string,
-  errorMessage?: string,
-}
-
-function testArgumentTypeError(context: ArgumentTypeErrorTestContext) {
-  // arrange
-  const t = context.test;
-  const type = context.type;
-  const name = context.parameterName;
-  const message = context.errorMessage || `Argument must have type '${type}'. Yours is not`;
-
-  const expected =
-    `Error in argument${name ? ` '${name}'` : ''}${(message) ? `: ${message}` : ''}`;
-  const target = ArgumentTypeError;
-
-  // act
-  const result = new target(type, name, message);
-  const actual = result.message;
-
-  // assert
-  t.plan(1);
-  t.is(actual, expected);
-}
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // constructor_name_message
@@ -50,6 +21,8 @@ function testArgumentTypeError(context: ArgumentTypeErrorTestContext) {
 test(title(TestType.Smoke, 'constructor_name_message', 
     'name-specified'), async t => {
   await Promise.resolve();
+
+  t.plan(2);
 
   testArgumentTypeError({
     test: t,
@@ -67,6 +40,8 @@ test(title(TestType.Unit, 'constructor_name_message',
     'all-specified'), async t => {
   await Promise.resolve();
 
+  t.plan(2);
+
   testArgumentTypeError({
     test: t,
     type: 'number',
@@ -79,6 +54,8 @@ test(title(TestType.Unit, 'constructor_name_message',
     'message-specified'), async t => {
   await Promise.resolve();
 
+  t.plan(2);
+
   testArgumentTypeError({
     test: t,
     type: 'number',
@@ -90,6 +67,8 @@ test(title(TestType.Unit, 'constructor_name_message',
 test(title(TestType.Unit, 'constructor_name_message', 
     'none-specified'), async t => {
   await Promise.resolve();
+
+  t.plan(2);
 
   testArgumentTypeError({
     test: t,

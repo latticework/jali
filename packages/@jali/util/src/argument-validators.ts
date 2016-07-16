@@ -30,7 +30,7 @@ export function verifyFunction(name: string, value: Object, message?: string): v
   verifyDefined(name, value, message);
 
   if (typeof value !== 'function') {
-    throw new ArgumentError(name, message);
+    throw new ArgumentTypeError('function', name, message);
   }
 }
 

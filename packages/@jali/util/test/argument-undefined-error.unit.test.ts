@@ -6,6 +6,9 @@ import { testArgumentError, } from '../testing/argument-error-helpers'
 
 import ArgumentUndefinedError from '../src/argument-undefined-error';
 
+export const DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE = 
+  `Argument must have a truthy value. Yours is 'undefined'`;
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 const title = makeTitleFunc(
   ProductEpic.Util, 
@@ -19,7 +22,7 @@ const title = makeTitleFunc(
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'constructor_name_message', 
+test(title(TestType.Smoke, 'constructor_name_message',
     'name-specified'), async t => {
   await Promise.resolve();
 
@@ -29,7 +32,7 @@ test(title(TestType.Smoke, 'constructor_name_message',
     classConstructor: ArgumentUndefinedError,
     parameterName: 'Name',
     errorMessage: undefined,
-    defaultMessage: 'Argument must have a truthy value. Yours is \'undefined\'',
+    defaultMessage: DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE,
   });
 });
 
@@ -37,7 +40,7 @@ test(title(TestType.Smoke, 'constructor_name_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'constructor_name_message', 
+test(title(TestType.Unit, 'constructor_name_message',
     'all-specified'), async t => {
   await Promise.resolve();
 
@@ -51,7 +54,7 @@ test(title(TestType.Unit, 'constructor_name_message',
   });
 });
 
-test(title(TestType.Unit, 'constructor_name_message', 
+test(title(TestType.Unit, 'constructor_name_message',
     'message-specified'), async t => {
   await Promise.resolve();
 
@@ -74,6 +77,6 @@ test(title(TestType.Unit, 'constructor_name_message',
     classConstructor: ArgumentUndefinedError,
     parameterName: undefined,
     errorMessage: undefined,
-    defaultMessage: 'Argument must have a truthy value. Yours is \'undefined\'',
+    defaultMessage: DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE,
   });
 });
