@@ -24,7 +24,7 @@ export function testArgumentError<TError extends Error>(context: TestContext<TEr
   const target = context.classConstructor;
 
   // act
-  const result = context.error || new target(name, message);
+  const result = context.error || new target(context.parameterName, context.errorMessage);
 
   // assert
   t.true(result instanceof context.classConstructor);

@@ -4,6 +4,21 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Unit Tests",
+      "type": "node",
+      "program": "${workspaceRoot}/node_modules/.bin/nyc/ava",
+      "stopOnEntry": false,
+      "args": [
+        "dist/all/**/*.test.js",
+        "--concurrency",
+        "5"
+      ],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "build",
+      "env": {"BABEL_ENV": "test"},
+      "runtimeExecutable": null
+    },
+    {
       "name": "Launch",
       "type": "node",
       "request": "launch",

@@ -70,13 +70,23 @@ apt_package 'python3-sphinx' do
 end
 
 # Install VSCode
+# Update instructions:
+# Download:
+# - Go to https://code.visualstudio.com/Docs/?dv=linux64_deb
+# - Node downloaded file.
+# - Copy link address of "direct download link" and paste as value of "source" 
+#   below.
+# - Download http://www.labtestproject.com/files/win/sha256sum/sha256sum.exe
+# - Follow instructions,
+#   http://www.labtestproject.com/using_windows/step_by_step_using_sha256sum_on_windows_xp.html
+#   to obtain checksum of downloaded file and paste below.
 if ::Dir.exist?('/usr/share/code/')
   Chef::Log.info('(up to date)')
 else
   remote_file "#{Chef::Config[:file_cache_path]}/visual-studio-code.deb" do
     source 'https://go.microsoft.com/fwlink/?LinkID=760868'
     mode 0644
-    checksum 'f7457df3c94b459b055b31ed1e3f2d22e1993e18c1b6209fd5aa98651c125a43'
+    checksum '241971e15ea28ccd4ab6ad33b61b18624eb02f6056176b5f331cba01ae12b35e'
   end
 
   dpkg_package 'visual-studio-code' do
