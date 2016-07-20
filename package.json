@@ -6,7 +6,14 @@
     "transform-decorators-legacy",
     "transform-es2015-function-name",
     "transform-function-sent",
-    "transform-exponentiation-operator"
+    "transform-exponentiation-operator",
+
+    "babel:",
+      "for ts+babel sourcemaps see http://stackoverflow.com/a/37799745/2240669",
+
+    "ava:",
+      "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
+      "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
   ],
   "name": "jali-srcs",
   "version": "0.0.0",
@@ -14,11 +21,17 @@
   "scripts": {
     "start": "ng server",
     "lint": "tslint \"packages/**/*.ts\"",
-    "build": "tsc -p packages",
-    "test": "BABEL_ENV=test ava dist/all/**/*.test.js --concurrency 5",
-    "test:cover": "BABEL_ENV=test nyc ava dist/all/**/*.test.js --concurrency 5 && nyc report --reporter=html && xdg-open ./coverage/index.html",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+
+    "build": "tsc -p packages --sourceMap",
+      "build:test": "tsc -p packages --inlineSourceMap",
+
+    "test": "BABEL_ENV=test ava --concurrency 5",
+      "pretest": "npm run build:test",
+      "test:cover": "BABEL_ENV=test nyc ava --concurrency 5 && nyc report --reporter=html && xdg-open ./coverage/index.html",
+        "pretest:cover": "npm run build:test",
+
+    "e2e": "protractor",
+      "pree2e": "webdriver-manager update"
   },
   "repository": {
     "type": "git",
@@ -69,6 +82,16 @@
     "webpack-merge": "^0.14.0"
   },
   "babel": {
+    "env": {
+      "development": {},
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ],
+        "sourceMaps": "inline"
+      },
+      "production": {}
+    },
     "presets": [],
     "plugins": [
       "syntax-trailing-function-commas",
@@ -90,23 +113,13 @@
     "ignore": [
       "*.test.js"
     ],
-    "env": {
-      "development": {
-      },
-      "test": {
-        "plugins": [
-          "transform-es2015-modules-commonjs"
-        ],
-        "sourceMaps": "inline"
-      },
-      "production": {}
-    }
+    "sourceMaps": "inline"
   },
   "ava": {
-    "//": [
-      "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
-      "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
+    "files": [
+      "dist/all/**/*.test.js"
     ],
+    "concurrency": 5,
     "babel": {
       "plugins": [
         "syntax-trailing-function-commas",
@@ -129,6 +142,12 @@
     },
     "require": [
       "babel-register"
+    ]
+  },
+  "nyc": {
+    "exclue": [
+      "**/*.test.*",
+      "**/testing/*.js"
     ]
   }
 }

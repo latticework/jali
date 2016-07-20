@@ -6,13 +6,13 @@ import { testArgumentError, } from '../testing/argument-error-helpers'
 
 import ArgumentUndefinedError from '../src/argument-undefined-error';
 
-export const DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE = 
-  `Argument must have a truthy value. Yours is 'undefined'`;
+const DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE =
+  `Argument must be defined. Yours is 'undefined'`;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 const title = makeTitleFunc(
-  ProductEpic.Util, 
-  RepoPackage.Util, 
+  ProductEpic.Util,
+  RepoPackage.Util,
   'ArgumentUndefinedError');
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -68,7 +68,7 @@ test(title(TestType.Unit, 'constructor_name_message',
   });
 });
 
-test(title(TestType.Unit, 'constructor_name_message', 
+test(title(TestType.Unit, 'constructor_name_message',
     'none-specified'), async t => {
   await Promise.resolve();
 

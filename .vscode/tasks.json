@@ -16,6 +16,15 @@
           "$tsc"
       ]
     },
+    {
+      "taskName": "build:test",
+      "args": ["run", "build:test"],
+      "isBuildCommand": true,
+      "isWatching": false,
+      "problemMatcher": [
+          "$tsc"
+      ]
+    },
     // http://shripalsoni.com/blog/configure-eslint-in-visual-studio-code/
     {
       "taskName": "lint",

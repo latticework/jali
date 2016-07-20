@@ -45,12 +45,12 @@ export function verifyIterable<T>(name: string, value: Iterable<T>, message?: st
   verifyDefined(name, value, message);
 
   if (!TypeGuards.isIterable(value)) {
-    throw new ArgumentError(name, message);
+    throw new ArgumentTypeError('iterable', name, message);
   }
 }
 
 export function verifyNonEmpty(name: string, value: string, message?: string): void | never {
-  verifyDefined(name, value, message);
+  verifyString(name, value, message);
 
   if (value === '') {
     throw new ArgumentEmptyStringError(name, message);

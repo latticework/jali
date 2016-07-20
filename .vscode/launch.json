@@ -6,15 +6,15 @@
     {
       "name": "Unit Tests",
       "type": "node",
-      "program": "${workspaceRoot}/node_modules/.bin/nyc/ava",
+      "program": "${workspaceRoot}/node_modules/.bin/ava",
       "stopOnEntry": false,
       "args": [
-        "dist/all/**/*.test.js",
-        "--concurrency",
-        "5"
+        //"./dist/all/**/${fileBasename}.js",
+        "--serial",
+        "--tap"
       ],
       "cwd": "${workspaceRoot}",
-      "preLaunchTask": "build",
+      "preLaunchTask": "build:test",
       "env": {"BABEL_ENV": "test"},
       "runtimeExecutable": null
     },

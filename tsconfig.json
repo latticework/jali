@@ -22,7 +22,6 @@
     "rootDir": ".",
     "strictNullChecks": true,
     "stripInternal": true,
-    "sourceMap": true,
     "target": "es6",
     "typeRoots": ["./node_modules/@types/node"],
     "types": ["node"]
