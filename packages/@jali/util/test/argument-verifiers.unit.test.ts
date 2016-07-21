@@ -8,16 +8,14 @@ import * as ArgumentVerifiers from '../src/argument-verifiers';
 
 import ArgumentEmptyStringError from '../src/argument-empty-string-error';
 import ArgumentError from '../src/argument-error';
-// import ArgumentFalseError from '../src/argument-false-error';
+import ArgumentFalseError from '../src/argument-false-error';
 // import ArgumentFalsyError from '../src/argument-falsy-error';
-// import ArgumentNanError from '../src/argument-nan-error';
-// import ArgumentNullError from '../src/argument-null-error';
+import ArgumentNanError from '../src/argument-nan-error';
+import ArgumentNullError from '../src/argument-null-error';
 import ArgumentTypeError from '../src/argument-type-error';
 import ArgumentUndefinedError from '../src/argument-undefined-error';
-// import ArgumentWhitespaceStringError from '../src/argument-whitespace-string-error';
-// import ArgumentZeroError from '../src/argument-zero-error';
-
-// import { DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE } from '../src/argument-undefined-error.unit.test'
+import ArgumentWhitespaceStringError from '../src/argument-whitespace-string-error';
+import ArgumentZeroError from '../src/argument-zero-error';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 const title = makeTitleFunc(
@@ -920,4 +918,1466 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
   });
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyNonZero_name_value_message
 
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyNonZero_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = 1;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as number;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = '' as any as number;
+  const expectedError = new ArgumentTypeError('number', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-not-specified-test-fails-for-zero', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = 0;
+  const expectedError = new ArgumentZeroError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = 1;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as number;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = '' as any as number;
+  const expectedError = new ArgumentTypeError('number', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-specified-test-fails-for-zero', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = 0;
+  const expectedError = new ArgumentZeroError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyNotWhitespace_name_value_message
+
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = 'not-whitespace';
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+test(title(TestType.Smoke, 'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-succeeds-with-some-whitespace'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  // Includes http://www.fileformat.info/info/unicode/char/1680/browsertest.htm
+  // Includes http://www.fileformat.info/info/unicode/char/2003/index.htm
+  const value = ' \t\v not-whitespace\u2003\r\n';
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as string;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = true as any as string;
+  const expectedError = new ArgumentTypeError('string', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-empty', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = '';
+  const expectedError = new ArgumentEmptyStringError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-whitespace', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  console.log('message-not-specified-test-fails-for-whitespace');
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  // Includes http://www.fileformat.info/info/unicode/char/1680/browsertest.htm
+  // Includes http://www.fileformat.info/info/unicode/char/2003/index.htm
+  const value = ' \t\v \u2003\r\n';
+  const expectedError = new ArgumentWhitespaceStringError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = 'non-empty';
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as string;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = true as any as string;
+  const expectedError = new ArgumentTypeError('string', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-empty', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = '';
+  const expectedError = new ArgumentEmptyStringError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-whitespace', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  // Includes http://www.fileformat.info/info/unicode/char/1680/browsertest.htm
+  // Includes http://www.fileformat.info/info/unicode/char/2003/index.htm
+  const value = ' \t\v \u2003\r\n';
+  const expectedError = new ArgumentWhitespaceStringError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyNotNull_name_value_message
+
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyNotNull_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = true;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNotNull(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyNotNull_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as boolean;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotNull(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentError({
+    test: t,
+    classConstructor: ArgumentUndefinedError,
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotNull_name_value_message',
+    'message-not-specified-test-fails-for-null', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = null as any as boolean;
+  const expectedError = new ArgumentNullError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotNull(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentError({
+    test: t,
+    classConstructor: ArgumentNullError,
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotNull_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = true;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNotNull(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyNotNull_name_value_message',
+    'message-specified-test-fails', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as boolean;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotNull(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentError({
+    test: t,
+    classConstructor: ArgumentUndefinedError,
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotNull_name_value_message',
+    'message-specified-test-fails-for-null', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = null as any as boolean;
+  const expectedError = new ArgumentNullError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotNull(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentError({
+    test: t,
+    classConstructor: ArgumentNullError,
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyNumber_name_value_message
+
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyNumber_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = 1;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as number;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = '' as any as number;
+  const expectedError = new ArgumentTypeError('number', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-not-specified-test-fails-for-nan', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = NaN;
+  const expectedError = new ArgumentNanError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = 1;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as number;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = '' as any as number;
+  const expectedError = new ArgumentTypeError('number', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-specified-test-fails-for-nan', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = NaN;
+  const expectedError = new ArgumentNanError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNumber(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyObject_name_value_message
+
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyObject_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = {};
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyObject(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyObject_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as Object;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyObject(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'object',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyObject_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = 1 as any as Object;
+  const expectedError = new ArgumentTypeError('object', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyObject(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'object',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyObject_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = {};
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyObject(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyObject_name_value_message',
+    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as Object;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyObject(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'object',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyObject_name_value_message',
+    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = 1 as any as Object;
+  const expectedError = new ArgumentTypeError('object', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyObject(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'object',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyString_name_value_message
+
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyString_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = '';
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyString(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyString_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as string;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyString(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyString_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = 1 as any as string;
+  const expectedError = new ArgumentTypeError('string', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyString(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyString_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = '';
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyString(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyString_name_value_message',
+    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as string;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyString(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyString_name_value_message',
+    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = 1 as any as string;
+  const expectedError = new ArgumentTypeError('string', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyString(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyTrue_name_value_message
+
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyTrue_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = true;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as boolean;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = '' as any as boolean;
+  const expectedError = new ArgumentTypeError('boolean', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-not-specified-test-fails-for-false', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = false;
+  const expectedError = new ArgumentFalseError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = true;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as boolean;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = '' as any as boolean;
+  const expectedError = new ArgumentTypeError('boolean', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-specified-test-fails-for-false', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = false;
+  const expectedError = new ArgumentFalseError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTrue(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////
+// // verifyTruthy_name_value_message
+
+// //////////////
+// // Smoke tests
+
+// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+//     'message-not-specified-test-succeeds-for-boolean'), async t => {
+//   await Promise.resolve();
+
+//   // arrange
+//   const name = 'Name';
+//   const loose = false;
+//   const message = undefined;
+//   const value = true;
+//   const target = ArgumentVerifiers;
+
+//   // act
+//   target.verifyTruthy(name, value, loose, message);
+
+//   // assert
+//   t.plan(1);
+//   t.pass();
+// });
+
+// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+//     'message-not-specified-test-succeeds-for-number'), async t => {
+//   await Promise.resolve();
+
+//   // arrange
+//   const name = 'Name';
+//   const message = undefined;
+//   const value = 1;
+//   const target = ArgumentVerifiers;
+
+//   // act
+//   target.verifyTruthy(name, value, message);
+
+//   // assert
+//   t.plan(1);
+//   t.pass();
+// });
+// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+//     'message-not-specified-test-succeeds-for-object'), async t => {
+//   await Promise.resolve();
+
+//   // arrange
+//   const name = 'Name';
+//   const message = undefined;
+//   const value = {};
+//   const target = ArgumentVerifiers;
+
+//   // act
+//   target.verifyTruthy(name, value, message);
+
+//   // assert
+//   t.plan(1);
+//   t.pass();
+// });
+// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+//     'message-not-specified-test-succeeds-for-boolean'), async t => {
+//   await Promise.resolve();
+
+//   // arrange
+//   const name = 'Name';
+//   const message = undefined;
+//   const value = true;
+//   const target = ArgumentVerifiers;
+
+//   // act
+//   target.verifyTruthy(name, value, message);
+
+//   // assert
+//   t.plan(1);
+//   t.pass();
+// });
+// //////////////
+// // Unit tests

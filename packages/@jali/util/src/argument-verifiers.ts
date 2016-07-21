@@ -57,11 +57,11 @@ export function verifyNonEmpty(name: string, value: string, message?: string): v
   }
 }
 
-export function verifyNotWhitespace(name: string, value: string, message?: string): void | never {
-  verifyNonEmpty(name, value, message);
+export function verifyNonZero(name: string, value: number, message?: string): void | never {
+  verifyNumber(name, value, message);
 
-  if (value.trim() === '') {
-    throw new ArgumentWhitespaceStringError(name, message);
+  if (value === 0) {
+    throw new ArgumentZeroError(name, message);
   }
 }
 
@@ -73,11 +73,11 @@ export function verifyNotNull<T>(name: string, value: T, message?: string): void
   }
 }
 
-export function verifyNonZero(name: string, value: number, message?: string): void | never {
-  verifyNumber(name, value, message);
+export function verifyNotWhitespace(name: string, value: string, message?: string): void | never {
+  verifyNonEmpty(name, value, message);
 
-  if (value === 0) {
-    throw new ArgumentZeroError(name, message);
+  if (value.trim() === '') {
+    throw new ArgumentWhitespaceStringError(name, message);
   }
 }
 
@@ -110,7 +110,7 @@ export function verifyString(name: string, value: string, message?: string): voi
 }
 
 export function verifyTrue(name: string, value: boolean, message?: string): void | never {
-  verifyDefined(name, value, message);
+  verifyBoolean(name, value, message);
 
   if (value === false) {
     throw new ArgumentFalseError(name, message);
@@ -135,7 +135,7 @@ export function verifyTruthy<T>(name: string, value: T, loose = false, message?:
     }
 
     if (typeof value === 'number' ) {
-      // Also checks for number and not NaN
+      // Also checks for not NaN
       verifyNonZero(name, value as any as number, message);
     }
   }
