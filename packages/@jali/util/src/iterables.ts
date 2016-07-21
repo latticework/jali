@@ -1,19 +1,5 @@
 import * as ArgumentVerifiers from './argument-verifiers';
 
-export function toMap<TKey, TValue>(
-    sequence: Iterable<TValue>, keySelector: (value: TValue) => TKey) {
-  ArgumentVerifiers.verifyIterable('sequence', sequence);
-  ArgumentVerifiers.verifyFunction('keySelector', keySelector);
-
-  let map = new Map<TKey, TValue>();
-
-  for (const value of sequence) {
-    map.set(keySelector(value), value);
-  }
-
-  return map;
-}
-
 export function has<T>(sequence: Iterable<T>): boolean
 export function has<T>(sequence: Iterable<T>, value: T | null , loose?: boolean): boolean
 export function has<T>(sequence: Iterable<T>, test: (value: T) => boolean): boolean
@@ -60,6 +46,20 @@ export function firstOrDefault<T>(sequence: Iterable<T>, value?: T): T | undefin
   }
 
   return value;
+}
+
+export function toMap<TKey, TValue>(
+    sequence: Iterable<TValue>, keySelector: (value: TValue) => TKey) {
+  ArgumentVerifiers.verifyIterable('sequence', sequence);
+  ArgumentVerifiers.verifyFunction('keySelector', keySelector);
+
+  let map = new Map<TKey, TValue>();
+
+  for (const value of sequence) {
+    map.set(keySelector(value), value);
+  }
+
+  return map;
 }
 
 export function* where<T>(sequence: Iterable<T>, test: (element: T) => boolean): Iterable<T> {

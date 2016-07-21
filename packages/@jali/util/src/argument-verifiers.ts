@@ -88,7 +88,7 @@ export function verifyNumber(name: string, value: number, message?: string): voi
     throw new ArgumentTypeError('number', name, message);
   }
 
-  if (value === NaN) {
+  if (Number.isNaN(value)) {
     throw new ArgumentNanError(name, message);
   }
 }

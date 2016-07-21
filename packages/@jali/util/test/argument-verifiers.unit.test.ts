@@ -9,7 +9,7 @@ import * as ArgumentVerifiers from '../src/argument-verifiers';
 import ArgumentEmptyStringError from '../src/argument-empty-string-error';
 import ArgumentError from '../src/argument-error';
 import ArgumentFalseError from '../src/argument-false-error';
-// import ArgumentFalsyError from '../src/argument-falsy-error';
+import ArgumentFalsyError from '../src/argument-falsy-error';
 import ArgumentNanError from '../src/argument-nan-error';
 import ArgumentNullError from '../src/argument-null-error';
 import ArgumentTypeError from '../src/argument-type-error';
@@ -2303,81 +2303,609 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
   });
 });
 
-// ////////////////////////////////////////////////////////////////////////////////////////////////////
-// // verifyTruthy_name_value_message
 
-// //////////////
-// // Smoke tests
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyTruthy_name_value_message
 
-// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-//     'message-not-specified-test-succeeds-for-boolean'), async t => {
-//   await Promise.resolve();
+//////////////
+// Smoke tests
 
-//   // arrange
-//   const name = 'Name';
-//   const loose = false;
-//   const message = undefined;
-//   const value = true;
-//   const target = ArgumentVerifiers;
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-with-default-parameters'), async t => {
+  await Promise.resolve();
 
-//   // act
-//   target.verifyTruthy(name, value, loose, message);
+  // arrange
+  const name = 'Name';
+  const value = true;
+  const target = ArgumentVerifiers;
 
-//   // assert
-//   t.plan(1);
-//   t.pass();
-// });
+  // act
+  target.verifyTruthy(name, value);
 
-// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-//     'message-not-specified-test-succeeds-for-number'), async t => {
-//   await Promise.resolve();
+  // assert
+  t.plan(1);
+  t.pass();
+});
 
-//   // arrange
-//   const name = 'Name';
-//   const message = undefined;
-//   const value = 1;
-//   const target = ArgumentVerifiers;
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-boolean'), async t => {
+  await Promise.resolve();
 
-//   // act
-//   target.verifyTruthy(name, value, message);
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = true;
+  const target = ArgumentVerifiers;
 
-//   // assert
-//   t.plan(1);
-//   t.pass();
-// });
-// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-//     'message-not-specified-test-succeeds-for-object'), async t => {
-//   await Promise.resolve();
+  // act
+  target.verifyTruthy(name, value, loose, message);
 
-//   // arrange
-//   const name = 'Name';
-//   const message = undefined;
-//   const value = {};
-//   const target = ArgumentVerifiers;
+  // assert
+  t.plan(1);
+  t.pass();
+});
 
-//   // act
-//   target.verifyTruthy(name, value, message);
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-function'), async t => {
+  await Promise.resolve();
 
-//   // assert
-//   t.plan(1);
-//   t.pass();
-// });
-// test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-//     'message-not-specified-test-succeeds-for-boolean'), async t => {
-//   await Promise.resolve();
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = ()=>{};
+  const target = ArgumentVerifiers;
 
-//   // arrange
-//   const name = 'Name';
-//   const message = undefined;
-//   const value = true;
-//   const target = ArgumentVerifiers;
+  // act
+  target.verifyTruthy(name, value, loose, message);
 
-//   // act
-//   target.verifyTruthy(name, value, message);
+  // assert
+  t.plan(1);
+  t.pass();
+});
 
-//   // assert
-//   t.plan(1);
-//   t.pass();
-// });
-// //////////////
-// // Unit tests
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-number'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = 1;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-object'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = {};
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-string'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = '1';
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-fails-for-undefined',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = undefined as any as boolean;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-fails-for-null',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = null as any as boolean;
+  const expectedError = new ArgumentNullError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-fails-for-false',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = false;
+  const expectedError = new ArgumentFalseError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-fails-for-zero',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = 0;
+  const expectedError = new ArgumentZeroError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-fails-for-nan',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = NaN;
+  const expectedError = new ArgumentNanError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-fails-for-empty-string',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = false;
+  const message = undefined;
+  const value = '';
+  const expectedError = new ArgumentEmptyStringError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+/** ***********************************************************************************************/
+
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-boolean'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = true;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-function'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = ()=>{};
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-number'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = 1;
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-object'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = {};
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-string'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = '1';
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-fails-for-undefined',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = undefined as any as boolean;
+  const expectedError = new ArgumentFalsyError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-fails-for-null',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = null as any as boolean;
+  const expectedError = new ArgumentFalsyError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-fails-for-false',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = false;
+  const expectedError = new ArgumentFalsyError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-fails-for-zero',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = 0;
+  const expectedError = new ArgumentFalsyError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-fails-for-nan',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = NaN;
+  const expectedError = new ArgumentFalsyError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-specified-loose-test-fails-for-empty-string',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const value = '';
+  const expectedError = new ArgumentFalsyError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
