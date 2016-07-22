@@ -7,29 +7,39 @@ export function isError(value: any): value is Error {
 }
 
 export function makeIsIterable<T>(
-  elementTypeGuard: (element: any) => element is T):
+  elementTypeGuard: (element: any) => element is T, deep = false):
     (value: any) => value is Iterable<T> {
   ArgumentVerifiers.verifyFunction('elementTypeGuard', elementTypeGuard);
 
-  let predicate = (value: any) => {
-    let iterable = value as Iterable<T>;
-
-    if (iterable[Symbol.iterator] === undefined) {
+  const test = (value: any) => {
+    if (!isIterable(value)) {
       return false;
     }
 
-    let element = Iterables.firstOrDefault(iterable);
+    if (!deep) {
+      const element = Iterables.firstOrDefault(value);
 
-    if (element === undefined) {
-      return true;
+      if (element === undefined) {
+        return true;
+      }
+
+      return elementTypeGuard(element);
     }
 
-    return elementTypeGuard(element);
+    for (const element of value as Iterable<T>) {
+      if (!elementTypeGuard(element)) {
+        return false;
+      }
+    }
+
+    return true;
   };
 
   // Need type assertion: See https://github.com/Microsoft/TypeScript/issues/5951.
-  return predicate as (value: any) => value is Iterable<T>;
+  return test as (value: any) => value is Iterable<T>;
 }
+
+
 
 export function isIterable<T>(value: any): value is Iterable<T> {
   return (value as Iterable<T>)[Symbol.iterator] !== undefined;

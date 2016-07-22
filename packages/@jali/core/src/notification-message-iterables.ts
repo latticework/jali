@@ -10,5 +10,5 @@ export function get_Error(messages: Iterable<NotificationMessage>):
 
 export function get_Errors(messages: Iterable<NotificationMessage>):
     Iterable<NotificationMessage> {
-  return Iterables.where(messages, message => message.severity <= MessageSeverity.Error);
+  return Iterables.filter(messages, message => message.severity <= MessageSeverity.Error);
 }
