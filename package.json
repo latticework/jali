@@ -1,37 +1,35 @@
 {
   "//": [
-    "syntax-trailing-function-commas",
-    "transform-async-to-generator",
-    "transform-class-properties",
-    "transform-decorators-legacy",
-    "transform-es2015-function-name",
-    "transform-function-sent",
-    "transform-exponentiation-operator",
-
     "babel:",
-      "for ts+babel sourcemaps see http://stackoverflow.com/a/37799745/2240669",
-
+    "for ts+babel sourcemaps see http://stackoverflow.com/a/37799745/2240669",
     "ava:",
-      "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
-      "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
+    "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
+    "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
   ],
   "name": "jali-srcs",
   "version": "0.0.0",
   "description": "Cross-platform service specification and execution context. Jali is the JavaScript implementation.",
   "scripts": {
-    "start": "ng server",
-    "lint": "tslint \"packages/**/*.ts\"",
-
     "build": "tsc -p packages --sourceMap",
       "build:test": "tsc -p packages --inlineSourceMap",
 
-    "test": "BABEL_ENV=test ava --concurrency 5",
-      "pretest": "npm run build:test",
-      "test:cover": "BABEL_ENV=test nyc ava --concurrency 5 && nyc report --reporter=html && xdg-open ./coverage/index.html",
-        "pretest:cover": "npm run build:test",
+    "cover": "BABEL_ENV=test nyc ava --tap --concurrency 5",
+      "precover": "npm run build:test",
+      "postcover": "nyc report --reporter=html",
+    "cover:html": "xdg-open ./coverage/index.html",
+      "precover:html": "npm run cover",
+
+    "docs": "typedoc -- --options typedoc.json",
 
     "e2e": "protractor",
-      "pree2e": "webdriver-manager update"
+      "pree2e": "webdriver-manager update",
+
+    "lint": "tslint \"packages/**/*.ts\"",
+
+    "start": "ng server",
+
+    "test": "BABEL_ENV=test ava --concurrency 5",
+      "pretest": "npm run build:test"
   },
   "repository": {
     "type": "git",
@@ -77,6 +75,7 @@
     "nyc": "^7.0.0",
     "ts-node": "^0.9.3",
     "tslint": "^3.13.0-dev.0",
+    "typedoc": "^0.4.4",
     "typescript": "^2.0.0-dev.20160705",
     "webpack": "^2.1.0-beta.15",
     "webpack-merge": "^0.14.0"
@@ -148,6 +147,10 @@
     "exclude": [
       "**/*.test.*",
       "**/testing/*"
+    ],
+    "reporter": [
+      "html",
+      "lcov"
     ]
   }
 }

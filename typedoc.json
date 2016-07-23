@@ -1,0 +1,21 @@
+{
+  "emitDecoratorMetadata": "true",
+  "exclude": [
+    "./dist/",
+    "./**/*.test.ts",
+    "./**/testing/*.ts"
+  ],
+  "experimentalDecorators": "true",
+  "ignoreCompilerErrors": "true",
+  "mode": "modules",
+  "module": "commonjs",
+  "moduleResolution": "node",
+  "name": "Jali Specification-driven Serverless Microservice Framework",
+  "out": "./dist/all/doc",
+  "preserveConstEnums": "true",
+  "stripInternal": "true",
+  "suppressExcessPropertyErrors": "true",
+  "suppressImplicitAnyIndexErrors": "true",
+  "target": "ES6",
+  "theme": "default"
+}
