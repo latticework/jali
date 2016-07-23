@@ -1,10 +1,10 @@
 # jali
 specification-driven serverless microservice framework
 
-<a href="https://www.openhub.net/p/jali"><script type='text/javascript' src='https://www.openhub.net/p/jali/widgets/project_thin_badge?format=js'></script></a>
-<script type='text/javascript' src='https://www.openhub.net/p/jali/widgets/project_thin_badge?format=js'></script>
+<!-- badges -->
 [![project status](https://img.shields.io/badge/project_status-pre--alpha-AA0114.svg)](https://github.com/latticework/jali/milestones)
-<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
+[![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://github.com/latticework/jali/milestones#boards?repos=45436564&milestones=0.1.0#)
+[![OpenHub stats](https://www.openhub.net/p/jali/widgets/project_thin_badge.gif)](https://www.openhub.net/p/jali)
 [![bitHound Overall Score](https://www.bithound.io/github/latticework/jali/badges/score.svg)](https://www.bithound.io/github/latticework/jali)
 
 
