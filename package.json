@@ -11,25 +11,19 @@
   "description": "Cross-platform service specification and execution context. Jali is the JavaScript implementation.",
   "scripts": {
     "build": "tsc -p packages --sourceMap",
-      "build:test": "tsc -p packages --inlineSourceMap",
-
+    "build:test": "tsc -p packages --inlineSourceMap",
     "cover": "BABEL_ENV=test nyc ava --tap --concurrency 5",
-      "precover": "npm run build:test",
-      "postcover": "nyc report --reporter=html",
+    "precover": "npm run build:test",
+    "postcover": "nyc report",
     "cover:html": "xdg-open ./coverage/index.html",
-      "precover:html": "npm run cover",
-
+    "precover:html": "npm run cover",
     "docs": "typedoc -- --options typedoc.json",
-
     "e2e": "protractor",
-      "pree2e": "webdriver-manager update",
-
+    "pree2e": "webdriver-manager update",
     "lint": "tslint \"packages/**/*.ts\"",
-
     "start": "ng server",
-
     "test": "BABEL_ENV=test ava --concurrency 5",
-      "pretest": "npm run build:test"
+    "pretest": "npm run build:test"
   },
   "repository": {
     "type": "git",
@@ -150,7 +144,7 @@
     ],
     "reporter": [
       "html",
-      "lcov"
+      "cobertura"
     ]
   }
 }
