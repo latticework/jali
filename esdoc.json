@@ -1,0 +1,6 @@
+{
+  "title": "Jali specification-driven serverless microservice framework",
+  "source": "./dist/all",
+  "destination": "./dist/docs",
+  "autoPrivate": false
+}
