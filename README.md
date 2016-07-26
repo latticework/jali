@@ -1,5 +1,5 @@
 # jali
-specification-driven serverless microservice framework
+Specification-driven serverless microservice framework
 
 <!-- badges -->
 [![OpenHub stats](https://www.openhub.net/p/jali/widgets/project_thin_badge.gif)](https://www.openhub.net/p/jali)
@@ -46,9 +46,13 @@ See [CREDITS.md] for instructions or examples how to use some of these technolog
 - `npm` as a task runner
 - [TypeScript 2.0][TypeScript] ([wiki][TypeScriptWiki]) adds optional static typing to JavaScript
   - [TypeDoc] TypeScript document generator
+    > Warning: [**TypeDoc** doesn't work with TypeScript 2 yet][TypeDocNotCompatible]
+  - [dgeni] Flexible JavaScript documentation generator used by AngularJS, Protractor and other JS projects
+    > Warning [**dgeni**, incredibly, doesn't work with TypeScript 2 yet][dgeniNotCompatible]
+  - [esdoc]
 - [EcmaScript 2017+][EcmaScript] ([wiki][EcmaScriptWiki]) the maturing JavaScript language
 - [webpack 2][webpack] ([wiki][WebpackWiki]) NodeJS module loader
-- [Babel] JavaScript parser and transpilation platform
+- [Babel 6][Babel] JavaScript parser and transpilation platform
 - [AVA] Concurrent JavaScript test framework for EcmaScript + Babel
 - [istanbul] JavaScript code coverage tool
   - [nyc] Istanbul CLI
@@ -69,12 +73,16 @@ _See [CONTRIBUTING.md]._
 [chef_zeroProvisioner]: https://www.vagrantup.com/docs/provisioning/chef_zero.html
 [CONTRIBUTING.md]: ./CONTRIBUTING.md
 [CREDITS.md]: ./CREDITS.md
+[dgeni]: https://github.com/angular/dgeni
+[dgeniNotCompatible]: https://github.com/angular/dgeni-packages/issues/193
 [EcmaScript]: https://github.com/tc39/proposals
 [EcmaScriptWiki]: https://en.wikipedia.org/wiki/ECMAScript
+[esdoc]: https://esdoc.org/
 [istanbul]: https://github.com/gotwarlost/istanbul
 [JaliDev]: https://github.com/latticework/jalidev
 [nyc]: https://github.com/istanbuljs/nyc
 [TypeDoc]: http://typedoc.io/
+[TypeDocNotCompatible]: https://github.com/TypeStrong/typedoc/issues/234
 [TypeScript]: https://blogs.msdn.microsoft.com/typescript/2016/07/11/announcing-typescript-2-0-beta/
 [TypeScriptWiki]: https://en.wikipedia.org/wiki/TypeScript
 [Ubuntu]: http://www.ubuntu.com/

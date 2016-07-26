@@ -1,7 +1,7 @@
 import * as UtilTypeGuards from '@jali/util/type-guards';
 
 import * as TypeGuards from '../type-guards';
-import * as NotificationMessageIterables from '../notification-message-iterables';
+import * as Iterables from '../iterables';
 
 import NotificationMessage from './notification-message';
 
@@ -36,7 +36,7 @@ function resolveMessage(
     return messageOrMessagesOrError.message;
   } else if (UtilTypeGuards.makeIsIterable(TypeGuards.isNotificationMessage)(
       messageOrMessagesOrError)) {
-    let error = NotificationMessageIterables.get_Error(messageOrMessagesOrError);
+    let error = Iterables.error(messageOrMessagesOrError);
 
     if (error !== undefined) {
       return error.message;
