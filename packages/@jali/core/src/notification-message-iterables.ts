@@ -5,7 +5,7 @@ import NotificationMessage from './notification-message';
 
 export function error(messages: Iterable<NotificationMessage>):
     NotificationMessage | undefined {
-  return Iterables.firstOrDefault(get_Errors(messages));
+  return Iterables.find(get_Errors(messages));
 }
 
 export function get_Errors(messages: Iterable<NotificationMessage>):

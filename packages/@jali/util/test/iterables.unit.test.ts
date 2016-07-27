@@ -67,7 +67,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence',
   const target = [];
 
   // act
-  const actual = Iterables.has(target);
+  const actual = Iterables.some(target);
 
   // assert
   t.plan(1);
@@ -84,7 +84,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence',
   const target = [1];
 
   // act
-  const actual = Iterables.has(target);
+  const actual = Iterables.some(target);
 
   // assert
   t.plan(1);
@@ -108,7 +108,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [value];
 
   // act
-  const actual = Iterables.has(target, value);
+  const actual = Iterables.some(target, value);
 
   // assert
   t.plan(1);
@@ -126,7 +126,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [2];
 
   // act
-  const actual = Iterables.has(target, value);
+  const actual = Iterables.some(target, value);
 
   // assert
   t.plan(1);
@@ -147,7 +147,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [1] as [Object];
 
   // act
-  const actual = Iterables.has(target, value);
+  const actual = Iterables.some(target, value);
 
   // assert
   t.plan(1);
@@ -165,7 +165,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [1] as [Object];
 
   // act
-  const actual = Iterables.has(target, value, true);
+  const actual = Iterables.some(target, value, true);
 
   // assert
   t.plan(1);
@@ -183,7 +183,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [2];
 
   // act
-  const actual = Iterables.has(target, value, true);
+  const actual = Iterables.some(target, value, true);
 
   // assert
   t.plan(1);
@@ -208,7 +208,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_test',
   const target = [0,1];
 
   // act
-  const actual = Iterables.has(target, test);
+  const actual = Iterables.some(target, test);
 
   // assert
   t.plan(1);
@@ -226,7 +226,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_test',
   const target = [0,2];
 
   // act
-  const actual = Iterables.has(target, test);
+  const actual = Iterables.some(target, test);
 
   // assert
   t.plan(1);
@@ -249,7 +249,7 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   const target = [1];
 
   // act
-  const actual = Iterables.firstOrDefault(target);
+  const actual = Iterables.find(target);
 
   // assert
   t.plan(1);
@@ -266,7 +266,7 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   const target = [];
 
   // act
-  const actual = Iterables.firstOrDefault(target);
+  const actual = Iterables.find(target);
 
   // assert
   t.plan(1);
@@ -284,7 +284,7 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   const target = [1];
 
   // act
-  const actual = Iterables.firstOrDefault(target, value);
+  const actual = Iterables.find(target, value);
 
   // assert
   t.plan(1);
@@ -302,7 +302,7 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   const target = [];
 
   // act
-  const actual = Iterables.firstOrDefault(target, value);
+  const actual = Iterables.find(target, value);
 
   // assert
   t.plan(1);
