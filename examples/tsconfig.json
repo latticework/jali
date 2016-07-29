@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "declaration": true,
-    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "lib": ["es2017"],
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": false,
     "noFallthroughCasesInSwitch": true,
@@ -14,17 +14,21 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "../dist/all/",
+    "outDir": "../dist/examples/",
     "paths": {
-      "@jali/*": ["./@jali/*"]
+      "@jali/*": ["../packages/@jali/*"]
     },
-    "rootDir": ".",
+    //"rootDir": ".",
+    "rootDirs": ["."],
     "strictNullChecks": true,
     "stripInternal": true,
-    "target": "es6",
+    "target": "es2015",
     "typeRoots": ["../../node_modules/@types/node"],
     "types": ["node"]
-  }
+  },
+  "files": [
+    "./index.ts"
+  ]
 }
 
 

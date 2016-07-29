@@ -2,8 +2,8 @@
 
 |Package|Description|Modules|
 |:-|:-|:-|
-|[@jali/core](#package-jalicore)|framework-level utilities|`@jali/core`<br>`@jali/core/iterables`<br>`@jali/core/type-guards`|
-|[@jali/util](#package-jaliutil)|language-level utilities|`@jali/util`<br>`@jali/util/errors`<br>`@jali/util/iterables`<br>`@jali/util/type-guards`|
+|[@jali/core](http://#package-jalicore)|framework-level utilities|`@jali/core`<br>`@jali/core/iterables`<br>`@jali/core/type-guards`|
+|[@jali/util](http://#package-jaliutil)|language-level utilities|`@jali/util`<br>`@jali/util/errors`<br>`@jali/util/iterables`<br>`@jali/util/type-guards`|
 
 ## Package @jail/core
 Provides framework-level utilities such as notification messages and structured errors.
@@ -13,9 +13,9 @@ Provides language-level utilities such as parameter verification and common `Ite
 
 |Export|Description|
 |:-|:-|
-|Errors|Re-export of [`@jail/util/errors`](#module-jailutilerrors)|
-|Iterables|Re-export of [`@jail/util/iterables`](#module-jailutiliterables)|
-|TypeGuards|Re-export of [`@jail/util/type-guards`](#module-jailutiltypeguards)|
+|Errors|Re-export of [`@jail/util/errors`](http://#module-jailutilerrors)|
+|Iterables|Re-export of [`@jail/util/iterables`](http://#module-jailutiliterables)|
+|TypeGuards|Re-export of [`@jail/util/type-guards`](http://#module-jailutiltypeguards)|
 
 ### Module @jail/util/errors
 |Export|Description|

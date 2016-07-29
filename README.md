@@ -1,5 +1,5 @@
 # jali
-Specification-driven serverless microservice framework
+Specification-driven serverless microservice DevOps framework and infrastructure http://jali-ms.io/
 
 <!-- badges -->
 [![OpenHub stats](https://www.openhub.net/p/jali/widgets/project_thin_badge.gif)](https://www.openhub.net/p/jali)
@@ -8,16 +8,30 @@ Specification-driven serverless microservice framework
 [![Dependency Status](https://dependencyci.com/github/latticework/jali/badge)](https://dependencyci.com/github/latticework/jali)
 [![bitHound Overall Score](https://www.bithound.io/github/latticework/jali/badges/score.svg)](https://www.bithound.io/github/latticework/jali)
 
+[![Gitter](https://badges.gitter.im/latticework/jali.svg)](https://gitter.im/latticework/jali?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 
 > ## Table of Contents
 >
+> - [Introduction](#introduction)
 > - [Technologies Demonstrated](#technologies-demonstrated)
 >   - [Development environment](#development-environment)
 >   - [Cloud development tools](#cloud-development-tools)
 >   - [NodeJS Development Tools](#nodejs-development-tools)
 > - [Developing Jali](#developing-jali)
 
+## Introduction
+
+Jali is
+- **specification-driven** permitting consumer driven contracts and multi-version management
+- **serverless** so you can your routines and run using any and all configurable platforms
+- where the **microservice** is the unit of development, delivery and management
+- a full **DevOps** platform because modern microservice delivery is continuous
+- an extensible, polyglot **framework** providing circuit breaking and self-documenting APIs and explicit routine services
+- an **infrastructure** pluggable for many major microservice platforms (eventually...)
+
+To learn more about developing and managing microservices with Jali, visit our [website].
 
 ## Technologies Demonstrated
 
@@ -96,5 +110,6 @@ _See [CONTRIBUTING.md]._
 [vscode]: https://code.visualstudio.com/
 [vscodeWiki]: https://en.wikipedia.org/wiki/Visual_Studio_Code
 [webpack]: https://gist.github.com/sokra/27b24881210b56bbaff7
+[website]: http://jali-ms.io/
 [WebpackWiki]: https://en.wikipedia.org/wiki/Webpack
 [ZenHub]: https://www.zenhub.com/

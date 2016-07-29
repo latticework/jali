@@ -1,9 +1,11 @@
 {
   "title": "Jali specification-driven serverless microservice framework",
   "source": "./dist/all",
+  "excludes": ["/testing/"],
   "destination": "./dist/docs",
   "autoPrivate": false,
   "manual": {
     "overview": ["./docs/esdoc/overview.md"]
-  }
+  },
+  "lint": false
 }

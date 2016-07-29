@@ -6,6 +6,7 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  * Throw this {@link Error} if a parameter must be a non-empty string.
  * @see {@link ArgumentWhitespaceStringError}
  * @see {@link verifyNonEmpty}
+ * @see {@link verifyTruthy}
  * @example <caption>The argument for the parameter lastName is an empty string.</caption>
  * throw new ArgumentEmptyStringError('lastName');
  * @since 0.0.1

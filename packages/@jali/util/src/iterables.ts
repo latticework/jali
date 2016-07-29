@@ -5,13 +5,15 @@ import * as ArgumentVerifiers from './argument-verifiers';
  * Returns a subset of the sequence of those elements that pass the specified test.
  *
  * @param T -
- *    The `Iterator` element type.
+ *    The `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter of the function.
  * @param {Iterable<T>} sequence -
  *    The `Iterable` to operate on
  * @param {function(element: T): boolean} test -
  *    The filter function
  * @return {Iterable<T>} -
  *    A sequence of of elements
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Array#filter</a>
+ * @since 0.0.1
  */
 export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean): Iterable<T> {
   ArgumentVerifiers.verifyIterable('sequence', sequence);
@@ -24,25 +26,27 @@ export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean)
   }
 }
 
+export function some<T>(sequence: Iterable<T>): boolean
+export function some<T>(sequence: Iterable<T>, value: T | null , loose?: boolean): boolean
+export function some<T>(sequence: Iterable<T>, test: (value: T) => boolean): boolean
 /**
  * Returns a value indicating whether any of the elements of a sequence pass the specified test.
  *
  * @param T -
- *    The `Iterator` element type.
+ *    The `Iterator` element type. <b>NOTE:</b> This is a TypeScript type parameter, not a parameter of the function.
  * @param {Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {T | null | function(value: T): boolean | undefined} valueOrTest -
+ * @param {T | null | function(value: T): boolean | undefined} [valueOrTest] -
  *    If not defined, indicates that the function should test for any existing elements; otherwise,
  *    either an element to match or a test function to execute
- * @param {T | undefined} loose -
+ * @param {T | undefined} [loose] -
  *    If `valueOrTest` is a value, indicates whether strict equality or loose equality should be
  *    used. The default is strict equality.
  * @return {boolean} -
  *    `true` if the test succeeded; otherwise, `false`;
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">Array#some</a>
+ * @since 0.0.1
  */
-export function some<T>(sequence: Iterable<T>): boolean
-export function some<T>(sequence: Iterable<T>, value: T | null , loose?: boolean): boolean
-export function some<T>(sequence: Iterable<T>, test: (value: T) => boolean): boolean
 export function some<T>(
     sequence: Iterable<T>, valueOrTest?: (value: T) => boolean | T, loose = false)
     : boolean {
@@ -78,6 +82,8 @@ export function some<T>(
   return false;
 }
 
+export function find<T>(sequence: Iterable<T>): T | undefined
+export function find<T>(sequence: Iterable<T>, value: T): T
 /**
  * Returns a value matching the specified test.
  *
@@ -90,8 +96,6 @@ export function some<T>(
  * @return {T | undefined} -
  *    The matched value or `undefined` if no match was found.
  */
-export function find<T>(sequence: Iterable<T>): T | undefined
-export function find<T>(sequence: Iterable<T>, value: T): T
 export function find<T>(sequence: Iterable<T>, value?: T): T | undefined {
   ArgumentVerifiers.verifyIterable('sequence', sequence);
 
