@@ -8,6 +8,7 @@ Specification-driven serverless microservice DevOps framework and infrastructure
 [![Dependency Status](https://dependencyci.com/github/latticework/jali/badge)](https://dependencyci.com/github/latticework/jali)
 [![bitHound Overall Score](https://www.bithound.io/github/latticework/jali/badges/score.svg)](https://www.bithound.io/github/latticework/jali)
 
+[![CLA assistant](https://cla-assistant.io/readme/badge/latticework/jali)](https://cla-assistant.io/latticework/jali)
 [![Gitter](https://badges.gitter.im/latticework/jali.svg)](https://gitter.im/latticework/jali?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 
@@ -75,6 +76,8 @@ See [CREDITS.md] for instructions or examples how to use some of these technolog
 
 _See [CONTRIBUTING.md]._
 
+[//]: - (From https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://ga-beacon.appspot.com/UA-81234965-2/welcome-page)](https://github.com/igrigorik/ga-beacon)
 
 [AVA]: https://github.com/avajs/ava
 [Babel]: https://babeljs.io/
