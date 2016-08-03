@@ -4,18 +4,14 @@ import * as Util from '@jali/util';
 import * as Errors from '@jali/util/errors';
 import { verifyArgument, verifyTruthy } from '@jali/util/errors';
 
-// import LogOptions from '../log-options';
 import Example from '../example';
-import ExampleWriter from '../example-writer'
+import ExampleContext from '../example-context'
 
+@Example('@jali/util')
 export default class UtilExamples {
-  /**
-   *
-   */
-  @Example('@jali/util', '@jali/util/errors')
-  public jali_util_example_01(writer: ExampleWriter): void {
-    writer.logIndented(1, `jali_util_example_01: Examples for module '@jali/util/errors'`);
 
+  @Example('@jali/util', '@jali/util/errors')
+  public jali_util_example_01(writer: ExampleContext): void {
     function functionWithParameters(
         notNullNumber: number, notWhitespaceString: string, truthyBoolean: boolean): void {
       Util.Errors.verifyNotNull('nonNullNumber', notNullNumber);
@@ -31,38 +27,39 @@ export default class UtilExamples {
         arg => `Argument must be between 10 and 19. Yours is '${arg}'`)
     }
 
-
-    writer.logIndented(2, `Example for function 'verifyNotNull'`);
+    writer.logIndented(2, `Example for function 'verifyNotNull'`, undefined, undefined, '①');
     writer.logException(3, () => functionWithParameters(null as any as number, 'value', true));
 
     console.log();
 
     // U+1680	OGHAM SPACE MARK
-    writer.logIndented(2, `Example for function 'verifyNotWhitespace'`);
+    writer.logIndented(2, `Example for function 'verifyNotWhitespace'`, undefined, undefined, '②');
     writer.logException(3, () => functionWithParameters(1, '\u{1680}', true));
 
     console.log();
 
-    writer.logIndented(2, `Example for function 'verifyTruthy'`);
+    writer.logIndented(2, `Example for function 'verifyTruthy'`, undefined, undefined, '③');
     writer.logException(3, () => functionWithParameters(1, 'value', NaN as any as boolean));
 
     console.log();
 
-    writer.logIndented(2, `Example for function 'verifyArgument'`);
+    writer.logIndented(2, `Example for function 'verifyArgument'`, undefined, undefined, '④');
     writer.logException(3, () => functionWithParameters(1, 'value with spaces', true));
 
     console.log();
 
-    writer.logIndented(2, `Example for function 'verifyArgument' with specified message function`);
+    writer.logIndented(2, `Example for function 'verifyArgument' with specified message function`, undefined, undefined, '⑤');
     writer.logException(3, () => functionWithParameters(20, 'value', true));
+
+    console.log();
   }
 
   /**
    *
    */
   @Example('@jali/util', '@jali/util/iterators')
-  public jali_util_example_02(writer: ExampleWriter): void {
-    writer.logIndented(1, `jali_util_example_02: Examples for module '@jali/util/iterators'`);
+  public jali_util_example_02(_writer: ExampleContext): void {
+//    writer.logIndented(1, `jali_util_example_02: Examples for module '@jali/util/iterators'`);
 
 
   }

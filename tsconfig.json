@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": "./packages",
+    "baseUrl": ".",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -18,7 +18,7 @@
     "noUnusedParameters": true,
     "outDir": "./dist/all/",
     "paths": {
-      "@jali/*": ["./@jali/*"]
+      "@jali/*": ["./packages/@jali/*"]
     },
     "rootDir": ".",
     "strictNullChecks": true,
@@ -26,7 +26,10 @@
     "target": "es6",
     "typeRoots": ["./node_modules/@types/node"],
     "types": ["node"]
-  }
+  },
+  "files": [
+    "./typings/index.d.ts"
+  ]
 }
 
 

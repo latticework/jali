@@ -10,11 +10,18 @@ Sources for `Jali` project design
 ## Project Management
 - Provided by [ZenHub].
 
+## JavaScript Language
+- Decorators
+  - [TypeScript Handbook][DecoratorTypeScript]
+  - [Decorators & metadata reflection in TypeScript: From Novice to Expert][DecoratorExpert]
+
 ## NodeJs
 - Express + TypeScript
   - [Starter-Kit Node.js Express 4.x app written in TypeScript][ExpressTypeScript]
 
 ## Tooling
+- ava:
+  - [Isomorphic TypeScript, fetch, promises, ava and coverage][ava-example]
 - webpack2:
   - [What's new in webpack 2][webpack2]
   - [Code Splitting in Angular 2][code-splitting]
@@ -30,8 +37,11 @@ Sources for `Jali` project design
 [Angular2]: https://github.com/angular/angular
 [Angular2Starter]: https://github.com/AngularClass/angular2-webpack-starter "An Angular 2 Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E), Karma, Protractor, Jasmine, TypeScript, and Webpack by @AngularClass"
 [angular2-dgeni-starter]: https://github.com/rangle/angular2-dgeni-starter
+[ava-example]: http://source.coveo.com/2016/05/11/isomorphic-typescript-ava-w-coverage/
 [code-splitting]: http://blog.waffle.io/code-splitting-angular-2-webpack-2/
 [CrossBuilder]:  https://github.com/zalmoxisus/crossbuilder
+[DecoratorExpert]: http://blog.wolksoftware.com/decorators-reflection-javascript-typescript
+[DecoratorTypeScript]: https://www.typescriptlang.org/docs/handbook/decorators.html (Decorators)
 [ExpressTypeScript]: https://github.com/czechboy0/Express-4x-Typescript-Sample
 [jalidev]: https://github.com/latticework/jalidev (Linux development environment for Jali projects.)
 [johnreilly]: http://blog.johnnyreilly.com/2015/12/es6-typescript-babel-react-flux-karma.html

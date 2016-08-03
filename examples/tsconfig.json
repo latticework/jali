@@ -27,7 +27,13 @@
     "types": ["node"]
   },
   "files": [
-    "./index.ts"
+    "../typings/index.d.ts",
+    "./index.ts",
+    "./packages/util.example.ts"
+  ]
+  ,
+  "include": [
+    "./**.ts"
   ]
 }
 
