@@ -1,34 +1,54 @@
 import 'reflect-metadata';
 
-import { createWriteStream, WriteStream } from 'fs';
+
+import * as fs from 'fs';
+import { EOL } from 'os';
+import * as path from 'path';
+
+import * as mkdirp from 'mkdirp';
+import * as sanitize from 'sanitize-filename';
+
 
 import Example from './example';
 import ExampleMetadata from './example-metadata'
+import FilePath from './file-path';
+
 
 export default class ExampleContext {
-  public readonly metadata: ExampleMetadata
   public readonly console: Console;
-  private readonly stream: WriteStream;
+
   private _markerIndex = 0;
   public get markerIndex() { return this._markerIndex; }
 
+  public readonly mdFile: string;
+  public readonly metadata: ExampleMetadata
+
   public constructor(
+      public readonly filePath: FilePath,
       public readonly obj: Object,
       public readonly fn: Function | undefined,
-      public readonly path: string,
       public readonly indent = 2,
       console?: Console) {
-    this.stream = createWriteStream(path);
+    const clsBaseFileName = sanitize(obj.constructor.name);
+    const fnBaseFileName = fn ? `${clsBaseFileName}_${sanitize(fn.name)}` : undefined;
+
+    this.mdFile = fn
+      ? path.join(filePath.mdRootDir, fnBaseFileName + '.md')
+      : path.join(filePath.mdRootDir, clsBaseFileName + '.md');
+
+    mkdirp.sync(filePath.mdRootDir);
+    fs.closeSync(fs.openSync(this.mdFile, 'w'));
+
     this.console = console || global.console;
 
-    const classMetadata = Example.getMetadata(obj.constructor);
-    const functionMetadata = fn && Example.getMetadata(obj, fn.name);
+    const clsMetadata = Example.getMetadata(obj.constructor);
+    const fnMetadata = fn ? Example.getMetadata(obj, fn.name) : undefined;
 
     this.metadata = {
-      pkg: functionMetadata && functionMetadata.pkg || classMetadata.pkg,
-      module: functionMetadata && functionMetadata.module || classMetadata.module,
-      type: functionMetadata && functionMetadata.member || classMetadata.type,
-      member: functionMetadata && functionMetadata.member || classMetadata.member,
+      pkg: fnMetadata && fnMetadata.pkg || clsMetadata.pkg,
+      module: fnMetadata && fnMetadata.module || clsMetadata.module,
+      type: fnMetadata && fnMetadata.member || clsMetadata.type,
+      member: fnMetadata && fnMetadata.member || clsMetadata.member,
     }
   }
 
@@ -91,12 +111,12 @@ export default class ExampleContext {
       indentedLines.push(indentedLine);
     }
 
-    return indentedLines.join('\n');
+    return indentedLines.join(EOL);
   }
 
   public log(message: string = '') {
     this.console.log(message);
-    this.stream.write(message + '\n');
+    fs.appendFileSync(this.mdFile, message + EOL);
   }
 
   public logIndented(depth: number, message: string, indent = 2, width = 80, marker?: string | boolean): void {
