@@ -7,7 +7,6 @@ import { EOL } from 'os';
 import * as appRoot from 'app-root-path';
 import * as glob_fs from 'glob-fs';
 import * as ts from 'typescript';
-//import * as tmp from 'tmp';
 
 import Example from './example';
 import ExampleRunnerOptions from './example-runner-options';
@@ -25,6 +24,7 @@ export default class ExampleRunner {
       mdDir: options.mdDir,
       rootDir: options.rootDir,
       tsDir: options.tsDir || options.rootDir,
+      width: options.width || 80,
     }
   }
 
@@ -45,13 +45,6 @@ export default class ExampleRunner {
     console.log(`Full mdDir: '${mdDir}'`);
     console.log(`Full rootDir: '${rootDir}'`);
     console.log(`Full tsDir: '${tsDir}'`);
-
-
-    // const tempDirName = sanitize(rootDir);
-
-    // const tempDir = tmp.dirSync({
-    //   prefix: `example-runner_${tempDirName}_`,
-    // });
 
     const files = glob.readdirSync(this.options.include) as string[];
 
@@ -74,6 +67,61 @@ export default class ExampleRunner {
     }
 
     return hasErrors;
+  }
+
+
+  private static getFileSource(tsPath: string): ts.SourceFile {
+    const source = fs.readFileSync(tsPath, {
+      encoding: 'utf8',
+    });
+
+    const { base } = path.parse(tsPath);
+
+    return ts.createSourceFile(base, source, ts.ScriptTarget.Latest, true);
+  }
+
+  private static *getFnContexts(clsCtx: ExampleContext): Iterable<ExampleContext> {
+    // // From http://stackoverflow.com/a/35033472/2240669
+    // // and http://stackoverflow.com/a/31055009/2240669
+    // const methodNames = Object.getOwnPropertyNames(cls.prototype)
+    const methodNames = Object.getOwnPropertyNames(clsCtx.obj.constructor.prototype)
+      .filter((name) => name !== 'constructor' && typeof (clsCtx.obj as any)[name] === 'function');
+
+    for (const methodName of methodNames) {
+      const methodMetadata = Example.getMetadata(clsCtx.obj, methodName);
+
+      if (methodMetadata) {
+        const fn = (clsCtx.obj as any)[methodName];
+
+        let errors: string[] = [];
+
+        const methodSource = Class.getMethodSource(
+          (clsCtx.clsSource as ts.ClassDeclaration), methodName, errors);
+
+        if (!methodSource) {
+          clsCtx.log(errors.join(EOL));
+          return false;
+        }
+
+        if (!methodSource.body) {
+          continue;
+        }
+
+        const fnCtx = new ExampleContext(
+          clsCtx.filePath,
+          clsCtx.obj,
+          fn,
+          clsCtx.fileSourceText,
+          clsCtx.fileSource,
+          clsCtx.clsSource,
+          methodSource,
+          clsCtx.indent,
+          clsCtx.width,
+          clsCtx.console);
+
+        yield fnCtx;
+      }
+    }
   }
 
   private static mapFilePath(
@@ -128,37 +176,23 @@ export default class ExampleRunner {
     return full;
   }
 
-  private static logContext(depth: number, ctx: ExampleContext): void {
-    const metadata = ctx.metadata;
+  private static getClassName(cls: ts.ClassDeclaration): string | undefined {
+    const classIdentifier = cls.name as ts.Identifier;
 
-    const name = ctx.fn ? ctx.fn.name : ctx.obj.constructor.name;
-    const description = metadata.member
-      ? `Examples for type ${metadata.type ? `'${metadata.type}' `: ''}member '${metadata.member}'`
-      : metadata.type
-      ? `Examples for type '${metadata.type}'`
-      : metadata.module
-      ? `Examples for package ${metadata.pkg ? `'${metadata.pkg}' ` : ''}submodule ` +
-        `'${metadata.module}'`
-      : metadata.pkg
-      ? `Examples for package '${metadata.pkg}'`
-      : undefined;
+    if (classIdentifier === undefined) {
+      return undefined;
+    }
 
-    const message = description ? `${name}: ${description}` : `Examples in ${name}`;
+    if (classIdentifier.kind !== ts.SyntaxKind.Identifier) {
+      return undefined;
+      //const kind = ts.SyntaxKind[classIdentifier.kind];
+      //throw new Error(`Class name as pos '${classIdentifier.pos}' must be 'Identifier'. Yours is '${kind}'`);
+    }
 
-    ctx.logIndented(depth, message)
+    return classIdentifier.text;
   }
 
-  private static getSource(tsPath: string): ts.SourceFile {
-    const source = fs.readFileSync(tsPath, {
-      encoding: 'utf8',
-    });
-
-    const { base } = path.parse(tsPath);
-
-    return ts.createSourceFile(base, source, ts.ScriptTarget.Latest, true);
-  }
-
-  private static getClassDeclaration(
+  private static getClassSource(
     tsPath: string, sourceFile: ts.SourceFile, clsName: string, errors: string[])
       : ts.ClassDeclaration | undefined {
     const fileChildren = sourceFile.getChildren();
@@ -183,23 +217,13 @@ export default class ExampleRunner {
     return clsDeclaration;
   }
 
-  private static getClassName(cls: ts.ClassDeclaration): string | undefined {
-    const classIdentifier = cls.name as ts.Identifier;
-
-    if (classIdentifier === undefined) {
-      return undefined;
-    }
-
-    if (classIdentifier.kind !== ts.SyntaxKind.Identifier) {
-      return undefined;
-      //const kind = ts.SyntaxKind[classIdentifier.kind];
-      //throw new Error(`Class name as pos '${classIdentifier.pos}' must be 'Identifier'. Yours is '${kind}'`);
-    }
-
-    return classIdentifier.text;
+  private static getMethodName(method: ts.MethodDeclaration): string | undefined {
+    return (method.name.kind === ts.SyntaxKind.Identifier)
+      ? (method.name as ts.Identifier).text
+      : undefined;
   }
 
-  private static getMethodDeclaration(cls: ts.ClassDeclaration, name: string, errors: string[])
+  private static getMethodSource(cls: ts.ClassDeclaration, name: string, errors: string[])
       : ts.MethodDeclaration | undefined {
     const memberLists = cls.getChildren().filter(n =>
       n.kind  === ts.SyntaxKind.SyntaxList &&
@@ -228,12 +252,6 @@ export default class ExampleRunner {
     return method;
   }
 
-  private static getMethodName(method: ts.MethodDeclaration): string | undefined {
-    return (method.name.kind === ts.SyntaxKind.Identifier)
-      ? (method.name as ts.Identifier).text
-      : undefined;
-  }
-
   private processFile(filePath: FilePath): boolean {
     console.log();
     console.log(`jsPath: '${filePath.jsPath}'`);
@@ -248,74 +266,69 @@ export default class ExampleRunner {
     if (classMetadata) {
       const obj = new cls();
 
-      const clsCtx = new ExampleContext(
-        filePath, obj, undefined, this.options.indent, this.options.console);
-
-      Class.logContext(0, clsCtx);
-
-      const sourceText = fs.readFileSync(filePath.tsPath, {
+      const fileSourceText = fs.readFileSync(filePath.tsPath, {
         encoding: 'utf8',
       });
 
-      const source = Class.getSource(filePath.tsPath);
+      const fileSource = Class.getFileSource(filePath.tsPath);
 
       const errors: string[] = [];
+      const clsSource = Class.getClassSource(filePath.tsPath, fileSource, obj.constructor.name, errors)
 
-      const clsSource = Class.getClassDeclaration(filePath.tsPath, source, obj.constructor.name, errors)
+      const clsCtx = new ExampleContext(
+        filePath,
+        obj,
+        undefined,
+        fileSourceText,
+        fileSource,
+        clsSource,
+        undefined,
+        this.options.indent,
+        this.options.width,
+        this.options.console);
+
+      clsCtx.logHeader();
 
       if (!clsSource) {
         clsCtx.log(errors.join(EOL));
         return false;
       }
 
-      let hasErrors = false;
+      let firstFunction = true;
+      let noErrors = true;
 
-      // From http://stackoverflow.com/a/35033472/2240669
-      // and http://stackoverflow.com/a/31055009/2240669
-      const methodNames = Object.getOwnPropertyNames(cls.prototype)
-        .filter((name) => name !== 'constructor' && typeof obj[name] === 'function');
-
-      for (const methodName of methodNames) {
-        const methodMetadata = Example.getMetadata(obj, methodName);
-
-        if (methodMetadata) {
-          const fn = obj[methodName];
-
-          const fnCtx = new ExampleContext(
-            filePath, obj, fn, this.options.indent, this.options.console);
-
-          let errors: string[] = [];
-          const methodSource = Class.getMethodDeclaration(clsSource, methodName, errors);
-
-          if (!methodSource) {
-            fnCtx.log(errors.join(EOL));
-            hasErrors = true;
-            continue;
-          }
-
-          if (!methodSource.body) {
-            continue;
-          }
-
-          Class.logContext(1, fnCtx);
-          fnCtx.log('```typescript');
-
-          fnCtx.log(sourceText.substring(methodSource.body.pos, methodSource.body.end)
-            .replace(/\r?\n/g, EOL));
-
-          fnCtx.log('```');
-
-
-          methodSource.body.pos
-
-          fnCtx.log('```typescript');
-          fn(fnCtx);
-          fnCtx.log('```');
+      for (const fnCtx of Class.getFnContexts(clsCtx)) {
+        if (firstFunction) {
+          firstFunction = false;
         }
+        else {
+          fnCtx.log();
+        }
+        noErrors = noErrors && this.processFunction(fnCtx);
       }
 
-      return hasErrors;
+      return noErrors;
     }
+
+    return true;
+  }
+
+  private processFunction(fnCtx: ExampleContext): boolean {
+    fnCtx.logHeader();
+
+    fnCtx.log('**ᴇxᴀᴍᴩʟᴇ**')
+    fnCtx.log('```typescript');
+
+    const body = (fnCtx.fnSource as ts.MethodDeclaration).body;
+
+    fnCtx.log(fnCtx.fileSourceText.substring(body!.pos, body!.end)
+      .replace(/\r?\n/g, EOL));
+
+    fnCtx.log('```');
+    fnCtx.log('<br>**ᴏᴜᴛᴩᴜᴛ**')
+    fnCtx.log('```');
+    (fnCtx.fn as Function)(fnCtx);
+    fnCtx.log('```');
 
     return true;
   }

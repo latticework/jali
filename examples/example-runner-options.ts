@@ -4,6 +4,7 @@ interface ExampleRunnerOptions {
   mdDir: string,
   tsDir?: string,
   indent?: number,
+  width?: number,
   console?: Console,
 }
 

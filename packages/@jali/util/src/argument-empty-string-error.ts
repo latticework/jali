@@ -4,11 +4,13 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  * Represents that an argument erroneously has an empty string value.
  *
  * Throw this {@link Error} if a parameter must be a non-empty string.
+ *
+ * @example <caption>The argument for the parameter lastName is an empty string.</caption>
+ * throw new ArgumentEmptyStringError('lastName');
+ *
  * @see {@link ArgumentWhitespaceStringError}
  * @see {@link verifyNonEmpty}
  * @see {@link verifyTruthy}
- * @example <caption>The argument for the parameter lastName is an empty string.</caption>
- * throw new ArgumentEmptyStringError('lastName');
  * @since 0.0.1
  */
 export default class ArgumentEmptyStringError extends ArgumentFalsyError {

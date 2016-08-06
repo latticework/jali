@@ -7,7 +7,7 @@ import * as path from 'path';
 
 import * as mkdirp from 'mkdirp';
 import * as sanitize from 'sanitize-filename';
-
+import * as ts from 'typescript';
 
 import Example from './example';
 import ExampleMetadata from './example-metadata'
@@ -17,27 +17,32 @@ import FilePath from './file-path';
 export default class ExampleContext {
   public readonly console: Console;
 
-  private _markerIndex = 0;
-  public get markerIndex() { return this._markerIndex; }
-
   public readonly mdFile: string;
   public readonly metadata: ExampleMetadata
+
+  private _markerIndex = 0;
+  public get markerIndex() { return this._markerIndex; }
 
   public constructor(
       public readonly filePath: FilePath,
       public readonly obj: Object,
       public readonly fn: Function | undefined,
+      public readonly fileSourceText: string,
+      public readonly fileSource: ts.SourceFile,
+      public readonly clsSource?: ts.ClassDeclaration,
+      public readonly fnSource?: ts.MethodDeclaration,
       public readonly indent = 2,
+      public readonly width = 80,
       console?: Console) {
     const clsBaseFileName = sanitize(obj.constructor.name);
-    const fnBaseFileName = fn ? `${clsBaseFileName}_${sanitize(fn.name)}` : undefined;
 
-    this.mdFile = fn
-      ? path.join(filePath.mdRootDir, fnBaseFileName + '.md')
-      : path.join(filePath.mdRootDir, clsBaseFileName + '.md');
+    this.mdFile = path.join(filePath.mdRootDir, clsBaseFileName + '.md');
 
     mkdirp.sync(filePath.mdRootDir);
-    fs.closeSync(fs.openSync(this.mdFile, 'w'));
+
+    if (!fn) {
+      fs.closeSync(fs.openSync(this.mdFile, 'w'));
+    }
 
     this.console = console || global.console;
 
@@ -119,15 +124,42 @@ export default class ExampleContext {
     fs.appendFileSync(this.mdFile, message + EOL);
   }
 
-  public logIndented(depth: number, message: string, indent = 2, width = 80, marker?: string | boolean): void {
+  public logHeader() {
+    const metadata = this.metadata;
 
-    const logMessage = Class.indentLines(depth, message, indent, width, this.getMarker(marker));
+    const name = this.fn ? this.fn.name : this.obj.constructor.name;
+    const description = metadata.member
+      ? `Examples for type ${metadata.type ? `\`${metadata.type}\` `: ''}member \`${metadata.member}\``
+      : metadata.type
+      ? `Examples for type \`${metadata.type}\``
+      : metadata.module
+      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\` ` : ''}submodule ` +
+        `\`${metadata.module}\``
+      : metadata.pkg
+      ? `Examples for package \`${metadata.pkg}\``
+      : `Examples in \`${name}\``;
+
+    const hdr = (this.fn) ? '## ' : '# ';
+
+    const message = `${hdr}${name}${EOL}${description}${EOL}`;
+
+    this.log(message)
+  }
+
+  public logIndented(depth: number, message: string, marker?: string | boolean): void {
+
+    const logMessage = Class.indentLines(depth, message, this.indent, this.width, this.getMarker(marker));
 
     this.log(logMessage);
   }
 
-  public logException(depth: number, fn: () => void, indent = 2, width = 80, marker?: string | boolean): void {
-    try { fn() } catch (err) { this.logIndented(depth, err.toString(), indent, width, this.getMarker(marker)); }
+  public logException(depth: number, fn: () => void, marker?: string | boolean): void {
+    try {
+      fn();
+    }
+    catch (err) {
+      this.logIndented(depth, err.toString(), this.getMarker(marker));
+    }
   }
 
   private getMarker(marker?: string | boolean): string | undefined {

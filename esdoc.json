@@ -5,7 +5,10 @@
   "destination": "./dist/docs",
   "autoPrivate": false,
   "manual": {
-    "overview": ["./docs/esdoc/overview.md"]
+    "overview": ["./docs/esdoc/overview.md"],
+    "example": [
+      "./dist/docs/examples/packages/jali_util.md"
+    ]
   },
   "lint": false
 }

@@ -8,18 +8,26 @@ import Example from '../example';
 import ExampleContext from '../example-context'
 
 @Example('@jali/util')
-export default class UtilExamples {
+export default class jali_util {
 
   @Example('@jali/util', '@jali/util/errors')
-  public jali_util_example_01(writer: ExampleContext): void {
+  public jali_util_errors(writer: ExampleContext): void {
+    // Demonstrates verifying function arguments for low-level libraries. In service operations,
+    // use Jali Notification Messages instead.
     function functionWithParameters(
         notNullNumber: number, notWhitespaceString: string, truthyBoolean: boolean): void {
+
+      // Verifying JavaScript type or common scenarios. Often redundant in TypeScript but needed if
+      // called otherwise.
       Util.Errors.verifyNotNull('nonNullNumber', notNullNumber);
       Errors.verifyNotWhitespace('notWhitespaceString', notWhitespaceString);
       verifyTruthy('truthyBoolean', truthyBoolean);
 
+      // Verifying invariants. In this case, the argument cannot contain a whitespace character
+      // anywhere.
       verifyArgument('notWhitespaceString', notWhitespaceString, arg => !arg.match(/\w/u));
 
+      // Verifying with a custom message. In this case, the permitted range is specified.
       verifyArgument(
         'notNullNumber',
         notNullNumber,
@@ -27,58 +35,43 @@ export default class UtilExamples {
         arg => `Argument must be between 10 and 19. Yours is '${arg}'`)
     }
 
-    writer.logIndented(2, `Example for function 'verifyNotNull'`, undefined, undefined, '①');
+    writer.logIndented(2, `Example for function 'verifyNotNull'`, '①');
     writer.logException(3, () => functionWithParameters(null as any as number, 'value', true));
 
-    console.log();
+    writer.log();
 
-    // U+1680	OGHAM SPACE MARK
-    writer.logIndented(2, `Example for function 'verifyNotWhitespace'`, undefined, undefined, '②');
-    writer.logException(3, () => functionWithParameters(1, '\u{1680}', true));
+    writer.logIndented(2, `Example for function 'verifyNotWhitespace'`, '②');
+    writer.logException(3, () => functionWithParameters(1, ' \t\v', true));
 
-    console.log();
+    writer.log();
 
-    writer.logIndented(2, `Example for function 'verifyTruthy'`, undefined, undefined, '③');
+    writer.logIndented(2, `Example for function 'verifyTruthy'`, '③');
     writer.logException(3, () => functionWithParameters(1, 'value', NaN as any as boolean));
 
-    console.log();
+    writer.log();
 
-    writer.logIndented(2, `Example for function 'verifyArgument'`, undefined, undefined, '④');
-    writer.logException(3, () => functionWithParameters(1, 'value with spaces', true));
+    // U+1680	OGHAM SPACE MARK
+    writer.logIndented(2, `Example for function 'verifyArgument'`, '④');
+    writer.logException(3, () => functionWithParameters(1, 'HasA\u{1680}Space', true));
 
-    console.log();
+    writer.log();
 
-    writer.logIndented(2, `Example for function 'verifyArgument' with specified message function`, undefined, undefined, '⑤');
+    writer.logIndented(
+      2, `Example for function 'verifyArgument' with specified message function`, '⑤');
+
     writer.logException(3, () => functionWithParameters(20, 'value', true));
 
-    console.log();
+    writer.log();
   }
 
   /**
    *
    */
   @Example('@jali/util', '@jali/util/iterators')
-  public jali_util_example_02(_writer: ExampleContext): void {
-//    writer.logIndented(1, `jali_util_example_02: Examples for module '@jali/util/iterators'`);
+  public jali_util_iterators(_writer: ExampleContext): void {
 
 
   }
 
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// export default function utilExamples(options: LogOptions) {
-//   const writer = new ExampleWriter(
-//     options.rootDir, options.indent, options.console);
-
-//   writer.logIndented(0, `utils.ts: Examples for package '@jali/util/errors'`);
-//   writer.log();
-//   jali_util_example_01(writer);
-//   console.log();
-//   jali_util_example_02(writer);
-// }
-
-// function executeExample(options: LogOptions, fn: (options: LogOptions) => void): void {
-//   const filePath = path.resolve(options.rootDir, fn.name + ".md");
-//   const writer = new ExampleWriter(options.)
-// }

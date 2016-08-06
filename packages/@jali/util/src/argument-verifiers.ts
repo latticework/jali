@@ -29,20 +29,20 @@ export function verifyBoolean(
   }
 }
 
+export function verifyDefined<T>(
+  name: string, value: T, message?: string | ((value: T) => string)): void | never {
+  if (value === undefined) {
+    throw new ArgumentUndefinedError(
+      name, errorMessage<T | undefined>(value, message));
+  }
+}
+
 export function verifyFunction(
     name: string, value: Object, message?: string | ((value: Object) => string)): void | never {
   verifyDefined(name, value, message);
 
   if (typeof value !== 'function') {
     throw new ArgumentTypeError('function', name, errorMessage(value, message));
-  }
-}
-
-export function verifyDefined<T>(
-  name: string, value: T, message?: string | ((value: T) => string)): void | never {
-  if (value === undefined) {
-    throw new ArgumentUndefinedError(
-      name, errorMessage<T | undefined>(value, message));
   }
 }
 
@@ -56,6 +56,32 @@ export function verifyIterable<T>(
   }
 }
 
+/**
+ * Throws an error if the specified argument value is not a non-empty string.
+ *
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {string} value -
+ *    the function argument
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentUndefinedError}
+ *    the argument is `undefined`.
+ * @throws {ArgumentTypeError}
+ *    the argument is not a `string`.
+ * @throws {ArgumentEmptyStringError}
+ *    the argument is an empty `string`.
+ *
+ * @example <caption>verify that parameter firstName is a non-empty string</caption>
+ * verifyNonEmpty('firstName', firstName);
+ *
+ * @see <a href="manual/example.html#jali_util_errors">Package <code>@jali/util</code> module <code>@jali/util/errors</code> examples. Example ②</a>
+ * @see {@link verifyDefined}
+ * @see {@link verifyString}
+ * @see {@link verifyNotWhitespace}
+ * @since 0.0.1
+ */
 export function verifyNonEmpty(
     name: string, value: string, message?: string | ((value: string) => string)): void | never {
   verifyString(name, value, message);

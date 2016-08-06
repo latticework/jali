@@ -8,7 +8,8 @@ const runner = new ExampleRunner({
   include: './dist/examples/**.example.js',
   rootDir: './dist/examples/examples',
   mdDir: './dist/docs/examples',
-  tsDir: './examples'
+  tsDir: './examples',
+  width: 100,
 })
 
 runner.run();
