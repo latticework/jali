@@ -136,6 +136,37 @@ test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
   });
 });
 
+test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
+    'message-function-test-fails', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const expectedValue = 1;
+  const expectedError = new ArgumentError(name, message);
+  const testResult = false;
+  let actualValue = 0;
+  const test = (value: number) => { actualValue = value; return testResult; };
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyArgument(name, expectedValue, test, messageFn);
+
+  // assert
+  t.plan(4);
+  const actualError = t.throws(action);
+  t.true(actualValue === expectedValue, 'test was not called.');
+
+  testArgumentError({
+    test: t,
+    classConstructor: ArgumentError,
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyBoolean_name_value_message
 
@@ -292,6 +323,33 @@ test(title(TestType.Unit, 'verifyBoolean_name_value_message',
   });
 });
 
+test(title(TestType.Unit, 'verifyBoolean_name_value_message',
+    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = '' as any as boolean;
+  const expectedError = new ArgumentTypeError('boolean', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyBoolean(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyFunction_name_value_message
@@ -449,6 +507,34 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   });
 });
 
+test(title(TestType.Unit, 'verifyFunction_name_value_message',
+    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = '' as any as boolean;
+  const expectedError = new ArgumentTypeError('function', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyFunction(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'function',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyDefined_name_value_message
@@ -536,6 +622,34 @@ test(title(TestType.Unit, 'verifyDefined_name_value_message',
 
   // act
   const action = () => target.verifyDefined(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentError({
+    test: t,
+    classConstructor: ArgumentUndefinedError,
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyDefined_name_value_message',
+    'message-function-test-fails', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = undefined as any as boolean;
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyDefined(name, value, messageFn);
 
   // assert
   t.plan(3);
@@ -706,6 +820,34 @@ test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
   });
 });
 
+
+test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
+    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = true as any as Iterable<number>;
+  const expectedError = new ArgumentTypeError('iterable', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyIterable(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'iterable',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyNonEmpty_name_value_message
@@ -918,6 +1060,34 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
   });
 });
 
+
+test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
+    'message-function-test-fails-for-empty', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = '';
+  const expectedError = new ArgumentEmptyStringError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonEmpty(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyNonZero_name_value_message
 
@@ -1114,6 +1284,35 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
 
   // act
   const action = () => target.verifyNonZero(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyNonZero_name_value_message',
+    'message-function-test-fails-for-zero', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messgeFn = () => message;
+  const value = 0;
+  const expectedError = new ArgumentZeroError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNonZero(name, value, messgeFn);
 
   // assert
   t.plan(3);
@@ -1419,6 +1618,35 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
   });
 });
 
+test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
+    'message-function-test-fails-for-whitespace', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  // Includes http://www.fileformat.info/info/unicode/char/1680/browsertest.htm
+  // Includes http://www.fileformat.info/info/unicode/char/2003/index.htm
+  const value = ' \t\v \u2003\r\n';
+  const expectedError = new ArgumentWhitespaceStringError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotWhitespace(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1558,6 +1786,33 @@ test(title(TestType.Unit, 'verifyNotNull_name_value_message',
 
   // act
   const action = () => target.verifyNotNull(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentError({
+    test: t,
+    classConstructor: ArgumentNullError,
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyNotNull_name_value_message',
+    'message-specified-test-fails-for-null', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = null as any as boolean;
+  const expectedError = new ArgumentNullError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNotNull(name, value, messageFn);
 
   // assert
   t.plan(3);
@@ -1780,6 +2035,34 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
   });
 });
 
+test(title(TestType.Unit, 'verifyNumber_name_value_message',
+    'message-function-test-fails-for-nan', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = NaN;
+  const expectedError = new ArgumentNanError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyNumber(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'number',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyObject_name_value_message
@@ -1922,6 +2205,34 @@ test(title(TestType.Unit, 'verifyObject_name_value_message',
 
   // act
   const action = () => target.verifyObject(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'object',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyObject_name_value_message',
+    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = 1 as any as Object;
+  const expectedError = new ArgumentTypeError('object', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyObject(name, value, messageFn);
 
   // assert
   t.plan(3);
@@ -2092,6 +2403,34 @@ test(title(TestType.Unit, 'verifyString_name_value_message',
   });
 });
 
+
+test(title(TestType.Unit, 'verifyString_name_value_message',
+    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = 1 as any as string;
+  const expectedError = new ArgumentTypeError('string', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyString(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyTrue_name_value_message
@@ -2303,6 +2642,34 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
   });
 });
 
+
+test(title(TestType.Unit, 'verifyTrue_name_value_message',
+    'message-function-test-fails-for-false', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = false;
+  const expectedError = new ArgumentFalseError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTrue(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'boolean',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyTruthy_name_value_message
@@ -2909,3 +3276,35 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
   });
 });
 
+
+/** ***********************************************************************************************/
+test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+    'message-function-loose-test-fails-for-empty-string',
+    TestDisposition.Negative),
+    async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const loose = true;
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = '';
+  const expectedError = new ArgumentFalsyError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyTruthy(name, value, loose, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'string',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});

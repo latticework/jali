@@ -171,12 +171,10 @@ export function verifyTruthy<T>(
     if (typeof value === 'boolean' ) {
       verifyTrue(name, value as any as boolean, errorMessage(value, message));
     }
-
-    if (typeof value === 'string' ) {
+    else if (typeof value === 'string' ) {
       verifyNonEmpty(name, value as any as string, errorMessage(value, message));
     }
-
-    if (typeof value === 'number' ) {
+    else if (typeof value === 'number' ) {
       // Also checks for not NaN
       verifyNonZero(name, value as any as number, errorMessage(value, message));
     }
