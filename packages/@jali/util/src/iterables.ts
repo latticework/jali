@@ -1,11 +1,12 @@
 import * as ArgumentVerifiers from './argument-verifiers';
 
-
+/* tslint:disable:max-line-length */
 /**
  * Returns a subset of the sequence of those elements that pass the specified test.
  *
  * @param T -
- *    The `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter of the function.
+ *    The `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter of the
+ *    function.
  * @param {Iterable<T>} sequence -
  *    The `Iterable` to operate on
  * @param {function(element: T): boolean} test -
@@ -16,6 +17,7 @@ import * as ArgumentVerifiers from './argument-verifiers';
  * @since 0.0.1
  */
 export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean): Iterable<T> {
+/* tslint:enable:max-line-length */
   ArgumentVerifiers.verifyIterable('sequence', sequence);
   ArgumentVerifiers.verifyFunction('test', test);
 
@@ -29,11 +31,13 @@ export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean)
 export function some<T>(sequence: Iterable<T>): boolean
 export function some<T>(sequence: Iterable<T>, value: T | null , loose?: boolean): boolean
 export function some<T>(sequence: Iterable<T>, test: (value: T) => boolean): boolean
+/* tslint:disable:max-line-length */
 /**
  * Returns a value indicating whether any of the elements of a sequence pass the specified test.
  *
  * @param T -
- *    The `Iterator` element type. <b>NOTE:</b> This is a TypeScript type parameter, not a parameter of the function.
+ *    The `Iterator` element type. <b>NOTE:</b> This is a TypeScript type parameter, not a
+ *    parameter of the function.
  * @param {Iterable<T>} sequence -
  *    The `Iterable` to operate on
  * @param {T | null | function(value: T): boolean | undefined} [valueOrTest] -
@@ -48,8 +52,8 @@ export function some<T>(sequence: Iterable<T>, test: (value: T) => boolean): boo
  * @since 0.0.1
  */
 export function some<T>(
-    sequence: Iterable<T>, valueOrTest?: (value: T) => boolean | T, loose = false)
-    : boolean {
+    sequence: Iterable<T>, valueOrTest?: (value: T) => boolean | T, loose = false): boolean {
+/* tslint:enable:max-line-length */
   ArgumentVerifiers.verifyIterable('sequence', sequence);
 
   if (valueOrTest === undefined) {

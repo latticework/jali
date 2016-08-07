@@ -4,7 +4,7 @@ import {makeTitleFunc, TestType, ProductEpic, RepoPackage, } from '../testing';
 
 import * as Iterables from '../src/iterables';
 
-class fakeValue {
+class FakeValue {
   public constructor(public value: any) {
 
   }
@@ -143,7 +143,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
 
   // arrange
   const expected = false;
-  const value = new fakeValue(1);
+  const value = new FakeValue(1);
   const target = [1] as [Object];
 
   // act
@@ -161,7 +161,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
 
   // arrange
   const expected = true;
-  const value = new fakeValue(1);
+  const value = new FakeValue(1);
   const target = [1] as [Object];
 
   // act
@@ -205,7 +205,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_test',
   // arrange
   const expected = true;
   const test = (element: number) => element === 1;
-  const target = [0,1];
+  const target = [0, 1];
 
   // act
   const actual = Iterables.some(target, test);
@@ -223,7 +223,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_test',
   // arrange
   const expected = false;
   const test = (element: number) => element === 1;
-  const target = [0,2];
+  const target = [0, 2];
 
   // act
   const actual = Iterables.some(target, test);

@@ -44,7 +44,7 @@ test(title(TestType.Smoke, 'isError',
 
   // arrange
   const expected = false;
-  const value = "error";
+  const value = 'error';
   const target = TypeGuards;
 
   // act
@@ -191,7 +191,7 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
     ((value: any) => typeof value === 'number') as (value: any) => value is number;
 
   const deep = undefined;
-  const value = ["one"];
+  const value = ['one'];
   const target = TypeGuards;
 
   // act
@@ -295,7 +295,7 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
     ((value: any) => typeof value === 'number') as (value: any) => value is number;
 
   const deep = true;
-  const value = [1, "two"];
+  const value = [1, 'two'];
   const target = TypeGuards;
 
   // act

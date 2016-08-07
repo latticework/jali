@@ -11,17 +11,43 @@ import ArgumentUndefinedError from './argument-undefined-error';
 import ArgumentWhitespaceStringError from './argument-whitespace-string-error';
 import ArgumentZeroError from './argument-zero-error';
 
+/**
+ * Throws an error if the specified argument value does not pass the specified test.
+ *
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {string} value -
+ *    the function argument
+ * @param {string} test -
+ *    evaluates whether the value meets expectations
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentError}
+ *    the test failed.
+ *
+ * @example <caption>verify that parameter deposit is non-negative</caption>
+ * verifyArgument('deposit', deposit, arg => arg > 0.0);
+ *
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Package <code>@jali/util</code> module <code>@jali/util/errors</code> examples. Example ④</a>
+ * @see {@link verifyDefined}
+ * @see {@link verifyTruthy}
+ * @since 0.0.1
+ */
 export function verifyArgument<T>(
-    name: string, value: T, test: (value: T) => boolean, message?: string | ((value: T) => string))
-    : void | never {
+    name: string,
+    value: T,
+    test: (value: T) => boolean,
+    message?: string | ((value: T) => string)): void | never {
   if (!test(value)) {
     throw new ArgumentError(name, errorMessage(value, message));
   }
 }
 
 export function verifyBoolean(
-    name: string, value: boolean, message?: string | ((value: boolean) => string))
-    : void | never {
+    name: string, value: boolean, message?: string | ((value: boolean) => string)):
+    void | never {
   verifyDefined(name, value, message);
 
   if (typeof value !== 'boolean') {
@@ -47,8 +73,8 @@ export function verifyFunction(
 }
 
 export function verifyIterable<T>(
-    name: string, value: Iterable<T>, message?: string | ((value: Iterable<T>) => string))
-    : void | never {
+    name: string, value: Iterable<T>, message?: string | ((value: Iterable<T>) => string)):
+    void | never {
   verifyDefined(name, value, message);
 
   if (!TypeGuards.isIterable(value)) {
@@ -76,7 +102,8 @@ export function verifyIterable<T>(
  * @example <caption>verify that parameter firstName is a non-empty string</caption>
  * verifyNonEmpty('firstName', firstName);
  *
- * @see <a href="manual/example.html#jali_util_errors">Package <code>@jali/util</code> module <code>@jali/util/errors</code> examples. Example ②</a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Package <code>@jali/util</code> module <code>@jali/util/errors</code> examples. Example ②</a>
  * @see {@link verifyDefined}
  * @see {@link verifyString}
  * @see {@link verifyNotWhitespace}
@@ -159,8 +186,8 @@ export function verifyTrue(
 }
 
 export function verifyTruthy<T>(
-    name: string, value: T, loose = false, message?: string | ((value: T) => string))
-    : void | never {
+    name: string, value: T, loose = false, message?: string | ((value: T) => string)):
+    void | never {
   if (!value) {
     if (loose) {
       throw new ArgumentFalsyError(name, errorMessage(value, message));
@@ -170,11 +197,9 @@ export function verifyTruthy<T>(
 
     if (typeof value === 'boolean' ) {
       verifyTrue(name, value as any as boolean, errorMessage(value, message));
-    }
-    else if (typeof value === 'string' ) {
+    } else if (typeof value === 'string' ) {
       verifyNonEmpty(name, value as any as string, errorMessage(value, message));
-    }
-    else if (typeof value === 'number' ) {
+    } else if (typeof value === 'number' ) {
       // Also checks for not NaN
       verifyNonZero(name, value as any as number, errorMessage(value, message));
     }

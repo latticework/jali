@@ -18,7 +18,11 @@ export function makeTitle(description: TestDescription): string {
 }
 
 export function makeTitleFunc(epic: ProductEpic, pkg: RepoPackage, targetName: string):
-    (type: TestType, functionName: string, description: string, disposition?: TestDisposition) => string {
+    (
+      type: TestType,
+      functionName: string,
+      description: string,
+      disposition?: TestDisposition) => string {
   return (
       type: TestType,
       functionName: string,

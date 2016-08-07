@@ -1,8 +1,7 @@
 import test from 'ava';
-//import * as assert from 'assert';
 
 import { makeTitleFunc, TestType, ProductEpic, RepoPackage, } from '../testing';
-import { testArgumentError, } from '../testing/argument-error-helpers'
+import { testArgumentError, } from '../testing/argument-error-helpers';
 
 import ArgumentFalsyError from '../src/argument-falsy-error';
 

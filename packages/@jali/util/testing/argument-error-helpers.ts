@@ -3,12 +3,12 @@ import { ContextualTestContext } from 'ava';
 import ArgumentTypeError from '../src/argument-type-error';
 
 export interface TestContext<TError extends Error> {
-  test: ContextualTestContext
-  classConstructor: new (name?: string, message?: string) => TError,
-  error?: TError,
-  parameterName?: string,
-  errorMessage?: string,
-  defaultMessage?: string,
+  test: ContextualTestContext;
+  classConstructor: new (name?: string, message?: string) => TError;
+  error?: TError;
+  parameterName?: string;
+  errorMessage?: string;
+  defaultMessage?: string;
 }
 
 export function testArgumentError<TError extends Error>(context: TestContext<TError>) {
@@ -34,12 +34,12 @@ export function testArgumentError<TError extends Error>(context: TestContext<TEr
 }
 
 export interface ArgumentTypeErrorTestContext {
-  test: ContextualTestContext,
-  classConstructor?: Function,
-  error?: Error,
-  type: string,
-  parameterName?: string,
-  errorMessage?: string,
+  test: ContextualTestContext;
+  classConstructor?: Function;
+  error?: Error;
+  type: string;
+  parameterName?: string;
+  errorMessage?: string;
 }
 
 export function testArgumentTypeError(context: ArgumentTypeErrorTestContext) {
@@ -61,8 +61,9 @@ export function testArgumentTypeError(context: ArgumentTypeErrorTestContext) {
 
   // assert
   t.true(
-    result instanceof errorConstructor, 
-    `Object of type '${result.constructor.name}' does not have error type '${errorConstructor.name}'`);
+    result instanceof errorConstructor,
+    `Object of type '${result.constructor.name}' does not have error type ` +
+    `'${errorConstructor.name}'`);
 
   const actualMessage = result.message;
   t.is(actualMessage, expectedMessage);

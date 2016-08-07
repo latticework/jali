@@ -1,8 +1,7 @@
 import test from 'ava';
-//import * as assert from 'assert';
 
 import { makeTitleFunc, TestType, ProductEpic, RepoPackage, TestDisposition, } from '../testing';
-import { testArgumentError, testArgumentTypeError, } from '../testing/argument-error-helpers'
+import { testArgumentError, testArgumentTypeError, } from '../testing/argument-error-helpers';
 
 import * as ArgumentVerifiers from '../src/argument-verifiers';
 
@@ -2724,7 +2723,7 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
   const name = 'Name';
   const loose = false;
   const message = undefined;
-  const value = ()=>{};
+  const value = () => {};
   const target = ArgumentVerifiers;
 
   // act
@@ -3016,7 +3015,7 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
   const name = 'Name';
   const loose = true;
   const message = 'Message';
-  const value = ()=>{};
+  const value = () => {};
   const target = ArgumentVerifiers;
 
   // act

@@ -20,7 +20,8 @@ export default class ArgumentEmptyStringError extends ArgumentFalsyError {
    * @param {string} [name] -
    *    The parameter name. Default is no name.
    * @param {string} [message] -
-   *    Specified message. Otherwise, a generic message will be used like *'Argument must not be an empty string. Yours is empty'*.
+   *    Specified message. Otherwise, a generic message will be used like *'Argument must not be an
+   *    empty string. Yours is empty'*.
    * @since 0.0.1
    */
   constructor(name?: string, message?: string) {
