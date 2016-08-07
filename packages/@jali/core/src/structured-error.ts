@@ -14,34 +14,45 @@ export default class StructuredError extends Error {
   constructor(innerError: Error)
   constructor(message: NotificationMessage, innerError: Error)
   constructor(messages: Iterable<NotificationMessage>, innerError: Error)
+  /**
+   * @todo ensure meaningful {@link NotificationMessage}.
+   */
   constructor(
     messageOrMessagesOrError:
       NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined,
     innerError: Error | undefined = undefined) {
-    super(resolveMessage(messageOrMessagesOrError));
+    super(Class.resolveMessage(messageOrMessagesOrError)); // Also validates.
+
 
     this.innerError = innerError;
 
     if (UtilTypeGuards.isError(messageOrMessagesOrError)) {
       this.innerError = messageOrMessagesOrError;
     }
+
   }
-}
 
-function resolveMessage(
-    messageOrMessagesOrError:
-      NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined):
-    string | undefined {
-  if (TypeGuards.isNotificationMessage(messageOrMessagesOrError)) {
-    return messageOrMessagesOrError.message;
-  } else if (UtilTypeGuards.makeIsIterable(TypeGuards.isNotificationMessage)(
-      messageOrMessagesOrError)) {
-    let error = Iterables.error(messageOrMessagesOrError);
+  /**
+   * Verifies the first constructor parameter and Resolves an error message from it for the
+   * {@link Error} constructor.
+   */
+  private static resolveMessage(
+      messageOrMessagesOrError:
+        NotificationMessage | Iterable<NotificationMessage> | Error | undefined = undefined):
+      string | undefined {
+    if (TypeGuards.isNotificationMessage(messageOrMessagesOrError)) {
+      return messageOrMessagesOrError.message;
+    } else if (UtilTypeGuards.makeIsIterable(TypeGuards.isNotificationMessage)(
+        messageOrMessagesOrError)) {
+      let error = Iterables.error(messageOrMessagesOrError);
 
-    if (error !== undefined) {
-      return error.message;
+      if (error !== undefined) {
+        return error.message;
+      }
     }
-  }
 
-  return undefined;
+    return undefined;
+  }
 }
+// tslint:disable-next-line:variable-name
+const Class = StructuredError;

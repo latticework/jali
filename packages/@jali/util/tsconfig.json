@@ -19,6 +19,7 @@
     "paths": {
     },
     "rootDir": ".",
+    "sourceMap": true,
     "strictNullChecks": true,
     "stripInternal": true,
     "target": "es6",

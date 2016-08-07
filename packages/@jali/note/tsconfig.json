@@ -20,6 +20,7 @@
       "@jali/*": ["../../../dist/packages-dist/*"]
     },
     "rootDir": ".",
+    "sourceMap": true,
     "strictNullChecks": true,
     "stripInternal": true,
     "target": "es6"

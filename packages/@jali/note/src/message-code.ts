@@ -1,3 +1,4 @@
+import * as Errors from '@jali/util/errors';
 import { MessagePriority } from '@jali/core';
 
 import MessageEncoding from './message-encoding';
@@ -7,8 +8,11 @@ export default class MessageCode {
   protected readonly messageEncoding: MessageEncoding;
 
   public constructor(
-   public readonly messageCode: string, messageEncoding?: MessageEncoding) {
-   this.messageEncoding = messageEncoding || StandardEncodings.standard;
+    public readonly messageCode: string, messageEncoding?: MessageEncoding) {
+  Errors.verifyString('messageCode', messageCode);
+  if (messageEncoding) { Errors.verifyObject('messageEncoding', messageEncoding); }
+
+  this.messageEncoding = messageEncoding || StandardEncodings.standard;
 
    // if (!messageEncoding.isValidCode(messageCode)) {
    // }

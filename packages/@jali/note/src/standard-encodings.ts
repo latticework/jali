@@ -1,6 +1,6 @@
 import StandardMessageEncoding from './standard-message-encoding';
 
 
-export var local = new StandardMessageEncoding([]);
-export var standard = new StandardMessageEncoding([]);
-export var extended = new StandardMessageEncoding([]);
+export const local = new StandardMessageEncoding([]);
+export const standard = new StandardMessageEncoding([]);
+export const extended = new StandardMessageEncoding([]);

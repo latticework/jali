@@ -1,8 +1,10 @@
+import * as Errors from '@jali/util/errors';
 import { MessagePriority, MessageSeverity } from '@jali/core';
 
 import MessageEncodingVersion from './message-encoding-version';
 import MessageEncodingData from './message-encoding-data';
 import MessageEncodingSegmentData from './message-encoding-segment-data';
+
 
 export default class StandardMessageEncodingVersion implements MessageEncodingVersion {
   public constructor(public readonly data: MessageEncodingData) {
@@ -10,7 +12,9 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
 
   public get version() { return this.data.schemaVersion; }
 
-  public isValidCode(_messageCode: string): boolean {
+  public isValidCode(messageCode: string): boolean {
+    Errors.verifyNonEmpty('messageCode', messageCode);
+
     throw new Error();
   }
 
@@ -38,11 +42,14 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
     return this.getSegmentValue(messageCode, this.data.baseMessageCodeData);
   }
 
-  private getSegmentValue(_messageCode: string, _data: MessageEncodingSegmentData): number {
+  private getSegmentValue(messageCode: string, data: MessageEncodingSegmentData): number {
+    Errors.verifyNonEmpty('messageCode', messageCode);
+    Errors.verifyObject('data', data);
+
     throw new Error();
     // const totalLength = data.position + length;
     // if (messageCode.length < totalLength) {
-    //     throw 
+    //     throw
     // }
   }
 }
