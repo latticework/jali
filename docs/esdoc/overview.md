@@ -2,22 +2,28 @@
 
 |Package|Description|Modules|
 |:-|:-|:-|
-|[@jali/core](http://#package-jalicore)|framework-level utilities|`@jali/core`<br>`@jali/core/iterables`<br>`@jali/core/type-guards`|
-|[@jali/util](http://#package-jaliutil)|language-level utilities|`@jali/util`<br>`@jali/util/errors`<br>`@jali/util/iterables`<br>`@jali/util/type-guards`|
+|[@jali/core](overview.html#package-jali-core)|framework-level utilities|`@jali/core`<br>`@jali/core/iterables`<br>`@jali/core/type-guards`|
+|[@jali/util](overview.html#package-jali-util)|language-level utilities|`@jali/util`<br>`@jali/util/errors`<br>`@jali/util/iterables`<br>`@jali/util/type-guards`|
 
-## Package @jail/core
+## Package @jali/core
+_Back to [Packages](overview.html#packages)_
+
 Provides framework-level utilities such as notification messages and structured errors.
 
-## Package @jail/util
+## Package @jali/util
+_Back to [Packages](overview.html#packages)_
+
 Provides language-level utilities such as parameter verification and common `Iterable` functions.
 
 |Export|Description|
 |:-|:-|
-|Errors|Re-export of [`@jail/util/errors`](#module-jail-util-errors)|
-|Iterables|Re-export of [`@jail/util/iterables`](#module-jail-util-iterables)|
-|TypeGuards|Re-export of [`@jail/util/type-guards`](#module-jail-util-typeguards)|
+|Errors|Re-export of [`@jali/util/errors`](overview.html#module-jali-util-errors)|
+|Iterables|Re-export of [`@jali/util/iterables`](overview.html#module-jali-util-iterables)|
+|TypeGuards|Re-export of [`@jali/util/type-guards`](overview.html#module-jali-util-type-guards)|
 
-### Module @jail/util/errors
+### Module @jali/util/errors
+_Back to [Package @jali/util](overview.html#package-jali-util)_
+
 |Export|Description|
 |:-|:-|
 |[ArgumentEmptyStringError]|Represents that an argument erroneously has an empty string value.|
@@ -71,7 +77,9 @@ Provides language-level utilities such as parameter verification and common `Ite
 [verifyTruthy]: ../function/index.html#static-function-verifyTruthy
 
 
-### Module @jail/util/iterables
+### Module @jali/util/iterables
+_Back to [Package @jali/util](overview.html#package-jali-util)_
+
 |Export|Description|
 |:-|:-|
 |[filter]||
@@ -86,7 +94,9 @@ Provides language-level utilities such as parameter verification and common `Ite
 [toMap]: ../function/index.html#static-function-toMap
 [makeIsIterable]: ../function/index.html#static-function-makeIsIterable
 
-### Module @jail/util/type-guards
+### Module @jali/util/type-guards
+_Back to [Package @jali/util](overview.html#package-jali-util)_
+
 |Export|Description|
 |:-|:-|
 |[isError]||

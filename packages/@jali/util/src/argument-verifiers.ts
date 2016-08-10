@@ -14,13 +14,16 @@ import ArgumentZeroError from './argument-zero-error';
 /**
  * Throws an error if the specified argument value does not pass the specified test.
  *
- * @param {string} name -
+ * @param T -
+ *    The `value` type. **Note**: This is a TypeScript type parameter, not a parameter of the
+ *    function.
+ * @param {!string} name -
  *    the formal parameter name
- * @param {string} value -
+ * @param {T} value -
  *    the function argument
- * @param {string} test -
+ * @param {!function(value: T) => boolean} test -
  *    evaluates whether the value meets expectations
- * @param {?(string | function(value: string): string)} message -
+ * @param {(string | function(value: string): string)} [message] -
  *    optional custom message or message factory
  *
  * @throws {ArgumentError}
@@ -29,9 +32,9 @@ import ArgumentZeroError from './argument-zero-error';
  * @example <caption>verify that parameter deposit is non-negative</caption>
  * verifyArgument('deposit', deposit, arg => arg > 0.0);
  *
- * @see <a href="manual/overview.html#package-jail-util">
+ * @see <a href="manual/overview.html#package-jali-util">
  *    package <code>@jali/util</code></a>
- * @see <a href="manual/overview.html#module-jail-util-errors">
+ * @see <a href="manual/overview.html#module-jali-util-errors">
  *    module <code>@jali/util/errors</code></a>
  * @see <a href="manual/example.html#jali_util_errors">
  *    Example method <code>jali_util_errors</code>, example ④</a>
