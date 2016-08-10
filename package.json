@@ -51,7 +51,6 @@
     "examples": "npm run examples:run",
       "examples:run": "NODE_PATH=$NODE_PATH:./dist/examples/packages node ./dist/examples/examples/index.js",
       "preexamples": "npm run build",
-    "old:install:clean": "npm set progress=false && npm install",
     "install:clean": "npm install",
       "preinstall:clean": "npm run clean:all",
     "lint": "tslint \"packages/**/*.ts\" --format verbose",
