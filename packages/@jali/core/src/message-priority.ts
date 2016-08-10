@@ -1,4 +1,6 @@
-/** Represents the priority of notification messages. */
+/**
+ * Represents the priority of notification messages.
+ */
 enum MessagePriority {
   /** Specifies that a message must be communicated. */
   Mandatory = 0,

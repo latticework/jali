@@ -1,4 +1,4 @@
-import * as UtilTypeGuards from '@jali/util/type-guards';
+import { TypeGuards as UtilTypeGuards } from '@jali/util';
 
 import * as TypeGuards from '../type-guards';
 import * as Iterables from '../iterables';

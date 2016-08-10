@@ -6,6 +6,7 @@
     {
       "name": "Examples",
       "type": "node",
+      "request": "launch",
       "program": "${workspaceRoot}/dist/examples/examples/index.js",
       "stopOnEntry": false,
       "args": [
@@ -18,9 +19,23 @@
       },
       "runtimeExecutable": null
     },
+    // http://stackoverflow.com/a/37064253/2240669
+    {
+      "name": "Remote Docs",
+      "type": "node",
+      "request": "attach",
+      "port": 5858,
+      "address": "localhost",
+      "restart": false,
+      "sourceMaps": false,
+      "outDir": null,
+      "localRoot": "${workspaceRoot}",
+      "remoteRoot": "/vagrant"
+    },
     {
       "name": "Unit Tests",
       "type": "node",
+      "request": "launch",
       "program": "${workspaceRoot}/node_modules/.bin/ava",
       "stopOnEntry": false,
       "args": [

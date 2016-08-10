@@ -18,16 +18,17 @@ export default class jali_util {
         notNullNumber: number, notWhitespaceString: string, truthyBoolean: boolean): void {
 
       // Verifying JavaScript type or common scenarios. Often redundant in TypeScript but needed if
-      // called otherwise.
+      // called otherwise. See examples ①, ②, & ③.
       Util.Errors.verifyNotNull('nonNullNumber', notNullNumber);
       Errors.verifyNotWhitespace('notWhitespaceString', notWhitespaceString);
       verifyTruthy('truthyBoolean', truthyBoolean);
 
       // Verifying invariants. In this case, the argument cannot contain a whitespace character
-      // anywhere.
+      // anywhere. See example ④.
       verifyArgument('notWhitespaceString', notWhitespaceString, arg => !arg.match(/\w/u));
 
-      // Verifying with a custom message. In this case, the permitted range is specified.
+      // Verifying with a custom message. In this case, the permitted range is specified. See
+      // example ⑤.
       verifyArgument(
         'notNullNumber',
         notNullNumber,

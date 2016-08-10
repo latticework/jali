@@ -1,5 +1,4 @@
-import * as Errors from '@jali/util/errors';
-import * as Iterables from '@jali/util/iterables';
+import { Errors, Iterables } from '@jali/util';
 
 import { MessagePriority, MessageSeverity } from '@jali/core';
 

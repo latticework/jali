@@ -2,9 +2,8 @@
 Specification-driven serverless microservice DevOps framework and infrastructure http://jali-ms.io/
 
 <!-- badges -->
-<!--
-[![NPM version][npm-image]][npm-url]
--->
+[//]: # ([![NPM version][npm-image]][npm-url])
+
 [![OpenHub stats](https://www.openhub.net/p/jali/widgets/project_thin_badge.gif)](https://www.openhub.net/p/jali)
 [![project status](https://img.shields.io/badge/project_status-pre--alpha-AA0114.svg)](https://github.com/latticework/jali/milestones)
 [![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://github.com/latticework/jali/milestones#boards?repos=45436564&milestones=0.1.0#)

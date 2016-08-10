@@ -10,6 +10,7 @@
 Vagrant.configure(2) do |config|
   # Ubuntu Server 14.04 LTS
   config.vm.box = 'box-cutter/ubuntu1404-desktop'
+  # Ubuntu Server 16.04 LTS
   # config.vm.box = 'box-cutter/ubuntu1604-desktop'
 
   config.vm.provider 'virtualbox' do |vb|
@@ -41,6 +42,9 @@ Vagrant.configure(2) do |config|
   # Seealso: http://friendsofvagrant.github.io/v1/docs/config/vm/define.html
   config.vm.define 'jali' do |jali|
     jali.vm.synced_folder 'C:\git', '/git'
+
+    # http://stackoverflow.com/a/37064253/2240669
+    jali.vm.network :forwarded_port, host: 5858, guest: 5858
 
     jali.vm.provider 'virtualbox' do |vb|
       # For a complete reference, please see the online documentation at

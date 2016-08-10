@@ -29,8 +29,12 @@ import ArgumentZeroError from './argument-zero-error';
  * @example <caption>verify that parameter deposit is non-negative</caption>
  * verifyArgument('deposit', deposit, arg => arg > 0.0);
  *
+ * @see <a href="manual/overview.html#package-jail-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jail-util-errors">
+ *    module <code>@jali/util/errors</code></a>
  * @see <a href="manual/example.html#jali_util_errors">
- *    Package <code>@jali/util</code> module <code>@jali/util/errors</code> examples. Example ④</a>
+ *    Example method <code>jali_util_errors</code>, example ④</a>
  * @see {@link verifyDefined}
  * @see {@link verifyTruthy}
  * @since 0.0.1

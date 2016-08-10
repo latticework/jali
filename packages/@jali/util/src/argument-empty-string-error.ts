@@ -11,6 +11,7 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  * @see {@link ArgumentWhitespaceStringError}
  * @see {@link verifyNonEmpty}
  * @see {@link verifyTruthy}
+ * @see {@link verifyNotWhitespace}
  * @since 0.0.1
  */
 export default class ArgumentEmptyStringError extends ArgumentFalsyError {

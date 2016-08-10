@@ -13,9 +13,9 @@ Provides language-level utilities such as parameter verification and common `Ite
 
 |Export|Description|
 |:-|:-|
-|Errors|Re-export of [`@jail/util/errors`](http://#module-jailutilerrors)|
-|Iterables|Re-export of [`@jail/util/iterables`](http://#module-jailutiliterables)|
-|TypeGuards|Re-export of [`@jail/util/type-guards`](http://#module-jailutiltypeguards)|
+|Errors|Re-export of [`@jail/util/errors`](#module-jail-util-errors)|
+|Iterables|Re-export of [`@jail/util/iterables`](#module-jail-util-iterables)|
+|TypeGuards|Re-export of [`@jail/util/type-guards`](#module-jail-util-typeguards)|
 
 ### Module @jail/util/errors
 |Export|Description|

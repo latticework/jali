@@ -56,7 +56,7 @@ else
       curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     EOH
   end
-  
+
   package 'nodejs' do
     action :install
   end
@@ -74,7 +74,7 @@ end
 # Download:
 # - Go to https://code.visualstudio.com/Docs/?dv=linux64_deb
 # - Node downloaded file.
-# - Copy link address of "direct download link" and paste as value of "source" 
+# - Copy link address of "direct download link" and paste as value of "source"
 #   below.
 # - Download http://www.labtestproject.com/files/win/sha256sum/sha256sum.exe
 # - Follow instructions,
@@ -86,7 +86,6 @@ else
   remote_file "#{Chef::Config[:file_cache_path]}/visual-studio-code.deb" do
     source 'https://go.microsoft.com/fwlink/?LinkID=760868'
     mode 0644
-    checksum '241971e15ea28ccd4ab6ad33b61b18624eb02f6056176b5f331cba01ae12b35e'
   end
 
   dpkg_package 'visual-studio-code' do

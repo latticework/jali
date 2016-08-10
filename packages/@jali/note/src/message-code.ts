@@ -1,4 +1,5 @@
-import * as Errors from '@jali/util/errors';
+import { Errors } from '@jali/util';
+
 import { MessagePriority } from '@jali/core';
 
 import MessageEncoding from './message-encoding';
