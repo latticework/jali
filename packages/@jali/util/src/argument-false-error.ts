@@ -8,8 +8,13 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  * @example <caption>The argument for the parameter isValid is `false`.</caption>
  * throw new ArgumentFalseError('lastName');
  *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
  * @see {@link verifyTrue}
  * @see {@link verifyTruthy}
+ * @public
  * @since 0.0.1
  */
 export default class ArgumentFalseError extends ArgumentFalsyError {
@@ -19,8 +24,9 @@ export default class ArgumentFalseError extends ArgumentFalsyError {
    * @param {string} [name] -
    *    The parameter name. Default is no name.
    * @param {string} [message] -
-   *    Specified message. Otherwise, a generic message will be used like *'Argument must not be an
-   *    empty string. Yours is empty'*.
+   *    Specified message. Otherwise, a generic message will be used like *Argument must have a
+   *    truthy value. Yours is 'false'*.
+   * @public
    * @since 0.0.1
    */
   constructor(name?: string, message?: string) {

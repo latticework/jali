@@ -40,7 +40,7 @@
       "cover:html": "xdg-open ./coverage/index.html",
         "precover:html": "npm run cover",
     "docs": "npm run build:docs",
-      "predocs": "npm run build && npm run examples:run",
+      "predocs": "npm run build:packages && npm run examples:run",
       "docs:dg": "echo ⚠ WARNING: Not operational script ⚠ && dgeni ./config/dgeni/index.js",
       "docs:es": "esdoc -c esdoc.json",
       "docs:td": "echo ⚠ WARNING: Not operational script ⚠ && typedoc --options typedoc.json",

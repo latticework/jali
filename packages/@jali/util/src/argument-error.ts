@@ -16,9 +16,14 @@
  * throw new ArgumentError('pairs', `Argument must have an even number of elements. Yours has ` +
  *   `'${pairs.length}'`);
  *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
  * @see {@link ArgumentFalsyError}
  * @see {@link verifyArgument}
  * @see {@link verifyTruthy}
+ * @public
  * @since 0.0.1
  */
 export default class ArgumentError extends Error {
@@ -28,8 +33,8 @@ export default class ArgumentError extends Error {
    * @param {string} [name] -
    *    The parameter name. Default is no name.
    * @param {string} [message] -
-   *    Specified message. Otherwise, a generic message will be used like *'Argument must not be an
-   *    empty string. Yours is empty'*.
+   *    An optional message. Default is no message. See class documentation for more details.*.
+   * @public
    * @since 0.0.1
    */
   public constructor(name?: string, message?: string) {

@@ -13,7 +13,8 @@ import * as ArgumentVerifiers from './argument-verifiers';
  *    The filter function
  * @return {Iterable<T>} -
  *    A sequence of of elements
- * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Array#filter</a>
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
+ *     target="_blank">Array#filter</a>
  * @since 0.0.1
  */
 export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean): Iterable<T> {
@@ -48,7 +49,8 @@ export function some<T>(sequence: Iterable<T>, test: (value: T) => boolean): boo
  *    used. The default is strict equality.
  * @return {boolean} -
  *    `true` if the test succeeded; otherwise, `false`;
- * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">Array#some</a>
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some"
+ *     target="_blank">Array#some</a>
  * @since 0.0.1
  */
 export function some<T>(
