@@ -16,6 +16,7 @@ import { default as ArgumentError } from './argument-error';
  * @see {@link verifyNonEmpty}
  * @see {@link verifyNotWhitespace}
  * @see {@link verifyTruthy}
+ * @public
  * @since 0.0.1
  */
 export default class ArgumentWhitespaceStringError extends ArgumentError {
@@ -27,6 +28,7 @@ export default class ArgumentWhitespaceStringError extends ArgumentError {
    * @param {string} [message] -
    *    Specified message. Otherwise, a generic message will be used like *Argument must contain
    *    non-whitespace characters. Yours has only whitespace*.
+   * @public
    * @since 0.0.1
    */
   constructor(name?: string, message?: string) {

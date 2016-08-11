@@ -15,6 +15,7 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  * @see {@link verifyNonNull}
  * @see {@link verifyObject}
  * @see {@link verifyTruthy}
+ * @public
  * @since 0.0.1
  */
 export default class ArgumentNullError extends ArgumentFalsyError {
@@ -26,6 +27,7 @@ export default class ArgumentNullError extends ArgumentFalsyError {
    * @param {string} [message] -
    *    Specified message. Otherwise, a generic message will be used like *Argument must have a
    *     non-null value. Yours is 'null'*.
+   * @public
    * @since 0.0.1
    */
   constructor(name?: string, message?: string) {

@@ -16,6 +16,7 @@ import { default as ArgumentError } from './argument-error';
  *    module <code>@jali/util/errors</code></a>
  * @see {@link verifyDefined}
  * @see {@link verifyTruthy}
+ * @public
  * @since 0.0.1
  */
 export default class ArgumentTypeError extends ArgumentError {
@@ -29,6 +30,7 @@ export default class ArgumentTypeError extends ArgumentError {
    * @param {string} [message] -
    *    Specified message. Otherwise, a generic message will be used like *Argument must have type
    *    '${type}'. Yours is not*.
+   * @public
    * @since 0.0.1
    */
   constructor(type: string, name?: string, message?: string) {
@@ -42,6 +44,8 @@ export default class ArgumentTypeError extends ArgumentError {
    * @param {string}: [message] -
    *    Specified message. Otherwise, a generic message will be created like *Argument must have
    *    type '${type}'. Yours is not*.
+   * @protected
+   * @since 0.0.1
    */
   protected static makeTypeMessage(type: string, message?: string) {
     return message || `Argument must have type '${type}'. Yours is not`;

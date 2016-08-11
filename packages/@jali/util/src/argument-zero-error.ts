@@ -5,8 +5,8 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  *
  * Throw this {@link Error} if a parameter must have a non-zero value.
  *
- * @example <caption>The argument for the parameter hight is zero.</caption>
- * throw new ArgumentZeroError('hight');
+ * @example <caption>The argument for the parameter height is zero.</caption>
+ * throw new ArgumentZeroError('height');
  *
  * @see <a href="manual/overview.html#package-jali-util">
  *    package <code>@jali/util</code></a>
@@ -14,6 +14,7 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  *    module <code>@jali/util/errors</code></a>
  * @see {@link verifyNonZero}
  * @see {@link verifyTruthy}
+ * @public
  * @since 0.0.1
  */
 export default class ArgumentZeroError extends ArgumentFalsyError {
@@ -25,6 +26,7 @@ export default class ArgumentZeroError extends ArgumentFalsyError {
    * @param {string} [message] -
    *    Specified message. Otherwise, a generic message will be used like *Argument must have a
    *    truthy value. Yours is 'zero'*.
+   * @public
    * @since 0.0.1
    */
   constructor(name?: string, message?: string) {

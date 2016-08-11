@@ -14,6 +14,7 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  *    module <code>@jali/util/errors</code></a>
  * @see {@link verifyNumber}
  * @see {@link verifyTruthy}
+ * @public
  * @since 0.0.1
  */
 export default class ArgumentNanError extends ArgumentFalsyError {
@@ -25,6 +26,7 @@ export default class ArgumentNanError extends ArgumentFalsyError {
    * @param {string} [message] -
    *    Specified message. Otherwise, a generic message will be used like *Argument must have a
    *    truthy value. Yours is 'NaN'*.
+   * @public
    * @since 0.0.1
    */
   constructor(name?: string, message?: string) {

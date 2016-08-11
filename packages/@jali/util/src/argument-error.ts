@@ -41,6 +41,7 @@ export default class ArgumentError extends Error {
     super(Class.makeMessage(name, message));
   }
 
+  /** @private */
   private static makeMessage(name?: string, message?: string) {
     return `Error in argument${name ? ` '${name}'` : ''}${(message) ? `: ${message}` : ''}`;
   }

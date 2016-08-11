@@ -384,7 +384,7 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   // arrange
   const name = 'Name';
   const message = undefined;
-  const value = undefined as any as boolean;
+  const value = undefined as any as () => {};
   const expectedError = new ArgumentUndefinedError(name, message);
   const target = ArgumentVerifiers;
 
@@ -412,7 +412,7 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   // arrange
   const name = 'Name';
   const message = undefined;
-  const value = '' as any as boolean;
+  const value = '' as any as () => {};
   const expectedError = new ArgumentTypeError('function', name, message);
   const target = ArgumentVerifiers;
 
@@ -459,7 +459,7 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   // arrange
   const name = 'Name';
   const message = 'Message';
-  const value = undefined as any as boolean;
+  const value = undefined as any as () => {};
   const expectedError = new ArgumentUndefinedError(name, message);
   const target = ArgumentVerifiers;
 
@@ -486,7 +486,7 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   // arrange
   const name = 'Name';
   const message = 'Message';
-  const value = '' as any as boolean;
+  const value = '' as any as () => {};
   const expectedError = new ArgumentTypeError('function', name, message);
   const target = ArgumentVerifiers;
 
@@ -514,7 +514,7 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   const name = 'Name';
   const message = 'Message';
   const messageFn = () => message;
-  const value = '' as any as boolean;
+  const value = '' as any as () => {};
   const expectedError = new ArgumentTypeError('function', name, message);
   const target = ArgumentVerifiers;
 

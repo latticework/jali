@@ -27,21 +27,22 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 |Export|Description|
 |:-|:-|
 |[ArgumentEmptyStringError]|Represents that an argument erroneously has an empty string value.|
-|[ArgumentError]||
-|[ArgumentFalseError]||
-|[ArgumentFalsyError]||
-|[ArgumentNanError]||
-|[ArgumentNullError]||
-|[ArgumentTypeError]||
-|[ArgumentUndefinedError]||
-|[ArgumentWhitespaceStringError]||
-|[ArgumentZeroError]||
-|[verifyArgument]||
-|[verifyBoolean]||
-|[verifyDefined]||
-|[verifyFunction]||
-|[verifyNonEmpty]||
-|[verifyNonZero]||
+|[ArgumentError]|Represents that an argument has violated a requirement.|
+|[ArgumentFalseError]|Represents that an argument erroneously has a value of `false`.|
+|[ArgumentFalsyError]|Represents that an argument erroneously has a _falsy_ value.|
+|[ArgumentNanError]|Represents that an argument erroneously has a value of `NaN`.|
+|[ArgumentNullError]|Represents that an argument erroneously has a value of `null`.|
+|[ArgumentTypeError]|Represents that an argument has an invalid type or an object with the incorrect structure.|
+|[ArgumentUndefinedError]|Represents that an argument erroneously is 'undefined'.|
+|[ArgumentWhitespaceStringError]|Represents that a string argument erroneously has only whitespace characters.|
+|[ArgumentZeroError]|Represents that an argument erroneously has a value of zero.|
+|[verifyArgument]|Throws an error if the specified argument value does not pass the specified test.|
+|[verifyBoolean]|Throws an error if the specified argument is not strictly a boolean value.|
+|[verifyDefined]|Throws an error if the specified argument is `undefined`.|
+|[verifyFunction]|Throws an error if the specified argument is not strictly a function expression.|
+|[verifyIterable]|Throws an error if the specified argument does not support iteration.|
+|[verifyNonEmpty]|Throws an error if the specified argument value is not a non-empty string.|
+|[verifyNonZero]|Throws an error if the specified argument value is not a non-zero number.|
 |[verifyNotNull]||
 |[verifyNotWhitespace]||
 |[verifyNumber]||
