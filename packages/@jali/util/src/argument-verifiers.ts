@@ -37,7 +37,7 @@ import ArgumentZeroError from './argument-zero-error';
  * @see <a href="manual/overview.html#module-jali-util-errors">
  *    module <code>@jali/util/errors</code></a>
  * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code>, example ④</a>
+ *    Example method <code>jali_util_errors</code>, examples ④ & ⑤</a>
  * @see {@link ArgumentError}
  * @see {@link verifyDefined}
  * @see {@link verifyTruthy}
@@ -50,6 +50,52 @@ export function verifyArgument<T>(
     message?: string | ((value: T) => string)): void | never {
   if (!test(value)) {
     throw new ArgumentError(name, errorMessage(value, message));
+  }
+}
+
+
+/**
+ * Throws an error if the specified argument is not an `Array`.
+ *
+ * > **Note:** Calls {@link Array.isArray}.
+ *
+ * @param T -
+ *    The `element` type. **Note:** This is a TypeScript type parameter, not a parameter of the
+ *    function.
+ * @param {!string} name -
+ *    The formal parameter name.
+ * @param {T} value -
+ *    The function argument.
+ * @param {(string | function(value: string): string)} [message] -
+ *    Optional custom message or message factory.
+ *
+ * @throws {ArgumentUndefinedError}
+ *    The argument is `undefined`.
+ * @throws {ArgumentTypeError}
+ *    The argument is not an `Array`.
+ *
+ * @example <caption>verify that parameter collection is an Array</caption>
+ * verifyArray('collection', collection);
+ *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Example method <code>jali_util_errors</code></a>
+ * @see {@link ArgumentUndefinedError}
+ * @see {@link ArgumentTypeError}
+ * @see {@link isIterable}
+ * @see {@link verifyIterable}
+ * @since 0.0.1
+ */
+export function verifyArray<T>(
+    name: string, value: T[], message?: string | ((value: Iterable<T>) => string)):
+    void | never {
+  verifyDefined(name, value, message);
+
+  if (!Array.isArray(value)) {
+    throw new ArgumentTypeError('Array', name, errorMessage(value, message));
   }
 }
 
@@ -209,7 +255,7 @@ export function verifyFunction(
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link isIterable}
- * @see {@link verifyTruthy}
+ * @see {@link verifyArray}
  * @since 0.0.1
  */
 export function verifyIterable<T>(
@@ -312,9 +358,9 @@ export function verifyNonZero(
 
 
 /**
- * Throws an error if the specified argument value is non-null value.
+ * Throws an error if the specified argument value is `undefined` or `null`.
  *
- * > **Note:** Consider using {@link verifyObject}
+ * > **Note:** Consider using {@link verifyTruthy} or {@link verifyObject}.
  *
  * @param {string} name -
  *    the formal parameter name
@@ -340,7 +386,7 @@ export function verifyNonZero(
  * @see <a href="manual/overview.html#module-jali-util-errors">
  *    module <code>@jali/util/errors</code></a>
  * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ *    Example method <code>jali_util_errors</code>, example ①</a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentNanError}
@@ -358,6 +404,44 @@ export function verifyNotNull<T>(
   }
 }
 
+
+/**
+ * Throws an error if the specified argument is not a string with non whitespace characters.
+ *
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {string} value -
+ *    the function argument
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentUndefinedError}
+ *    the argument is `undefined`.
+ * @throws {ArgumentTypeError}
+ *    the argument is not a `string`.
+ * @throws {ArgumentEmptyStringError}
+ *    the argument is an empty `string`.
+ * @throws {ArgumentWhitespaceStringError}
+ *    the argument has only whitespace characters.
+ *
+ * @example <caption>verify that parameter firstName has non-whitespace characters</caption>
+ * verifyNotWhitespace('firstName', firstName);
+ *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Example method <code>jali_util_errors</code>, example ②</a>
+ * @see {@link ArgumentUndefinedError}
+ * @see {@link ArgumentTypeError}
+ * @see {@link ArgumentEmptyStringError}
+ * @see {@link ArgumentWhitespaceStringError}
+ * @see {@link verifyDefined}
+ * @see {@link verifyString}
+ * @see {@link verifyNonEmpty}
+ * @since 0.0.1
+ */
 export function verifyNotWhitespace(
     name: string, value: string, message?: string | ((value: string) => string)): void | never {
   verifyNonEmpty(name, value, message);
@@ -367,6 +451,43 @@ export function verifyNotWhitespace(
   }
 }
 
+
+/**
+ * Throws an error if the specified argument value is not a `number` or has a value of `NaN`.
+ *
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {number} value -
+ *    the function argument
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentUndefinedError}
+ *    the argument is `undefined`.
+ * @throws {ArgumentTypeError}
+ *    the argument is not a `number`.
+ * @throws {ArgumentNanError}
+ *    the argument is `NaN`.
+ * @throws {ArgumentZeroError}
+ *    the argument is a number the value zero.
+ *
+ * @example <caption>verify that parameter price is a number</caption>
+ * verifyNumber('price', price);
+ *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Example method <code>jali_util_errors</code></a>
+ * @see {@link ArgumentUndefinedError}
+ * @see {@link ArgumentTypeError}
+ * @see {@link ArgumentNanError}
+ * @see {@link ArgumentZeroError}
+ * @see {@link verifyDefined}
+ * @see {@link verifyNonZero}
+ * @since 0.0.1
+ */
 export function verifyNumber(
     name: string, value: number, message?: string | ((value: number) => string)): void | never {
   verifyDefined(name, value, message);
@@ -380,6 +501,40 @@ export function verifyNumber(
   }
 }
 
+/**
+ * Throws an error if the specified argument value is not an `Object`.
+ *
+ * > **Note:** To exclude `null` values also call {@link verifyNotNull}
+ *
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {Object} value -
+ *    the function argument
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentUndefinedError}
+ *    the argument is `undefined`.
+ * @throws {ArgumentTypeError}
+ *    the argument is not an `Object`.
+ *
+ * @example <caption>verify that parameter height has a nonzero value</caption>
+ * verifyNonEmpty('height', height);
+ *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Example method <code>jali_util_errors</code></a>
+ * @see {@link ArgumentUndefinedError}
+ * @see {@link ArgumentTypeError}
+ * @see {@link ArgumentNanError}
+ * @see {@link ArgumentZeroError}
+ * @see {@link verifyDefined}
+ * @see {@link verifyNonZero}
+ * @since 0.0.1
+ */
 export function verifyObject(
     name: string, value: Object, message?: string | ((value: Object) => string)): void | never {
   verifyDefined(name, value, message);
@@ -389,6 +544,40 @@ export function verifyObject(
   }
 }
 
+/**
+ * Throws an error if the specified argument value is not a `string`.
+ *
+ * > **Note:** To verify a meaningful value consider using {@link verifyNonEmpty} or
+ * > {@link verifyNotWhitespace}.
+ *
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {string} value -
+ *    the function argument
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentUndefinedError}
+ *    the argument is `undefined`.
+ * @throws {ArgumentTypeError}
+ *    the argument is not a `string`.
+ *
+ * @example <caption>verify that parameter alphabet is a string</caption>
+ * verifyNonEmpty('alphabet', alphabet);
+ *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Example method <code>jali_util_errors</code></a>
+ * @see {@link ArgumentUndefinedError}
+ * @see {@link ArgumentTypeError}
+ * @see {@link verifyDefined}
+ * @see {@link verifyNonEmpty}
+ * @see {@link verifyNotWhitespace}
+ * @since 0.0.1
+ */
 export function verifyString(
     name: string, value: string, message?: string | ((value: string) => string)): void | never {
   verifyDefined(name, value, message);
@@ -398,6 +587,43 @@ export function verifyString(
   }
 }
 
+
+/**
+ * Throws an error if the specified argument value is not a boolean with the value 'true'.
+ *
+ * > **Note:** To verify a _truthy_ value, use {@link verifyTruthy}.
+ *
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {boolean} value -
+ *    the function argument
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentUndefinedError}
+ *    the argument is `undefined`.
+ * @throws {ArgumentTypeError}
+ *    the argument is not a `boolean`.
+ * @throws {ArgumentFalseError}
+ *    the argument is a number the value zero.
+ *
+ * @example <caption>verify that parameter isValid is true</caption>
+ * verifyNonEmpty('isValid', isValid);
+ *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Example method <code>jali_util_errors</code></a>
+ * @see {@link ArgumentUndefinedError}
+ * @see {@link ArgumentTypeError}
+ * @see {@link ArgumentFalseError}
+ * @see {@link verifyDefined}
+ * @see {@link verifyBoolean}
+ * @see {@link verifyTruthy}
+ * @since 0.0.1
+ */
 export function verifyTrue(
     name: string, value: boolean, message?: string | ((value: boolean) => string)): void | never {
   verifyBoolean(name, value, message);
@@ -407,6 +633,66 @@ export function verifyTrue(
   }
 }
 
+/**
+ * Throws an error if the specified argument value is not _truthy_.
+ *
+ * The `loose` parameter changes what exception is thrown. If `loose`, then only
+ * {@link ArgumentFalsyError} is thrown. Otherwise, the exception for the appropriate _falsy_ value
+ * is thrown.
+ *
+ * > **Note:** You can test for any of the _falsy_ values individually using the appropriate
+ * > `verify...` function.
+ *
+ * @param T -
+ *    The `value` type. **Note:** This is a TypeScript type parameter, not a parameter of the
+ *    function.
+ * @param {string} name -
+ *    the formal parameter name
+ * @param {T} value -
+ *    the function argument
+ * @param {?(string | function(value: string): string)} message -
+ *    optional custom message or message factory
+ *
+ * @throws {ArgumentFalsyError}
+ *    the argument is _falsy_ and `loose` is specified.
+ * @throws {ArgumentEmptyStringError}
+ *    the argument is an empty `string` and `loose` is not specified.
+ * @throws {ArgumentFalseError}
+ *    the argument has the value `false` and `loose` is not specified.
+ * @throws {ArgumentNanError}
+ *    the argument has the value `NaN` and `loose` is not specified.
+ * @throws {ArgumentNullError}
+ *    the argument has the value `null` and `loose` is not specified.
+ * @throws {ArgumentUndefinedError}
+ *    the argument is `undefined` and `loose` is not specified.
+ * @throws {ArgumentUndefinedError}
+ *    the argument is zero and `loose` is not specified.
+ *
+ * @example <caption>verify that parameter item is truthy</caption>
+ * verifyTruthy('item', item);
+ *
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank">
+ *    Definition of falsy</a> (MDN)
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-errors">
+ *    module <code>@jali/util/errors</code></a>
+ * @see <a href="manual/example.html#jali_util_errors">
+ *    Example method <code>jali_util_errors</code>, example ③</a>
+ * @see {@link ArgumentEmptyStringError}
+ * @see {@link ArgumentFalseError}
+ * @see {@link ArgumentNanError}
+ * @see {@link ArgumentNullError}
+ * @see {@link ArgumentUndefinedError}
+ * @see {@link ArgumentZeroError}
+ * @see {@link verifyDefined}
+ * @see {@link verifyNonEmpty}
+ * @see {@link verifyNonZero}
+ * @see {@link verifyNotNull}
+ * @see {@link verifyNumber}
+ * @see {@link verifyTrue}
+ * @since 0.0.1
+ */
 export function verifyTruthy<T>(
     name: string, value: T, loose = false, message?: string | ((value: T) => string)):
     void | never {

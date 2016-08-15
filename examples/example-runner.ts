@@ -333,4 +333,4 @@ export default class ExampleRunner {
     return true;
   }
 }
-const Class = ExampleRunner;
+const Class = ExampleRunner; // tslint:disable-line:variable-name

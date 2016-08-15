@@ -183,4 +183,4 @@ export default class ExampleContext {
     return [...markerNumerals].map(char => String.fromCharCode(0x2460 + parseInt(char))).join();
   }
 }
-const Class = ExampleContext;
+const Class = ExampleContext; // tslint:disable-line:variable-name

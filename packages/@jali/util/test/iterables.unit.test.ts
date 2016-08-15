@@ -92,13 +92,13 @@ test(title(TestType.Smoke, 'hasOfT_sequence',
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// hasOfT_sequence_value_loose
+// includesOfT_sequence_value_loose
 
 //////////////
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
+test(title(TestType.Smoke, 'includesOfT_sequence_value_loose',
     'has-value-with-default-parameters'), async t => {
   await Promise.resolve();
 
@@ -108,7 +108,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [value];
 
   // act
-  const actual = Iterables.some(target, value);
+  const actual = Iterables.includes(target, value);
 
   // assert
   t.plan(1);
@@ -116,7 +116,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
+test(title(TestType.Smoke, 'includesOfT_sequence_value_loose',
     'does-not-have-value-with-default-parameters'), async t => {
   await Promise.resolve();
 
@@ -126,7 +126,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [2];
 
   // act
-  const actual = Iterables.some(target, value);
+  const actual = Iterables.includes(target, value);
 
   // assert
   t.plan(1);
@@ -137,7 +137,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
+test(title(TestType.Smoke, 'includesOfT_sequence_value_loose',
     'does-not-have-value-not-loose'), async t => {
   await Promise.resolve();
 
@@ -147,43 +147,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
   const target = [1] as [Object];
 
   // act
-  const actual = Iterables.some(target, value);
-
-  // assert
-  t.plan(1);
-  t.is(actual, expected);
-});
-
-/** ***********************************************************************************************/
-test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
-    'has-value-loose'), async t => {
-  await Promise.resolve();
-
-  // arrange
-  const expected = true;
-  const value = new FakeValue(1);
-  const target = [1] as [Object];
-
-  // act
-  const actual = Iterables.some(target, value, true);
-
-  // assert
-  t.plan(1);
-  t.is(actual, expected);
-});
-
-/** ***********************************************************************************************/
-test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
-    'does-not-have-loose'), async t => {
-  await Promise.resolve();
-
-  // arrange
-  const expected = false;
-  const value = 1;
-  const target = [2];
-
-  // act
-  const actual = Iterables.some(target, value, true);
+  const actual = Iterables.includes(target, value);
 
   // assert
   t.plan(1);
@@ -192,13 +156,13 @@ test(title(TestType.Smoke, 'hasOfT_sequence_value_loose',
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// hasOfT_sequence_test
+// someOfT_sequence_test
 
 //////////////
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'hasOfT_sequence_test',
+test(title(TestType.Smoke, 'someOfT_sequence_test',
     'test-succeeds'), async t => {
   await Promise.resolve();
 
@@ -216,7 +180,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_test',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'hasOfT_sequence_test',
+test(title(TestType.Smoke, 'someOfT_sequence_test',
     'test-fails'), async t => {
   await Promise.resolve();
 
@@ -232,6 +196,7 @@ test(title(TestType.Smoke, 'hasOfT_sequence_test',
   t.plan(1);
   t.is(actual, expected);
 });
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // firstOrDefaultOfT_sequence_value
@@ -249,7 +214,7 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   const target = [1];
 
   // act
-  const actual = Iterables.find(target);
+  const actual = Iterables.firstOrDefault(target);
 
   // assert
   t.plan(1);
@@ -266,7 +231,7 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   const target = [];
 
   // act
-  const actual = Iterables.find(target);
+  const actual = Iterables.firstOrDefault(target);
 
   // assert
   t.plan(1);
@@ -284,7 +249,7 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   const target = [1];
 
   // act
-  const actual = Iterables.find(target, value);
+  const actual = Iterables.firstOrDefault(target, value);
 
   // assert
   t.plan(1);
@@ -299,10 +264,10 @@ test(title(TestType.Smoke, 'firstOrDefaultOfT_sequence_value',
   // arrange
   const expected = 2;
   const value = 2;
-  const target = [];
+  const target: number[] = [];
 
   // act
-  const actual = Iterables.find(target, value);
+  const actual = Iterables.firstOrDefault(target, value);
 
   // assert
   t.plan(1);

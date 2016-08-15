@@ -43,13 +43,13 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 |[verifyIterable]|Throws an error if the specified argument does not support iteration.|
 |[verifyNonEmpty]|Throws an error if the specified argument value is not a non-empty string.|
 |[verifyNonZero]|Throws an error if the specified argument value is not a non-zero number.|
-|[verifyNotNull]||
-|[verifyNotWhitespace]||
-|[verifyNumber]||
-|[verifyObject]||
-|[verifyString]|Represents ...|
-|[verifyTrue]|Represents ...|
-|[verifyTruthy]|Represents ...|
+|[verifyNotNull]|Throws an error if the specified argument value is `undefined` or `null`.|
+|[verifyNotWhitespace]|Throws an error if the specified argument is not a string with non whitespace characters.|
+|[verifyNumber]|Throws an error if the specified argument value is not a `number` or has a value of `NaN`.|
+|[verifyObject]|Throws an error if the specified argument value is not an `Object`.|
+|[verifyString]|Throws an error if the specified argument value is not a `string`.|
+|[verifyTrue]|Throws an error if the specified argument value is not a boolean with the value 'true'.|
+|[verifyTruthy]|Throws an error if the specified argument value is not _truthy_.|
 
 
 [ArgumentEmptyStringError]: ../class/all/@jali/util/src/argument-empty-string-error.js~ArgumentEmptyStringError.html
@@ -83,17 +83,33 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 
 |Export|Description|
 |:-|:-|
-|[filter]||
-|[firstOrDefault]||
-|[has]||
-|[toMap]||
-|[makeIsIterable]||
+|[concat]|Concatenates a sequence of a type with zero or more other sequences of that type.|
+|[every]|Returns a value indicating whether every element fulfills the specified test.|
+|[filter]|Returns a subset of the sequence of those elements that pass the specified test.|
+|[find]|Returns the first value matching the specified test or `undefined` if no match was found.|
+|[first]|Returns the first element of a sequence.|
+|[firstOrDefault]|Returns the first element of a sequence.|
+|[includes]|Returns a value indicating whether a match for the specified test was found.|
+|[map]|Returns a sequence of elements that are the result of calling the specified converter<br>function on each element.|
+|[reduce]|Aggregates a sequence to a single computed element value.|
+|[slice]|Returns a segment of the original sequence.|
+|[some]|Returns a value indicating whether any of the elements of a sequence pass the specified test.|
+|[toArray]|Converts an argument that could either be a value of a type or a sequence of that type to<br>an array of that type.|
+|[toMap]|Converts a sequence to a `Map` using the specified key selector function.|
 
+[concat]: ../function/index.html#static-function-concat
+[every]: ../function/index.html#static-function-every
 [filter]: ../function/index.html#static-function-filter
+[find]: ../function/index.html#static-function-find
+[first]: ../function/index.html#static-function-first
 [firstOrDefault]: ../function/index.html#static-function-firstOrDefault
-[has]: ../function/index.html#static-function-has
+[includes]: ../function/index.html#static-function-includes
+[map]: ../function/index.html#static-function-map
+[reduce]: ../function/index.html#static-function-reduce
+[slice]: ../function/index.html#static-function-slice
+[some]: ../function/index.html#static-function-some
+[toArray]: ../function/index.html#static-function-toArray
 [toMap]: ../function/index.html#static-function-toMap
-[makeIsIterable]: ../function/index.html#static-function-makeIsIterable
 
 ### Module @jali/util/type-guards
 _Back to [Package @jali/util](overview.html#package-jali-util)_
@@ -102,7 +118,9 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 |:-|:-|
 |[isError]||
 |[isIterable]||
+|[makeIsIterable]||
 
 [isError]: ../function/index.html#static-function-isError
-[isIterable]: ../function/index.html#static-function-
+[isIterable]: ../function/index.html#static-function-isIterable
+[makeIsIterable]: ../function/index.html#static-function-makeIsIterable
 

@@ -14,7 +14,7 @@ import { default as ArgumentError } from './argument-error';
  * @see <a href="manual/overview.html#module-jali-util-errors">
  *    module <code>@jali/util/errors</code></a>
  * @see <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank">
- *    Definition of falsy</a>
+ *    Definition of falsy</a> (MDN)
  * @see {@link verifyDefined}
  * @see {@link verifyTruthy}
  * @public

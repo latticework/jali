@@ -54,5 +54,4 @@ export default class StructuredError extends Error {
     return undefined;
   }
 }
-// tslint:disable-next-line:variable-name
-const Class = StructuredError;
+const Class = StructuredError; // tslint:disable-line:variable-name

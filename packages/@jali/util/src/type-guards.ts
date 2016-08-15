@@ -7,7 +7,11 @@ export function isError(value: any): value is Error {
 }
 
 export function makeIsIterable<T>(
-  elementTypeGuard: (element: any) => element is T, deep = false):
+  elementTypeGuard: (element: any) => boolean, deep?: boolean): (value: any) => value is Iterable<T>
+export function makeIsIterable<T>(
+  elementTest: (element: any) => boolean, deep?: boolean): (value: any) => value is Iterable<T>
+export function makeIsIterable<T>(
+  elementTypeGuard: any, deep = false):
     (value: any) => value is Iterable<T> {
   ArgumentVerifiers.verifyFunction('elementTypeGuard', elementTypeGuard);
 
@@ -17,13 +21,13 @@ export function makeIsIterable<T>(
     }
 
     if (!deep) {
-      const element = Iterables.find(value);
+      const first = Iterables.firstOrDefault(value);
 
-      if (element === undefined) {
+      if (first === undefined) {
         return true;
       }
 
-      return elementTypeGuard(element);
+      return elementTypeGuard(first);
     }
 
     for (const element of value as Iterable<T>) {
