@@ -7,7 +7,7 @@ export function error(messages: Iterable<NotificationMessage>):
     NotificationMessage | undefined {
   Errors.verifyIterable('messages', messages);
 
-  return Iterables.firstOrDefault(get_Errors(messages));
+  return Iterables.find(get_Errors(messages));
 }
 
 export function get_Errors(messages: Iterable<NotificationMessage>):

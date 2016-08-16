@@ -1,5 +1,4 @@
 import * as ArgumentVerifiers from './argument-verifiers';
-import InvalidStateError from './invalid-state-error';
 import { isIterable, makeIsIterable } from './type-guards';
 
 
@@ -175,17 +174,18 @@ export function* filter<T>(
 
 /* tslint:disable:max-line-length */
 /**
- * Returns the first value matching the specified test or `undefined` if no match was found.
+ * Returns the first value matching the specified test or `undefined` if no match was found. If no
+ * test is specified, returns the first element, or `undefined` if the sequence is empty.
  *
- * > **Note:** To return whether a match was found, use {@link includes}. To return all matching values
- * > use {@link filter}.
+ * > **Note:** To return whether a match was found, use {@link some}. To match a specific element
+ * > value, use {@link includes}. To return all matching values, use {@link filter}.
  *
  * @param T -
  *    The `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter of the
  *    function.
  * @param {!Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {!ElementTest<T>} test -
+ * @param {ElementTest<T>} [test] -
  *    A function that returns a value indicating whether an element of the sequence fulfills the
  *    requirement.
  * @return {T | undefined} -
@@ -195,78 +195,34 @@ export function* filter<T>(
  *     target="_blank">Array#find</a>
  * @see {@link filter}
  * @see {@link includes}
+ * @see {@link some}
  * @since 0.0.1
  */
 export function find<T>(
-    sequence: Iterable<T>, test: (value: T, index: number, sequence: Iterable<T>) => boolean):
+    sequence: Iterable<T>, test?: (value: T, index: number, sequence: Iterable<T>) => boolean):
     T | undefined {
 /* tslint:enable:max-line-length */
   ArgumentVerifiers.verifyIterable('sequence', sequence);
-  ArgumentVerifiers.verifyFunction('test', test);
+  if (test) { ArgumentVerifiers.verifyFunction('test', test); };
+
+  if (!test) {
+    for (const element of sequence) {
+      return element;
+    }
+
+    return undefined;
+  }
 
   if (Array.isArray(sequence)) { return (sequence as T[]).find(test); }
 
+  let index = 0;
   for (let element of sequence) {
-    return element;
+    if (test(element, index, sequence)) {
+      return element;
+    }
   }
 
   return undefined;
-}
-
-/**
- * Returns the first element of a sequence.
- *
- * > **Note:** To not throw on an empty sequence, use {@link firstOrDefault}. To return the first
- * > value matching a test, use {@link find}.
- *
- * @param T -
- *    The `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter of the
- *    function.
- * @param {!Iterable<T>} sequence -
- *    The `Iterable` to operate on.
- *
- * @throws {InvalidStateError}
- *    `sequence` as no elements.
- *
- * @see {@link find}
- * @see {@link firstOrDefault}
- */
-export function first<T>(sequence: Iterable<T>): T {
-  ArgumentVerifiers.verifyIterable('sequence', sequence);
-
-  for (const element of sequence) {
-    return element;
-  }
-
-  throw new InvalidStateError(`'@jali/util/src/first' called for an empty sequence`);
-}
-
-/**
- * Returns the first element of a sequence.
- *
- * > **Note:** To throw on an empty sequence, use {@link first}. To return the first value
- * > matching a test, use {@link find}.
- *
- * @param T -
- *    The `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter of the
- *    function.
- * @param {!Iterable<T>} sequence -
- *    The `Iterable` to operate on.
- *
- * @throws {InvalidStateError}
- *    `sequence` as no elements.
- *
- * @see {@link find}
- * @see {@link firstOrDefault}
- */
-export function firstOrDefault<T>(sequence: Iterable<T>, defaultValue?: T): T | undefined {
-  ArgumentVerifiers.verifyIterable('sequence', sequence);
-
-  for (const element of sequence) {
-    return element;
-  }
-
-  return defaultValue;
 }
 
 /* tslint:disable:max-line-length */
@@ -339,7 +295,7 @@ export function* map<T, U>(
   ArgumentVerifiers.verifyIterable('sequence', sequence);
   ArgumentVerifiers.verifyFunction('converter', converter);
 
-  if (Array.isArray(sequence)) { return (sequence as T[]).map(converter) }
+  if (Array.isArray(sequence)) { return (sequence as T[]).map(converter); }
 
   let index = 0;
   for (const element of sequence) {

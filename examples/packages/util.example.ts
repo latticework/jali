@@ -160,54 +160,54 @@ export default class jali_util {
     writer.logIndented(3, output2);
   }
 
-  /**
-   * @/jali/util/iterables.first
-   */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'first')
-  public jali_util_iterators_first(writer: ExampleContext): void {
-    writer.logIndented(2, `Get first element`, '①');
+  // /**
+  //  * @/jali/util/iterables.first
+  //  */
+  // @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'first')
+  // public jali_util_iterators_first(writer: ExampleContext): void {
+  //   writer.logIndented(2, `Get first element`, '①');
 
-    const numbers = [2, 6, 10, 22, 999];
-    const first = Iterables.first(numbers);
+  //   const numbers = [2, 6, 10, 22, 999];
+  //   const first = Iterables.first(numbers);
 
-    const output =
-      `The first element of '${numbers}' is: '${first}'.`;
+  //   const output =
+  //     `The first element of '${numbers}' is: '${first}'.`;
 
-    writer.logIndented(3, output);
+  //   writer.logIndented(3, output);
 
-    writer.log();
+  //   writer.log();
 
-    writer.logIndented(2, `Try to get the first element of an empty sequence`, '②');
-    const emptyNumbers: number[] = [];
-    writer.logException(3, () => Iterables.first(emptyNumbers));
-  }
+  //   writer.logIndented(2, `Try to get the first element of an empty sequence`, '②');
+  //   const emptyNumbers: number[] = [];
+  //   writer.logException(3, () => Iterables.first(emptyNumbers));
+  // }
 
-  /**
-   * @/jali/util/iterables.firstOrDefault
-   */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'firstOrDefault')
-  public jali_util_iterators_firstOrDefault(writer: ExampleContext): void {
-    writer.logIndented(2, `Get first element`, '①');
+  // /**
+  //  * @/jali/util/iterables.firstOrDefault
+  //  */
+  // @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'firstOrDefault')
+  // public jali_util_iterators_firstOrDefault(writer: ExampleContext): void {
+  //   writer.logIndented(2, `Get first element`, '①');
 
-    const numbers = [2, 6, 10, 22, 999];
-    const firstOrDefault = Iterables.firstOrDefault(numbers);
+  //   const numbers = [2, 6, 10, 22, 999];
+  //   const firstOrDefault = Iterables.firstOrDefault(numbers);
 
-    const output =
-      `The firstOrDefault element of '${numbers}' is: '${firstOrDefault}'.`;
+  //   const output =
+  //     `The firstOrDefault element of '${numbers}' is: '${firstOrDefault}'.`;
 
-    writer.logIndented(3, output);
+  //   writer.logIndented(3, output);
 
-    writer.log();
+  //   writer.log();
 
-    writer.logIndented(2, `Try to get the first element of an empty sequence`, '②');
-    const emptyNumbers: number[] = [];
-    const defaultValue = Iterables.firstOrDefault(emptyNumbers, 999);
+  //   writer.logIndented(2, `Try to get the first element of an empty sequence`, '②');
+  //   const emptyNumbers: number[] = [];
+  //   const defaultValue = Iterables.firstOrDefault(emptyNumbers, 999);
 
-    writer.logIndented(
-      3,
-      `Tried to get the first value of an empty sequence '${emptyNumbers}'. Got default value ` +
-      `'${defaultValue}', instead.`);
-  }
+  //   writer.logIndented(
+  //     3,
+  //     `Tried to get the first value of an empty sequence '${emptyNumbers}'. Got default value ` +
+  //     `'${defaultValue}', instead.`);
+  // }
 
   /**
    * @/jali/util/iterables.includes
@@ -258,5 +258,27 @@ export default class jali_util {
     writer.logIndented(3, output2);
   }
 
+  /**
+   * @/jali/util/iterables.reduce
+   */
+  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'reduce')
+  public jali_util_iterators_reduce(writer: ExampleContext): void {
+    writer.logIndented(2, `Compute average`, '①');
+
+    let average = { count: 0, value: 0, };
+
+    const numbers = [2, 6, 10, 22, 999];
+    const result = Iterables.reduce(numbers, (p, e) => {
+      return {
+        count: p.count + 1,
+        value: (p.value * p.count + e) / (p.count + 1)
+      }
+    }, average);
+
+    const output =
+      `The average of sequence '${numbers}' is: '${result.value}'.`;
+
+    writer.logIndented(3, output);
+  }
 }
 

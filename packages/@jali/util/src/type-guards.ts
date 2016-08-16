@@ -21,7 +21,7 @@ export function makeIsIterable<T>(
     }
 
     if (!deep) {
-      const first = Iterables.firstOrDefault(value);
+      const first = Iterables.find(value);
 
       if (first === undefined) {
         return true;
