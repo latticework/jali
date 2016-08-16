@@ -31,20 +31,11 @@ export default class ExampleRunner {
   public run(): boolean {
     const glob = glob_fs({gitignore: true/*, realpath: true*/});
 
-    console.log(`include: '${this.options.include}'`);
-    console.log(`mdDir: '${this.options.mdDir}'`);
-    console.log(`rootDir: '${this.options.rootDir}'`);
-    console.log(`tsDir: '${this.options.tsDir}'`);
-
     const errors: string[] = [];
 
     const mdDir = appRoot.resolve(this.options.mdDir) as string;
     const rootDir = Class.validatePathAndGetAbsolute(this.options.rootDir, 'rootDir', errors);
     const tsDir = Class.validatePathAndGetAbsolute(this.options.tsDir as string, 'tsDir', errors);
-
-    console.log(`Full mdDir: '${mdDir}'`);
-    console.log(`Full rootDir: '${rootDir}'`);
-    console.log(`Full tsDir: '${tsDir}'`);
 
     const files = glob.readdirSync(this.options.include) as string[];
 
@@ -130,8 +121,6 @@ export default class ExampleRunner {
     const fileFragment = jsPath.substr(rootDir.length + 1);
     const fragments = path.parse(fileFragment);
 
-    console.log('Fragments: ' + JSON.stringify(fragments, undefined, 2));
-
     const tsPath = path.join(tsDir, fragments.dir, fragments.name + ".ts");
     Class.validatePath(tsPath, 'TypeScript file', errors);
 
@@ -146,8 +135,6 @@ export default class ExampleRunner {
       tsPath: tsPath,
       mdRootDir: mdFilePrefix,
     };
-
-    console.log('FilePath: ' + JSON.stringify(filePath, undefined, 2));
 
     return filePath;
   }
@@ -253,11 +240,6 @@ export default class ExampleRunner {
   }
 
   private processFile(filePath: FilePath): boolean {
-    console.log();
-    console.log(`jsPath: '${filePath.jsPath}'`);
-    console.log(`tsPath: '${filePath.tsPath}'`);
-    console.log(`mdRootDir: '${filePath.mdRootDir}'`);
-
     // From https://github.com/esnext/es6-module-transpiler/issues/85
     const cls = (require(filePath.jsPath)).default;
 

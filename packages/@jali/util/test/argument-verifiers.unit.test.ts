@@ -1460,7 +1460,6 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
     'message-not-specified-test-fails-for-whitespace', TestDisposition.Negative), async t => {
   await Promise.resolve();
 
-  console.log('message-not-specified-test-fails-for-whitespace');
   // arrange
   const name = 'Name';
   const message = undefined;

@@ -52,7 +52,7 @@ export default class ExampleContext {
     this.metadata = {
       pkg: fnMetadata && fnMetadata.pkg || clsMetadata.pkg,
       module: fnMetadata && fnMetadata.module || clsMetadata.module,
-      type: fnMetadata && fnMetadata.member || clsMetadata.type,
+      type: fnMetadata && fnMetadata.type || clsMetadata.type,
       member: fnMetadata && fnMetadata.member || clsMetadata.member,
     }
   }
@@ -129,9 +129,12 @@ export default class ExampleContext {
 
     const name = this.fn ? this.fn.name : this.obj.constructor.name;
     const description = metadata.member
-      ? `Examples for type ${metadata.type ? `\`${metadata.type}\` `: ''}member \`${metadata.member}\``
+      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\` ` : ''}submodule ` +
+        `\`${metadata.module}\` type ${metadata.type ? `\`${metadata.type}\` `: ''}member ` +
+        `\`${metadata.member}\``
       : metadata.type
-      ? `Examples for type \`${metadata.type}\``
+      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\` ` : ''}submodule ` +
+        `\`${metadata.module}\` type \`${metadata.type}\``
       : metadata.module
       ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\` ` : ''}submodule ` +
         `\`${metadata.module}\``

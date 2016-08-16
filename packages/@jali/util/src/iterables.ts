@@ -2,6 +2,65 @@ import * as ArgumentVerifiers from './argument-verifiers';
 import InvalidStateError from './invalid-state-error';
 import { isIterable, makeIsIterable } from './type-guards';
 
+
+/**
+ * @typedef {function} ElementTest -
+ *    test performed on elements of a sequence
+ * @param T -
+ *    The `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter of the
+ *    function.
+ * @param {!T} element -
+ *    The iteration element
+ * @param {!number} index -
+ *    The index of the element
+ * @param {!Iterable<T>} sequence -
+ *    The sequence being iterated
+ * @return {boolean} -
+ *    A value indicating whether the specified element passed the test.
+ */
+
+/**
+ * @typedef {function} ElementConverter -
+ *    Converts the input sequence element to an output sequence element.
+ * @param T -
+ *    The input `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter
+ *    of the function.
+ * @param U -
+ *    The output `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter
+ *    of the function.
+ * @param {!T} element -
+ *    The iteration element
+ * @param {!number} index -
+ *    The index of the element
+ * @param {!Iterable<T>} sequence -
+ *    The sequence being iterated
+ * @return {U} -
+ *    The converted value.
+ */
+
+/**
+ * @typedef {function} ElementAccumulator -
+ *    Aggregates the input sequence elements to an output value.
+ * @param T -
+ *    The input `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter
+ *    of the function.
+ * @param U -
+ *    The output `Iterator` element type. NOTE: This is a TypeScript type parameter, not a parameter
+ *    of the function.
+ * @param {!U} previousValue -
+ *    For the first execution either an `initialValue`, if specified, or the first element in the
+ *    sequence. Otherwise, an intermediary accumulated value.
+ * @param {!T} currentValue -
+ *    The iteration element.
+ * @param {!currentIndex} index -
+ *    The index of the iteration element
+ * @param {!Iterable<T>} sequence -
+ *    The sequence being iterated
+ * @return {U} -
+ *    The accumulated value.
+ */
+
+
 /* tslint:disable:max-line-length */
 /**
  * Concatenates a sequence of a type with zero or more other sequences of that type.
@@ -46,7 +105,7 @@ export function* concat<T>(sequence: Iterable<T>, ...items: Iterable<T>[]): Iter
  *    function.
  * @param {!Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {!function(value: T, index?: number, sequence?: Iterable<T>): boolean} test -
+ * @param {!ElementTest<T>} test -
  *    A function that returns a value indicating whether an element of the sequence fulfills the
  *    requirement.
  *
@@ -86,7 +145,7 @@ export function every<T>(
  *    function.
  * @param {!Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {!function(element: T): boolean} test -
+ * @param {!ElementTest<T>} test -
  *    The filter function
  * @return {Iterable<T>} -
  *    A sequence of elements
@@ -97,15 +156,20 @@ export function every<T>(
  * @see {@link includes}
  * @since 0.0.1
  */
-export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean): Iterable<T> {
+export function* filter<T>(
+    sequence: Iterable<T>, test: (element: T, index: number, sequence: Iterable<T>) => boolean):
+    Iterable<T> {
 /* tslint:enable:max-line-length */
   ArgumentVerifiers.verifyIterable('sequence', sequence);
   ArgumentVerifiers.verifyFunction('test', test);
 
+  let index = 0;
   for (let element of sequence) {
-    if (test(element)) {
+    if (test(element, index, sequence)) {
       yield element;
     }
+
+    index += 1;
   }
 }
 
@@ -121,7 +185,7 @@ export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean)
  *    function.
  * @param {!Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {!function(value: T, index?: number, sequence?: Iterable<T>): boolean} test -
+ * @param {!ElementTest<T>} test -
  *    A function that returns a value indicating whether an element of the sequence fulfills the
  *    requirement.
  * @return {T | undefined} -
@@ -134,7 +198,7 @@ export function* filter<T>(sequence: Iterable<T>, test: (element: T) => boolean)
  * @since 0.0.1
  */
 export function find<T>(
-    sequence: Iterable<T>, test: (value: T, index?: number, sequence?: Iterable<T>) => boolean):
+    sequence: Iterable<T>, test: (value: T, index: number, sequence: Iterable<T>) => boolean):
     T | undefined {
 /* tslint:enable:max-line-length */
   ArgumentVerifiers.verifyIterable('sequence', sequence);
@@ -259,7 +323,7 @@ export function includes<T>(
  *    parameter of the function.
  * @param {!Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {!function(element: T): U} converter -
+ * @param {!ElementConverter<T, U>} converter -
  *    The element conversion function.
  * @return {Iterable<U>} -
  *    A sequence of converted elements.
@@ -269,12 +333,19 @@ export function includes<T>(
  *
  * @since 0.0.1
  */
-export function* map<T, U>(sequence: Iterable<T>, converter: (element: T) => U): Iterable<U> {
+export function* map<T, U>(
+    sequence: Iterable<T>, converter: (element: T, index: number, sequence: Iterable<T>) => U):
+    Iterable<U> {
   ArgumentVerifiers.verifyIterable('sequence', sequence);
   ArgumentVerifiers.verifyFunction('converter', converter);
 
+  if (Array.isArray(sequence)) { return (sequence as T[]).map(converter) }
+
+  let index = 0;
   for (const element of sequence) {
-    yield converter(element);
+    yield converter(element, index, sequence);
+
+    index += 1;
   }
 }
 
@@ -310,12 +381,12 @@ export function reduce<T, U>(
  *    function.
  * @param {!Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {!function(previousValue: U, currentValue: T, currentIndex: number, sequence: Iterable<T>) => U} accumulator -
- *    The element conversion function.
+ * @param {!ElementAccumulator<T, U>} accumulator -
+ *    The element aggregation function
  * @param {T} [initialValue] -
- *    Optional initial value; otherwise, first element is used
+ *    Optional initial value; otherwise, first element is used as initial value
  * @return {Iterable<U>} -
- *    A sequence of converted elements.
+ *    A sequence of converted elements
  *
  * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
  *     target="_blank">Array#reduce</a>
@@ -396,22 +467,28 @@ export function some<T>(sequence: Iterable<T>, test: (value: T) => boolean): boo
 /**
  * Returns a value indicating whether any of the elements of a sequence pass the specified test.
  *
+ * > **Note:** To return the first matching value, use {@link find}. To return all matching values,
+ * > use {@link filter}. To match on equality, use {@link includes}.
+ *
  * @param T -
  *    The `Iterator` element type. <b>NOTE:</b> This is a TypeScript type parameter, not a
  *    parameter of the function.
  * @param {Iterable<T>} sequence -
  *    The `Iterable` to operate on
- * @param {function(value: T): boolean} [test] -
+ * @param {?ElementTest<T>} [test] -
  *    If not defined, indicates that the function should test for any existing elements; otherwise,
- *    either an element to match or a test function to execute
+ *    a function that indicates whether an element meets a requirement.
  * @return {boolean} -
- *    `true` if the test succeeded; otherwise, `false`;
+ *    `true` if an element was found that meets the test; otherwise, `false`;
  * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some"
  *     target="_blank">Array#some</a>
+ * @see {@link filter}
+ * @see {@link find}
+ * @see {@link includes}
  * @since 0.0.1
  */
 export function some<T>(
-    sequence: Iterable<T>, test?: (value: T, index?: number, sequence?: Iterable<T>) => boolean): boolean {
+    sequence: Iterable<T>, test?: (value: T, index: number, sequence: Iterable<T>) => boolean): boolean {
 /* tslint:enable:max-line-length */
   ArgumentVerifiers.verifyIterable('sequence', sequence);
 
@@ -424,10 +501,15 @@ export function some<T>(
     return false;
   }
 
+  if (Array.isArray(sequence)) { return (sequence as T[]).some(test); }
+
+  let index = 0;
   for (let element of sequence) {
-    if (test(element)) {
+    if (test(element, index, sequence)) {
       return true;
     }
+
+    index += 1;
   }
 
   return false;

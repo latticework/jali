@@ -21,7 +21,7 @@
     },
     // http://stackoverflow.com/a/37064253/2240669
     {
-      "name": "Remote Docs",
+      "name": "Remote",
       "type": "node",
       "request": "attach",
       "port": 5858,
