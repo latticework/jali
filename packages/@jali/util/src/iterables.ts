@@ -1,6 +1,154 @@
 import * as ArgumentVerifiers from './argument-verifiers';
 import { isIterable, makeIsIterable } from './type-guards';
 
+/* tslint:disable:max-line-length */
+/**
+ * Converts an argument that could either be a value of a type or a sequence of that type to
+ * an array of that type.
+ *
+ * Specify the constructor to specify the iteration type. Use for values, such as strings, that are
+ * also iterables of another type.
+ *
+ * > **Note:** To treat a string as a value rather than a sequence of characters, you must specify
+ * > the `String` constructor.
+ *
+ * > **Note:** To only ensure an iterable value, use {@link asIterable}.
+ *
+ * > **Note:** {@link asArray} is different from
+ * > <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"
+ * > target="_blank">Array.from</a> or the
+ * > <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator"
+ * > target="_blank">spread operator</a>, which only convert an iterable to an array.
+ * > {@link asArray} ensures a value that can be a scalar value or an array of values is converted
+ * > to an array.
+ *
+ * @param T -
+ *    The `value` type. **Note:** This is a TypeScript type parameter, not a parameter of the
+ *    function.
+ * @param {T | Iterable<T>} valueOrSequence -
+ *    A value that could be a value or an Iterable of that value type.
+ * @param {function (...args: any[]): T} [ctor] -
+ *    Optional constructor for the type being iterated.
+ * @return {Array<T>} an array of the value type.
+ *
+ * @example <caption>ensures argument personOrPersons is converted to an array</caption>
+ * const persons = Iterables.asArray(personOrPersons);
+ *
+ * @example <caption>ensures string argument colorOrColors is converted to an array</caption>
+ * const persons = Iterables.asArray(colorOrColors, String);
+ *
+ * @see <a href="manual/overview.html#package-jali-util">
+ *    package <code>@jali/util</code></a>
+ * @see <a href="manual/overview.html#module-jali-util-iterables">
+ *    module <code>@jali/util/iterables</code></a>
+ * @see <a href="manual/example.html#jali_util_iterators_asarray">
+ *    Example method <code>jali_util_iterators_asarray</code>, examples ① & ②</a>
+ * @see {@link asIterable}
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"
+ *    target="_blank">Array.from (MDN)</a>
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator"
+ *    target="_blank">spread syntax (MDN)</a>
+ * @since 0.0.1
+ */
+export function asArray<T>(valueOrSequence: T | Iterable<T>, ctor?: new(...args: any[]) => T): T[] {
+/* tslint:enable:max-line-length */
+  if (typeof valueOrSequence === undefined) {
+    return [];
+  }
+
+  if (typeof ctor !== 'undefined') {
+    // Quiet Typescript 2.1.beta / VSCode 1.4.0 compiler error.
+    // tslint:disable:no-shadowed-variable
+    const localCtor = ctor as new(...args: any[]) => T;
+
+    if (valueOrSequence instanceof localCtor ||
+        typeof valueOrSequence === 'string' && localCtor as any === String) {
+      return [valueOrSequence];
+    }
+
+    const iterableTypeGuard = makeIsIterable(e => e instanceof localCtor, false);
+
+    if (iterableTypeGuard(valueOrSequence)) {
+      if (Array.isArray(valueOrSequence)) {
+        return valueOrSequence;
+      }
+
+      return [...valueOrSequence];
+    }
+  }
+
+  if (Array.isArray(valueOrSequence)) {
+    return valueOrSequence;
+  }
+
+  if (isIterable(valueOrSequence)) {
+    return [...(valueOrSequence as Iterable<T>)];
+  }
+
+  return [valueOrSequence];
+}
+
+/**
+ * Converts an argument that could either be a value of a type or a sequence of that type to
+ * a sequence of that type.
+ *
+ * Specify the constructor to specify the iteration type. Use for values, such as strings, that are
+ * also iterables of another type.
+ *
+ * > **Note:** To treat a string as a value rather than a sequence of characters, you must specify
+ * > the `String` constructor.
+ *
+ * > **Note:** To ensure an Array value, use {@link toArray}.
+ *
+ * @param T -
+ *    The `value` type. **Note:** This is a TypeScript type parameter, not a parameter of the
+ *    function.
+ * @param {T | Iterable<T>} valueOrSequence -
+ *    A value that could be a value or an Iterable of that value type.
+ * @param {function (...args: any[]): T} [ctor] -
+ *    Optional constructor for the type being iterated.
+ * @return {Iterable<T>}
+ *
+ * @see {@link asArray}
+ * @since 0.0.1
+ */
+export function asIterable<T>(
+    valueOrSequence: T | Iterable<T>, ctor?: new(...args: any[]) => T): Iterable<T> {
+  if (typeof valueOrSequence === undefined) {
+    return [];
+  }
+
+  if (typeof ctor !== 'undefined') {
+    // Quiet Typescript 2.1.beta / VSCode 1.4.0 compiler error.
+    // tslint:disable:no-shadowed-variable
+    const localCtor = ctor as new(...args: any[]) => T;
+
+    if (valueOrSequence instanceof localCtor ||
+        typeof valueOrSequence === 'string' && localCtor as any === String) {
+      return [valueOrSequence];
+    }
+
+    const iterableTypeGuard = makeIsIterable(e => e instanceof localCtor, false);
+
+    if (iterableTypeGuard(valueOrSequence)) {
+      if (Array.isArray(valueOrSequence)) {
+        return valueOrSequence;
+      }
+
+      return [...valueOrSequence];
+    }
+  }
+
+  if (Array.isArray(valueOrSequence)) {
+    return valueOrSequence;
+  }
+
+  if (isIterable(valueOrSequence)) {
+    return [...(valueOrSequence as Iterable<T>)];
+  }
+
+  return [valueOrSequence];
+}
 
 /**
  * @typedef {function} ElementTest -
@@ -295,7 +443,10 @@ export function* map<T, U>(
   ArgumentVerifiers.verifyIterable('sequence', sequence);
   ArgumentVerifiers.verifyFunction('converter', converter);
 
-  if (Array.isArray(sequence)) { return (sequence as T[]).map(converter); }
+  if (Array.isArray(sequence)) {
+    yield* (sequence as T[]).map(converter);
+    return;
+  }
 
   let index = 0;
   for (const element of sequence) {
@@ -411,14 +562,15 @@ export function* slice<T>(sequence: Iterable<T>, begin: number, end?: number): I
   }
   let index = 0;
   for (const element of sequence) {
-    if (index < begin) { continue; }
-    if (end !== undefined && index === end) { break; }
-    yield element;
+    if (index >= begin) {
+      if (end !== undefined && index === end) { break; }
+      yield element;
+    }
+
+    index += 1;
   }
 }
 
-export function some<T>(sequence: Iterable<T>): boolean
-export function some<T>(sequence: Iterable<T>, test: (value: T) => boolean): boolean
 /* tslint:disable:max-line-length */
 /**
  * Returns a value indicating whether any of the elements of a sequence pass the specified test.
@@ -469,62 +621,6 @@ export function some<T>(
   }
 
   return false;
-}
-
-/**
- * Converts an argument that could either be a value of a type or a sequence of that type to
- * an array of that type.
- *
- * Specify the constructor to specify the iteration type. Use for values, such as strings, that are
- * also iterables of another type.
- *
- * > **Note:** To treat a string as a value rather than a sequence of characters, you must specify
- * > the `String` constructor.
- *
- * @param T -
- *    The `value` type. **Note:** This is a TypeScript type parameter, not a parameter of the
- *    function.
- * @param {T | Iterable<T>} valueOrSequence -
- *    A value that could be a value or an Iterable of that value type.
- * @param {function (...args: any[]): T} [ctor] -
- *    Optional constructor for the type being iterated.
- * @return {Array<T>} an array of the value type.
- * @since 0.0.1
- */
-export function toArray<T>(valueOrSequence: T | Iterable<T>, ctor?: new(...args: any[]) => T): T[] {
-  if (typeof valueOrSequence === undefined) {
-    return [];
-  }
-
-  if (typeof ctor !== 'undefined') {
-    // Quiet Typescript 2.1.beta / VSCode 1.4.0 compiler error.
-    // tslint:disable:no-shadowed-variable
-    const localCtor = ctor as new(...args: any[]) => T;
-
-    if (valueOrSequence instanceof localCtor) {
-      return [valueOrSequence];
-    }
-
-    const iterableTypeGuard = makeIsIterable(e => e instanceof localCtor, false);
-
-    if (iterableTypeGuard(valueOrSequence)) {
-      if (Array.isArray(valueOrSequence)) {
-        return valueOrSequence;
-      }
-
-      return [...valueOrSequence];
-    }
-  }
-
-  if (Array.isArray(valueOrSequence)) {
-    return valueOrSequence;
-  }
-
-  if (isIterable(valueOrSequence)) {
-    return [...(valueOrSequence as Iterable<T>)];
-  }
-
-  return [valueOrSequence];
 }
 
 /**

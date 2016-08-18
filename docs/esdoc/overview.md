@@ -83,32 +83,30 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 
 |Export|Description|
 |:-|:-|
+|[asArray]|Converts an argument that could either be a value of a type or a sequence of that type to<br>an array of that type.|
+|[asIterable]|Converts an argument that could either be a value of a type or a sequence of that type to a<br>sequence of that type.|
 |[concat]|Concatenates a sequence of a type with zero or more other sequences of that type.|
 |[every]|Returns a value indicating whether every element fulfills the specified test.|
 |[filter]|Returns a subset of the sequence of those elements that pass the specified test.|
 |[find]|Returns the first value matching the specified test or `undefined` if no match was found.|
-|[first]|Returns the first element of a sequence.|
-|[firstOrDefault]|Returns the first element of a sequence.|
 |[includes]|Returns a value indicating whether a match for the specified test was found.|
 |[map]|Returns a sequence of elements that are the result of calling the specified converter<br>function on each element.|
 |[reduce]|Aggregates a sequence to a single computed element value.|
 |[slice]|Returns a segment of the original sequence.|
 |[some]|Returns a value indicating whether any of the elements of a sequence pass the specified test.|
-|[toArray]|Converts an argument that could either be a value of a type or a sequence of that type to<br>an array of that type.|
 |[toMap]|Converts a sequence to a `Map` using the specified key selector function.|
 
+[asArray]: ../function/index.html#static-function-asArray
+[asIterable]: ../function/index.html#static-function-asIterable
 [concat]: ../function/index.html#static-function-concat
 [every]: ../function/index.html#static-function-every
 [filter]: ../function/index.html#static-function-filter
 [find]: ../function/index.html#static-function-find
-[first]: ../function/index.html#static-function-first
-[firstOrDefault]: ../function/index.html#static-function-firstOrDefault
 [includes]: ../function/index.html#static-function-includes
 [map]: ../function/index.html#static-function-map
 [reduce]: ../function/index.html#static-function-reduce
 [slice]: ../function/index.html#static-function-slice
 [some]: ../function/index.html#static-function-some
-[toArray]: ../function/index.html#static-function-toArray
 [toMap]: ../function/index.html#static-function-toMap
 
 ### Module @jali/util/type-guards

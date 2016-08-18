@@ -4,6 +4,7 @@ import * as Util from '@jali/util';
 import * as Errors from '@jali/util/errors';
 import { verifyArgument, verifyTruthy } from '@jali/util/errors';
 import * as Iterables from '@jali/util/iterables';
+import * as TypeGuards from '@jali/util/type-guards';
 
 import Example from '../example';
 import ExampleContext from '../example-context'
@@ -67,6 +68,47 @@ export default class jali_util {
   }
 
   /**
+   * @/jali/util/iterables.asArray
+   */
+  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'asArray')
+  public jali_util_iterators_asarray(writer: ExampleContext): void {
+    writer.logIndented(2, `number to number[]`, '①');
+
+    const numberOrNumbers: number | Iterable<number> = 2;
+    const array = Iterables.asArray(numberOrNumbers);
+    const isArrayOfNumber = TypeGuards.makeIsIterable(e => typeof e === 'number', true);
+
+    const output =
+      `Is '${array}' a 'number[]' (${isArrayOfNumber(array)}) with length '1' ` +
+      `(${array.length === 1}) and first value of '2'? '${Iterables.find(array) === 2}'`;
+
+    writer.logIndented(3, output);
+
+    writer.log();
+
+    writer.logIndented(2, `string to string[]`, '②');
+
+    const stringOrStrings: string | Iterable<string> = 'DodgerBlue';
+    const array2 = Iterables.asArray(stringOrStrings, String);
+    const array3 = Iterables.asArray(stringOrStrings);
+    const isArrayOfString = TypeGuards.makeIsIterable(e => typeof e === 'string', true);
+
+    const output2 =
+      `Is '${array2}' a 'string[]' (${isArrayOfString(array2)}) with length '1' ` +
+      `(${array2.length === 1}) and first value of 'DodgerBlue'? ` +
+      `'${Iterables.find(array2) === 'DodgerBlue'}'`;
+
+    writer.logIndented(3, output2);
+
+    const output3 =
+      `Is '${array3}' a 'string[]' (${isArrayOfString(array3)}) with length '1' ` +
+      `(${array3.length === 1}) and first value of 'DodgerBlue'? ` +
+      `'${Iterables.find(array3) === 'DodgerBlue'}'`;
+
+    writer.logIndented(3, output3);
+  }
+
+  /**
    * @/jali/util/iterables.concat
    */
   @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'concat')
@@ -76,7 +118,7 @@ export default class jali_util {
     const workWeekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
     const daysOfWeek = Iterables.concat([weekendDays[0]], workWeekDays, [weekendDays[1]]);
-    writer.logIndented(3, `Days of Week: '${Iterables.toArray(daysOfWeek)}`);
+    writer.logIndented(3, `Days of Week: '${Iterables.asArray(daysOfWeek)}`);
   }
 
   /**
@@ -117,7 +159,7 @@ export default class jali_util {
     const evens = Iterables.filter(numbers, e => e % 2 === 0);
 
     const output =
-      `Sequence '${numbers}' has these even values: '${Iterables.toArray(evens)}'.`;
+      `Sequence '${numbers}' has these even values: '${Iterables.asArray(evens)}'.`;
 
     writer.logIndented(3, output);
 
@@ -128,7 +170,7 @@ export default class jali_util {
     const evenIndexed = Iterables.filter(numbers2, (_, i) => i % 2 === 0);
 
     const output2 =
-      `Even indexed elements of sequence '${numbers2}' are '${Iterables.toArray(evenIndexed)}'.`;
+      `Even indexed elements of sequence '${numbers2}' are '${Iterables.asArray(evenIndexed)}'.`;
 
     writer.logIndented(3, output2);
   }
@@ -158,56 +200,17 @@ export default class jali_util {
       `The fourth element of sequence '${numbers2}' is '${fourth}'.`;
 
     writer.logIndented(3, output2);
+
+    writer.log();
+
+    writer.logIndented(2, `Get the first element`, '③');
+    const first = Iterables.find(numbers);
+
+    const output3 =
+      `The first element in sequence '${numbers}' is '${first}'.`;
+
+    writer.logIndented(3, output3);
   }
-
-  // /**
-  //  * @/jali/util/iterables.first
-  //  */
-  // @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'first')
-  // public jali_util_iterators_first(writer: ExampleContext): void {
-  //   writer.logIndented(2, `Get first element`, '①');
-
-  //   const numbers = [2, 6, 10, 22, 999];
-  //   const first = Iterables.first(numbers);
-
-  //   const output =
-  //     `The first element of '${numbers}' is: '${first}'.`;
-
-  //   writer.logIndented(3, output);
-
-  //   writer.log();
-
-  //   writer.logIndented(2, `Try to get the first element of an empty sequence`, '②');
-  //   const emptyNumbers: number[] = [];
-  //   writer.logException(3, () => Iterables.first(emptyNumbers));
-  // }
-
-  // /**
-  //  * @/jali/util/iterables.firstOrDefault
-  //  */
-  // @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'firstOrDefault')
-  // public jali_util_iterators_firstOrDefault(writer: ExampleContext): void {
-  //   writer.logIndented(2, `Get first element`, '①');
-
-  //   const numbers = [2, 6, 10, 22, 999];
-  //   const firstOrDefault = Iterables.firstOrDefault(numbers);
-
-  //   const output =
-  //     `The firstOrDefault element of '${numbers}' is: '${firstOrDefault}'.`;
-
-  //   writer.logIndented(3, output);
-
-  //   writer.log();
-
-  //   writer.logIndented(2, `Try to get the first element of an empty sequence`, '②');
-  //   const emptyNumbers: number[] = [];
-  //   const defaultValue = Iterables.firstOrDefault(emptyNumbers, 999);
-
-  //   writer.logIndented(
-  //     3,
-  //     `Tried to get the first value of an empty sequence '${emptyNumbers}'. Got default value ` +
-  //     `'${defaultValue}', instead.`);
-  // }
 
   /**
    * @/jali/util/iterables.includes
@@ -240,20 +243,19 @@ export default class jali_util {
 
     const numbers = [2, 6, 10, 22, 999];
     const objects = Iterables.map(numbers, e => { return {id: e} });
+    const objectsDisplay = [...objects].map(o => JSON.stringify(o)).join();
 
     const output =
-      `Sequence '${Iterables.toArray(objects)}' has these Ids: '${numbers}'.`;
+      `Sequence '${objectsDisplay}' has these Ids: '${numbers}'.`;
 
     writer.logIndented(3, output);
 
     writer.log();
 
-    writer.logIndented(2, `Select every other element`, '②');
+    writer.logIndented(2, `Multiply element by position`, '②');
     const numbers2 = [1, 6, 6, 24];
-    const evenIndexed = Iterables.map(numbers2, (_, i) => i % 2 === 0);
-
-    const output2 =
-      `Even indexed elements of sequence '${numbers2}' are '${Iterables.toArray(evenIndexed)}'.`;
+    const scaled = Iterables.map(numbers2, (e, i) => e * (i + 1));
+    const output2 = `Sequence '${numbers2}' elements scaled by position: '${[...scaled]}'.`;
 
     writer.logIndented(3, output2);
   }
@@ -279,6 +281,110 @@ export default class jali_util {
       `The average of sequence '${numbers}' is: '${result.value}'.`;
 
     writer.logIndented(3, output);
+  }
+
+  /**
+   * @/jali/util/iterables.slice
+   */
+  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'slice')
+  public jali_util_iterators_slice(writer: ExampleContext): void {
+    writer.logIndented(2, `Get paged data from a store`, '①');
+
+
+    const computeValue = (i: number) => Array.from(
+      'abcde', (c, ci) => {
+        const offset = i % 26 - (i % 26 + ci >= 26 ? 26 : 0);
+        return String.fromCharCode(c.charCodeAt(0) + offset);
+    }).join('');
+
+
+    const store: {id: number, value: string}[] = [];
+    for (let i = 0; i < 1000; i++) {
+      store.push({
+        id: i,
+        value: computeValue(i),
+      });
+    }
+
+    const getPage = (pageNumber: number, pageSize: number) =>
+      Iterables.slice(store, pageNumber * pageSize, pageNumber * pageSize + pageSize);
+
+    const writePage = (pageNumber: number, page: Iterable<{id: number, value: string}>) => {
+      const output =
+        `Data for page '${pageNumber}' is '${JSON.stringify(Array.from(page))}'.`;
+
+      writer.logIndented(3, output);
+    }
+
+    const pageSize = 10;
+
+    let pageNumber = 0;
+
+    let page = getPage(pageNumber, pageSize);
+    writePage(pageNumber, page);
+
+    writer.log();
+
+    pageNumber = 43;
+    page = getPage(pageNumber, pageSize);
+    writePage(pageNumber, page);
+  }
+
+  /**
+   * @/jali/util/iterables.some
+   */
+  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'some')
+  public jali_util_iterators_some(writer: ExampleContext): void {
+    writer.logIndented(2, `Determine if any element is divisible by 5`, '①');
+
+    const numbers = [2, 6, 10, 22, 999];
+    const areDivisible = Iterables.some(numbers, e => e % 5 === 0);
+
+    const output =
+      `Are any element of '${numbers}' divisible by five? '${areDivisible}'.`;
+
+    writer.logIndented(3, output);
+
+    writer.log();
+
+    writer.logIndented(2, `Determine if there is a fourth element`, '②');
+    const numbers2 = [1, 6, 6, 24];
+    const hasFourth = Iterables.some(numbers2, (_, i) => i === 3);
+
+    const output2 =
+      `Is there a fourth element in sequence '${numbers2}'? '${hasFourth}'.`;
+
+    writer.logIndented(3, output2);
+
+    writer.log();
+
+    writer.logIndented(2, `Determine if the sequence is empty`, '③');
+    const hasAny = Iterables.some(numbers2);
+
+    const output3 =
+      `Is sequence '${numbers2}' empty? '${!hasAny}'.`;
+
+    writer.logIndented(3, output3);
+  }
+
+  /**
+   * @/jali/util/iterables.toMap
+   */
+  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'toMap')
+  public jali_util_iterators_tomap(writer: ExampleContext): void {
+    writer.logIndented(2, `Entities mapped by id`, '①');
+
+    const queryResult = [
+      {id: 4, firstName: 'Sam', lastName: 'Smith',},
+      {id: 10, firstName: 'Janet', lastName: 'Jones',},
+      {id: 7, firstName: 'Karina', lastName: 'Kelly',},
+    ];
+
+    const byId = Iterables.toMap(queryResult, e => e.id);
+
+    for (const id of Array.from(byId.keys()).sort((a, b) => a < b ? -1 : a === b ? 0 : 1)) {
+      writer.logIndented(3, JSON.stringify(byId.get(id)));
+    }
   }
 }
 
