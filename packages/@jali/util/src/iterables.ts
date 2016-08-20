@@ -25,7 +25,7 @@ import { isIterable, makeIsIterable } from './type-guards';
  * @param T -
  *    The `value` type. **Note:** This is a TypeScript type parameter, not a parameter of the
  *    function.
- * @param {T | Iterable<T>} valueOrSequence -
+ * @param {?(T | Iterable<T>)} valueOrSequence -
  *    A value that could be a value or an Iterable of that value type.
  * @param {function (...args: any[]): T} [ctor] -
  *    Optional constructor for the type being iterated.
@@ -50,9 +50,9 @@ import { isIterable, makeIsIterable } from './type-guards';
  *    target="_blank">spread syntax (MDN)</a>
  * @since 0.0.1
  */
-export function asArray<T>(valueOrSequence: T | Iterable<T>, ctor?: new(...args: any[]) => T): T[] {
+export function asArray<T>(valueOrSequence: T | Iterable<T> | undefined, ctor?: new(...args: any[]) => T): T[] {
 /* tslint:enable:max-line-length */
-  if (typeof valueOrSequence === undefined) {
+  if (valueOrSequence === undefined) {
     return [];
   }
 

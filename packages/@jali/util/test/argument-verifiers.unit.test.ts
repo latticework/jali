@@ -166,6 +166,192 @@ test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
   });
 });
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// verifyArray_name_value_message
+
+//////////////
+// Smoke tests
+
+test(title(TestType.Smoke, 'verifyArray_name_value_message',
+    'message-not-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = [1,2,3];
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyArray(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+//////////////
+// Unit tests
+
+test(title(TestType.Unit, 'verifyArray_name_value_message',
+    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = undefined as any as any[];
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyArray(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'Array',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyArray_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = undefined;
+  const value = '' as any as any[];
+  const expectedError = new ArgumentTypeError('Array', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyArray(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'Array',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
+test(title(TestType.Unit, 'verifyArray_name_value_message',
+    'message-specified-test-succeeds'), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = [1,2,3];
+  const target = ArgumentVerifiers;
+
+  // act
+  target.verifyArray(name, value, message);
+
+  // assert
+  t.plan(1);
+  t.pass();
+});
+
+
+test(title(TestType.Unit, 'verifyArray_name_value_message',
+    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = undefined as any as any[];
+  const expectedError = new ArgumentUndefinedError(name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyArray(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'Array',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyArray_name_value_message',
+    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const value = '' as any as any[];
+  const expectedError = new ArgumentTypeError('Array', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyArray(name, value, message);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'Array',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+test(title(TestType.Unit, 'verifyArray_name_value_message',
+    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+  await Promise.resolve();
+
+  // arrange
+  const name = 'Name';
+  const message = 'Message';
+  const messageFn = () => message;
+  const value = '' as any as any[];
+  const expectedError = new ArgumentTypeError('Array', name, message);
+  const target = ArgumentVerifiers;
+
+  // act
+  const action = () => target.verifyArray(name, value, messageFn);
+
+  // assert
+  t.plan(3);
+  const actualError = t.throws(action) as Error;
+
+  testArgumentTypeError({
+    test: t,
+    classConstructor: expectedError.constructor,
+    type: 'Array',
+    error: actualError,
+    errorMessage: expectedError.message,
+  });
+});
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // verifyBoolean_name_value_message
 
