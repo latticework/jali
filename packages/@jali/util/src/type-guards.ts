@@ -46,6 +46,6 @@ export function makeIsIterable<T>(
 
 
 export function isIterable<T>(value: any): value is Iterable<T> {
-  return (value as Iterable<T>)[Symbol.iterator] !== undefined;
+  return value && (value as Iterable<T>)[Symbol.iterator] !== undefined;
 }
 

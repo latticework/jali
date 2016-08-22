@@ -34,7 +34,7 @@
       "clean:coverage": "rimraf ./coverage",
       "clean:all": "npm cache clean && rimraf node_modules coverage",
         "preclean:all": "npm run clean",
-    "cover": "BABEL_ENV=test nyc ava --tap --concurrency 5",
+    "cover": "BABEL_ENV=test nyc ava --concurrency 5",
       "precover": "npm run build:test",
       "postcover": "nyc report",
       "cover:html": "xdg-open ./coverage/index.html",
@@ -58,7 +58,9 @@
     "start": "ng server",
       "start:clean": "npm start",
         "prestart:clean": "npm run clean",
-    "test": "BABEL_ENV=test ava --tap --concurrency 5",
+    "old-test": "BABEL_ENV=test ava --tap --concurrency 5",
+    "test": "BABEL_ENV=test ava --concurrency 5",
+      "test:run:debug": "BABEL_ENV=test node --debug-brk ./node_modules/.bin/ava --tap --serial",
       "pretest": "npm run build:test"
   },
   "repository": {

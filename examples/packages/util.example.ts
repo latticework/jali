@@ -109,6 +109,47 @@ export default class jali_util {
   }
 
   /**
+   * @/jali/util/iterables.asIterable
+   */
+  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'asIterable')
+  public jali_util_iterators_asiterable(writer: ExampleContext): void {
+    writer.logIndented(2, `undefined to Iterable<number>`, '①');
+
+    const numberOrNumbers: number | Iterable<number> | undefined = undefined;
+    const iterable = Iterables.asIterable(numberOrNumbers);
+    const isIterableOfNumber = TypeGuards.makeIsIterable(e => typeof e === 'number', true);
+
+    const output =
+      `Is '${iterable}' an 'Iterable<number>' (${isIterableOfNumber(iterable)}) with length '0': ` +
+      `'${[...iterable].length === 0}'`;
+
+    writer.logIndented(3, output);
+
+    writer.log();
+
+    writer.logIndented(2, `string to Iterable<string>`, '②');
+
+    const stringOrStrings: string | Iterable<string> = 'DodgerBlue';
+    const iterable2 = Iterables.asIterable(stringOrStrings, String);
+    const iterable3 = Iterables.asIterable(stringOrStrings);
+    const isIterableOfString = TypeGuards.makeIsIterable(e => typeof e === 'string', true);
+
+    const output2 =
+      `Is '${iterable2}' an 'Iterable<string>' (${isIterableOfString(iterable2)}) with length ` +
+      `'1' (${[...iterable2].length === 1}) and first value of 'DodgerBlue'? ` +
+      `'${Iterables.find(iterable2) === 'DodgerBlue'}'`;
+
+    writer.logIndented(3, output2);
+
+    const output3 =
+      `Is '${iterable3}' a 'Iterable<string>' (${isIterableOfString(iterable3)}) with length ` +
+      `'1' (${[...iterable3].length === 1}) and first value of 'DodgerBlue'? ` +
+      `'${Iterables.find(iterable3) === 'DodgerBlue'}'`;
+
+    writer.logIndented(3, output3);
+  }
+
+  /**
    * @/jali/util/iterables.concat
    */
   @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'concat')
