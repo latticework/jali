@@ -33,8 +33,8 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
-    "blue-tape": "^0.2.0",
-    "mkdirp": "^0.5.1",
+    "blue-tape": "0.2.0",
+    "mkdirp": "0.5.1",
     "ts-node": "^0.9.0",
     "tslint": "^3.11.0",
     "typescript": "^1.8.10",
