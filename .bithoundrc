@@ -1,0 +1,18 @@
+{
+  "critics": {
+    "lint": {"engine": "tslint"}
+  },
+    "ignore": [
+    "**/node_modules/**",
+    "build/**",
+    "coverage/**",
+    "dist/**",
+    "test/**"
+  ],
+  "test": [
+    "**/test/**",
+    "**/tests/**",
+    "**/spec/**",
+    "**/specs/**"
+  ]
+}
