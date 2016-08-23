@@ -1,18 +1,21 @@
 {
   "critics": {
-    "lint": {"engine": "tslint"}
+    "lint": {"engine": "tslint"},
+    "wc": { "limit": 5000 }
   },
     "ignore": [
     "**/node_modules/**",
     "build/**",
+    "config/**",
     "coverage/**",
     "dist/**",
-    "test/**"
+    "examples/**",
+    "packages/@jali/core/**",
+    "packages/@jali/note/**",
+    "webpackfile.js"
   ],
   "test": [
     "**/test/**",
-    "**/tests/**",
-    "**/spec/**",
-    "**/specs/**"
+    "**/spec/**"
   ]
 }
