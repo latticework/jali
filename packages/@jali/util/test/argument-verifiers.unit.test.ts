@@ -29,8 +29,12 @@ const title = makeTitleFunc(
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyArgumentOfT_name_value_test_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyArgumentOfT_name_value_test_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
