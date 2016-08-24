@@ -21,8 +21,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'toMapOfTKeyTValue_sequence_keySelector',
-    'string-key'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'toMapOfTKeyTValue_sequence_keySelector',
+    'string-key'),
+  async t => {
   await Promise.resolve();
 
   // arrange

@@ -28,8 +28,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
-    'empty'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'includesOfT_sequence_value_fromIndex',
+    'empty'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -49,8 +53,12 @@ test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
-    'includes'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'includesOfT_sequence_value_fromIndex',
+    'includes'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -70,8 +78,12 @@ test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
-    'not-includes'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'includesOfT_sequence_value_fromIndex',
+    'not-includes'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -92,8 +104,12 @@ test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
-    'has-value-with-default-parameters'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'includesOfT_sequence_value_fromIndex',
+    'has-value-with-default-parameters'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -110,8 +126,12 @@ test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
-    'does-not-have-value-with-default-parameters'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'includesOfT_sequence_value_fromIndex',
+    'does-not-have-value-with-default-parameters'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -131,8 +151,12 @@ test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
-    'empty-from-zero'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'includesOfT_sequence_value_fromIndex',
+    'empty-from-zero'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -152,8 +176,12 @@ test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
-    'includes-from-index'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'includesOfT_sequence_value_fromIndex',
+    'includes-from-index'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -173,8 +201,12 @@ test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
-    'not-includes-from-index'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'includesOfT_sequence_value_fromIndex',
+    'not-includes-from-index'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -194,8 +226,12 @@ test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
-    'not-includes-before-index'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'includesOfT_sequence_value_fromIndex',
+    'not-includes-before-index'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -216,8 +252,12 @@ test(title(TestType.Unit, 'includesOfT_sequence_value_fromIndex',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
-    'includes-NaN'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'includesOfT_sequence_value_fromIndex',
+    'includes-NaN'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -238,8 +278,12 @@ test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'includesOfT_sequence_value_fromIndex',
-    'does-not-have-value-not-loose'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'includesOfT_sequence_value_fromIndex',
+    'does-not-have-value-not-loose'),
+  async t => {
   await Promise.resolve();
 
   // arrange

@@ -20,8 +20,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
-    'missing-value'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'asArrayOfT_valueOrSequence_ctor',
+    'missing-value'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -41,8 +45,12 @@ test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
-    'single-value'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'asArrayOfT_valueOrSequence_ctor',
+    'single-value'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -62,8 +70,12 @@ test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
-    'array-value'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'asArrayOfT_valueOrSequence_ctor',
+    'array-value'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -84,7 +96,8 @@ test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
 
 /** ***********************************************************************************************/
 test.failing(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
-    'not-array-value'), async t => {
+    'not-array-value'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -105,8 +118,12 @@ test.failing(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
-    'missing-string'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'asArrayOfT_valueOrSequence_ctor',
+    'missing-string'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -126,8 +143,12 @@ test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
-    'single-string'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'asArrayOfT_valueOrSequence_ctor',
+    'single-string'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -148,8 +169,12 @@ test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
-    'string-array-value'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'asArrayOfT_valueOrSequence_ctor',
+    'string-array-value'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -172,8 +197,12 @@ test(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
-    'missing-map'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'asArrayOfT_valueOrSequence_ctor',
+    'missing-map'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -193,8 +222,12 @@ test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
-    'single-map'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'asArrayOfT_valueOrSequence_ctor',
+    'single-map'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -215,8 +248,12 @@ test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
-    'single-map-no-ctor'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'asArrayOfT_valueOrSequence_ctor',
+    'single-map-no-ctor'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -237,8 +274,12 @@ test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
-    'map-array-value'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'asArrayOfT_valueOrSequence_ctor',
+    'map-array-value'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -263,8 +304,12 @@ test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
-    'single-string-no-ctor'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'asArrayOfT_valueOrSequence_ctor',
+    'single-string-no-ctor'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -285,8 +330,12 @@ test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'asArrayOfT_valueOrSequence_ctor',
-    'string-array-value-no-ctor'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'asArrayOfT_valueOrSequence_ctor',
+    'string-array-value-no-ctor'),
+  async t => {
   await Promise.resolve();
 
   // arrange

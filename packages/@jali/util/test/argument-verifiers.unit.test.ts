@@ -57,8 +57,13 @@ test(
 //////////////
 // Unit tests
 
-test(title(TestType.Smoke, 'verifyArgumentOfT_name_value_test_message',
-    'message-not-specified-test-fails', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyArgumentOfT_name_value_test_message',
+    'message-not-specified-test-fails',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -87,8 +92,12 @@ test(title(TestType.Smoke, 'verifyArgumentOfT_name_value_test_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArgumentOfT_name_value_test_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -109,8 +118,13 @@ test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
 });
 
 
-test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
-    'message-specified-test-fails', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArgumentOfT_name_value_test_message',
+    'message-specified-test-fails',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -139,8 +153,13 @@ test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
-    'message-function-test-fails', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArgumentOfT_name_value_test_message',
+    'message-function-test-fails',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -177,8 +196,12 @@ test(title(TestType.Unit, 'verifyArgumentOfT_name_value_test_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyArray_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyArray_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -198,8 +221,13 @@ test(title(TestType.Smoke, 'verifyArray_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyArray_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArray_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -226,8 +254,13 @@ test(title(TestType.Unit, 'verifyArray_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyArray_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArray_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -254,8 +287,12 @@ test(title(TestType.Unit, 'verifyArray_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyArray_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArray_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -273,8 +310,13 @@ test(title(TestType.Unit, 'verifyArray_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyArray_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArray_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -300,8 +342,13 @@ test(title(TestType.Unit, 'verifyArray_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyArray_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArray_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -327,8 +374,13 @@ test(title(TestType.Unit, 'verifyArray_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyArray_name_value_message',
-    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyArray_name_value_message',
+    'message-function-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -362,8 +414,12 @@ test(title(TestType.Unit, 'verifyArray_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyBoolean_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyBoolean_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -383,8 +439,13 @@ test(title(TestType.Smoke, 'verifyBoolean_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyBoolean_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyBoolean_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -411,8 +472,13 @@ test(title(TestType.Unit, 'verifyBoolean_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyBoolean_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyBoolean_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -439,8 +505,12 @@ test(title(TestType.Unit, 'verifyBoolean_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyBoolean_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyBoolean_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -458,8 +528,13 @@ test(title(TestType.Unit, 'verifyBoolean_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyBoolean_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyBoolean_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -485,8 +560,13 @@ test(title(TestType.Unit, 'verifyBoolean_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyBoolean_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyBoolean_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -512,8 +592,13 @@ test(title(TestType.Unit, 'verifyBoolean_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyBoolean_name_value_message',
-    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyBoolean_name_value_message',
+    'message-function-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -546,8 +631,12 @@ test(title(TestType.Unit, 'verifyBoolean_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyFunction_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyFunction_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -567,8 +656,13 @@ test(title(TestType.Smoke, 'verifyFunction_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyFunction_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyFunction_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -595,8 +689,13 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyFunction_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyFunction_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -623,8 +722,12 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyFunction_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyFunction_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -642,8 +745,13 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyFunction_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyFunction_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -669,8 +777,13 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyFunction_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyFunction_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -696,8 +809,13 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyFunction_name_value_message',
-    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyFunction_name_value_message',
+    'message-function-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -731,8 +849,12 @@ test(title(TestType.Unit, 'verifyFunction_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyDefined_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyDefined_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -752,8 +874,13 @@ test(title(TestType.Smoke, 'verifyDefined_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyDefined_name_value_message',
-    'message-not-specified-test-fails', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyDefined_name_value_message',
+    'message-not-specified-test-fails',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -779,8 +906,12 @@ test(title(TestType.Unit, 'verifyDefined_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyDefined_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyDefined_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -798,8 +929,13 @@ test(title(TestType.Unit, 'verifyDefined_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyDefined_name_value_message',
-    'message-specified-test-fails', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyDefined_name_value_message',
+    'message-specified-test-fails',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -825,8 +961,13 @@ test(title(TestType.Unit, 'verifyDefined_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyDefined_name_value_message',
-    'message-function-test-fails', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyDefined_name_value_message',
+    'message-function-test-fails',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -859,8 +1000,12 @@ test(title(TestType.Unit, 'verifyDefined_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyIterableOfT_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyIterableOfT_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -880,8 +1025,13 @@ test(title(TestType.Smoke, 'verifyIterableOfT_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyIterableOfT_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -908,8 +1058,13 @@ test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyIterableOfT_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -936,8 +1091,12 @@ test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyIterableOfT_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -955,8 +1114,13 @@ test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyIterableOfT_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -982,8 +1146,13 @@ test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyIterableOfT_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1010,8 +1179,13 @@ test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
-    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyIterableOfT_name_value_message',
+    'message-function-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1044,8 +1218,12 @@ test(title(TestType.Unit, 'verifyIterableOfT_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyNonEmpty_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyNonEmpty_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1065,8 +1243,13 @@ test(title(TestType.Smoke, 'verifyNonEmpty_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1093,8 +1276,13 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1120,8 +1308,13 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-not-specified-test-fails-for-empty', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-not-specified-test-fails-for-empty',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1148,8 +1341,12 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1167,8 +1364,13 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1194,8 +1396,13 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1222,8 +1429,13 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-specified-test-fails-for-empty', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-specified-test-fails-for-empty',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1250,8 +1462,13 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
-    'message-function-test-fails-for-empty', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonEmpty_name_value_message',
+    'message-function-test-fails-for-empty',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1283,8 +1500,12 @@ test(title(TestType.Unit, 'verifyNonEmpty_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyNonZero_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyNonZero_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1304,8 +1525,13 @@ test(title(TestType.Smoke, 'verifyNonZero_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1332,8 +1558,13 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1359,8 +1590,13 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-not-specified-test-fails-for-zero', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-not-specified-test-fails-for-zero',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1386,8 +1622,12 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1405,8 +1645,13 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1432,8 +1677,13 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1460,8 +1710,13 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-specified-test-fails-for-zero', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-specified-test-fails-for-zero',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1488,8 +1743,13 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNonZero_name_value_message',
-    'message-function-test-fails-for-zero', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNonZero_name_value_message',
+    'message-function-test-fails-for-zero',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1523,8 +1783,12 @@ test(title(TestType.Unit, 'verifyNonZero_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyNotWhitespace_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1541,8 +1805,12 @@ test(title(TestType.Smoke, 'verifyNotWhitespace_name_value_message',
   t.pass();
 });
 
-test(title(TestType.Smoke, 'verifyNotWhitespace_name_value_message',
-    'message-not-specified-test-succeeds-with-some-whitespace'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-succeeds-with-some-whitespace'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1564,8 +1832,13 @@ test(title(TestType.Smoke, 'verifyNotWhitespace_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1592,8 +1865,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1619,8 +1897,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-not-specified-test-fails-for-empty', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-empty',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1646,8 +1929,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-not-specified-test-fails-for-whitespace', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-not-specified-test-fails-for-whitespace',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1676,8 +1964,12 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1695,8 +1987,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1722,8 +2019,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1750,8 +2052,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-specified-test-fails-for-empty', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-empty',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1777,8 +2084,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-specified-test-fails-for-whitespace', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-specified-test-fails-for-whitespace',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1806,8 +2118,13 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
-    'message-function-test-fails-for-whitespace', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotWhitespace_name_value_message',
+    'message-function-test-fails-for-whitespace',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1843,8 +2160,12 @@ test(title(TestType.Unit, 'verifyNotWhitespace_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyNotNull_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyNotNull_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1864,8 +2185,13 @@ test(title(TestType.Smoke, 'verifyNotNull_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyNotNull_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotNull_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1890,8 +2216,13 @@ test(title(TestType.Unit, 'verifyNotNull_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotNull_name_value_message',
-    'message-not-specified-test-fails-for-null', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotNull_name_value_message',
+    'message-not-specified-test-fails-for-null',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1916,8 +2247,12 @@ test(title(TestType.Unit, 'verifyNotNull_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotNull_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotNull_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1935,8 +2270,13 @@ test(title(TestType.Unit, 'verifyNotNull_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNotNull_name_value_message',
-    'message-specified-test-fails', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotNull_name_value_message',
+    'message-specified-test-fails',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1961,8 +2301,13 @@ test(title(TestType.Unit, 'verifyNotNull_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotNull_name_value_message',
-    'message-specified-test-fails-for-null', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotNull_name_value_message',
+    'message-specified-test-fails-for-null',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -1987,8 +2332,13 @@ test(title(TestType.Unit, 'verifyNotNull_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNotNull_name_value_message',
-    'message-specified-test-fails-for-null', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNotNull_name_value_message',
+    'message-specified-test-fails-for-null',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2020,8 +2370,12 @@ test(title(TestType.Unit, 'verifyNotNull_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyNumber_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyNumber_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2041,8 +2395,13 @@ test(title(TestType.Smoke, 'verifyNumber_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2069,8 +2428,13 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2096,8 +2460,13 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-not-specified-test-fails-for-nan', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-not-specified-test-fails-for-nan',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2123,8 +2492,12 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2142,8 +2515,13 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2169,8 +2547,13 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2196,8 +2579,13 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-specified-test-fails-for-nan', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-specified-test-fails-for-nan',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2223,8 +2611,13 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyNumber_name_value_message',
-    'message-function-test-fails-for-nan', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyNumber_name_value_message',
+    'message-function-test-fails-for-nan',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2258,8 +2651,12 @@ test(title(TestType.Unit, 'verifyNumber_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyObject_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyObject_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2279,8 +2676,13 @@ test(title(TestType.Smoke, 'verifyObject_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyObject_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyObject_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2307,8 +2709,13 @@ test(title(TestType.Unit, 'verifyObject_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyObject_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyObject_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2334,8 +2741,12 @@ test(title(TestType.Unit, 'verifyObject_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyObject_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyObject_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2353,8 +2764,13 @@ test(title(TestType.Unit, 'verifyObject_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyObject_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyObject_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2380,8 +2796,13 @@ test(title(TestType.Unit, 'verifyObject_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyObject_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyObject_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2407,8 +2828,13 @@ test(title(TestType.Unit, 'verifyObject_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyObject_name_value_message',
-    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyObject_name_value_message',
+    'message-function-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2442,8 +2868,12 @@ test(title(TestType.Unit, 'verifyObject_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyString_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyString_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2463,8 +2893,13 @@ test(title(TestType.Smoke, 'verifyString_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyString_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyString_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2491,8 +2926,13 @@ test(title(TestType.Unit, 'verifyString_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyString_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyString_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2518,8 +2958,12 @@ test(title(TestType.Unit, 'verifyString_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyString_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyString_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2537,8 +2981,13 @@ test(title(TestType.Unit, 'verifyString_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyString_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyString_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2564,8 +3013,13 @@ test(title(TestType.Unit, 'verifyString_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyString_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyString_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2592,8 +3046,13 @@ test(title(TestType.Unit, 'verifyString_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyString_name_value_message',
-    'message-function-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyString_name_value_message',
+    'message-function-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2626,8 +3085,12 @@ test(title(TestType.Unit, 'verifyString_name_value_message',
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'verifyTrue_name_value_message',
-    'message-not-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTrue_name_value_message',
+    'message-not-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2647,8 +3110,13 @@ test(title(TestType.Smoke, 'verifyTrue_name_value_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-not-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-not-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2675,8 +3143,13 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-not-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-not-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2702,8 +3175,13 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-not-specified-test-fails-for-false', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-not-specified-test-fails-for-false',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2729,8 +3207,12 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-specified-test-succeeds'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-specified-test-succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2748,8 +3230,13 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-specified-test-fails-for-undefined', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-specified-test-fails-for-undefined',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2775,8 +3262,13 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
   });
 });
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-specified-test-fails-for-wrong-type', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-specified-test-fails-for-wrong-type',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2803,8 +3295,13 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-specified-test-fails-for-false', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-specified-test-fails-for-false',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2831,8 +3328,13 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
 });
 
 
-test(title(TestType.Unit, 'verifyTrue_name_value_message',
-    'message-function-test-fails-for-false', TestDisposition.Negative), async t => {
+test(
+  title(
+    TestType.Unit,
+    'verifyTrue_name_value_message',
+    'message-function-test-fails-for-false',
+    TestDisposition.Negative),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2866,8 +3368,12 @@ test(title(TestType.Unit, 'verifyTrue_name_value_message',
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-not-specified-not-loose-test-succeeds-with-default-parameters'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-with-default-parameters'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2884,8 +3390,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-not-specified-not-loose-test-succeeds-for-boolean'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-boolean'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2904,8 +3414,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-not-specified-not-loose-test-succeeds-for-function'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-function'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2924,8 +3438,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-not-specified-not-loose-test-succeeds-for-number'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-number'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2944,8 +3462,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-not-specified-not-loose-test-succeeds-for-object'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-object'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2964,8 +3486,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-not-specified-not-loose-test-succeeds-for-string'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-not-specified-not-loose-test-succeeds-for-string'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -2987,7 +3513,10 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-not-specified-not-loose-test-fails-for-undefined',
     TestDisposition.Negative),
     async t => {
@@ -3018,7 +3547,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-not-specified-not-loose-test-fails-for-null',
     TestDisposition.Negative),
     async t => {
@@ -3049,7 +3581,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-not-specified-not-loose-test-fails-for-false',
     TestDisposition.Negative),
     async t => {
@@ -3080,7 +3615,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-not-specified-not-loose-test-fails-for-zero',
     TestDisposition.Negative),
     async t => {
@@ -3111,7 +3649,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-not-specified-not-loose-test-fails-for-nan',
     TestDisposition.Negative),
     async t => {
@@ -3142,7 +3683,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-not-specified-not-loose-test-fails-for-empty-string',
     TestDisposition.Negative),
     async t => {
@@ -3176,8 +3720,12 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 /** ***********************************************************************************************/
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-specified-loose-test-succeeds-for-boolean'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-boolean'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -3196,8 +3744,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-specified-loose-test-succeeds-for-function'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-function'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -3216,8 +3768,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-specified-loose-test-succeeds-for-number'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-number'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -3236,8 +3792,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-specified-loose-test-succeeds-for-object'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-object'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -3256,8 +3816,12 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
-    'message-specified-loose-test-succeeds-for-string'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'verifyTruthy_name_value_message',
+    'message-specified-loose-test-succeeds-for-string'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -3279,7 +3843,10 @@ test(title(TestType.Smoke, 'verifyTruthy_name_value_message',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-specified-loose-test-fails-for-undefined',
     TestDisposition.Negative),
     async t => {
@@ -3310,7 +3877,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-specified-loose-test-fails-for-null',
     TestDisposition.Negative),
     async t => {
@@ -3341,7 +3911,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-specified-loose-test-fails-for-false',
     TestDisposition.Negative),
     async t => {
@@ -3372,7 +3945,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-specified-loose-test-fails-for-zero',
     TestDisposition.Negative),
     async t => {
@@ -3403,7 +3979,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-specified-loose-test-fails-for-nan',
     TestDisposition.Negative),
     async t => {
@@ -3434,7 +4013,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-specified-loose-test-fails-for-empty-string',
     TestDisposition.Negative),
     async t => {
@@ -3466,7 +4048,10 @@ test(title(TestType.Unit, 'verifyTruthy_name_value_message',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'verifyTruthy_name_value_message',
+test(
+  title(
+    TestType.Unit,
+    'verifyTruthy_name_value_message',
     'message-function-loose-test-fails-for-empty-string',
     TestDisposition.Negative),
     async t => {

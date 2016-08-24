@@ -17,8 +17,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'everyOfT_sequence_test',
-    'succeeds'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'everyOfT_sequence_test',
+    'succeeds'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -50,8 +54,12 @@ test(title(TestType.Smoke, 'everyOfT_sequence_test',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'everyOfT_sequence_test',
-    'fails'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'everyOfT_sequence_test',
+    'fails'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -88,7 +96,8 @@ test(title(TestType.Smoke, 'everyOfT_sequence_test',
 
 /** ***********************************************************************************************/
 test.failing(title(TestType.Smoke, 'everyOfT_sequence_test',
-    'succeeds-not-array'), async t => {
+    'succeeds-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -122,7 +131,8 @@ test.failing(title(TestType.Smoke, 'everyOfT_sequence_test',
 
 /** ***********************************************************************************************/
 test.failing(title(TestType.Smoke, 'everyOfT_sequence_test',
-    'fails-not-array'), async t => {
+    'fails-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange

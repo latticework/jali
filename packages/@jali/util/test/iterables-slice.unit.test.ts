@@ -18,8 +18,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'no-end'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'sliceOfT_sequence_begin_end',
+    'no-end'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -39,8 +43,12 @@ test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'with-end'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'sliceOfT_sequence_begin_end',
+    'with-end'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -61,8 +69,12 @@ test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'no-end-not-array'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'sliceOfT_sequence_begin_end',
+    'no-end-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -82,8 +94,12 @@ test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'with-end-not-array'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'sliceOfT_sequence_begin_end',
+    'with-end-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -108,8 +124,12 @@ test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'no-end-reverse'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'sliceOfT_sequence_begin_end',
+    'no-end-reverse'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -129,8 +149,12 @@ test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'with-end-reverse'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'sliceOfT_sequence_begin_end',
+    'with-end-reverse'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -150,8 +174,12 @@ test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'with-negative-end'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'sliceOfT_sequence_begin_end',
+    'with-negative-end'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -173,7 +201,8 @@ test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
 
 /** ***********************************************************************************************/
 test.failing(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
-    'no-end-reverse-not-array'), async t => {
+    'no-end-reverse-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange

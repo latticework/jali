@@ -17,8 +17,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
-    'sum'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'reduceOfT_sequence_accumulator',
+    'sum'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -55,8 +59,12 @@ test(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
-    'sum-not-array'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'reduceOfT_sequence_accumulator',
+    'sum-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -94,8 +102,12 @@ test(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
-    'specified-initial-sum'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'reduceOfT_sequence_accumulator',
+    'specified-initial-sum'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -134,7 +146,8 @@ test(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
 
 /** ***********************************************************************************************/
 test.failing(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
-    'specified-initial-sum-not-array'), async t => {
+    'specified-initial-sum-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange

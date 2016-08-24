@@ -17,8 +17,12 @@ const title = makeTitleFunc(
 //////////////
 // Smoke tests
 
-test(title(TestType.Smoke, 'constructor_name_message',
-    'name-specified'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'constructor_name_message',
+    'name-specified'),
+  async t => {
   await Promise.resolve();
 
   t.plan(2);
@@ -35,8 +39,12 @@ test(title(TestType.Smoke, 'constructor_name_message',
 //////////////
 // Unit tests
 
-test(title(TestType.Unit, 'constructor_name_message',
-    'all-specified'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'constructor_name_message',
+    'all-specified'),
+  async t => {
   await Promise.resolve();
 
   t.plan(2);
@@ -49,8 +57,12 @@ test(title(TestType.Unit, 'constructor_name_message',
   });
 });
 
-test(title(TestType.Unit, 'constructor_name_message',
-    'message-specified'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'constructor_name_message',
+    'message-specified'),
+  async t => {
   await Promise.resolve();
 
   t.plan(2);
@@ -63,8 +75,12 @@ test(title(TestType.Unit, 'constructor_name_message',
   });
 });
 
-test(title(TestType.Unit, 'constructor_name_message',
-    'none-specified'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'constructor_name_message',
+    'none-specified'),
+  async t => {
   await Promise.resolve();
 
   t.plan(2);

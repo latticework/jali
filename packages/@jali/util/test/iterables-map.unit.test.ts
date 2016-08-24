@@ -17,8 +17,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'mapOfT_sequence_converter',
-    'doubled'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'mapOfT_sequence_converter',
+    'doubled'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -52,7 +56,8 @@ test(title(TestType.Smoke, 'mapOfT_sequence_converter',
 
 /** ***********************************************************************************************/
 test.failing(title(TestType.Smoke, 'mapOfT_sequence_converter',
-    'doubled-not-array'), async t => {
+    'doubled-not-array'),
+  async t => {
   await Promise.resolve();
 
   // arrange

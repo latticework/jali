@@ -19,8 +19,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'filterOfT_sequence_test',
-    'two-matches'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'filterOfT_sequence_test',
+    'two-matches'),
+  async t => {
   await Promise.resolve();
 
   // arrange

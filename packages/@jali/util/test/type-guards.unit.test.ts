@@ -20,8 +20,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'isError',
-    'is-error'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'isError',
+    'is-error'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -38,8 +42,12 @@ test(title(TestType.Smoke, 'isError',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'isError',
-    'is-not-error'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'isError',
+    'is-not-error'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -62,8 +70,12 @@ test(title(TestType.Smoke, 'isError',
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'isIterableOfT_value',
-    'is-iterable'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'isIterableOfT_value',
+    'is-iterable'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -80,8 +92,12 @@ test(title(TestType.Smoke, 'isIterableOfT_value',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'isIterableOfT_value',
-    'is-not-iterable'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'isIterableOfT_value',
+    'is-not-iterable'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -105,8 +121,12 @@ test(title(TestType.Smoke, 'isIterableOfT_value',
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-iterable_empty_default_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-iterable_empty_default_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -130,8 +150,12 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-iterable_nonempty_default_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-iterable_nonempty_default_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -155,8 +179,12 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-not-iterable_default_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-not-iterable_default_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -180,8 +208,12 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-not-element_default_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-not-element_default_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -209,8 +241,12 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-iterable_empty_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-iterable_empty_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -234,8 +270,12 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-iterable_nonempty_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-iterable_nonempty_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -259,8 +299,12 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-not-iterable_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-not-iterable_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -284,8 +328,12 @@ test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'makeIsIterableOfT_elementTypeGuard_deep',
-    'is-not-element_nonempty_deep'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'makeIsIterableOfT_elementTypeGuard_deep',
+    'is-not-element_nonempty_deep'),
+  async t => {
   await Promise.resolve();
 
   // arrange

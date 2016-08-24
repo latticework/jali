@@ -17,8 +17,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'findOfT_sequence_test',
-    'empty'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'findOfT_sequence_test',
+    'empty'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -36,8 +40,12 @@ test(title(TestType.Smoke, 'findOfT_sequence_test',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'findOfT_sequence_test',
-    'non-empty'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'findOfT_sequence_test',
+    'non-empty'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -55,8 +63,12 @@ test(title(TestType.Smoke, 'findOfT_sequence_test',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'findOfT_sequence_test',
-    'no-match'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'findOfT_sequence_test',
+    'no-match'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -75,8 +87,12 @@ test(title(TestType.Smoke, 'findOfT_sequence_test',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'findOfT_sequence_test',
-    'matches'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'findOfT_sequence_test',
+    'matches'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -99,8 +115,12 @@ test(title(TestType.Smoke, 'findOfT_sequence_test',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'findOfT_sequence_test',
-    'not-array-no-match'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'findOfT_sequence_test',
+    'not-array-no-match'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -119,8 +139,12 @@ test(title(TestType.Smoke, 'findOfT_sequence_test',
 });
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'findOfT_sequence_test',
-    'not-array-matches'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'findOfT_sequence_test',
+    'not-array-matches'),
+  async t => {
   await Promise.resolve();
 
   // arrange

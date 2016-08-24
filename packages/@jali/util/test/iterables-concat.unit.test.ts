@@ -17,8 +17,12 @@ let title = makeTitleFunc(
 // Smoke tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'concatOfT_sequence_items',
-    'two-sequences'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'concatOfT_sequence_items',
+    'two-sequences'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -41,8 +45,12 @@ test(title(TestType.Smoke, 'concatOfT_sequence_items',
 // Unit tests
 
 /** ***********************************************************************************************/
-test(title(TestType.Unit, 'concatOfT_sequence_items',
-    'one-sequence'), async t => {
+test(
+  title(
+    TestType.Unit,
+    'concatOfT_sequence_items',
+    'one-sequence'),
+  async t => {
   await Promise.resolve();
 
   // arrange
@@ -63,8 +71,12 @@ test(title(TestType.Unit, 'concatOfT_sequence_items',
 
 
 /** ***********************************************************************************************/
-test(title(TestType.Smoke, 'concatOfT_sequence_items',
-    'three-sequences'), async t => {
+test(
+  title(
+    TestType.Smoke,
+    'concatOfT_sequence_items',
+    'three-sequences'),
+  async t => {
   await Promise.resolve();
 
   // arrange
