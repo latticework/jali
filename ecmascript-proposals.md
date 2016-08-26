@@ -18,7 +18,7 @@
 | [System.global][15]                  | Stage 2     | Yes  |                                     |                | core.js                                                 |
 | [Class Fields][20]                   | Stage 2     | Yes  | [transform-class-properties]        |                |                                                         |
 | [Promise.prototype.finally][16]      | Stage 2     |      |                                     |                |                                                         |
-| [String.prototype.{trimStart,trimEnd}][17]| Stage 2| Yes |                                     |                | core.js                                                 |
+| [String.prototype.{trimStart,trimEnd}][17]| Stage 2| Yes  |                                     |                | core.js                                                 |
 | [Class and Property Decorators][18]  | Stage 2     | Yes  | [transform-decorators-legacy]       |                | Already in typescript.                                  |
 | [Observable][19]                     | Stage 1     | Yes  |                                     |                | core.js                                                 |
 | [RegExp Unicode Property Escapes][23]| Stage 1     |      |                                     |                |                                                         |
