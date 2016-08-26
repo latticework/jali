@@ -4,6 +4,8 @@ import {makeTitleFunc, TestType, ProductEpic, RepoPackage, } from '../testing';
 
 import * as Iterables from '../src/iterables';
 
+import { toIterable } from '../testing/iterables-helpers';
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 let title = makeTitleFunc(
   ProductEpic.Util,
@@ -78,7 +80,7 @@ test(
   await Promise.resolve();
 
   // arrange
-  const sequence = (function*(arr: number[]) {for (const e of arr) {yield e;}})([2, 4, 6]);
+  const sequence = toIterable([2, 4, 6]);
   const begin = 1;
   const end = undefined;
   const expectedSequence = [4, 6];
@@ -103,7 +105,7 @@ test(
   await Promise.resolve();
 
   // arrange
-  const sequence = (function*(arr: number[]) {for (const e of arr) {yield e;}})([2, 4, 6]);
+  const sequence = toIterable([2, 4, 6]);
   const begin = 0;
   const end = 2;
   const expectedSequence = [2, 4];
@@ -206,7 +208,7 @@ test.failing(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
   await Promise.resolve();
 
   // arrange
-  const sequence = (function*(arr: number[]) {for (const e of arr) {yield e;}})([2, 4, 6]);
+  const sequence = toIterable([2, 4, 6]);
   const begin = -1;
   const end = undefined;
   const expectedSequence = [6];

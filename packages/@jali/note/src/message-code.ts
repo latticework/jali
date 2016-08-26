@@ -6,8 +6,6 @@ import MessageEncoding from './message-encoding';
 import * as StandardEncodings from './standard-encodings';
 
 export default class MessageCode {
-  protected readonly messageEncoding: MessageEncoding;
-
   public constructor(
     public readonly messageCode: string, messageEncoding?: MessageEncoding) {
   Errors.verifyString('messageCode', messageCode);
@@ -22,4 +20,6 @@ export default class MessageCode {
   public get priority(): MessagePriority {
     return this.messageEncoding.getMessagePriority(this.messageCode);
   }
+
+  protected readonly messageEncoding: MessageEncoding;
 }

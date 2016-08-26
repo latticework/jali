@@ -3,6 +3,8 @@ import {makeTitleFunc, TestType, ProductEpic, RepoPackage, } from '../testing';
 
 import * as Iterables from '../src/iterables';
 
+import { toIterable } from '../testing/iterables-helpers';
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 let title = makeTitleFunc(
   ProductEpic.Util,
@@ -68,7 +70,7 @@ test(
   await Promise.resolve();
 
   // arrange
-  const sequence = (function*(arr: number[]) {for (const e of arr) {yield e;}})([2, 4, 6]);
+  const sequence = toIterable([2, 4, 6]);
   const expectedElements = [4, 6];
   const expectedPrevious = [2, 6];
   const expectedIndexes = [1, 2];
@@ -151,7 +153,7 @@ test.failing(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
   await Promise.resolve();
 
   // arrange
-  const sequence = (function*(arr: number[]) {for (const e of arr) {yield e;}})([2, 4, 6]);
+  const sequence = toIterable([2, 4, 6]);
   const expectedElements = [...sequence];
   const expectedPrevious = [1, 3, 7];
   const expectedIndexes = [0, 1, 2];

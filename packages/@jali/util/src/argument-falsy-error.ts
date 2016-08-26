@@ -51,4 +51,4 @@ export default class ArgumentFalsyError extends ArgumentError {
       `Argument must have a truthy value. Yours ${type ? `is '${type}'` : 'does not'}`;
   }
 }
-const Class = ArgumentFalsyError; // tslint:disable-line:variable-name
+const Class = ArgumentFalsyError; // tslint:disable-line:variable-name  no-use-before-declare

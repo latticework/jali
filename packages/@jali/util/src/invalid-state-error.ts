@@ -7,4 +7,4 @@ export default class InvalidStateError extends Error {
     return specified || `Function called against data in an invalid state.`;
   }
 }
-const Class = InvalidStateError; // tslint:disable-line:variable-name
+const Class = InvalidStateError; // tslint:disable-line:variable-name no-use-before-declare

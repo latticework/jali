@@ -7,8 +7,6 @@ import MessageEncodingVersion from './message-encoding-version';
 // import MessageEncodingData from './message-encoding-data';
 
 export default class StandardMessageEncoding implements MessageEncoding {
-  private readonly versionMap: Map<number, MessageEncodingVersion>;
-
   public constructor(public readonly versions: Iterable<MessageEncodingVersion>) {
     Errors.verifyIterable('versions', versions);
 
@@ -69,6 +67,8 @@ export default class StandardMessageEncoding implements MessageEncoding {
     const version = this.getValidVersion(messageCode);
     return version.getBaseMessageCode(messageCode);
   }
+
+  private readonly versionMap: Map<number, MessageEncodingVersion>;
 
 
   /**

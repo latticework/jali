@@ -207,7 +207,7 @@ test(
   // arrange
   const name = 'Name';
   const message = undefined;
-  const value = [1,2,3];
+  const value = [1, 2, 3];
   const target = ArgumentVerifiers;
 
   // act
@@ -298,7 +298,7 @@ test(
   // arrange
   const name = 'Name';
   const message = 'Message';
-  const value = [1,2,3];
+  const value = [1, 2, 3];
   const target = ArgumentVerifiers;
 
   // act

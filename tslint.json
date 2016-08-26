@@ -22,8 +22,23 @@
     "member-access": false,
     "member-ordering": [
       true,
-      "static-before-instance",
-      "variables-before-functions"
+      {
+        "order": [
+          "public-static-field",
+          "public-instance-field",
+          "constructor",
+          "public-static-method",
+          "public-instance-method",
+          "protected-static-field",
+          "protected-instance-field",
+          "protected-static-method",
+          "protected-instance-method",
+          "private-static-field",
+          "private-instance-field",
+          "private-static-method",
+          "private-instance-method"
+        ]
+      }
     ],
     "no-arg": true,
     "no-internal-module": true,
@@ -50,7 +65,7 @@
     "no-unused-expression": true,
     "no-unused-variable": true,
     "no-unreachable": true,
-    "no-use-before-declare": true,
+    "no-use-before-declare": false,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
     "one-line": [

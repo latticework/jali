@@ -2,7 +2,7 @@ import test from 'ava';
 import {makeTitleFunc, TestType, ProductEpic, RepoPackage, } from '../testing';
 
 import * as Iterables from '../src/iterables';
-import { testAsIterable } from '../testing/iterables-helpers'
+import { testAsIterable, toIterable } from '../testing/iterables-helpers';
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,7 +78,7 @@ test(
   await Promise.resolve();
 
   // arrange
-  const expectedArray = [1,2,3];
+  const expectedArray = [1, 2, 3];
   // act
   // assert
   t.plan(1);
@@ -100,7 +100,7 @@ test.failing(title(TestType.Smoke, 'asIterableOfT_valueOrSequence_ctor',
   await Promise.resolve();
 
   // arrange
-  const sequence = (function*(arr: number[]) {for (const e of arr) {yield e;}})([1, 2, 3]);
+  const sequence = toIterable([1, 2, 3]);
   const expectedArray = [...sequence];
   // act
   // assert
@@ -177,7 +177,7 @@ test(
   await Promise.resolve();
 
   // arrange
-  const expectedArray = ['abc','def','ghi'];
+  const expectedArray = ['abc', 'def', 'ghi'];
   // act
   // assert
   t.plan(1);
@@ -338,7 +338,7 @@ test(
   await Promise.resolve();
 
   // arrange
-  const expectedArray = ['abc','def','ghi'];
+  const expectedArray = ['abc', 'def', 'ghi'];
   // act
   // assert
   t.plan(1);

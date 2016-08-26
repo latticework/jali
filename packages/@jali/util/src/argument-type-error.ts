@@ -51,4 +51,4 @@ export default class ArgumentTypeError extends ArgumentError {
     return message || `Argument must have type '${type}'. Yours is not`;
   }
 }
-const Class = ArgumentTypeError; // tslint:disable-line:variable-name
+const Class = ArgumentTypeError; // tslint:disable-line:variable-name  no-use-before-declare

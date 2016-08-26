@@ -3,8 +3,6 @@ import { MessagePriority, MessageSeverity, NotificationMessage } from '@jali/cor
 import MessageCode from './message-code';
 
 export default class TypedMessage<Args> implements NotificationMessage {
-  private innerMessageCode: MessageCode;
-
   public get messageCode(): string {
     return this.innerMessageCode.messageCode;
   }
@@ -21,4 +19,6 @@ export default class TypedMessage<Args> implements NotificationMessage {
   protected constructor(messageCode: string) {
     this.innerMessageCode = new MessageCode(messageCode);
   }
+
+  private innerMessageCode: MessageCode;
 }

@@ -46,4 +46,4 @@ export default class ArgumentError extends Error {
     return `Error in argument${name ? ` '${name}'` : ''}${(message) ? `: ${message}` : ''}`;
   }
 }
-const Class = ArgumentError; // tslint:disable-line:variable-name
+const Class = ArgumentError; // tslint:disable-line:variable-name no-use-before-declare
