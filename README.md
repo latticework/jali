@@ -12,7 +12,7 @@ Specification-driven serverless microservice DevOps framework and infrastructure
 
 [![CLA assistant](https://cla-assistant.io/readme/badge/latticework/jali)](https://cla-assistant.io/latticework/jali)
 [![Gitter](https://badges.gitter.im/latticework/jali.svg)](https://gitter.im/latticework/jali?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
+[![Build Status](https://semaphoreci.com/api/v1/latticework/jali/branches/master/shields_badge.svg)](https://semaphoreci.com/latticework/jali)
 
 
 > ## Table of Contents
