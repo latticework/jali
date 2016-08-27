@@ -5,7 +5,6 @@
     "ava:",
     "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
     "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
-    
   ],
   "name": "jali-srcs",
   "version": "0.0.0",
