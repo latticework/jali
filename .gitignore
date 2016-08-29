@@ -100,7 +100,7 @@ build/Release
 node_modules
 jspm_packages
 # (Angular CLI)
-typings
+# typings
 
 # TypeScript
 .Trash*
