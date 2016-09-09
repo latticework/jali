@@ -4,6 +4,7 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "inlineSourceMap": true,
     "inlineSources": true,
     "lib": ["es2017"],
     "module": "es2015",
@@ -19,7 +20,6 @@
     "paths": {
     },
     "rootDir": ".",
-    "sourceMap": true,
     "strictNullChecks": true,
     "stripInternal": true,
     "target": "es6",

@@ -67,7 +67,7 @@
     "no-unreachable": true,
     "no-use-before-declare": false,
     "no-var-keyword": true,
-    "object-literal-sort-keys": false,
+    "object-literal-sort-keys": true,
     "one-line": [
       true,
       "check-catch",

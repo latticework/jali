@@ -26,7 +26,9 @@ Sources for `Jali` project design
   - [What's new in webpack 2][webpack2]
   - [Code Splitting in Angular 2][code-splitting]
 - webpack + ng2: See [Angular 2 Starter][Angular2Starter].
-- webpack + TypeScript + babel: See [ES6 + TypeScript + Babel + React + Flux + Karma: The Secret Recipe][johnreilly]
+- webpack + TypeScript + babel
+  - Uses [awesome-typescript-loader]
+  - See [ES6 + TypeScript + Babel + React + Flux + Karma: The Secret Recipe][johnreilly]
 - webpack + electron + cordova: See [CrossBuilder]
 - webpack + es6:
   - [Tree-shaking with webpack 2 and Babel 6][2ality]
@@ -37,6 +39,7 @@ Sources for `Jali` project design
 [Angular2]: https://github.com/angular/angular
 [Angular2Starter]: https://github.com/AngularClass/angular2-webpack-starter "An Angular 2 Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E), Karma, Protractor, Jasmine, TypeScript, and Webpack by @AngularClass"
 [angular2-dgeni-starter]: https://github.com/rangle/angular2-dgeni-starter
+[awesome-typescript-loader]: https://www.npmjs.com/package/awesome-typescript-loader
 [ava-example]: http://source.coveo.com/2016/05/11/isomorphic-typescript-ava-w-coverage/
 [code-splitting]: http://blog.waffle.io/code-splitting-angular-2-webpack-2/
 [CrossBuilder]:  https://github.com/zalmoxisus/crossbuilder

@@ -1,38 +1,40 @@
 // cSpell Settings
 {
 
-    // Version of the setting file.  Always 0.1
-    "version": "0.1",
+  // Version of the setting file.  Always 0.1
+  "version": "0.1",
 
-    // language - current active spelling language
-    "language": "en",
+  // language - current active spelling language
+  "language": "en",
 
-    // words - list of words to be always considered correct
-    "words": [
-        "aspnet",
-        "ctor",
-        "dist",
-        "Falsy",
-        "gitignore",
-        "iterability",
-        "iterables",
-        "jali",
-        "jalidev",
-        "mkdirp",
-        "microservice",
-        "microservices",
-        "pluggable",
-        "serverless",
-        "submodule",
-        "Repo",
-        "truthy",
-        "Validators"
-    ],
+  // words - list of words to be always considered correct
+  "words": [
+    "aspnet",
+    "ctor",
+    "dist",
+    "Falsy",
+    "gitignore",
+    "iterability",
+    "iterables",
+    "jali",
+    "jalidev",
+    "mkdirp",
+    "microservice",
+    "microservices",
+    "multitenant",
+    "partitionable",
+    "pluggable",
+    "serverless",
+    "submodule",
+    "Repo",
+    "truthy",
+    "Validators"
+  ],
 
-    // flagWords - list of words to be always considered incorrect
-    // This is useful for offensive words and common spelling errors.
-    // For example "hte" should be "the"
-    "flagWords": [
-        "hte"
-    ]
+  // flagWords - list of words to be always considered incorrect
+  // This is useful for offensive words and common spelling errors.
+  // For example "hte" should be "the"
+  "flagWords": [
+    "hte"
+  ]
 }

@@ -1,0 +1,42 @@
+{
+  "author": "Latticework <latticework@outlook.com> (https://medium.com/@latticeworkms)",
+  "bugs": {
+    "url": "https://github.com/latticework/jali/issues"
+  },
+  "contributors": [
+    {
+      "name": "Kenneth Brubaker",
+      "email": "kennethbrubaker1968@gmail.com",
+      "url": "https://medium.com/@kenbrubaker"
+    }
+  ],
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "homepage": "http://jali-ms.io/",
+  "keywords": [
+    "jali",
+    "jalijs",
+    "jalims",
+    "microservice",
+    "microservices",
+    "typescript"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Kenneth Brubaker",
+      "email": "kennethbrubaker1968@gmail.com",
+      "url": "https://medium.com/@kenbrubaker"
+    }
+  ],
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "tag": "pre-alpha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/latticework/jali.git"
+  }
+}
