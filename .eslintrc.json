@@ -15,7 +15,6 @@
     "guard-for-in": "error",
     "indent": [
       "error",
-      "spaces",
       2
     ],
     "no-duplicate-case": "error",
@@ -42,7 +41,7 @@
     "no-redeclare": "error",
     "no-empty": "off",
     "no-eval": "error",
-    "no-shadowed-variable": "error",
+    "no-shadow": "error",
     //"no-string-literal": true,
     "no-fallthrough": "error",
     "no-trailing-spaces": "error",
@@ -52,63 +51,22 @@
     "no-use-before-define": "error",
     "no-var": "error",
     "sort-keys": "error",
-    "one-line": [
-      true,
-      "check-catch",
-      "check-else",
-      "check-open-brace",
-      "check-whitespace"
-    ],
-    "quotemark": [
-      true,
-      "avoid-escape",
-      "single"
-    ],
-    "radix": true,
-    "semicolon": [
-      "always"
-    ],
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
-    "typedef-whitespace": [
-      true,
+    "quotes": [
+      "error",
+      "single",
       {
-        "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
+
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
       }
     ],
-    "variable-name": [
-      true,
-      "ban-keywords",
-      "check-format",
-      "allow-trailing-underscore"
+    "radix": "error",
+    "semi": [
+      "error",
+      "always"
     ],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
-    "component-class-suffix": true,
-    "component-selector-name": [true, "kebab-case"],
-    "component-selector-type": [true, "element"],
-    "directive-class-suffix": true,
-    "directive-selector-name": [true, "camelCase"],
-    "directive-selector-type": [true, "attribute"],
-    "no-attribute-parameter-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-host-property-decorator": true,
-    "use-input-property-decorator": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "use-output-property-decorator": true
+    "space-before-blocks": "error",
+    "space-infix-ops": "error",
+    "space-unary-ops": "error"
   }
 }

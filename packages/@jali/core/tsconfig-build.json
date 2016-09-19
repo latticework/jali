@@ -15,9 +15,9 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "../../../dist/packages-dist/core/",
+    "outDir": "../../../dist/packages-dist/@jali/core/",
     "paths": {
-      "@jali/*": ["../../../dist/packages-dist/*"]
+      "@jali/*": ["../../../dist/packages-dist/@jali/*"]
     },
     "rootDir": ".",
     "sourceMap": true,

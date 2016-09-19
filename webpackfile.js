@@ -9,7 +9,7 @@
 exports (options) => {
   return new Promise((resolve, reject) => {
 
-    switch options.environment {
+    switch (options.environment) {
       case "production":
 
     }

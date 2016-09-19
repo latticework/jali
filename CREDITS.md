@@ -34,8 +34,11 @@ Sources for `Jali` project design
   - [Tree-shaking with webpack 2 and Babel 6][2ality]
   - [Webpack 2 Tree Shaking Configuration][modus-create]
 - webpack + ng2 + TypeScript + Dgeni: See [angular2-dgeni-starter]
+- linting
+  - [alex]: Catch insensitive, inconsiderate writing
 
 [2ality]: http://www.2ality.com/2015/12/webpack-tree-shaking.html
+[alex]: http://alexjs.com/
 [Angular2]: https://github.com/angular/angular
 [Angular2Starter]: https://github.com/AngularClass/angular2-webpack-starter "An Angular 2 Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E), Karma, Protractor, Jasmine, TypeScript, and Webpack by @AngularClass"
 [angular2-dgeni-starter]: https://github.com/rangle/angular2-dgeni-starter
