@@ -19,7 +19,7 @@
           "prebuild:pkg:core": "npm run build:pkg:util",
         "build:pkg:note": "tsc -p packages/@jali/note/tsconfig-build.json && cpy packages/@jali/note/package.json dist/packages-dist/@jali/note",
           "prebuild:pkg:note": "npm run build:pkg:core",
-        "build:pkg:util": "tsc -p packages/@jali/util/tsconfig-build.json && webpack --config packages/@jali/util/webpackfile.js && cpy packages/@jali/util/package.json dist/packages-dist/@jali/util",
+        "build:pkg:util": "tsc -p packages/@jali/util/tsconfig-build.json && webpack --config packages/@jali/util/webpackfile.js && cpy LICENSE dist/packages-dist/@jali/util",
       "build:examples": "tsc -p examples",
       "build:dev": "npm run build:packages",
         "prebuild:dev": "npm run clean",
