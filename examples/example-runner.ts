@@ -141,7 +141,7 @@ export default class ExampleRunner {
 
   private static validatePath(path: string, name: string, errors: string[]): void {
     try {
-      fs.accessSync(path, fs.R_OK);
+      fs.accessSync(path, fs.constants.R_OK);
     }
     catch (err) {
       errors.push(`Cannot access '${name}' path '${path}'`);
