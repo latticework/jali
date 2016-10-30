@@ -85,10 +85,10 @@ test(
   t.true(actualValue === expectedValue, 'test was not called.');
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -146,10 +146,10 @@ test(
   t.true(actualValue === expectedValue, 'test was not called.');
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -182,10 +182,10 @@ test(
   t.true(actualValue === expectedValue, 'test was not called.');
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -245,11 +245,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'Array',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'Array',
   });
 });
 
@@ -278,11 +278,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'Array',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'Array',
   });
 });
 
@@ -334,11 +334,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'Array',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'Array',
   });
 });
 
@@ -366,11 +366,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'Array',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'Array',
   });
 });
 
@@ -399,11 +399,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'Array',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'Array',
   });
 });
 
@@ -463,11 +463,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -496,11 +496,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -552,11 +552,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -584,11 +584,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -617,11 +617,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -680,11 +680,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -713,11 +713,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -769,11 +769,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'function',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'function',
   });
 });
 
@@ -801,11 +801,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'function',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'function',
   });
 });
 
@@ -834,11 +834,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'function',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'function',
   });
 });
 
@@ -898,10 +898,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -953,10 +953,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -986,10 +986,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -1049,11 +1049,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'iterable',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'iterable',
   });
 });
 
@@ -1082,11 +1082,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'iterable',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'iterable',
   });
 });
 
@@ -1138,11 +1138,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'iterable',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'iterable',
   });
 });
 
@@ -1170,11 +1170,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'iterable',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'iterable',
   });
 });
 
@@ -1204,11 +1204,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'iterable',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'iterable',
   });
 });
 
@@ -1267,11 +1267,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1300,11 +1300,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1332,11 +1332,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1388,11 +1388,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1420,11 +1420,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1453,11 +1453,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1487,11 +1487,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1549,11 +1549,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -1582,11 +1582,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -1614,11 +1614,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -1669,11 +1669,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -1701,11 +1701,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -1734,11 +1734,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -1768,11 +1768,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -1856,11 +1856,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1889,11 +1889,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1921,11 +1921,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -1955,11 +1955,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -2011,11 +2011,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -2043,11 +2043,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -2076,11 +2076,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -2110,11 +2110,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -2145,11 +2145,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -2209,10 +2209,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -2240,10 +2240,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentNullError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -2294,10 +2294,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -2325,10 +2325,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentNullError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -2357,10 +2357,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentNullError,
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
   });
 });
 
@@ -2419,11 +2419,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -2452,11 +2452,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -2484,11 +2484,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -2539,11 +2539,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -2571,11 +2571,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -2603,11 +2603,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -2636,11 +2636,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -2700,11 +2700,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'object',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'object',
   });
 });
 
@@ -2733,11 +2733,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'object',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'object',
   });
 });
 
@@ -2788,11 +2788,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'object',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'object',
   });
 });
 
@@ -2820,11 +2820,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'object',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'object',
   });
 });
 
@@ -2853,11 +2853,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'object',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'object',
   });
 });
 
@@ -2917,11 +2917,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -2950,11 +2950,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -3005,11 +3005,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -3037,11 +3037,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -3071,11 +3071,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -3134,11 +3134,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3167,11 +3167,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3199,11 +3199,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3254,11 +3254,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3286,11 +3286,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3319,11 +3319,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3353,11 +3353,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3538,11 +3538,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3572,11 +3572,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3606,11 +3606,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3640,11 +3640,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -3674,11 +3674,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -3708,11 +3708,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -3868,11 +3868,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3902,11 +3902,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3936,11 +3936,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'boolean',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'boolean',
   });
 });
 
@@ -3970,11 +3970,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -4004,11 +4004,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'number',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'number',
   });
 });
 
@@ -4038,11 +4038,11 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });
 
@@ -4074,10 +4074,10 @@ test(
   const actualError = t.throws(action) as Error;
 
   testArgumentTypeError({
-    test: t,
     classConstructor: expectedError.constructor,
-    type: 'string',
     error: actualError,
     errorMessage: expectedError.message,
+    test: t,
+    type: 'string',
   });
 });

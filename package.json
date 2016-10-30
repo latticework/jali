@@ -25,7 +25,7 @@
         "prebuild:dev": "npm run clean",
         "postbuild:dev": "npm run build:examples && npm run lint",
       "build:docs": "npm run docs:es",
-      "build:test": "npm run build:packages -- --inlineSourceMap --inlineSources",
+      "build:test": "npm run build:packages -- --inlineSourceMap --inlineSources && npm run lint && npm run examples:run && npm run build:docs",
         "prebuild:test": "npm run clean",
       "build:prod": "npm run build:pkg",
         "prebuild:prod": "npm run clean",
@@ -74,7 +74,7 @@
   "author": "Latticework",
   "license": "MIT",
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">= 6.9.0"
   },
   "bugs": {
     "url": "https://github.com/latticework/jali/issues"

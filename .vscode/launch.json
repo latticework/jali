@@ -4,6 +4,23 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Docs",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/esdoc",
+      "stopOnEntry": false,
+      "args": [
+        "-c",
+        "esdoc.json"
+      ],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "",
+      "env": {
+        "BABEL_ENV": "development"
+      },
+      "runtimeExecutable": null
+    },
+    {
       "name": "Examples",
       "type": "node",
       "request": "launch",

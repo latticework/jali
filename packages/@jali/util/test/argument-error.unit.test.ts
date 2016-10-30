@@ -29,11 +29,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentError,
-    parameterName: 'Name',
-    errorMessage: undefined,
     defaultMessage: '',
+    errorMessage: undefined,
+    parameterName: 'Name',
+    test: t,
   });
 });
 
@@ -51,11 +51,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentError,
-    parameterName: 'Name',
-    errorMessage: 'Message',
     defaultMessage: undefined,
+    errorMessage: 'Message',
+    parameterName: 'Name',
+    test: t,
   });
 });
 
@@ -69,11 +69,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentError,
-    parameterName: undefined,
-    errorMessage: 'Message',
     defaultMessage: undefined,
+    errorMessage: 'Message',
+    parameterName: undefined,
+    test: t,
   });
 });
 
@@ -87,10 +87,10 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentError,
-    parameterName: undefined,
-    errorMessage: undefined,
     defaultMessage: '',
+    errorMessage: undefined,
+    parameterName: undefined,
+    test: t,
   });
 });

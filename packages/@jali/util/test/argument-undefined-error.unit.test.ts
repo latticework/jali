@@ -31,11 +31,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
-    parameterName: 'Name',
-    errorMessage: undefined,
     defaultMessage: DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE,
+    errorMessage: undefined,
+    parameterName: 'Name',
+    test: t,
   });
 });
 
@@ -53,11 +53,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
-    parameterName: 'Name',
-    errorMessage: 'Message',
     defaultMessage: undefined,
+    errorMessage: 'Message',
+    parameterName: 'Name',
+    test: t,
   });
 });
 
@@ -71,11 +71,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
-    parameterName: undefined,
-    errorMessage: 'Message',
     defaultMessage: undefined,
+    errorMessage: 'Message',
+    parameterName: undefined,
+    test: t,
   });
 });
 
@@ -88,10 +88,10 @@ test(
   await Promise.resolve();
 
   testArgumentError({
-    test: t,
     classConstructor: ArgumentUndefinedError,
-    parameterName: undefined,
-    errorMessage: undefined,
     defaultMessage: DEFAULT_ARGUMENT_UNDEFINED_ERROR_MESSAGE,
+    errorMessage: undefined,
+    parameterName: undefined,
+    test: t,
   });
 });

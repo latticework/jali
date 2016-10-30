@@ -34,12 +34,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: undefined,
     ctor: undefined,
-    target: Iterables,
     expected: [],
     expectingMessage: 'Array should be empty.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: undefined,
   });
 });
 
@@ -59,12 +59,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: 1,
     ctor: undefined,
-    target: Iterables,
     expected: [1],
     expectingMessage: 'Array should have one element.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: 1,
   });
 });
 
@@ -85,12 +85,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: expectedArray,
     ctor: undefined,
-    target: Iterables,
     expected: expectedArray,
     expectingMessage: 'Array should have three elements.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: expectedArray,
   });
 });
 
@@ -108,12 +108,12 @@ test.failing(title(TestType.Smoke, 'asArrayOfT_valueOrSequence_ctor',
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: sequence,
     ctor: undefined,
-    target: Iterables,
     expected: expectedArray,
     expectingMessage: 'Array should have three elements.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: sequence,
   });
 });
 
@@ -132,12 +132,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: undefined,
     ctor: String,
-    target: Iterables,
     expected: [],
     expectingMessage: 'Array should be empty.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: undefined,
   });
 });
 
@@ -158,12 +158,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: stringValue,
     ctor: String,
-    target: Iterables,
     expected: [stringValue],
     expectingMessage: 'Array should have one element.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: stringValue,
   });
 });
 
@@ -184,12 +184,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: expectedArray,
     ctor: String,
-    target: Iterables,
     expected: expectedArray,
     expectingMessage: 'Array should have three elements.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: expectedArray,
   });
 });
 
@@ -211,12 +211,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: undefined,
     ctor: Map,
-    target: Iterables,
     expected: [],
     expectingMessage: 'Array should be empty.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: undefined,
   });
 });
 
@@ -237,12 +237,12 @@ test(
   t.plan(1);
 
   testAsArray<Map<number, string>>({
-    test: t,
-    valueOrSequence: mapValue,
     ctor: Map,
-    target: Iterables,
     expected: [mapValue],
     expectingMessage: 'Array should have one element.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: mapValue,
   });
 });
 
@@ -263,12 +263,12 @@ test(
   t.plan(1);
 
   testAsArray<Map<number, string>>({
-    test: t,
-    valueOrSequence: mapValue as Map<number, string>,
     ctor: undefined,
-    target: Iterables,
     expected: [...mapValue] as any as Map<number, string>[],
     expectingMessage: 'Array should have three elements.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: mapValue as Map<number, string>,
   });
 });
 
@@ -293,12 +293,12 @@ test(
   t.plan(1);
 
   testAsArray<Map<number, string>>({
-    test: t,
-    valueOrSequence: expectedArray,
     ctor: Map,
-    target: Iterables,
     expected: expectedArray,
     expectingMessage: 'Array should have three elements.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: expectedArray,
   });
 });
 
@@ -319,12 +319,12 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: stringValue,
     ctor: undefined,
-    target: Iterables,
     expected: [...stringValue],
     expectingMessage: 'Array should have three elements.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: stringValue,
   });
 });
 
@@ -345,11 +345,11 @@ test(
   t.plan(1);
 
   testAsArray({
-    test: t,
-    valueOrSequence: expectedArray,
     ctor: undefined,
-    target: Iterables,
     expected: expectedArray,
     expectingMessage: 'Array should have three elements.',
+    target: Iterables,
+    test: t,
+    valueOrSequence: expectedArray,
   });
 });

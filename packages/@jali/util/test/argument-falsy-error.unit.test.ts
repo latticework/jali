@@ -28,11 +28,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentFalsyError,
-    parameterName: 'Name',
-    errorMessage: undefined,
     defaultMessage: 'Argument must have a truthy value. Yours does not',
+    errorMessage: undefined,
+    parameterName: 'Name',
+    test: t,
   });
 });
 
@@ -50,11 +50,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentFalsyError,
-    parameterName: 'Name',
-    errorMessage: 'Message',
     defaultMessage: undefined,
+    errorMessage: 'Message',
+    parameterName: 'Name',
+    test: t,
   });
 });
 
@@ -68,11 +68,11 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentFalsyError,
-    parameterName: undefined,
-    errorMessage: 'Message',
     defaultMessage: undefined,
+    errorMessage: 'Message',
+    parameterName: undefined,
+    test: t,
   });
 });
 
@@ -86,10 +86,10 @@ test(
 
   t.plan(2);
   testArgumentError({
-    test: t,
     classConstructor: ArgumentFalsyError,
-    parameterName: undefined,
-    errorMessage: undefined,
     defaultMessage: 'Argument must have a truthy value. Yours does not',
+    errorMessage: undefined,
+    parameterName: undefined,
+    test: t,
   });
 });

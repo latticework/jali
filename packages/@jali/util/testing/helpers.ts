@@ -29,11 +29,11 @@ export function makeTitleFunc(epic: ProductEpic, pkg: RepoPackage, targetName: s
       description: string,
       disposition: TestDisposition = TestDisposition.Positive
     ) => makeTitle({
-      type: type,
+      description: description,
       disposition: disposition,
       epic: epic,
-      package: pkg,
       functionName: `${targetName ? `${targetName}﹍` : ''}${functionName}`,
-      description: description,
+      package: pkg,
+      type: type,
     } as TestDescription);
 }

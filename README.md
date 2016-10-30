@@ -4,10 +4,9 @@ Specification-driven serverless microservice DevOps framework and infrastructure
 <!-- badges -->
 [//]: # ([![NPM version][npm-image]][npm-url])
 
-<!--
-Need table?
-[![NPM version](https://img.shields.io/npm/v/nyc.svg)](https://www.npmjs.com/package/nyc)
--->
+[//]: - (Need table?)
+[//]: - ([![NPM version](https://img.shields.io/npm/v/nyc.svg)](https://www.npmjs.com/package/nyc))
+
 
 [![OpenHub stats](https://www.openhub.net/p/jali/widgets/project_thin_badge.gif)](https://www.openhub.net/p/jali)
 [![project status](https://img.shields.io/badge/project_status-pre--alpha-AA0114.svg)](https://github.com/latticework/jali/milestones)

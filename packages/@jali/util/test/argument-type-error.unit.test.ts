@@ -28,10 +28,10 @@ test(
   t.plan(2);
 
   testArgumentTypeError({
+    errorMessage: 'Message',
+    parameterName: 'Name',
     test: t,
     type: 'number',
-    parameterName: 'Name',
-    errorMessage: 'Message',
   });
 });
 
@@ -50,10 +50,10 @@ test(
   t.plan(2);
 
   testArgumentTypeError({
+    errorMessage: 'Message',
+    parameterName: 'Name',
     test: t,
     type: 'number',
-    parameterName: 'Name',
-    errorMessage: 'Message',
   });
 });
 
@@ -68,10 +68,10 @@ test(
   t.plan(2);
 
   testArgumentTypeError({
+    errorMessage: 'Message',
+    parameterName: undefined,
     test: t,
     type: 'number',
-    parameterName: undefined,
-    errorMessage: 'Message',
   });
 });
 
@@ -86,9 +86,9 @@ test(
   t.plan(2);
 
   testArgumentTypeError({
+    errorMessage: undefined,
+    parameterName: undefined,
     test: t,
     type: 'number',
-    parameterName: undefined,
-    errorMessage: undefined,
   });
 });
