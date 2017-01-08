@@ -1,3 +1,3 @@
 source 'https://supermarket.chef.io'
 
-cookbook 'main', path: './site-cookbooks/main'
+cookbook 'main', '~> 0.1.1', path: './site-cookbooks/main'

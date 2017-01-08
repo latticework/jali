@@ -84,6 +84,7 @@ if ::Dir.exist?('/usr/share/code/')
   Chef::Log.info('(up to date)')
 else
   remote_file "#{Chef::Config[:file_cache_path]}/visual-studio-code.deb" do
+    # or http://code.visualstudio.com/docs/?dv=linux64_deb ?
     source 'https://go.microsoft.com/fwlink/?LinkID=760868'
     mode 0644
   end
@@ -103,10 +104,6 @@ end
 
 # Set shell functions and aliases
 file '/home/vagrant/.bash_aliases' do
-  # Verfiy that --disable-gpu is needed on distros other than Ubuntu 14.04
-  content <<-EOH
-  code () { command -p code "$@" --disable-gpu ; }
-  EOH
 end
 
 # Set up project

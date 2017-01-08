@@ -2,16 +2,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-
 # For examples on parameterizing see:
 # http://stackoverflow.com/questions/13065576/override-vagrant-configuration-settings-locally-per-dev
 
-
 Vagrant.configure(2) do |config|
-  # Ubuntu Server 14.04 LTS
-  config.vm.box = 'box-cutter/ubuntu1404-desktop'
   # Ubuntu Server 16.04 LTS
-  # config.vm.box = 'box-cutter/ubuntu1604-desktop'
+  config.vm.box = 'box-cutter/ubuntu1604-desktop'
 
   config.vm.provider 'virtualbox' do |vb|
   end
