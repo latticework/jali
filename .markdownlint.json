@@ -1,0 +1,19 @@
+{
+  "default": true,
+  "MD003": { "style": "atx" },
+  "MD004": { "style": "dash" },
+  "MD007": { "indent": 2 },
+  "MD013": {
+    "code_blocks": false,
+    "line_length": 72,
+    "tables": false
+  },
+  "MD029": { "style": "one" },
+  "MD030": {
+    "ol_multi": 1,
+    "ol_single": 1,
+    "ul_multi": 1,
+    "ul_single": 1
+  },
+  "MD035":{ "style": "---"}
+}

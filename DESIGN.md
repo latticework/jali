@@ -5,10 +5,13 @@
 
 The **Jali** repository is designed to provide a uniform development
 and execution environment for polyglot development of Jali packages
-and programs within different PC Platforms, such as Windows, Mac, and
+and programs within different OS Platforms, such as Windows, Mac, and
 Linux distros.
 
+<!-- markdownlint-disable MD004 -->
+
 > ## Table Of Contents
+>
 > - [Development philosophy](#jali-development-philosophy)
 >   - [Bootstrapping](#bootstrapping)
 >   - [Modules](#modules)
@@ -22,6 +25,7 @@ Linux distros.
 > - Development guest configuration
 > - Jali build process
 
+<!-- markdownlint-enable MD004 -->
 
 ## Introduction
 
@@ -46,15 +50,15 @@ single, modular tool that provides the full DevOps stack with a
 single tool-set. The toolset provides abstracted commands that is
 implemented by plug-ins for different technologies and languages.
 
-The key for Jail is to bring the DevOps process up to a 
+The key for Jail is to bring the DevOps process up to a
 semantic level to democratize access to microservices, regardless of
 chosen language, platform, configuration management tool, cloud
 provider, deployment orchestrator, or monitoring toolset.
 
-It does not necessarily provide interchagable access to every technology
-but allows the project team to pick or migrate to technologies that
-may be different from other teams but maintain the same toolset and
-microservice configuration and support.
+It does not necessarily provide interchangeable access to every
+technology but allows the project team to pick or migrate to
+technologies that may be different from other teams but maintain the
+same toolset and microservice configuration and support.
 
 Initial implementation will be for JavaScript and golang, with support
 for dotnet and others to follow.
@@ -173,4 +177,5 @@ Respectively, these plugins install Chef into the vagrant guest machine
 and execute Berkshelf files on those guest machines.
 
 #### Vagrantfile layout
+
 The [Vagrantfile](./Vagrantfile)

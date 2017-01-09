@@ -2,23 +2,29 @@
 
 [//]: # (Keep lines to 72 characters to leave room for the preview     )
 [//]: # (pane.                                                         )
+<!-- cSpell:ignore polsedit, polseditx, secpol, vistauac -->
 
 Provides contribution requirements, contribution guidelines, and
 onboarding information.
 
+<!-- markdownlint-disable MD004 -->
+
 > ## Table Of Contents
-> * [Getting Started](#getting-started)
->   * [Prerequisites](#prerequisites)
->     * [Prerequisites for NodeJS users](#prerequisites-for-nodejs-users)
->   * [Setup](#setup)
-> * [Contribution Requirements](#contribution-requirements)
-> * [Contribution Guidelines](#contribution-guidelines)
->   * [Triage](#triage)
->   * [Emoji](#emoji)
->   * [Commit message guidelines](#commit-message-guidelines)
-> * [Issue states](#issue-states)
-> * [Pull Request type](#pull-request-type)
-> * [Pull Request states](#pull-request-states)
+>
+> - [Getting Started](#getting-started)
+>   - [Prerequisites](#prerequisites)
+>     - [Prerequisites for NodeJS users](#prerequisites-for-nodejs-users)
+>   - [Setup](#setup)
+> - [Contribution Requirements](#contribution-requirements)
+> - [Contribution Guidelines](#contribution-guidelines)
+>   - [Triage](#triage)
+>   - [Emoji](#emoji)
+>   - [Commit message guidelines](#commit-message-guidelines)
+> - [Issue states](#issue-states)
+> - [Pull Request type](#pull-request-type)
+> - [Pull Request states](#pull-request-states)
+
+<!-- markdownlint-enable MD004 -->
 
 ## Getting Started
 
@@ -30,7 +36,7 @@ onboarding information.
 
     1. Install [**ChefDK**](https://downloads.chef.io/chef-dk/)
 
-       * For Windows 10, use the Windows 2012r2 x68_64 download
+       - For Windows 10, use the Windows 2012r2 x68_64 download
 
     1. Install the Chef **vagrant-omnibus** Vagrant plugin
 
@@ -42,6 +48,7 @@ onboarding information.
 
 #### Prerequisites for NodeJS users
 
+<!-- markdownlint-disable MD004 -->
 > On **Windows 10** you need to be a part of the `Administrators` group
 > and always run `vagrant` from a console as administrator. You possibly
 > can add the `SeCreateSymbolicLinkPrivilege` to your account. However
@@ -61,11 +68,13 @@ onboarding information.
 > To add privileges to create simlinks:
 >
 > 1. Open a windows security policy editor
->    * On **Windows 10 Professional or Enterprise** open `secpol.msc`
->    * On **Windows 10 Home** download `polsedit` from
+>    - On **Windows 10 Professional or Enterprise** open `secpol.msc`
+>    - On **Windows 10 Home** download `polsedit` from
 >      [here](http://www.southsoftware.com/)
 >      and open `polseditx64.exe`
 > 1. Add your user to `SeCreateSymbolicLinkPrivilege`
+
+<!-- markdownlint-enable MD004 -->
 
 ### Setup
 
@@ -114,6 +123,9 @@ title in the order Issue Type, Commit Type, Issue Status separated by a
 single space. Until the issue is triaged only the issue type should be
 included. If possible, always use the Unicode symbol.
 
+> Note: In the future, the emoji will be maintained automatically using
+> a bot such as [mary-poppins].
+
 ### Commit message guidelines
 
 Use the proper commit type emoji. Allowed commit types and the
@@ -161,5 +173,6 @@ markdown document.
 | Merged | 💋 | `:kiss:` |
 | Closed | 🚫 | `:no_entry_sign:` |
 
+[mary-poppins]: https://github.com/btford/mary-poppins
 [StackOverflow]: http://stackoverflow.com/questions/tagged/jali
 [vistauac_topic3]: https://msdn.microsoft.com/en-us/library/bb530410.aspx#vistauac_topic3
