@@ -30,7 +30,7 @@
   "dependencies": {
     "core-js": "^2.4.0",
     "systemjs": "^0.19.30",
-    "zone.js": "^0.6.12"
+    "zone.js": "^0.7.5"
   },
   "devDependencies": {
     "blue-tape": "^0.2.0",
