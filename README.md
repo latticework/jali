@@ -2,7 +2,7 @@
 
 [//]: # (Keep lines to 72 characters to leave room for the preview     )
 [//]: # (pane.                                                         )
-<!-- cSpell:ignore atlassian, cirkel, gitter, lerna -->
+<!-- cSpell:ignore atlassian, cirkel, clas, gitter, lerna -->
 
 Specification-driven serverless microservice DevOps framework and
 infrastructure [http://jali-ms.io/](http://jali-ms.io/)

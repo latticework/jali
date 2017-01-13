@@ -480,7 +480,7 @@ export function reduce<T>(
       currentValue: T,
       currentIndex: number,
       sequence: Iterable<T>) => T,
-    initialValue?: T): T
+    initialValue?: T): T;
 export function reduce<T, U>(
     sequence: Iterable<T>,
     accumulator: (
@@ -488,7 +488,7 @@ export function reduce<T, U>(
       currentValue: T,
       currentIndex: number,
       sequence: Iterable<T>) => U,
-    initialValue: U): U
+    initialValue: U): U;
 /* tslint:disable:max-line-length */
 /**
  * Aggregates a sequence to a single computed element value.

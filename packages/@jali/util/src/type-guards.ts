@@ -7,9 +7,10 @@ export function isError(value: any): value is Error {
 }
 
 export function makeIsIterable<T>(
-  elementTypeGuard: (element: any) => boolean, deep?: boolean): (value: any) => value is Iterable<T>
+  elementTypeGuard: (element: any) => boolean, deep?: boolean):
+  (value: any) => value is Iterable<T>;
 export function makeIsIterable<T>(
-  elementTest: (element: any) => boolean, deep?: boolean): (value: any) => value is Iterable<T>
+  elementTest: (element: any) => boolean, deep?: boolean): (value: any) => value is Iterable<T>;
 export function makeIsIterable<T>(
   elementTypeGuard: any, deep = false):
     (value: any) => value is Iterable<T> {
