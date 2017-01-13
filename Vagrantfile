@@ -12,7 +12,6 @@ Vagrant.configure(2) do |config|
   config.vm.provider 'virtualbox' do |vb|
   end
 
-
   # Install the latest version of Chef.
   # For more information see https://github.com/chef/vagrant-omnibus
   #
@@ -32,7 +31,6 @@ Vagrant.configure(2) do |config|
     # Add a recipe
     chef.add_recipe 'main::default'
   end
-
 
   # See: http://stackoverflow.com/a/20431791
   # Seealso: http://friendsofvagrant.github.io/v1/docs/config/vm/define.html

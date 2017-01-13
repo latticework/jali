@@ -20,7 +20,7 @@ infrastructure [http://jali-ms.io/](http://jali-ms.io/)
 [![Gitter](https://badges.gitter.im/latticework/jali.svg)](https://gitter.im/latticework/jali?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Build Status](https://semaphoreci.com/api/v1/latticework/jali/branches/master/shields_badge.svg)](https://semaphoreci.com/latticework/jali)
 
-<!-- markdownlint-disable MD004 -->
+<!-- markdownlint-disable ul-style -->
 
 > ## Table of Contents
 >
@@ -31,7 +31,7 @@ infrastructure [http://jali-ms.io/](http://jali-ms.io/)
 >   - [Cloud development tools](#cloud-development-tools)
 >   - [NodeJS Development Tools](#nodejs-development-tools)
 
-<!-- markdownlint-enable MD004 -->
+<!-- markdownlint-enable ul-style -->
 
 ## Introduction
 
@@ -91,7 +91,7 @@ some of these technologies.
       Studio Code
     - [code-spell-checker] Spelling checker for source code
     - Many more. See `clavecoder's` Visual Studio Code Sync Settings
-      [clavecoder-extensions] file for a full list of useful Visual 
+      [clavecoder-extensions] file for a full list of useful Visual
       Studio Code extensions.
 - [JaliDev] seed project for providing team-consistent development
   environments using the

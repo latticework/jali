@@ -80,7 +80,7 @@ test(
 
   // arrange
   const expected = true;
-  const value = [];
+  const value: any[] = [];
   const target = TypeGuards;
 
   // act
@@ -136,7 +136,7 @@ test(
     ((value: any) => typeof value === 'number') as (value: any) => value is number;
 
   const deep = undefined;
-  const value = [];
+  const value: any[] = [];
   const target = TypeGuards;
 
   // act
@@ -256,7 +256,7 @@ test(
     ((value: any) => typeof value === 'number') as (value: any) => value is number;
 
   const deep = true;
-  const value = [];
+  const value: any[] = [];
   const target = TypeGuards;
 
   // act

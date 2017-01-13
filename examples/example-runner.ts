@@ -1,3 +1,5 @@
+// cSpell:ignore readdir ᴇxᴀᴍᴩʟᴇ ᴏᴜᴛᴩᴜᴛ
+
 import 'reflect-metadata';
 
 import * as path from 'path';
@@ -29,7 +31,7 @@ export default class ExampleRunner {
   }
 
   public run(): boolean {
-    const glob = glob_fs({gitignore: true/*, realpath: true*/});
+    const glob = glob_fs({gitignore: true/*, realPath: true*/});
 
     const errors: string[] = [];
 

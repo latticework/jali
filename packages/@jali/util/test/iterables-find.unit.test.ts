@@ -26,7 +26,7 @@ test(
   await Promise.resolve();
 
   // arrange
-  const sequence = [];
+  const sequence: any[] = [];
   const expected = undefined;
   const target = Iterables;
 

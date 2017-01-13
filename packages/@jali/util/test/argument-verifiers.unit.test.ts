@@ -1010,7 +1010,7 @@ test(
 
   // arrange
   const name = 'Name';
-  const value = [];
+  const value: any[] = [];
   const message = undefined;
   const target = ArgumentVerifiers;
 
@@ -1102,7 +1102,7 @@ test(
   // arrange
   const name = 'Name';
   const message = 'Message';
-  const value = [];
+  const value: any[] = [];
   const target = ArgumentVerifiers;
 
   // act
@@ -1755,13 +1755,13 @@ test(
   // arrange
   const name = 'Name';
   const message = 'Message';
-  const messgeFn = () => message;
+  const messageFn = () => message;
   const value = 0;
   const expectedError = new ArgumentZeroError(name, message);
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, messgeFn);
+  const action = () => target.verifyNonZero(name, value, messageFn);
 
   // assert
   t.plan(3);

@@ -8,7 +8,7 @@ and execution environment for polyglot development of Jali packages
 and programs within different OS Platforms, such as Windows, Mac, and
 Linux distros.
 
-<!-- markdownlint-disable MD004 -->
+<!-- markdownlint-disable ul-style -->
 
 > ## Table Of Contents
 >
@@ -25,7 +25,7 @@ Linux distros.
 > - Development guest configuration
 > - Jali build process
 
-<!-- markdownlint-enable MD004 -->
+<!-- markdownlint-enable ul-style -->
 
 ## Introduction
 

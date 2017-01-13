@@ -1,16 +1,13 @@
 # Cookbook Name:: main
 # Recipe:: default
 
-
 # Run apt-update
 include_recipe 'apt::default'
-
 
 # Install gksudo
 apt_package 'gksu' do
   action :install
 end
-
 
 # Install Docker
 docker_service 'default' do
@@ -61,7 +58,6 @@ else
     action :install
   end
 end
-
 
 # Install Sphinx documentation generator
 # http://stackoverflow.com/a/23922391

@@ -30,7 +30,7 @@ test(
 
   // arrange
   const expected = false;
-  const target = [];
+  const target: any[] = [];
 
   // act
   const actual = Iterables.some(target);

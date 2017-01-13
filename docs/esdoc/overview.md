@@ -1,19 +1,35 @@
+<!-- markdownlint-disable first-line-h1 first-header-h1 -->
+
 ## Packages
+
+[//]: # (Keep lines to 72 characters to leave room for the preview     )
+[//]: # (pane.                                                         )
+<!-- cSpell:ignore polsedit, polseditx, secpol, vistauac -->
+
+<!-- markdownlint-disable no-inline-html -->
 
 |Package|Description|Modules|
 |:-|:-|:-|
 |[@jali/core](overview.html#package-jali-core)|framework-level utilities|`@jali/core`<br>`@jali/core/iterables`<br>`@jali/core/type-guards`|
 |[@jali/util](overview.html#package-jali-util)|language-level utilities|`@jali/util`<br>`@jali/util/errors`<br>`@jali/util/iterables`<br>`@jali/util/type-guards`|
 
+<!-- markdownlint-enable no-inline-html -->
+
 ## Package @jali/core
+
 _Back to [Packages](overview.html#packages)_
 
-Provides framework-level utilities such as notification messages and structured errors.
+Provides framework-level utilities such as notification messages and
+structured errors.
 
 ## Package @jali/util
+
 _Back to [Packages](overview.html#packages)_
 
-Provides language-level utilities such as parameter verification and common `Iterable` functions.
+Provides language-level utilities such as parameter verification and
+common `Iterable` functions.
+
+<!-- markdownlint-disable no-inline-html -->
 
 |Export|Description|
 |:-|:-|
@@ -21,8 +37,13 @@ Provides language-level utilities such as parameter verification and common `Ite
 |Iterables|Re-export of [`@jali/util/iterables`](overview.html#module-jali-util-iterables)|
 |TypeGuards|Re-export of [`@jali/util/type-guards`](overview.html#module-jali-util-type-guards)|
 
+<!-- markdownlint-enable no-inline-html -->
+
 ### Module @jali/util/errors
+
 _Back to [Package @jali/util](overview.html#package-jali-util)_
+
+<!-- markdownlint-disable no-inline-html -->
 
 |Export|Description|
 |:-|:-|
@@ -51,6 +72,7 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 |[verifyTrue]|Throws an error if the specified argument value is not a boolean with the value 'true'.|
 |[verifyTruthy]|Throws an error if the specified argument value is not _truthy_.|
 
+<!-- markdownlint-enable no-inline-html -->
 
 [ArgumentEmptyStringError]: ../class/all/@jali/util/src/argument-empty-string-error.js~ArgumentEmptyStringError.html
 [ArgumentError]: ../class/all/@jali/util/src/argument-error.js~ArgumentError.html
@@ -77,9 +99,11 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 [verifyTrue]: ../function/index.html#static-function-verifyTrue
 [verifyTruthy]: ../function/index.html#static-function-verifyTruthy
 
-
 ### Module @jali/util/iterables
+
 _Back to [Package @jali/util](overview.html#package-jali-util)_
+
+<!-- markdownlint-disable no-inline-html -->
 
 |Export|Description|
 |:-|:-|
@@ -96,6 +120,8 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 |[some]|Returns a value indicating whether any of the elements of a sequence pass the specified test.|
 |[toMap]|Converts a sequence to a `Map` using the specified key selector function.|
 
+<!-- markdownlint-enable no-inline-html -->
+
 [asArray]: ../function/index.html#static-function-asArray
 [asIterable]: ../function/index.html#static-function-asIterable
 [concat]: ../function/index.html#static-function-concat
@@ -110,7 +136,10 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 [toMap]: ../function/index.html#static-function-toMap
 
 ### Module @jali/util/type-guards
+
 _Back to [Package @jali/util](overview.html#package-jali-util)_
+
+<!-- markdownlint-disable no-inline-html -->
 
 |Export|Description|
 |:-|:-|
@@ -118,7 +147,8 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 |[isIterable]||
 |[makeIsIterable]||
 
+<!-- markdownlint-enable no-inline-html -->
+
 [isError]: ../function/index.html#static-function-isError
 [isIterable]: ../function/index.html#static-function-isIterable
 [makeIsIterable]: ../function/index.html#static-function-makeIsIterable
-

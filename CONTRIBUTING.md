@@ -7,7 +7,7 @@
 Provides contribution requirements, contribution guidelines, and
 onboarding information.
 
-<!-- markdownlint-disable MD004 -->
+<!-- markdownlint-disable ul-style -->
 
 > ## Table Of Contents
 >
@@ -24,7 +24,7 @@ onboarding information.
 > - [Pull Request type](#pull-request-type)
 > - [Pull Request states](#pull-request-states)
 
-<!-- markdownlint-enable MD004 -->
+<!-- markdownlint-enable ul-style -->
 
 ## Getting Started
 
@@ -48,7 +48,7 @@ onboarding information.
 
 #### Prerequisites for NodeJS users
 
-<!-- markdownlint-disable MD004 -->
+<!-- markdownlint-disable ul-style -->
 > On **Windows 10** you need to be a part of the `Administrators` group
 > and always run `vagrant` from a console as administrator. You possibly
 > can add the `SeCreateSymbolicLinkPrivilege` to your account. However
@@ -74,7 +74,7 @@ onboarding information.
 >      and open `polseditx64.exe`
 > 1. Add your user to `SeCreateSymbolicLinkPrivilege`
 
-<!-- markdownlint-enable MD004 -->
+<!-- markdownlint-enable ul-style -->
 
 ### Setup
 

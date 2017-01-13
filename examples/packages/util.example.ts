@@ -1,3 +1,4 @@
+// cSpell:ignore asiterable tomap
 // import * as path from 'path';
 
 import * as Util from '@jali/util';
