@@ -55,10 +55,12 @@
         "shortcode",
         "simd",
         "simlinks",
+        "srcs",
         "submodule",
         "transpilation",
         "triaged",
         "toolset",
+        "typeguard",
         "truthy",
         "vagrantfile",
         "validators"

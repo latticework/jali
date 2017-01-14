@@ -114,7 +114,7 @@
     "cpy-cli": "^1.0.1",
     "dgeni": "^0.4.2",
     "dgeni-packages": "^0.16.4",
-    "esdoc": "^0.5.2",
+    "esdoc": "^0.4.8",
     "eslint": "^3.13.1",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",

@@ -23,6 +23,24 @@ Linux distros.
 > - [Development host configuration](#development-host-configuration)
 >   - [Vagrant configuration](#vagrant-configuration)
 > - Development guest configuration
+>   - Chef
+>   - NodeJs
+>   - Sphinx
+>   - Editors
+>     - Visual Studio Code configuration
+> - Project configuration
+>   - Folder Structure
+>   - `npm` project configuration
+>   - TypeScript configuration
+>   - `esdoc` configuration
+>   - Linters
+>     - `tslint` configuration
+>     - `eslint` configuration
+>     - `markdownlint` configuration
+>   - Babel configuration
+>   - `webpack` configuration
+>   - Editor configuration
+>     - Visual Studio Code configuration
 > - Jali build process
 
 <!-- markdownlint-enable ul-style -->
