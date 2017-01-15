@@ -20,11 +20,11 @@ remove others.
 >   - [Commit types](#commit-types)
 > - [Template Form Decision Tree](#template-form-decision-tree)
 > - [Template Forms](#template-forms)
->   - [Question](#question-question)
->   - [Idea](#idea-bulb)
->   - [Bug](#bug-beetle)
->   - [Enhancement](#enhancement-arrow_forward)
->   - [Epic](#epi-movie_camera)
+>   - [Question](#question--question)
+>   - [Idea](#idea--bulb)
+>   - [Bug](#bug--beetle)
+>   - [Enhancement](#enhancement--arrow_forward)
+>   - [Epic](#epic--movie_camera)
 
 ## General Instructions
 
@@ -66,7 +66,7 @@ Use the following decision tree to choose the appropriate form:
    **(E)**, if a bug report, go to **(F)**; otherwise, go to **(H)**.
 1. **(E)** You are a `contributor` asking a question. Go to **(J)**.
 1. **(F)** Do you have enough details to complete the `Bug` form? If
-   yes, go to **(G)**; otherwise, go to **(E)**.
+   yes, go to **(G)**; otherwise, go to **(J)**.
 1. **(G)** You are a `contributor` entering a bug report. If you are a 
    `core-contributor` go to **(L)**; otherwise, go to **(J)**.
 1. **(H)** You are a `contributor` wanting an enhancement. Do you you
@@ -80,9 +80,9 @@ Use the following decision tree to choose the appropriate form:
    for questions, create a StackOverflow question; otherwise, create a
    [Question](#question-❓-question).
    ❌
-1. **(K)** Create an [Idea](#idea-bulb). ❌
-1. **(L)** Create a [Bug](#bug-beetle). ❌
-1. **(M)** Create an [Enhancement](#enhancement-arrow_forward). ❌
+1. **(K)** Create an [Idea](#idea--bulb). ❌
+1. **(L)** Create a [Bug](#bug--beetle). ❌
+1. **(M)** Create an [Enhancement](#enhancement--arrow_forward). ❌
 1. **(N)** Create an [Epic](#epic-movie_camera). ❌
 
 
