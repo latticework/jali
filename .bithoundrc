@@ -3,7 +3,7 @@
     "lint": {"engine": "none"},
     "wc": { "limit": 5000 }
   },
-    "ignore": [
+  "ignore": [
     "**/node_modules/**",
     "build/**",
     "config/**",
@@ -16,6 +16,13 @@
   ],
   "test": [
     "**/test/**",
-    "**/spec/**"
-  ]
+    "**/tests/**",
+    "**/spec/**",
+    "**/specs/**"
+  ],
+  "dependencies": {
+    "mute": [
+      "esdoc"
+    ]
+  }
 }
