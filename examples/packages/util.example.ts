@@ -1,19 +1,19 @@
 // cSpell:ignore asiterable tomap
 // import * as path from 'path';
 
-import * as Util from '@jali/util';
-import * as Errors from '@jali/util/errors';
-import { verifyArgument, verifyTruthy } from '@jali/util/errors';
-import * as Iterables from '@jali/util/iterables';
-import * as TypeGuards from '@jali/util/type-guards';
+import * as Util from '@jali-ms/util';
+import * as Errors from '@jali-ms/util/errors';
+import { verifyArgument, verifyTruthy } from '@jali-ms/util/errors';
+import * as Iterables from '@jali-ms/util/iterables';
+import * as TypeGuards from '@jali-ms/util/type-guards';
 
 import Example from '../example';
 import ExampleContext from '../example-context'
 
-@Example('@jali/util')
+@Example('@jali-ms/util')
 export default class jali_util {
 
-  @Example('@jali/util', '@jali/util/errors')
+  @Example('@jali-ms/util', '@jali-ms/util/errors')
   public jali_util_errors(writer: ExampleContext): void {
     // Demonstrates verifying function arguments for low-level libraries. In service operations,
     // use Jali Notification Messages instead.
@@ -71,7 +71,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.asArray
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'asArray')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'asArray')
   public jali_util_iterators_asarray(writer: ExampleContext): void {
     writer.logIndented(2, `number to number[]`, '①');
 
@@ -112,7 +112,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.asIterable
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'asIterable')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'asIterable')
   public jali_util_iterators_asiterable(writer: ExampleContext): void {
     writer.logIndented(2, `undefined to Iterable<number>`, '①');
 
@@ -153,7 +153,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.concat
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'concat')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'concat')
   public jali_util_iterators_concat(writer: ExampleContext): void {
     writer.logIndented(2, `Concatenate three sequences.`, '①');
     const weekendDays = ['Sunday', 'Saturday'];
@@ -166,7 +166,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.every
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'every')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'every')
   public jali_util_iterators_every(writer: ExampleContext): void {
     writer.logIndented(2, `Test for only even numbers`, '①');
 
@@ -193,7 +193,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.filter
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'filter')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'filter')
   public jali_util_iterators_filter(writer: ExampleContext): void {
     writer.logIndented(2, `Select even numbers`, '①');
 
@@ -220,7 +220,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.find
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'find')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'find')
   public jali_util_iterators_find(writer: ExampleContext): void {
     writer.logIndented(2, `Find first element divisible by 5`, '①');
 
@@ -257,7 +257,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.includes
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'includes')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'includes')
   public jali_util_iterators_includes(writer: ExampleContext): void {
     writer.logIndented(2, `Find an element`, '①');
 
@@ -279,7 +279,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.map
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'map')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'map')
   public jali_util_iterators_map(writer: ExampleContext): void {
     writer.logIndented(2, `Transform to objects`, '①');
 
@@ -305,7 +305,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.reduce
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'reduce')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'reduce')
   public jali_util_iterators_reduce(writer: ExampleContext): void {
     writer.logIndented(2, `Compute average`, '①');
 
@@ -328,7 +328,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.slice
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'slice')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'slice')
   public jali_util_iterators_slice(writer: ExampleContext): void {
     writer.logIndented(2, `Get paged data from a store`, '①');
 
@@ -375,7 +375,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.some
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'some')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'some')
   public jali_util_iterators_some(writer: ExampleContext): void {
     writer.logIndented(2, `Determine if any element is divisible by 5`, '①');
 
@@ -412,7 +412,7 @@ export default class jali_util {
   /**
    * @/jali/util/iterables.toMap
    */
-  @Example('@jali/util', '@jali/util/iterators', 'Iterables', 'toMap')
+  @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'toMap')
   public jali_util_iterators_tomap(writer: ExampleContext): void {
     writer.logIndented(2, `Entities mapped by id`, '①');
 

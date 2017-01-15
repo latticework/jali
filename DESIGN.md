@@ -150,7 +150,7 @@ packages. In the future it will support polyglot development with
 golang and other platforms hosted in the same repo.
 
 > You can see the packages in the
-> [packages/@jali](https://github.com/latticework/jali/tree/master/packages/@jali)
+> [packages/@jali-ms](https://github.com/latticework/jali/tree/master/packages/@jali-ms)
 > folder.
 
 ### Security and management

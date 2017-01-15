@@ -10,8 +10,8 @@
     "coverage/**",
     "dist/**",
     "examples/**",
-    "packages/@jali/core/**",
-    "packages/@jali/note/**",
+    "packages/@jali-ms/core/**",
+    "packages/@jali-ms/note/**",
     "webpackfile.js"
   ],
   "test": [
