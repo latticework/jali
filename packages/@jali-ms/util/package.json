@@ -4,7 +4,7 @@
     "See https://docs.npmjs.com/files/package.json"
   ],
   "name": "@jali-ms/util",
-  "version": "0.0.1-prealpha.2",
+  "version": "0.0.1",
   "description": "Language level utilities for the Jali microservice platform.",
   "keywords": [
     "jali",
