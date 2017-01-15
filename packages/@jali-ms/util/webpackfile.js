@@ -64,6 +64,8 @@ module.exports = function(options) {
     },
     output: {
       filename: '[name].umd.js',
+      // http://stackoverflow.com/a/38290798/2240669
+      libraryTarget: 'umd',
       path: distBundleDir,
     },
     plugins: [
