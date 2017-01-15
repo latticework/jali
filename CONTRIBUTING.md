@@ -26,6 +26,10 @@ onboarding information.
 
 <!-- markdownlint-enable ul-style -->
 
+This document explains how to contribute to the Jali project. For an
+introduction to Jali, see [README.md](./README.md). To understand the
+design of the Jali project, see [DESIGN.md](./DESIGN.md).
+
 ## Getting Started
 
 ### Prerequisites
@@ -79,18 +83,21 @@ onboarding information.
 ### Setup
 
 1. Clone `jali`
-
    > `git clone https://github.com/latticework/jali.git`
 1. Open a console window (perhaps as Administrator), cd to the project
    folder and run Vagrant
-
    > `vagrant up`
 1. Wait for Vagrant and Chef initializations to complete before using the
    virtual machine.
 1. In the jali VM, cd to `/vagrant` and start developing or use
    **vagrant ssh**
-
    > `vagrant ssh`
+
+1. Initialize `npm`.
+   > `npm install`
+
+1. Build Jali.
+   > `npm test`
 
 ## Contribution Requirements
 
@@ -99,9 +106,19 @@ To contribute you must sign the
 
 ## Contribution Guidelines
 
+### Creating issues
+
+For `non-contributors` and `contributors`, Jali issues consist of
+`Questions` and `Ideas`. Only a `core-contributor` should create a
+`Bug`, `Enhancement`, or `Epic`. Please follow
+[ISSUE-TEMPLATE-INSTRUCTIONS.md](./ISSUE-TEMPLATE-INSTRUCTIONS.md) when
+creating a Jali issue. It provides detailed instructions and a
+systematic [decision tree](./ISSUE-TEMPLATE-INSTRUCTIONS.md#template-form-decision-tree)
+to determine which issue form you should create.
+
 ### Triage
 
-A core contributor will triage **Question** or **Idea** issues. A
+A `core-contributor` will triage **Question** or **Idea** issues. A
 **Question** is triaged by either suggesting the user post the question
 on StackOverflow or by answering the question. The question may result
 in the creation of **Bug** or **Enhancement** issues; or it may simply
@@ -109,14 +126,14 @@ be closed.
 
 An **Idea** is triaged by either putting it in the **Icebox** ZenHub
 pipeline until more points accumulate or by the creation of **Bug** or
-**Enhancement** issues.
+**Enhancement** issues. It also may simply be closed.
 
-A **Bug** and **Enhancement** issue is triaged by moving it to the
+A **Bug** or **Enhancement** issue is triaged by moving it to the
 **Icebox** or **Backlog** ZenHub pipeline or by closing it.
 
 ### Emoji
 
-Jali projects embrace the use of emoji in GitHub to facilitate
+The Jali project embraces the use of emoji in GitHub to facilitate
 communication. The emoji sets are used to identify issue type, commit
 type, and issue status. These emoji are placed at the end of the issue
 title in the order Issue Type, Commit Type, Issue Status separated by a
@@ -129,49 +146,51 @@ included. If possible, always use the Unicode symbol.
 ### Commit message guidelines
 
 Use the proper commit type emoji. Allowed commit types and the
-corresponding emoji. Use the Unicode character if you can. You can copy
-the actual Unicode character by viewing the raw version of this
-markdown document.
+corresponding emoji are listed below. Use the Unicode character, if
+possible, rather than the GitHub shortcode. You can copy the actual
+Unicode character by viewing the raw version of this markdown document.
+
+### Commit types
 
 | Commit Type Code | Unicode Emoji | GitHub Shortcode |
 |:--|:-:|:--|
-| feat | ✨ | `:sparkles:` |
-| fix | 🔧 | `:wrench:` |
-| docs | 📄 | `:page_facing_up:` |
-| style | 💄 | `:lipstick:` |
+| feat     | ✨ | `:sparkles:` |
+| fix      | 🔧 | `:wrench:` |
+| docs     | 📄 | `:page_facing_up:` |
+| style    | 💄 | `:lipstick:` |
 | refactor | 📐 | `:triangular_ruler:` |
-| perf | 🏃 | `:running:` |
-| test | 🔬 | `:microscope:` |
-| chore | 🔨 | `:hammer:` |
+| perf     | 🏃 | `:running:` |
+| test     | 🔬 | `:microscope:` |
+| chore    | 🔨 | `:hammer:` |
 
 ### Issue states
 
 | Issue State | Unicode Emoji | GitHub Shortcode |
-|:--|:-:|:--|
-| New | 🎁 | `:gift:` |
-| Icebox | 💤 | `:zzz:` |
-| Backlog | ☰ | N/A |
+|:-|:-:|:-|
+| New         | 🎁 | `:gift:` |
+| Icebox      | 💤 | `:zzz:` |
+| Backlog     | ☰ | N/A |
 | In Progress | 🚶 | `:walking:` |
-| Review/QA | ⚖ | N/A |
-| Done | ☑️ |`:ballot_box_with_check:` |
-| Closed | TBD | TBD |
+| Review/QA   | ⚖ | N/A |
+| Done        | ☑️ |`:ballot_box_with_check:` |
+| Closed      | TBD | TBD |
 
 ### Pull Request type
 
 | PR State | Unicode Emoji | GitHub Shortcode |
 |:--|:-:|:--|
 | fast-forward | 🔃 | `:arrows_clockwise:` |
-| merge | 🔀 | `:twisted_rightwards_arrows:` |
-| revert | 🔄 | `:arrows_counterclockwise:` |
+| merge        | 🔀 | `:twisted_rightwards_arrows:` |
+| revert       | 🔄 | `:arrows_counterclockwise:` |
 
 ### Pull Request states
 
 | PR State | Unicode Emoji | GitHub Shortcode |
-|:--|:-:|:--|
-| New | 🎁 | `:gift:` |
+|:-|:-:|:-|
+| New       | 🎁 | `:gift:` |
 | Review/QA | ⚖ | N/A |
-| Merged | 💋 | `:kiss:` |
-| Closed | 🚫 | `:no_entry_sign:` |
+| Merged    | 💋 | `:kiss:` |
+| Closed    | 🚫 | `:no_entry_sign:` |
 
 [mary-poppins]: https://github.com/btford/mary-poppins
 [StackOverflow]: http://stackoverflow.com/questions/tagged/jali

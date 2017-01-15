@@ -51,6 +51,7 @@
         "provisioners",
         "relavent",
         "repo",
+        "semver",
         "serverless",
         "shortcode",
         "simd",

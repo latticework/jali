@@ -129,13 +129,13 @@ some of these technologies.
   JavaScript language
   - See [ECMASCRIPT-PROPOSALS.md](./ECMASCRIPT-PROPOSALS.md) for what
     features and proposals are implemented in Jali
-  - [esdoc] (integrated by Jali)
+  - [esdoc]  (integrated by Jali)
   - [eslint] The pluggable linting utility for JavaScript and JSX
 - [webpack 2][webpack] ([wiki][WebpackWiki]) NodeJS module loader
 - [Babel 6][Babel] JavaScript parser and transpilation platform
 - [AVA] Concurrent JavaScript test framework for EcmaScript + Babel
-- [istanbul] JavaScript code coverage tool
-  - [nyc] Istanbul CLI
+  - [istanbul] JavaScript code coverage tool
+    - [nyc] Istanbul CLI
 
 [//]: - (From https://github.com/igrigorik/ga-beacon)
 [![Analytics](https://ga-beacon.appspot.com/UA-81234965-2/welcome-page)](https://github.com/igrigorik/ga-beacon)

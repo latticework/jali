@@ -16,6 +16,7 @@ const packagesDir = `./${packageDirName}`;
 const scopeDir = `${packagesDir}/${npmScope}`;
 const packageDir = `${scopeDir}/${packageName}`;
 
+const projectDir = `.`;
 const distDir = `./${distDirName}`;
 const distPackagesDir = `${distDir}/${packagesDistDirName}`;
 const distScopeDir = `${distPackagesDir}/${npmScope}`;
@@ -36,26 +37,26 @@ module.exports = function(options) {
         {
           exclude: /node_modules/,
           loader: 'babel-loader',
-          plugins: [
-            'syntax-trailing-function-commas',
-            'transform-async-to-generator',
-            'transform-class-properties',
-            'transform-decorators-legacy',
-            'transform-es2015-function-name',
-            'transform-es2015-modules-commonjs',
-            'transform-function-sent',
-            'transform-exponentiation-operator',
-            [
-              'transform-runtime',
-              {
-                polyfill: false,
-                regenerator: false,
-              }
-            ]
-          ],
-          presets: [],
           query: {
-            cacheDirectory: true
+            cacheDirectory: true,
+            plugins: [
+              'syntax-trailing-function-commas',
+              'transform-async-to-generator',
+              'transform-class-properties',
+              'transform-decorators-legacy',
+              'transform-es2015-function-name',
+              'transform-es2015-modules-commonjs',
+              'transform-function-sent',
+              'transform-exponentiation-operator',
+              [
+                'transform-runtime',
+                {
+                  polyfill: false,
+                  regenerator: false,
+                }
+              ]
+            ],
+            presets: []
           },
           test: /\.js$/,
         }
@@ -83,10 +84,9 @@ module.exports = function(options) {
           to: '..',
         },
         {
-          context: packageDir,
-          from: 'LICENCE',
-          to: '..',
-          toType: 'file',
+          context: projectDir,
+          from: 'LICENSE',
+          to: '..'
         },
       ]),
     ],

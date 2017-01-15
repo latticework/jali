@@ -19,7 +19,7 @@
           "prebuild:pkg:core": "npm run build:pkg:util",
         "build:pkg:note": "tsc -p packages/@jali/note/tsconfig-build.json && cpy packages/@jali/note/package.json dist/packages-dist/@jali/note",
           "prebuild:pkg:note": "npm run build:pkg:core",
-        "build:pkg:util": "tsc -p packages/@jali/util/tsconfig-build.json && webpack --config packages/@jali/util/webpackfile.js && cpy LICENSE dist/packages-dist/@jali/util",
+        "build:pkg:util": "tsc -p packages/@jali/util/tsconfig-build.json && webpack --config packages/@jali/util/webpackfile.js",
       "build:examples": "tsc -p examples",
       "build:dev": "npm run build:packages",
         "prebuild:dev": "npm run clean",
@@ -127,7 +127,7 @@
     "tslint": "^4.3.1",
     "typedoc": "^0.5.5",
     "typescript": "^2.1.5",
-    "webpack": "^1.14.0",
+    "webpack": "^2.2.0-rc.4",
     "webpack-merge": "^2.4.0"
   },
   "babel": {
