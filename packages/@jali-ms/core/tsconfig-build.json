@@ -4,6 +4,7 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "inlineSources": true,
     "lib": ["es2017"],
     "module": "es2015",
     "moduleResolution": "node",
@@ -14,19 +15,20 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "../dist/all/",
+    "outDir": "../../../dist/packages-dist/@jali-ms/core/",
     "paths": {
-      "@jali-ms/*": ["./@jali-ms/*"]
+      "@jali-ms/*": ["../../../dist/packages-dist/@jali-ms/*"]
     },
     "rootDir": ".",
+    "sourceMap": true,
     "strictNullChecks": true,
     "stripInternal": true,
-    "target": "es6",
-    "typeRoots": ["../../node_modules/@types/node"],
-    "types": ["node"]
+    "target": "es6"
   },
-  "include": [
-    "**/*.ts"
+  "files": [
+    "index.ts",
+    "iterables/index.ts",
+    "type-guards/index.ts"
   ]
 }
 

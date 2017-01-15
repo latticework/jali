@@ -10,19 +10,19 @@
 
 |Package|Description|Modules|
 |:-|:-|:-|
-|[@jali/core](overview.html#package-jali-core)|framework-level utilities|`@jali/core`<br>`@jali/core/iterables`<br>`@jali/core/type-guards`|
-|[@jali/util](overview.html#package-jali-util)|language-level utilities|`@jali/util`<br>`@jali/util/errors`<br>`@jali/util/iterables`<br>`@jali/util/type-guards`|
+|[@jali-ms/core](overview.html#package-jali-core)|framework-level utilities|`@jali-ms/core`<br>`@jali-ms/core/iterables`<br>`@jali-ms/core/type-guards`|
+|[@jali-ms/util](overview.html#package-jali-util)|language-level utilities|`@jali-ms/util`<br>`@jali-ms/util/errors`<br>`@jali-ms/util/iterables`<br>`@jali-ms/util/type-guards`|
 
 <!-- markdownlint-enable no-inline-html -->
 
-## Package @jali/core
+## Package @jali-ms/core
 
 _Back to [Packages](overview.html#packages)_
 
 Provides framework-level utilities such as notification messages and
 structured errors.
 
-## Package @jali/util
+## Package @jali-ms/util
 
 _Back to [Packages](overview.html#packages)_
 
@@ -33,15 +33,15 @@ common `Iterable` functions.
 
 |Export|Description|
 |:-|:-|
-|Errors|Re-export of [`@jali/util/errors`](overview.html#module-jali-util-errors)|
-|Iterables|Re-export of [`@jali/util/iterables`](overview.html#module-jali-util-iterables)|
-|TypeGuards|Re-export of [`@jali/util/type-guards`](overview.html#module-jali-util-type-guards)|
+|Errors|Re-export of [`@jali-ms/util/errors`](overview.html#module-jali-util-errors)|
+|Iterables|Re-export of [`@jali-ms/util/iterables`](overview.html#module-jali-util-iterables)|
+|TypeGuards|Re-export of [`@jali-ms/util/type-guards`](overview.html#module-jali-util-type-guards)|
 
 <!-- markdownlint-enable no-inline-html -->
 
-### Module @jali/util/errors
+### Module @jali-ms/util/errors
 
-_Back to [Package @jali/util](overview.html#package-jali-util)_
+_Back to [Package @jali-ms/util](overview.html#package-jali-util)_
 
 <!-- markdownlint-disable no-inline-html -->
 
@@ -74,16 +74,16 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 
 <!-- markdownlint-enable no-inline-html -->
 
-[ArgumentEmptyStringError]: ../class/all/@jali/util/src/argument-empty-string-error.js~ArgumentEmptyStringError.html
-[ArgumentError]: ../class/all/@jali/util/src/argument-error.js~ArgumentError.html
-[ArgumentFalseError]: ../class/all/@jali/util/src/argument-false-error.js~ArgumentFalseError.html
-[ArgumentFalsyError]: ../class/all/@jali/util/src/argument-falsy-error.js~ArgumentFalsyError.html
-[ArgumentNanError]: ../class/all/@jali/util/src/argument-nan-error.js~ArgumentNanError.html
-[ArgumentNullError]: ../class/all/@jali/util/src/argument-null-error.js~ArgumentNullError.html
-[ArgumentTypeError]: ../class/all/@jali/util/src/argument-type-error.js~ArgumentTypeError.html
-[ArgumentUndefinedError]: ../class/all/@jali/util/src/argument-undefined-error.js~ArgumentUndefinedError.html
-[ArgumentWhitespaceStringError]: ../class/all/@jali/util/src/argument-whitespace-string-error.js~ArgumentWhitespaceStringError.html
-[ArgumentZeroError]: ../class/all/@jali/util/src/argument-zero-error.js~ArgumentZeroError.html
+[ArgumentEmptyStringError]: ../class/all/@jali-ms/util/src/argument-empty-string-error.js~ArgumentEmptyStringError.html
+[ArgumentError]: ../class/all/@jali-ms/util/src/argument-error.js~ArgumentError.html
+[ArgumentFalseError]: ../class/all/@jali-ms/util/src/argument-false-error.js~ArgumentFalseError.html
+[ArgumentFalsyError]: ../class/all/@jali-ms/util/src/argument-falsy-error.js~ArgumentFalsyError.html
+[ArgumentNanError]: ../class/all/@jali-ms/util/src/argument-nan-error.js~ArgumentNanError.html
+[ArgumentNullError]: ../class/all/@jali-ms/util/src/argument-null-error.js~ArgumentNullError.html
+[ArgumentTypeError]: ../class/all/@jali-ms/util/src/argument-type-error.js~ArgumentTypeError.html
+[ArgumentUndefinedError]: ../class/all/@jali-ms/util/src/argument-undefined-error.js~ArgumentUndefinedError.html
+[ArgumentWhitespaceStringError]: ../class/all/@jali-ms/util/src/argument-whitespace-string-error.js~ArgumentWhitespaceStringError.html
+[ArgumentZeroError]: ../class/all/@jali-ms/util/src/argument-zero-error.js~ArgumentZeroError.html
 [verifyArgument]: ../function/index.html#static-function-verifyArgument
 [verifyBoolean]: ../function/index.html#static-function-verifyBoolean
 [verifyDefined]: ../function/index.html#static-function-verifyDefined
@@ -99,9 +99,9 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 [verifyTrue]: ../function/index.html#static-function-verifyTrue
 [verifyTruthy]: ../function/index.html#static-function-verifyTruthy
 
-### Module @jali/util/iterables
+### Module @jali-ms/util/iterables
 
-_Back to [Package @jali/util](overview.html#package-jali-util)_
+_Back to [Package @jali-ms/util](overview.html#package-jali-util)_
 
 <!-- markdownlint-disable no-inline-html -->
 
@@ -135,9 +135,9 @@ _Back to [Package @jali/util](overview.html#package-jali-util)_
 [some]: ../function/index.html#static-function-some
 [toMap]: ../function/index.html#static-function-toMap
 
-### Module @jali/util/type-guards
+### Module @jali-ms/util/type-guards
 
-_Back to [Package @jali/util](overview.html#package-jali-util)_
+_Back to [Package @jali-ms/util](overview.html#package-jali-util)_
 
 <!-- markdownlint-disable no-inline-html -->
 

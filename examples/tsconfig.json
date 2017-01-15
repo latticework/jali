@@ -16,7 +16,7 @@
     "noUnusedParameters": true,
     "outDir": "../dist/examples/",
     "paths": {
-      "@jali/*": ["../packages/@jali/*"]
+      "@jali-ms/*": ["../packages/@jali-ms/*"]
     },
     //"rootDir": ".",
     "rootDirs": ["."],
