@@ -1,16 +1,13 @@
 # Cookbook Name:: main
 # Recipe:: default
 
-
 # Run apt-update
 include_recipe 'apt::default'
-
 
 # Install gksudo
 apt_package 'gksu' do
   action :install
 end
-
 
 # Install Docker
 docker_service 'default' do
@@ -56,12 +53,11 @@ else
       curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     EOH
   end
-  
+
   package 'nodejs' do
     action :install
   end
 end
-
 
 # Install Sphinx documentation generator
 # http://stackoverflow.com/a/23922391
@@ -70,13 +66,23 @@ apt_package 'python3-sphinx' do
 end
 
 # Install VSCode
+# Update instructions:
+# Download:
+# - Go to https://code.visualstudio.com/Docs/?dv=linux64_deb
+# - Node downloaded file.
+# - Copy link address of "direct download link" and paste as value of "source"
+#   below.
+# - Download http://www.labtestproject.com/files/win/sha256sum/sha256sum.exe
+# - Follow instructions,
+#   http://www.labtestproject.com/using_windows/step_by_step_using_sha256sum_on_windows_xp.html
+#   to obtain checksum of downloaded file and paste below.
 if ::Dir.exist?('/usr/share/code/')
   Chef::Log.info('(up to date)')
 else
   remote_file "#{Chef::Config[:file_cache_path]}/visual-studio-code.deb" do
+    # or http://code.visualstudio.com/docs/?dv=linux64_deb ?
     source 'https://go.microsoft.com/fwlink/?LinkID=760868'
     mode 0644
-    checksum 'f7457df3c94b459b055b31ed1e3f2d22e1993e18c1b6209fd5aa98651c125a43'
   end
 
   dpkg_package 'visual-studio-code' do
@@ -94,10 +100,6 @@ end
 
 # Set shell functions and aliases
 file '/home/vagrant/.bash_aliases' do
-  # Verfiy that --disable-gpu is needed on distros other than Ubuntu 14.04
-  content <<-EOH
-  code () { command -p code "$@" --disable-gpu ; }
-  EOH
 end
 
 # Set up project

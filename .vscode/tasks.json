@@ -1,0 +1,49 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "command": "npm",
+  "isShellCommand": true,
+  "showOutput": "always",
+  "suppressTaskName": true,
+  "tasks": [
+    {
+      "taskName": "build",
+      "args": ["run", "build"],
+      "isBuildCommand": true,
+      "isWatching": false,
+      "problemMatcher": [
+          "$tsc"
+      ]
+    },
+    {
+      "taskName": "build:test",
+      "args": ["run", "build:test"],
+      "isBuildCommand": true,
+      "isWatching": false,
+      "problemMatcher": [
+          "$tsc"
+      ]
+    },
+    // http://shripalsoni.com/blog/configure-eslint-in-visual-studio-code/
+    {
+      "taskName": "lint",
+      "args": ["run", "build"],
+      "problemMatcher": [
+          "$eslint-stylish"
+      ]
+    },
+    {
+      "taskName": "install",
+      "args": ["install"]
+    },
+    {
+      "taskName": "update",
+      "args": ["update"]
+    },
+    {
+      "taskName": "test",
+      "args": ["run", "test"]
+    }
+  ]
+}

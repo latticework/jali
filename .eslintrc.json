@@ -1,0 +1,72 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "root": true,
+  "rules": {
+    "spaced-comment": "error",
+    "curly": "error",
+    "eol-last": "error",
+    "guard-for-in": "error",
+    "indent": [
+      "error",
+      2
+    ],
+    "no-duplicate-case": "error",
+    "no-extra-label": "error",
+    "no-unused-labels": "error",
+    "no-label-var": "error",
+    "max-len": [
+      "error",
+      100
+    ],
+    "no-caller": "error",
+    "prefer-rest-params": "error",
+    "no-bitwise": "error",
+
+    "no-console": [
+      "error",
+      {
+        "allow": ["assert"]
+      }
+    ],
+    "no-new-wrappers": "error",
+    "no-debugger": "error",
+    "no-dupe-keys": "error",
+    "no-redeclare": "error",
+    "no-empty": "off",
+    "no-eval": "error",
+    "no-shadow": "error",
+    //"no-string-literal": true,
+    "no-fallthrough": "error",
+    "no-trailing-spaces": "error",
+    "no-unused-expressions": "error",
+    "no-unused-vars": "error",
+    "no-unreachable": "error",
+    "no-use-before-define": "error",
+    "no-var": "error",
+    "sort-keys": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "radix": "error",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "space-before-blocks": "error",
+    "space-infix-ops": "error",
+    "space-unary-ops": "error"
+  }
+}

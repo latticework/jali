@@ -2,19 +2,15 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-
 # For examples on parameterizing see:
 # http://stackoverflow.com/questions/13065576/override-vagrant-configuration-settings-locally-per-dev
 
-
 Vagrant.configure(2) do |config|
-  # Ubuntu Server 14.04 LTS
-  config.vm.box = 'box-cutter/ubuntu1404-desktop'
-  # config.vm.box = 'box-cutter/ubuntu1604-desktop'
+  # Ubuntu Server 16.04 LTS
+  config.vm.box = 'box-cutter/ubuntu1604-desktop'
 
   config.vm.provider 'virtualbox' do |vb|
   end
-
 
   # Install the latest version of Chef.
   # For more information see https://github.com/chef/vagrant-omnibus
@@ -36,11 +32,13 @@ Vagrant.configure(2) do |config|
     chef.add_recipe 'main::default'
   end
 
-
   # See: http://stackoverflow.com/a/20431791
   # Seealso: http://friendsofvagrant.github.io/v1/docs/config/vm/define.html
   config.vm.define 'jali' do |jali|
     jali.vm.synced_folder 'C:\git', '/git'
+
+    # http://stackoverflow.com/a/37064253/2240669
+    jali.vm.network :forwarded_port, host: 5858, guest: 5858
 
     jali.vm.provider 'virtualbox' do |vb|
       # For a complete reference, please see the online documentation at

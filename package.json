@@ -1,14 +1,67 @@
 {
+  "//": [
+    "babel:",
+    "for ts+babel sourcemaps see http://stackoverflow.com/a/37799745/2240669",
+    "ava:",
+    "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
+    "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
+  ],
   "name": "jali-srcs",
   "version": "0.0.0",
   "description": "Cross-platform service specification and execution context. Jali is the JavaScript implementation.",
   "scripts": {
+    "build": "npm run build:dev",
+      "build:packages": "tsc -p packages",
+        "postbuild:packages": "npm run build:examples",
+      "build:pkg": "echo build:pkg complete",
+        "prebuild:pkg": "npm run build:pkg:note",
+        "build:pkg:core": "tsc -p packages/@jali/core/tsconfig-build.json && cpy packages/@jali/core/package.json dist/packages-dist/@jali/core",
+          "prebuild:pkg:core": "npm run build:pkg:util",
+        "build:pkg:note": "tsc -p packages/@jali/note/tsconfig-build.json && cpy packages/@jali/note/package.json dist/packages-dist/@jali/note",
+          "prebuild:pkg:note": "npm run build:pkg:core",
+        "build:pkg:util": "tsc -p packages/@jali/util/tsconfig-build.json && webpack --config packages/@jali/util/webpackfile.js",
+      "build:examples": "tsc -p examples",
+      "build:dev": "npm run build:packages",
+        "prebuild:dev": "npm run clean",
+        "postbuild:dev": "npm run build:examples && npm run lint",
+      "build:docs": "npm run docs:es",
+      "build:test": "npm run build:packages -- --inlineSourceMap --inlineSources && npm run lint && npm run examples:run && npm run build:docs",
+        "prebuild:test": "npm run clean",
+      "build:prod": "npm run build:pkg",
+        "prebuild:prod": "npm run clean",
+    "clean": "npm run clean:dist && npm run clean:coverage",
+      "clean:dist": "rimraf ./dist",
+      "clean:coverage": "rimraf ./coverage",
+      "clean:all": "npm cache clean && rimraf node_modules coverage",
+        "preclean:all": "npm run clean",
+    "cover": "BABEL_ENV=test nyc ava --concurrency 5",
+      "precover": "npm run build:test",
+      "postcover": "nyc report",
+      "cover:html": "xdg-open ./coverage/index.html",
+        "precover:html": "npm run cover",
+    "docs": "npm run build:docs",
+      "predocs": "npm run build:packages && npm run examples:run",
+      "docs:dg": "echo ⚠ WARNING: Not operational script ⚠ && dgeni ./config/dgeni/index.js",
+      "docs:es": "esdoc -c esdoc.json",
+      "docs:td": "echo ⚠ WARNING: Not operational script ⚠ && typedoc --options typedoc.json",
+      "docs:html": "xdg-open ./dist/docs/index.html",
+        "predocs:html": "npm run docs",
+    "e2e": "protractor",
+      "pree2e": "webdriver-manager update",
+    "examples": "npm run examples:run",
+      "examples:run": "NODE_PATH=$NODE_PATH:./dist/examples/packages node ./dist/examples/examples/index.js",
+      "examples:run:debug": "NODE_PATH=$NODE_PATH:./dist/examples/packages node --debug-brk ./dist/examples/examples/index.js",
+      "preexamples": "npm run build:packages",
+    "install:clean": "npm install",
+      "preinstall:clean": "npm run clean:all",
+    "lint": "tslint \"packages/**/*.ts\" --format verbose",
     "start": "ng server",
-    "postinstall": "typings install",
-    "lint": "tslint \"src/**/*.ts\"",
-    "test": "ng test",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+      "start:clean": "npm start",
+        "prestart:clean": "npm run clean",
+    "old-test": "BABEL_ENV=test ava --tap --concurrency 5",
+    "test": "BABEL_ENV=test ava --concurrency 5",
+      "test:run:debug": "BABEL_ENV=test node --debug-brk ./node_modules/.bin/ava --tap --serial",
+      "pretest": "npm run build:test"
   },
   "repository": {
     "type": "git",
@@ -21,25 +74,133 @@
   "author": "Latticework",
   "license": "MIT",
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">= 6.9.0"
   },
   "bugs": {
     "url": "https://github.com/latticework/jali/issues"
   },
   "homepage": "http://jali-ms.io/",
   "dependencies": {
-    "core-js": "^2.4.0",
-    "systemjs": "^0.19.30",
-    "zone.js": "^0.6.12"
+    "babel-runtime": "^6.20.0",
+    "core-js": "^2.4.1",
+    "disposables": "^1.0.1",
+    "espower": "^2.0.2",
+    "reflect-metadata": "^0.1.9",
+    "zone.js": "^0.7.5"
   },
   "devDependencies": {
-    "blue-tape": "^0.2.0",
+    "@types/mkdirp": "^0.3.29",
+    "@types/node": "^6.0.60",
+    "@types/sanitize-filename": "^1.1.28",
+    "@types/tmp": "^0.0.32",
+    "app-root-path": "^2.0.1",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "ava": "^0.17.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-espower": "^2.3.1",
+    "babel-plugin-syntax-trailing-function-commas": "^6.20.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-function-name": "^6.9.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-exponentiation-operator": "^6.8.0",
+    "babel-plugin-transform-function-sent": "^1.0.1",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-register": "^6.18.0",
+    "codelyzer": "^2.0.0-beta.4",
+    "copy-webpack-plugin": "^4.0.1",
+    "cpy-cli": "^1.0.1",
+    "dgeni": "^0.4.2",
+    "dgeni-packages": "^0.16.4",
+    "esdoc": "^0.4.8",
+    "eslint": "^3.13.1",
+    "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
-    "ts-node": "^0.9.0",
-    "tslint": "^3.11.0",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.5",
-    "webpack": "^2.1.0-beta.13",
-    "webpack-merge": "^0.14.0"
+    "glob-fs": "^0.1.6",
+    "nyc": "^10.0.0",
+    "rimraf": "^2.5.4",
+    "sanitize-filename": "^1.6.1",
+    "tmp": "^0.0.31",
+    "ts-node": "^2.0.0",
+    "tslint": "^4.3.1",
+    "typedoc": "^0.5.5",
+    "typescript": "^2.1.5",
+    "webpack": "^2.2.0-rc.4",
+    "webpack-merge": "^2.4.0"
+  },
+  "babel": {
+    "env": {
+      "development": {},
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ],
+        "sourceMaps": "inline"
+      },
+      "production": {}
+    },
+    "presets": [],
+    "plugins": [
+      "syntax-trailing-function-commas",
+      "transform-async-to-generator",
+      "transform-class-properties",
+      "transform-decorators-legacy",
+      "transform-es2015-function-name",
+      "transform-function-sent",
+      "transform-exponentiation-operator",
+      [
+        "transform-runtime",
+        {
+          "polyfill": false,
+          "regenerator": false
+        }
+      ],
+      "espower"
+    ],
+    "ignore": [
+      "*.test.js"
+    ],
+    "sourceMaps": "inline"
+  },
+  "ava": {
+    "files": [
+      "dist/all/**/*.test.js"
+    ],
+    "concurrency": 5,
+    "babel": {
+      "plugins": [
+        "syntax-trailing-function-commas",
+        "transform-async-to-generator",
+        "transform-class-properties",
+        "transform-decorators-legacy",
+        "transform-es2015-modules-commonjs",
+        "transform-es2015-function-name",
+        "transform-exponentiation-operator",
+        "transform-function-sent",
+        [
+          "transform-runtime",
+          {
+            "polyfill": false,
+            "regenerator": false
+          }
+        ],
+        "espower"
+      ]
+    },
+    "require": [
+      "babel-register"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.test.*",
+      "**/testing/*"
+    ],
+    "reporter": [
+      "html",
+      "cobertura"
+    ]
   }
 }

@@ -1,0 +1,110 @@
+{
+  // https://code.visualstudio.com/docs/runtimes/nodejs
+  // https://code.visualstudio.com/docs/editor/debugging
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docs",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/esdoc",
+      "stopOnEntry": false,
+      "args": [
+        "-c",
+        "esdoc.json"
+      ],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "",
+      "env": {
+        "BABEL_ENV": "development"
+      },
+      "runtimeExecutable": null
+    },
+    {
+      "name": "Examples",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/dist/examples/examples/index.js",
+      "stopOnEntry": false,
+      "args": [
+      ],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "",
+      "env": {
+        "BABEL_ENV": "development",
+        "NODE_PATH": "$NODE_PATH:./dist/examples/packages"
+      },
+      "runtimeExecutable": null
+    },
+    // http://stackoverflow.com/a/37064253/2240669
+    {
+      "name": "Remote",
+      "type": "node",
+      "request": "attach",
+      "port": 5858,
+      "address": "localhost",
+      "restart": false,
+      "sourceMaps": false,
+      "outDir": null,
+      "localRoot": "${workspaceRoot}",
+      "remoteRoot": "/vagrant"
+    },
+    {
+      "name": "Unit Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/ava",
+      "stopOnEntry": false,
+      "args": [
+        //"./dist/all/**/${fileBasename}.js",
+        "--serial",
+        "--tap"
+      ],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "build:test",
+      "env": {"BABEL_ENV": "test"},
+      "runtimeExecutable": null
+    },
+    {
+      "name": "Launch",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/server",
+      "stopOnEntry": false,
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "build",
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "externalConsole": false,
+      "sourceMaps": false,
+      "outDir": null
+    },
+    {
+      "name": "Attach",
+      "type": "node",
+      "request": "attach",
+      "port": 5858,
+      "address": "localhost",
+      "restart": false,
+      "sourceMaps": false,
+      "outDir": null,
+      "localRoot": "${workspaceRoot}",
+      "remoteRoot": null
+    },
+    {
+      "name": "Attach to Process",
+      "type": "node",
+      "request": "attach",
+      "processId": "${command.PickProcess}",
+      "port": 5858,
+      "sourceMaps": false,
+      "outDir": null
+    }
+  ]
+}

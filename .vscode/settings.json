@@ -1,0 +1,16 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.DS_Store": true
+  },
+  "files.eol": "\n",
+  //enabled through .editorconfig
+  // "files.trimTrailingWhitespace": true,
+  "files.encoding": "utf8",
+  "git.enabled": true,
+  "git.enableLongCommitWarning": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
