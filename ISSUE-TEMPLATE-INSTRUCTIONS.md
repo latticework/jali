@@ -80,10 +80,10 @@ Use the following decision tree to choose the appropriate form:
    for questions, create a StackOverflow question; otherwise, create a
    [Question](#question-❓-question).
    ❌
-1. **(K)** Create an [Idea](#idea-❓-bulb). ❌
-1. **(L)** Create a [Bug](#bug-🐞-beetle). ❌
-1. **(M)** Create an [Enhancement](#enhancement-▶️️-arrow_forward). ❌
-1. **(N)** Create an [Epic](#epic-🎥-movie_camera). ❌
+1. **(K)** Create an [Idea](#idea-bulb). ❌
+1. **(L)** Create a [Bug](#bug-beetle). ❌
+1. **(M)** Create an [Enhancement](#enhancement-arrow_forward). ❌
+1. **(N)** Create an [Epic](#epic-movie_camera). ❌
 
 
 ## Template Forms
