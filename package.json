@@ -91,7 +91,7 @@
   },
   "devDependencies": {
     "@types/mkdirp": "^0.3.29",
-    "@types/node": "^6.0.60",
+    "@types/node": "^7.0.0",
     "@types/sanitize-filename": "^1.1.28",
     "@types/tmp": "^0.0.32",
     "app-root-path": "^2.0.1",
@@ -115,7 +115,7 @@
     "cpy-cli": "^1.0.1",
     "dgeni": "^0.4.2",
     "dgeni-packages": "^0.16.4",
-    "esdoc": "^0.4.8",
+    "esdoc": "^0.5.2",
     "eslint": "^3.13.1",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
