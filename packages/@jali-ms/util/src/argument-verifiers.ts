@@ -32,12 +32,12 @@ import ArgumentZeroError from './argument-zero-error';
  * @example <caption>verify that parameter deposit is non-negative</caption>
  * verifyArgument('deposit', deposit, arg => arg > 0.0);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code>, examples ④ & ⑤</a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code>, examples ④ & ⑤</a>
  * @see {@link ArgumentError}
  * @see {@link verifyDefined}
  * @see {@link verifyTruthy}
@@ -77,12 +77,12 @@ export function verifyArgument<T>(
  * @example <caption>verify that parameter collection is an Array</caption>
  * verifyArray('collection', collection);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link isIterable}
@@ -119,12 +119,12 @@ export function verifyArray<T>(
  * @example <caption>verify that parameter isValid is boolean</caption>
  * verifyBoolean('isValid', isValid);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentUndefinedError}
  * @see {@link verifyDefined}
@@ -163,12 +163,12 @@ export function verifyBoolean(
  * @example <caption>verify that parameter element is defined</caption>
  * verifyDefined('element', element);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link verifyTruthy}
  * @since 0.0.1
@@ -202,12 +202,12 @@ export function verifyDefined<T>(
  * @example <caption>verify that parameter factory is a function</caption>
  * verifyFunction('factory', factory);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentUndefinedError}
  * @see {@link verifyDefined}
@@ -246,12 +246,12 @@ export function verifyFunction(
  * @example <caption>verify that parameter collection is iterable</caption>
  * verifyIterable('collection', collection);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link isIterable}
@@ -288,12 +288,12 @@ export function verifyIterable<T>(
  * @example <caption>verify that parameter firstName is a non-empty string</caption>
  * verifyNonEmpty('firstName', firstName);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code>, example ②</a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code>, example ②</a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentEmptyStringError}
@@ -333,12 +333,12 @@ export function verifyNonEmpty(
  * @example <caption>verify that parameter height has a nonzero value</caption>
  * verifyNonEmpty('height', height);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentNanError}
@@ -381,12 +381,12 @@ export function verifyNonZero(
  * @example <caption>verify that parameter height has a nonzero value</caption>
  * verifyNonEmpty('height', height);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code>, example ①</a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code>, example ①</a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentNanError}
@@ -427,12 +427,12 @@ export function verifyNotNull<T>(
  * @example <caption>verify that parameter firstName has non-whitespace characters</caption>
  * verifyNotWhitespace('firstName', firstName);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code>, example ②</a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code>, example ②</a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentEmptyStringError}
@@ -474,12 +474,12 @@ export function verifyNotWhitespace(
  * @example <caption>verify that parameter price is a number</caption>
  * verifyNumber('price', price);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentNanError}
@@ -521,12 +521,12 @@ export function verifyNumber(
  * @example <caption>verify that parameter height has a nonzero value</caption>
  * verifyNonEmpty('height', height);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentNanError}
@@ -565,12 +565,12 @@ export function verifyObject(
  * @example <caption>verify that parameter alphabet is a string</caption>
  * verifyNonEmpty('alphabet', alphabet);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link verifyDefined}
@@ -610,12 +610,12 @@ export function verifyString(
  * @example <caption>verify that parameter isValid is true</caption>
  * verifyNonEmpty('isValid', isValid);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code></a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code></a>
  * @see {@link ArgumentUndefinedError}
  * @see {@link ArgumentTypeError}
  * @see {@link ArgumentFalseError}
@@ -673,12 +673,12 @@ export function verifyTrue(
  *
  * @see <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank">
  *    Definition of falsy</a> (MDN)
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see <a href="manual/example.html#jali_util_errors">
- *    Example method <code>jali_util_errors</code>, example ③</a>
+ * @see <a href="manual/example.html#jali_ms_util_errors">
+ *    Example method <code>jali_ms_util_errors</code>, example ③</a>
  * @see {@link ArgumentEmptyStringError}
  * @see {@link ArgumentFalseError}
  * @see {@link ArgumentNanError}

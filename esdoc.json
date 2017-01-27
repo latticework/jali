@@ -7,7 +7,7 @@
   "manual": {
     "overview": ["./docs/esdoc/overview.md"],
     "example": [
-      "./dist/docs/examples/packages/jali_util.md"
+      "./dist/docs/examples/packages/jali_ms_util.md"
     ]
   },
   "lint": false

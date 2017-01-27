@@ -10,9 +10,9 @@ import { default as ArgumentError } from './argument-error';
  * throw new ArgumentTypeError(
  *    'motor', `The argument is not a valid 'Motor'. It lacks the 'start' method`);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
  * @see {@link verifyDefined}
  * @see {@link verifyTruthy}

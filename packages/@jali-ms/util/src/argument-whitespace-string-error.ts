@@ -8,9 +8,9 @@ import { default as ArgumentError } from './argument-error';
  * @example <caption>The string argument for the parameter firstName has only whitespace.</caption>
  * throw new ArgumentWhitespaceStringError('firstName');
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
  * @see {@link ArgumentEmptyStringError}
  * @see {@link verifyNonEmpty}

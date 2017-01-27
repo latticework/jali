@@ -97,12 +97,12 @@ import { isIterable, makeIsIterable } from './type-guards';
  * @example <caption>ensures string argument colorOrColors is converted to an array</caption>
  * const persons = Iterables.asArray(colorOrColors, String);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-iterables">
+ * @see <a href="manual/overview.html#module-jali-ms-util-iterables">
  *    module <code>@jali-ms/util/iterables</code></a>
- * @see <a href="manual/example.html#jali_util_iterators_asarray">
- *    Example method <code>jali_util_iterators_asarray</code>, examples ① & ②</a>
+ * @see <a href="manual/example.html#jali_ms_util_iterators_asarray">
+ *    Example method <code>jali_ms_util_iterators_asarray</code>, examples ① & ②</a>
  * @see {@link asIterable}
  * @see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"
  *    target="_blank">Array.from (MDN)</a>
@@ -172,12 +172,12 @@ export function asArray<T>(valueOrSequence: T | Iterable<T> | undefined, ctor?: 
  * @example <caption>ensures argument idOrIds is converted to an iterable</caption>
  * const ids = Iterables.asIterable(idOrIds);
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-iterables">
+ * @see <a href="manual/overview.html#module-jali-ms-util-iterables">
  *    module <code>@jali-ms/util/iterables</code></a>
- * @see <a href="manual/example.html#jali_util_iterators_asiterable">
- *    Example method <code>jali_util_iterators_asiterable</code>, examples ① & ②</a>
+ * @see <a href="manual/example.html#jali_ms_util_iterators_asiterable">
+ *    Example method <code>jali_ms_util_iterators_asiterable</code>, examples ① & ②</a>
  * @see {@link asArray}
  * @since 0.0.1
  */
