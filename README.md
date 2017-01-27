@@ -12,9 +12,9 @@ infrastructure [http://jali-ms.io/](http://jali-ms.io/)
 
 [![OpenHub stats](https://www.openhub.net/p/jali/widgets/project_thin_badge.gif)](https://www.openhub.net/p/jali)
 [![project status](https://img.shields.io/badge/project_status-pre--alpha-AA0114.svg)](https://github.com/latticework/jali/milestones)
-[![zen-hub](https://raw.githubusercontent.com/zen-hubIO/support/master/zen-hub-badge.png)](https://github.com/latticework/jali/milestones#boards?repos=45436564&milestones=0.1.0#)
+[![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://github.com/latticework/jali/milestones#boards?repos=45436564&milestones=0.1.0#)
 [![Dependency Status](https://dependencyci.com/github/latticework/jali/badge)](https://dependencyci.com/github/latticework/jali)
-[![bit-hound Overall Score](https://www.bit-hound.io/github/latticework/jali/badges/score.svg)](https://www.bit-hound.io/github/latticework/jali)
+[![bitHound Overall Score](https://www.bithound.io/github/latticework/jali/badges/score.svg)](https://www.bithound.io/github/latticework/jali)
 
 [![CLA assistant](https://cla-assistant.io/readme/badge/latticework/jali)](https://cla-assistant.io/latticework/jali)
 [![Gitter](https://badges.gitter.im/latticework/jali.svg)](https://gitter.im/latticework/jali?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
@@ -131,8 +131,8 @@ some of these technologies.
   JavaScript language
   - See [ecmascript-proposals.md](./ecmascript-proposals.md) for what
     features and proposals are implemented in Jali
-  - [esdoc]  (integrated by Jali)
-  - [eslint] The pluggable linting utility for JavaScript and JSX
+  - [esdoc][esdoc]  (integrated by Jali)
+  - [eslint][eslint] The pluggable linting utility for JavaScript and JSX
 - [webpack 2][webpack] ([wiki][webpack-wiki]) NodeJS module loader
 - [Babel 6][babel] JavaScript parser and transpilation platform
 - [AVA][ava] Concurrent JavaScript test framework for EcmaScript + Babel
@@ -161,7 +161,7 @@ some of these technologies.
 [esdoc]: https://esdoc.org/
 [eslint]: http://eslint.org/
 [istanbul]: https://github.com/gotwarlost/istanbul
-[jali-dev]: https://github.com/latticework/jali-dev
+[jali-dev]: https://github.com/latticework/jalidev
 [keith-cirkel]: https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
 [monorepo-babel]: https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo
 [monorepo-cycle]: http://staltz.com/setting-up-a-javascript-monorepo.html
