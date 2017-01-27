@@ -34,11 +34,11 @@ design of the Jali project, see [DESIGN.md](./DESIGN.md).
 
 ### Prerequisites
 
-1. Install [**Oracle VirtualBox**](https://www.virtualbox.org/wiki/Downloads)
-1. Install [**Vagrant**](https://www.vagrantup.com/downloads.html)
+1. Install [**Oracle VirtualBox**][virtual-box-downloads]
+1. Install [**Vagrant**][vagrant-downloads]
 1. Install and configure Chef:
 
-    1. Install [**ChefDK**](https://downloads.chef.io/chef-dk/)
+    1. Install [**ChefDK**][chef-dev-kit-download]
 
        - For Windows 10, use the Windows 2012r2 x68_64 download
 
@@ -62,7 +62,7 @@ design of the Jali project, see [DESIGN.md](./DESIGN.md).
 > (UAC) or make sure your account does not have any of the restricted
 > privileges. See article `Windows Vista Application Development
 > Requirements for User Account Control Compatibility` section
-> [New Technologies for Windows][vistauac_topic3] subsection `Access
+> [New Technologies for Windows][vista-uac-topic-3] subsection `Access
 > Token Changes` for more information and a list of restricted
 > privileges. [HT](http://superuser.com/a/839608)
 >
@@ -120,9 +120,9 @@ to determine which issue form you should create.
 
 A `core-contributor` will triage **Question** or **Idea** issues. A
 **Question** is triaged by either suggesting the user post the question
-on StackOverflow or by answering the question. The question may result
-in the creation of **Bug** or **Enhancement** issues; or it may simply
-be closed.
+on [StackOverflow][stack-overflow] or by answering the question. The
+question may result in the creation of **Bug** or **Enhancement**
+issues; or it may simply be closed.
 
 An **Idea** is triaged by either putting it in the **Icebox** ZenHub
 pipeline until more points accumulate or by the creation of **Bug** or
@@ -152,46 +152,49 @@ Unicode character by viewing the raw version of this markdown document.
 
 ### Commit types
 
-| Commit Type Code | Unicode Emoji | GitHub Shortcode |
-|:--|:-:|:--|
-| feat     | ✨ | `:sparkles:` |
-| fix      | 🔧 | `:wrench:` |
-| docs     | 📄 | `:page_facing_up:` |
-| style    | 💄 | `:lipstick:` |
-| refactor | 📐 | `:triangular_ruler:` |
-| perf     | 🏃 | `:running:` |
-| test     | 🔬 | `:microscope:` |
-| chore    | 🔨 | `:hammer:` |
+| Commit Type Code | GitHub Shortcode     | Unicode Emoji |
+|:-----------------|:---------------------|:-------------:|
+| feat             | `:sparkles:`         | ✨             |
+| fix              | `:wrench:`           | 🔧            |
+| docs             | `:page_facing_up:`   | 📄            |
+| style            | `:lipstick:`         | 💄            |
+| refactor         | `:triangular_ruler:` | 📐            |
+| perf             | `:running:`          | 🏃            |
+| test             | `:microscope:`       | 🔬            |
+| chore            | `:hammer:`           | 🔨            |
 
 ### Issue states
 
-| Issue State | Unicode Emoji | GitHub Shortcode |
-|:-|:-:|:-|
-| New         | 🎁 | `:gift:` |
-| Icebox      | 💤 | `:zzz:` |
-| Backlog     | ☰ | N/A |
-| In Progress | 🚶 | `:walking:` |
-| Review/QA   | ⚖ | N/A |
-| Done        | ☑️ |`:ballot_box_with_check:` |
-| Closed      | TBD | TBD |
+| Issue State | GitHub Shortcode          | Unicode Emoji |
+|:------------|:--------------------------|:-------------:|
+| New         | `:gift:`                  | 🎁            |
+| Icebox      | `:zzz:`                   | 💤            |
+| Backlog     | N/A                       | ☰             |
+| In Progress | `:walking:`               | 🚶            |
+| Review/QA   | N/A                       | ⚖             |
+| Done        | `:ballot_box_with_check:` | ☑️            |
+| Closed      | TBD                       | TBD           |
 
 ### Pull Request type
 
-| PR State | Unicode Emoji | GitHub Shortcode |
-|:--|:-:|:--|
-| fast-forward | 🔃 | `:arrows_clockwise:` |
-| merge        | 🔀 | `:twisted_rightwards_arrows:` |
-| revert       | 🔄 | `:arrows_counterclockwise:` |
+| PR Type      | GitHub Shortcode              | Unicode Emoji |
+|:-------------|:------------------------------|:-------------:|
+| fast-forward | `:arrows_clockwise:`          | 🔃            |
+| merge        | `:twisted_rightwards_arrows:` | 🔀            |
+| revert       | `:arrows_counterclockwise:`   | 🔄            |
 
 ### Pull Request states
 
-| PR State | Unicode Emoji | GitHub Shortcode |
-|:-|:-:|:-|
-| New       | 🎁 | `:gift:` |
-| Review/QA | ⚖ | N/A |
-| Merged    | 💋 | `:kiss:` |
-| Closed    | 🚫 | `:no_entry_sign:` |
+| PR State  | GitHub Shortcode  | Unicode Emoji |
+|:----------|:------------------|:-------------:|
+| New       | `:gift:`          | 🎁            |
+| Review/QA | N/A               | ⚖             |
+| Merged    | `:kiss:`          | 💋            |
+| Closed    | `:no_entry_sign:` | 🚫            |
 
+[chef-dev-kit-download]: https://downloads.chef.io/chef-dk/
 [mary-poppins]: https://github.com/btford/mary-poppins
-[StackOverflow]: http://stackoverflow.com/questions/tagged/jali
-[vistauac_topic3]: https://msdn.microsoft.com/en-us/library/bb530410.aspx#vistauac_topic3
+[stack-overflow]: http://stackoverflow.com/questions/tagged/jali
+[vagrant-downloads]: https://www.vagrantup.com/downloads.html
+[vista-uac-topic-3]: https://msdn.microsoft.com/en-us/library/bb530410.aspx#vistauac_topic3
+[virtual-box-downloads]: https://www.virtualbox.org/wiki/Downloads

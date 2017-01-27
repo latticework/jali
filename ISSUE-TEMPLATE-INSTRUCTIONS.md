@@ -20,11 +20,11 @@ remove others.
 >   - [Commit types](#commit-types)
 > - [Template Form Decision Tree](#template-form-decision-tree)
 > - [Template Forms](#template-forms)
->   - [Question](#question--question)
->   - [Idea](#idea--bulb)
->   - [Bug](#bug--beetle)
->   - [Enhancement](#enhancement--arrow_forward)
->   - [Epic](#epic--movie_camera)
+>   - [Question](#question)
+>   - [Idea](#idea)
+>   - [Bug](#bug)
+>   - [Enhancement](#enhancement)
+>   - [Epic](#epic)
 
 ## General Instructions
 
@@ -78,17 +78,19 @@ Use the following decision tree to choose the appropriate form:
 1. **(J)** Check on [StackOverflow][stack-overflow-jali] if the question
    has been asked already. If not, and it meets StackOverflow criteria
    for questions, create a StackOverflow question; otherwise, create a
-   [Question](#question-❓-question).
+   [Question](#question).
    ❌
-1. **(K)** Create an [Idea](#idea--bulb). ❌
-1. **(L)** Create a [Bug](#bug--beetle). ❌
-1. **(M)** Create an [Enhancement](#enhancement--arrow_forward). ❌
-1. **(N)** Create an [Epic](#epic-movie_camera). ❌
+1. **(K)** Create an [Idea](#idea). ❌
+1. **(L)** Create a [Bug](#bug). ❌
+1. **(M)** Create an [Enhancement](#enhancement). ❌
+1. **(N)** Create an [Epic](#epic). ❌
 
 
 ## Template Forms
 
-### Question ❓ `:question:`
+### Question
+
+> Emoji: ❓ `:question:`
 
 Usage questions should be asked at [StackOverflow][stack-overflow-jali].
 However, not all questions are appropriate for StackOverflow. See
@@ -121,7 +123,9 @@ form. If you are a non-`core-contributor`, enter a `Bug` using the
 
 ```
 
-### Idea 💡 `:bulb:`
+### Idea
+
+> Emoji: 💡 `:bulb:`
 
 An `Idea` is a suggested change to the system. If you not a
 `core-contributor` and intend to submit a GitHub PR, you should submit
@@ -150,7 +154,9 @@ an `Idea` issue first, then reference the Idea from the PR. A
 
 ```
 
-### Bug 🐞 `:beetle:`
+### Bug
+
+> Emoji: 🐞 `:beetle:`
 
 The `Bug` form should only be used by `core-contributors`; others should
 use the `Idea` form. A `Bug` is a defect of the intended function of the product.
@@ -221,7 +227,9 @@ formal issues. Please fill the form out completely.
 
 ```
 
-### Enhancement ▶️️ `:arrow_forward:`
+### Enhancement
+
+> Emoji: ▶️️ `:arrow_forward:`
 
 The `Enhancement` form should only be used by `core-contributors`;
 others should use the `Idea` form. An `Enhancement` represents a change
@@ -273,7 +281,9 @@ Whereas currently ...).
 
 ```
 
-### Epic 🎥 `:movie_camera:`
+### Epic
+
+> Emoji: 🎥 `:movie_camera:`
 
 In Jali, a [ZenHub][zen-hub] *Epic* associates related `Enhancement`
 issues into a feature requirement category.
