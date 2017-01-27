@@ -11,10 +11,10 @@ import Example from '../example';
 import ExampleContext from '../example-context'
 
 @Example('@jali-ms/util')
-export default class jali_util {
+export default class jali_ms_util {
 
   @Example('@jali-ms/util', '@jali-ms/util/errors')
-  public jali_util_errors(writer: ExampleContext): void {
+  public jali_ms_util_errors(writer: ExampleContext): void {
     // Demonstrates verifying function arguments for low-level libraries. In service operations,
     // use Jali Notification Messages instead.
     function functionWithParameters(
@@ -69,10 +69,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.asArray
+   * @jali-ms/util/iterables.asArray
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'asArray')
-  public jali_util_iterators_asarray(writer: ExampleContext): void {
+  public jali_ms_util_iterators_asarray(writer: ExampleContext): void {
     writer.logIndented(2, `number to number[]`, '①');
 
     const numberOrNumbers: number | Iterable<number> = 2;
@@ -110,10 +110,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.asIterable
+   * @jali-ms/util/iterables.asIterable
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'asIterable')
-  public jali_util_iterators_asiterable(writer: ExampleContext): void {
+  public jali_ms_util_iterators_asiterable(writer: ExampleContext): void {
     writer.logIndented(2, `undefined to Iterable<number>`, '①');
 
     const numberOrNumbers: number | Iterable<number> | undefined = undefined;
@@ -151,10 +151,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.concat
+   * @jali-ms/util/iterables.concat
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'concat')
-  public jali_util_iterators_concat(writer: ExampleContext): void {
+  public jali_ms_util_iterators_concat(writer: ExampleContext): void {
     writer.logIndented(2, `Concatenate three sequences.`, '①');
     const weekendDays = ['Sunday', 'Saturday'];
     const workWeekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -164,10 +164,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.every
+   * @jali-ms/util/iterables.every
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'every')
-  public jali_util_iterators_every(writer: ExampleContext): void {
+  public jali_ms_util_iterators_every(writer: ExampleContext): void {
     writer.logIndented(2, `Test for only even numbers`, '①');
 
     const numbers = [2, 6, 10, 22, 999];
@@ -191,10 +191,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.filter
+   * @jali-ms/util/iterables.filter
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'filter')
-  public jali_util_iterators_filter(writer: ExampleContext): void {
+  public jali_ms_util_iterators_filter(writer: ExampleContext): void {
     writer.logIndented(2, `Select even numbers`, '①');
 
     const numbers = [2, 6, 10, 22, 999];
@@ -218,10 +218,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.find
+   * @jali-ms/util/iterables.find
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'find')
-  public jali_util_iterators_find(writer: ExampleContext): void {
+  public jali_ms_util_iterators_find(writer: ExampleContext): void {
     writer.logIndented(2, `Find first element divisible by 5`, '①');
 
     const numbers = [2, 6, 10, 22, 999];
@@ -255,10 +255,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.includes
+   * @jali-ms/util/iterables.includes
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'includes')
-  public jali_util_iterators_includes(writer: ExampleContext): void {
+  public jali_ms_util_iterators_includes(writer: ExampleContext): void {
     writer.logIndented(2, `Find an element`, '①');
 
     const numbers = [2, 6, 10, 22, 999];
@@ -277,10 +277,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.map
+   * @jali-ms/util/iterables.map
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'map')
-  public jali_util_iterators_map(writer: ExampleContext): void {
+  public jali_ms_util_iterators_map(writer: ExampleContext): void {
     writer.logIndented(2, `Transform to objects`, '①');
 
     const numbers = [2, 6, 10, 22, 999];
@@ -303,10 +303,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.reduce
+   * @jali-ms/util/iterables.reduce
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'reduce')
-  public jali_util_iterators_reduce(writer: ExampleContext): void {
+  public jali_ms_util_iterators_reduce(writer: ExampleContext): void {
     writer.logIndented(2, `Compute average`, '①');
 
     let average = { count: 0, value: 0, };
@@ -326,10 +326,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.slice
+   * @jali-ms/util/iterables.slice
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'slice')
-  public jali_util_iterators_slice(writer: ExampleContext): void {
+  public jali_ms_util_iterators_slice(writer: ExampleContext): void {
     writer.logIndented(2, `Get paged data from a store`, '①');
 
 
@@ -373,10 +373,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.some
+   * @jali-ms/util/iterables.some
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'some')
-  public jali_util_iterators_some(writer: ExampleContext): void {
+  public jali_ms_util_iterators_some(writer: ExampleContext): void {
     writer.logIndented(2, `Determine if any element is divisible by 5`, '①');
 
     const numbers = [2, 6, 10, 22, 999];
@@ -410,10 +410,10 @@ export default class jali_util {
   }
 
   /**
-   * @/jali/util/iterables.toMap
+   * @jali-ms/util/iterables.toMap
    */
   @Example('@jali-ms/util', '@jali-ms/util/iterators', 'Iterables', 'toMap')
-  public jali_util_iterators_tomap(writer: ExampleContext): void {
+  public jali_ms_util_iterators_tomap(writer: ExampleContext): void {
     writer.logIndented(2, `Entities mapped by id`, '①');
 
     const queryResult = [

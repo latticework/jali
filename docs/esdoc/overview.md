@@ -11,7 +11,7 @@
 |Package|Description|Modules|
 |:-|:-|:-|
 |[@jali-ms/core](overview.html#package-jali-core)|framework-level utilities|`@jali-ms/core`<br>`@jali-ms/core/iterables`<br>`@jali-ms/core/type-guards`|
-|[@jali-ms/util](overview.html#package-jali-util)|language-level utilities|`@jali-ms/util`<br>`@jali-ms/util/errors`<br>`@jali-ms/util/iterables`<br>`@jali-ms/util/type-guards`|
+|[@jali-ms/util](overview.html#package-jali-ms-util)|language-level utilities|`@jali-ms/util`<br>`@jali-ms/util/errors`<br>`@jali-ms/util/iterables`<br>`@jali-ms/util/type-guards`|
 
 <!-- markdownlint-enable no-inline-html -->
 
@@ -33,15 +33,15 @@ common `Iterable` functions.
 
 |Export|Description|
 |:-|:-|
-|Errors|Re-export of [`@jali-ms/util/errors`](overview.html#module-jali-util-errors)|
-|Iterables|Re-export of [`@jali-ms/util/iterables`](overview.html#module-jali-util-iterables)|
-|TypeGuards|Re-export of [`@jali-ms/util/type-guards`](overview.html#module-jali-util-type-guards)|
+|Errors|Re-export of [`@jali-ms/util/errors`](overview.html#module-jali-ms-util-errors)|
+|Iterables|Re-export of [`@jali-ms/util/iterables`](overview.html#module-jali-ms-util-iterables)|
+|TypeGuards|Re-export of [`@jali-ms/util/type-guards`](overview.html#module-jali-ms-util-type-guards)|
 
 <!-- markdownlint-enable no-inline-html -->
 
 ### Module @jali-ms/util/errors
 
-_Back to [Package @jali-ms/util](overview.html#package-jali-util)_
+_Back to [Package @jali-ms/util](overview.html#package-jali-ms-util)_
 
 <!-- markdownlint-disable no-inline-html -->
 
@@ -101,7 +101,7 @@ _Back to [Package @jali-ms/util](overview.html#package-jali-util)_
 
 ### Module @jali-ms/util/iterables
 
-_Back to [Package @jali-ms/util](overview.html#package-jali-util)_
+_Back to [Package @jali-ms/util](overview.html#package-jali-ms-util)_
 
 <!-- markdownlint-disable no-inline-html -->
 
@@ -137,7 +137,7 @@ _Back to [Package @jali-ms/util](overview.html#package-jali-util)_
 
 ### Module @jali-ms/util/type-guards
 
-_Back to [Package @jali-ms/util](overview.html#package-jali-util)_
+_Back to [Package @jali-ms/util](overview.html#package-jali-ms-util)_
 
 <!-- markdownlint-disable no-inline-html -->
 

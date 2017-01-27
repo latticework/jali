@@ -8,9 +8,9 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  * @example <caption>The argument for the parameter isValid is `false`.</caption>
  * throw new ArgumentFalseError('lastName');
  *
- * @see <a href="manual/overview.html#package-jali-util">
+ * @see <a href="manual/overview.html#package-jali-ms-util">
  *    package <code>@jali-ms/util</code></a>
- * @see <a href="manual/overview.html#module-jali-util-errors">
+ * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
  * @see {@link verifyTrue}
  * @see {@link verifyTruthy}
