@@ -300,7 +300,9 @@ export default class ExampleRunner {
   private processFunction(fnCtx: ExampleContext): boolean {
     fnCtx.logHeader();
 
-    fnCtx.log('**ᴇxᴀᴍᴩʟᴇ**')
+    // Do not use header (i.e., '###') or it will show up in the esdoc navigation bar.
+    fnCtx.log('**ᴇxᴀᴍᴩʟᴇ**');
+    fnCtx.log();
     fnCtx.log('```typescript');
 
     const body = (fnCtx.fnSource as ts.MethodDeclaration).body;
@@ -309,8 +311,11 @@ export default class ExampleRunner {
       .replace(/\r?\n/g, EOL));
 
     fnCtx.log('```');
-    fnCtx.log('<br>**ᴏᴜᴛᴩᴜᴛ**')
-    fnCtx.log('```');
+    fnCtx.log();
+    // Do not use header (i.e., '###') or it will show up in the esdoc navigation bar.
+    fnCtx.log('<br>**ᴏᴜᴛᴩᴜᴛ**');
+    fnCtx.log();
+    fnCtx.log('```text');
     (fnCtx.fn as Function)(fnCtx);
     fnCtx.log('```');
 

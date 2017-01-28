@@ -54,7 +54,7 @@ export default class jali_ms_util {
 
     writer.log();
 
-    // U+1680	OGHAM SPACE MARK
+    // U+1680 OGHAM SPACE MARK
     writer.logIndented(2, `Example for function 'verifyArgument'`, '④');
     writer.logException(3, () => functionWithParameters(1, 'HasA\u{1680}Space', true));
 
