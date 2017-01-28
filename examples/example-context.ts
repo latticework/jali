@@ -129,24 +129,33 @@ export default class ExampleContext {
 
     const name = this.fn ? this.fn.name : this.obj.constructor.name;
     const description = metadata.member
-      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\` ` : ''}submodule ` +
-        `\`${metadata.module}\` type ${metadata.type ? `\`${metadata.type}\` `: ''}member ` +
+      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\`` : ''}${EOL}submodule ` +
+        `\`${metadata.module}\`${EOL}type ${metadata.type ? `\`${metadata.type}\``: ''}${EOL}member ` +
         `\`${metadata.member}\``
       : metadata.type
-      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\` ` : ''}submodule ` +
-        `\`${metadata.module}\` type \`${metadata.type}\``
+      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\`` : ''}${EOL}submodule ` +
+        `\`${metadata.module}\`${EOL}type \`${metadata.type}\``
       : metadata.module
-      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\` ` : ''}submodule ` +
+      ? `Examples for package ${metadata.pkg ? `\`${metadata.pkg}\`` : ''}${EOL}submodule ` +
         `\`${metadata.module}\``
       : metadata.pkg
       ? `Examples for package \`${metadata.pkg}\``
       : `Examples in \`${name}\``;
 
     const hdr = (this.fn) ? '## ' : '# ';
+    const title = (this.fn) ? `${name}` : `Example ${name}`;
 
-    const message = `${hdr}${name}${EOL}${description}${EOL}`;
+    const message = `${hdr}${title}${EOL}${EOL}${description}`;
 
-    this.log(message)
+    this.log(message);
+    this.log();
+
+    if (!this.fn)
+    {
+      this.log('[//]: # (<!-- cSpell:disable -->)');
+      this.log('[//]: # (<!-- markdownlint-disable no-emphasis-as-header no-inline-html -->)');
+      this.log();
+    }
   }
 
   public logIndented(depth: number, message: string, marker?: string | boolean): void {

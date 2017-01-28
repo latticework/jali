@@ -1,6 +1,4 @@
-<!-- markdownlint-disable first-line-h1 first-header-h1 -->
-
-## Packages
+# Packages
 
 [//]: # (Keep lines to 72 characters to leave room for the preview     )
 [//]: # (pane.                                                         )
