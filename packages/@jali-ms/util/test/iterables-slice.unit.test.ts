@@ -202,7 +202,7 @@ test(
 
 
 /** ***********************************************************************************************/
-test.failing(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
+test(title(TestType.Smoke, 'sliceOfT_sequence_begin_end',
     'no-end-reverse-not-array'),
   async t => {
   await Promise.resolve();

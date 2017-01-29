@@ -57,14 +57,14 @@ test(
 });
 
 /** ***********************************************************************************************/
-test.failing(title(TestType.Smoke, 'mapOfT_sequence_converter',
+test(title(TestType.Smoke, 'mapOfT_sequence_converter',
     'doubled-not-array'),
   async t => {
   await Promise.resolve();
 
   // arrange
-  const sequence = toIterable([2, 4, 6]);
-  const expectedElements = [...sequence];
+  const expectedElements = [2, 4, 6];
+  const sequence = toIterable(expectedElements);
   const expectedIndexes = [0, 1, 2];
   const expectedSequences = [sequence, sequence, sequence];
   const actualElements: number[] = [];

@@ -94,14 +94,14 @@ test(
 });
 
 /** ***********************************************************************************************/
-test.failing(title(TestType.Smoke, 'asIterableOfT_valueOrSequence_ctor',
+test(title(TestType.Smoke, 'asIterableOfT_valueOrSequence_ctor',
     'not-array-value'),
   async t => {
   await Promise.resolve();
 
   // arrange
-  const sequence = toIterable([1, 2, 3]);
-  const expectedArray = [...sequence];
+  const expectedArray = [1, 2, 3];
+  const sequence = toIterable(expectedArray);
   // act
   // assert
   t.plan(1);
