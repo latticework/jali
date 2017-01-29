@@ -59,7 +59,6 @@
     "start": "ng server",
       "start:clean": "npm start",
         "prestart:clean": "npm run clean",
-    "old-test": "BABEL_ENV=test ava --tap --concurrency 5",
     "test": "npm run test:run",
       "test:ut": "npm run test:run",
         "pretest:ut": "npm run build:ut",
