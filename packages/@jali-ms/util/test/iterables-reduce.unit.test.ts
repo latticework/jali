@@ -147,14 +147,14 @@ test(
 });
 
 /** ***********************************************************************************************/
-test.failing(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
+test(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
     'specified-initial-sum-not-array'),
   async t => {
   await Promise.resolve();
 
   // arrange
-  const sequence = toIterable([2, 4, 6]);
-  const expectedElements = [...sequence];
+  const expectedElements = [2, 4, 6];
+  const sequence = toIterable(expectedElements);
   const expectedPrevious = [1, 3, 7];
   const expectedIndexes = [0, 1, 2];
   const expectedSequences = [sequence, sequence, sequence];
@@ -170,7 +170,7 @@ test.failing(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
     return p + e;
   };
   const initialValue = 1;
-  const expected = 12 + initialValue;
+  const expected = expectedElements.reduce((pv, cv) => pv + cv, initialValue);
   const target = Iterables;
 
   // act
@@ -179,9 +179,9 @@ test.failing(title(TestType.Smoke, 'reduceOfT_sequence_accumulator',
   // assert
   t.plan(5);
 
-  t.deepEqual(actualPrevious, expectedPrevious);
-  t.deepEqual([...actualElements], expectedElements);
-  t.deepEqual([...actualIndexes], [...expectedIndexes]);
-  t.deepEqual([...actualSequences], [...expectedSequences]);
+  t.deepEqual(actualPrevious, expectedPrevious, 'array of previous values');
+  t.deepEqual([...actualElements], expectedElements, 'array of current values');
+  t.deepEqual([...actualIndexes], [...expectedIndexes], 'array of indexes');
+  t.deepEqual([...actualSequences], [...expectedSequences], 'array of the same sequence');
   t.deepEqual(actual, expected, 'reduce should sum elements');
 });

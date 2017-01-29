@@ -98,14 +98,14 @@ test(
 // Unit tests
 
 /** ***********************************************************************************************/
-test.failing(title(TestType.Smoke, 'everyOfT_sequence_test',
+test(title(TestType.Smoke, 'everyOfT_sequence_test',
     'succeeds-not-array'),
   async t => {
   await Promise.resolve();
 
   // arrange
-  const sequence = toIterable([2, 4, 6]);
-  const expectedElements = [...sequence];
+  const expectedElements = [2, 4, 6];
+  const sequence = toIterable(expectedElements);
   const expectedIndexes = [0, 1, 2];
   const expectedSequences = [sequence, sequence, sequence];
   const actualElements: number[] = [];
@@ -124,7 +124,7 @@ test.failing(title(TestType.Smoke, 'everyOfT_sequence_test',
   const actual = target.every(sequence, test);
 
   // assert
-  t.plan(4);
+  t.plan(5);
   t.is(actualElements.length, 3);
   t.deepEqual(actualElements, expectedElements);
   t.deepEqual([...actualIndexes], [...expectedIndexes]);
@@ -133,15 +133,14 @@ test.failing(title(TestType.Smoke, 'everyOfT_sequence_test',
 });
 
 /** ***********************************************************************************************/
-test.failing(title(TestType.Smoke, 'everyOfT_sequence_test',
+test(title(TestType.Smoke, 'everyOfT_sequence_test',
     'fails-not-array'),
   async t => {
   await Promise.resolve();
 
   // arrange
-  // const sequence = toIterable([2, 4, 6]);
-  const sequence = Iterables.concat([2, 4, 6]);
-  const expectedElements = [...sequence];
+  const expectedElements = [2, 4, 6];
+  const sequence = toIterable(expectedElements);
   const expectedIndexes = [0, 1, 2];
   const expectedSequences = [sequence, sequence, sequence];
   const actualElements: number[] = [];

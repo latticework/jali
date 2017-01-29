@@ -533,7 +533,7 @@ export function reduce<T, U>(
   let value: T | U = undefined as any as T | U;
   for (const element of sequence) {
     if (index === 0) {
-      if (initialValue !== undefined) {
+      if (initialValue != undefined) {
         value = accumulator(initialValue, element, index, sequence);
       } else {
         value = element;
@@ -541,6 +541,7 @@ export function reduce<T, U>(
     } else {
       value = accumulator(value, element, index, sequence);
     }
+
     index = index + 1;
   }
 
@@ -578,19 +579,18 @@ export function reduce<T, U>(
  */
 export function* slice<T>(sequence: Iterable<T>, begin?: number, end?: number): Iterable<T> {
   ArgumentVerifiers.verifyIterable('sequence', sequence);
-  if (begin !== undefined) { ArgumentVerifiers.verifyNumber('begin', begin); }
-  if (end !== undefined) { ArgumentVerifiers.verifyNumber('end', end); }
+  if (begin != undefined) { ArgumentVerifiers.verifyNumber('begin', begin); }
+  if (end != undefined) { ArgumentVerifiers.verifyNumber('end', end); }
 
   if (Array.isArray(sequence)) { return yield * (sequence as T[]).slice(begin, end); }
 
-
-  if (begin < 0 || end < 0) { return [...sequence].slice(begin, end); }
+  if (begin < 0 || end < 0) { return yield * [...sequence].slice(begin, end); }
 
 
   let index = 0;
   for (const element of sequence) {
     if (index >= begin || 0) {
-      if (end !== undefined && index === end) { break; }
+      if (end != undefined && index === end) { break; }
       yield element;
     }
 

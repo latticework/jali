@@ -45,7 +45,7 @@
       "address": "localhost",
       "restart": false,
       "sourceMaps": false,
-      "outDir": null,
+      "outFiles": [ ],
       "localRoot": "${workspaceRoot}",
       "remoteRoot": "/vagrant"
     },
