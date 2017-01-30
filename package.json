@@ -130,7 +130,7 @@
     "tslint": "^4.4.2",
     "typedoc": "^0.5.5",
     "typescript": "^2.1.5",
-    "webpack": "^2.2.0",
+    "webpack": "^2.2.1",
     "webpack-merge": "^2.5.0"
   },
   "babel": {
