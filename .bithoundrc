@@ -1,6 +1,6 @@
 {
   "critics": {
-    "lint": {"engine": "none"},
+    "lint": {"engine": "tslint"},
     "wc": { "limit": 5000 }
   },
   "ignore": [
@@ -22,7 +22,8 @@
   ],
   "dependencies": {
     "mute": [
-      "esdoc"
+    ],
+    "unused-ignores": [
     ]
   }
 }

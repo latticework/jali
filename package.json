@@ -8,6 +8,7 @@
       "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
     ],
     "dependencies": [
+      "If needed, bitHound can ignore unused dendencies: http://blog.bithound.io/configuring-bithound-101/#ignoringmodulesmarkedasunused",
       "Add these back in at the appropriate time using Angular2 Webpack Starter, https://github.com/AngularClass/angular2-webpack-starter",
       "  babel-runtime",
       "  core-js",
