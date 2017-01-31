@@ -1,7 +1,9 @@
-# 0.1.1
+# Change history
 
-updated depends versions
+## 0.1.1
 
-# 0.1.0
+Updated depends versions
+
+## 0.1.0
 
 Initial release of main
