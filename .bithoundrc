@@ -1,11 +1,14 @@
 {
   "//": {
+    "critics": [
+      "Linting turned off again. Don't know how to control what to lint. Since project linting is in CI build, it's safe to turn it off here."
+    ]
     "dependencies-mute": [
       "@types/node muted because we are using Node 6"
     ]
   }
   "critics": {
-    "lint": {"engine": "tslint"},
+    "lint": {"engine": "none"},
     "wc": { "limit": 5000 }
   },
   "ignore": [
