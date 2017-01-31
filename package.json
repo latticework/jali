@@ -69,7 +69,7 @@
       "preexamples": "npm run build:packages",
     "install:clean": "npm install",
       "preinstall:clean": "npm run clean:all",
-    "lint": "tslint \"packages/**/*.ts\" --format verbose",
+    "lint": "tslint --format verbose \"packages/**/*.ts\" \"typings/**/*.ts\"",
     "start": "ng server",
       "start:clean": "npm start",
         "prestart:clean": "npm run clean",

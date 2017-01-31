@@ -1,4 +1,9 @@
 {
+  "//": {
+    "dependencies-mute": [
+      "@types/node muted because we are using Node 6"
+    ]
+  }
   "critics": {
     "lint": {"engine": "tslint"},
     "wc": { "limit": 5000 }
@@ -22,6 +27,7 @@
   ],
   "dependencies": {
     "mute": [
+      "@types/node"
     ],
     "unused-ignores": [
     ]
