@@ -8,6 +8,7 @@
     "words": [
         "apis",
         "asarray",
+        "asiterable",
         "aspnet",
         "berkshelf",
         "clavecoder",
@@ -61,13 +62,12 @@
         "transpilation",
         "triaged",
         "toolset",
-        "typeguard",
         "truthy",
+        "typedef",
+        "typeguard",
         "vagrantfile",
         "validators",
-        "webpackfile",
-        "typedef",
-        "asiterable"
+        "webpackfile"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.
