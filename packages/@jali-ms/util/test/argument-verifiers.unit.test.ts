@@ -1213,7 +1213,7 @@ test(
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// verifyNonEmpty_name_value_message
+// verifyNonempty_name_value_message
 
 //////////////
 // Smoke tests
@@ -1221,7 +1221,7 @@ test(
 test(
   title(
     TestType.Smoke,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-not-specified-test-succeeds'),
   async t => {
   await Promise.resolve();
@@ -1233,7 +1233,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  target.verifyNonEmpty(name, value, message);
+  target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(1);
@@ -1246,7 +1246,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-not-specified-test-fails-for-undefined',
     TestDisposition.Negative),
   async t => {
@@ -1260,7 +1260,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonEmpty(name, value, message);
+  const action = () => target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(3);
@@ -1279,7 +1279,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-not-specified-test-fails-for-wrong-type',
     TestDisposition.Negative),
   async t => {
@@ -1293,7 +1293,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonEmpty(name, value, message);
+  const action = () => target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(3);
@@ -1311,7 +1311,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-not-specified-test-fails-for-empty',
     TestDisposition.Negative),
   async t => {
@@ -1325,7 +1325,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonEmpty(name, value, message);
+  const action = () => target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(3);
@@ -1344,7 +1344,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-specified-test-succeeds'),
   async t => {
   await Promise.resolve();
@@ -1356,7 +1356,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  target.verifyNonEmpty(name, value, message);
+  target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(1);
@@ -1367,7 +1367,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-specified-test-fails-for-undefined',
     TestDisposition.Negative),
   async t => {
@@ -1381,7 +1381,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonEmpty(name, value, message);
+  const action = () => target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(3);
@@ -1399,7 +1399,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-specified-test-fails-for-wrong-type',
     TestDisposition.Negative),
   async t => {
@@ -1413,7 +1413,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonEmpty(name, value, message);
+  const action = () => target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(3);
@@ -1432,7 +1432,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-specified-test-fails-for-empty',
     TestDisposition.Negative),
   async t => {
@@ -1446,7 +1446,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonEmpty(name, value, message);
+  const action = () => target.verifyNonempty(name, value, message);
 
   // assert
   t.plan(3);
@@ -1465,7 +1465,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonEmpty_name_value_message',
+    'verifyNonempty_name_value_message',
     'message-function-test-fails-for-empty',
     TestDisposition.Negative),
   async t => {
@@ -1480,7 +1480,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonEmpty(name, value, messageFn);
+  const action = () => target.verifyNonempty(name, value, messageFn);
 
   // assert
   t.plan(3);
@@ -1495,7 +1495,7 @@ test(
   });
 });
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// verifyNonZero_name_value_message
+// verifyNonzero_name_value_message
 
 //////////////
 // Smoke tests
@@ -1503,7 +1503,7 @@ test(
 test(
   title(
     TestType.Smoke,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-not-specified-test-succeeds'),
   async t => {
   await Promise.resolve();
@@ -1515,7 +1515,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  target.verifyNonZero(name, value, message);
+  target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(1);
@@ -1528,7 +1528,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-not-specified-test-fails-for-undefined',
     TestDisposition.Negative),
   async t => {
@@ -1542,7 +1542,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, message);
+  const action = () => target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(3);
@@ -1561,7 +1561,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-not-specified-test-fails-for-wrong-type',
     TestDisposition.Negative),
   async t => {
@@ -1575,7 +1575,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, message);
+  const action = () => target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(3);
@@ -1593,7 +1593,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-not-specified-test-fails-for-zero',
     TestDisposition.Negative),
   async t => {
@@ -1607,7 +1607,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, message);
+  const action = () => target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(3);
@@ -1625,7 +1625,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-specified-test-succeeds'),
   async t => {
   await Promise.resolve();
@@ -1637,7 +1637,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  target.verifyNonZero(name, value, message);
+  target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(1);
@@ -1648,7 +1648,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-specified-test-fails-for-undefined',
     TestDisposition.Negative),
   async t => {
@@ -1662,7 +1662,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, message);
+  const action = () => target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(3);
@@ -1680,7 +1680,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-specified-test-fails-for-wrong-type',
     TestDisposition.Negative),
   async t => {
@@ -1694,7 +1694,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, message);
+  const action = () => target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(3);
@@ -1713,7 +1713,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-specified-test-fails-for-zero',
     TestDisposition.Negative),
   async t => {
@@ -1727,7 +1727,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, message);
+  const action = () => target.verifyNonzero(name, value, message);
 
   // assert
   t.plan(3);
@@ -1746,7 +1746,7 @@ test(
 test(
   title(
     TestType.Unit,
-    'verifyNonZero_name_value_message',
+    'verifyNonzero_name_value_message',
     'message-function-test-fails-for-zero',
     TestDisposition.Negative),
   async t => {
@@ -1761,7 +1761,7 @@ test(
   const target = ArgumentVerifiers;
 
   // act
-  const action = () => target.verifyNonZero(name, value, messageFn);
+  const action = () => target.verifyNonzero(name, value, messageFn);
 
   // assert
   t.plan(3);

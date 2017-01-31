@@ -8,6 +8,7 @@
     "words": [
         "apis",
         "asarray",
+        "asiterable",
         "aspnet",
         "berkshelf",
         "clavecoder",
@@ -61,8 +62,9 @@
         "transpilation",
         "triaged",
         "toolset",
-        "typeguard",
         "truthy",
+        "typedef",
+        "typeguard",
         "vagrantfile",
         "validators",
         "webpackfile"

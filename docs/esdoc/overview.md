@@ -60,8 +60,8 @@ _Back to [Package @jali-ms/util](overview.html#package-jali-ms-util)_
 |[verifyDefined]|Throws an error if the specified argument is `undefined`.|
 |[verifyFunction]|Throws an error if the specified argument is not strictly a function expression.|
 |[verifyIterable]|Throws an error if the specified argument does not support iteration.|
-|[verifyNonEmpty]|Throws an error if the specified argument value is not a non-empty string.|
-|[verifyNonZero]|Throws an error if the specified argument value is not a non-zero number.|
+|[verifyNonempty]|Throws an error if the specified argument value is not a non-empty string.|
+|[verifyNonzero]|Throws an error if the specified argument value is not a non-zero number.|
 |[verifyNotNull]|Throws an error if the specified argument value is `undefined` or `null`.|
 |[verifyNotWhitespace]|Throws an error if the specified argument is not a string with non whitespace characters.|
 |[verifyNumber]|Throws an error if the specified argument value is not a `number` or has a value of `NaN`.|
@@ -87,8 +87,8 @@ _Back to [Package @jali-ms/util](overview.html#package-jali-ms-util)_
 [verifyDefined]: ../function/index.html#static-function-verifyDefined
 [verifyFunction]: ../function/index.html#static-function-verifyFunction
 [verifyIterable]: ../function/index.html#static-function-verifyIterable
-[verifyNonEmpty]: ../function/index.html#static-function-verifyNonEmpty
-[verifyNonZero]: ../function/index.html#static-function-verifyNonZero
+[verifyNonempty]: ../function/index.html#static-function-verifyNonempty
+[verifyNonzero]: ../function/index.html#static-function-verifyNonzero
 [verifyNotNull]: ../function/index.html#static-function-verifyNotNull
 [verifyNotWhitespace]: ../function/index.html#static-function-verifyNotWhitespace
 [verifyNumber]: ../function/index.html#static-function-verifyNumber

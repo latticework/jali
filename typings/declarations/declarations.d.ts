@@ -1,10 +1,3 @@
-// https://github.com/Microsoft/TypeScript/issues/6615
-declare module 'glob-fs' {
-    var _temp: any;
-    export = _temp;
-}
-
-declare module 'app-root-path' {
-    var _temp: any;
-    export = _temp;
-}
+// See: http://www.typescriptlang.org/docs/handbook/modules.html#shorthand-ambient-modules
+declare module 'glob-fs';
+declare module 'app-root-path';

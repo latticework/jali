@@ -1,11 +1,25 @@
 {
-  "//": [
-    "babel:",
-    "for ts+babel sourcemaps see http://stackoverflow.com/a/37799745/2240669",
-    "ava:",
-    "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
-    "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
-  ],
+  "//": {
+    "babel": [
+      "for ts+babel sourcemaps see http://stackoverflow.com/a/37799745/2240669"
+    ],
+    "ava": [
+      "See https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-tests-and-sources-the-same-way.",
+      "See https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md"
+    ],
+    "dependencies": [
+      "If needed, bitHound can ignore unused dendencies: http://blog.bithound.io/configuring-bithound-101/#ignoringmodulesmarkedasunused",
+      "Add these back in at the appropriate time using Angular2 Webpack Starter, https://github.com/AngularClass/angular2-webpack-starter",
+      "  babel-runtime",
+      "  core-js",
+      "  zone.js",
+      "Determine whether/if to use disposables vs. rx.disposables"
+    ],
+    "devDependencies": [
+      "Add these back in at the appropriate time using Angular2 Webpack Starter, https://github.com/AngularClass/angular2-webpack-starter",
+      "  codelyzer"
+    ]
+  },
   "name": "jali-srcs",
   "version": "0.0.0",
   "description": "Cross-platform service specification and execution context. Jali is the JavaScript implementation.",
@@ -55,7 +69,7 @@
       "preexamples": "npm run build:packages",
     "install:clean": "npm install",
       "preinstall:clean": "npm run clean:all",
-    "lint": "tslint \"packages/**/*.ts\" --format verbose",
+    "lint": "tslint --format verbose \"packages/**/*.ts\" \"typings/**/*.ts\"",
     "start": "ng server",
       "start:clean": "npm start",
         "prestart:clean": "npm run clean",
@@ -87,16 +101,11 @@
   },
   "homepage": "http://jali-ms.io/",
   "dependencies": {
-    "babel-runtime": "^6.22.0",
-    "core-js": "^2.4.1",
-    "disposables": "^1.0.1",
-    "espower": "^2.0.2",
-    "reflect-metadata": "^0.1.9",
-    "zone.js": "^0.7.6"
+    "reflect-metadata": "^0.1.9"
   },
   "devDependencies": {
     "@types/mkdirp": "^0.3.29",
-    "@types/node": "^6.0.61",
+    "@types/node": "^6.0.62",
     "@types/sanitize-filename": "^1.1.28",
     "@types/tmp": "^0.0.32",
     "app-root-path": "^2.0.1",
@@ -115,7 +124,6 @@
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-node6": "^11.0.0",
     "babel-register": "^6.22.0",
-    "codelyzer": "^2.0.0-beta.4",
     "copy-webpack-plugin": "^4.0.1",
     "cpy-cli": "^1.0.1",
     "esdoc": "^0.5.2",
