@@ -13,7 +13,7 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
   public get version() { return this.data.schemaVersion; }
 
   public isValidCode(messageCode: string): boolean {
-    Errors.verifyNonEmpty('messageCode', messageCode);
+    Errors.verifyNonempty('messageCode', messageCode);
 
     throw new Error();
   }
@@ -43,7 +43,7 @@ export default class StandardMessageEncodingVersion implements MessageEncodingVe
   }
 
   private getSegmentValue(messageCode: string, data: MessageEncodingSegmentData): number {
-    Errors.verifyNonEmpty('messageCode', messageCode);
+    Errors.verifyNonempty('messageCode', messageCode);
     Errors.verifyObject('data', data);
 
     throw new Error();

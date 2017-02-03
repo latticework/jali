@@ -13,7 +13,7 @@ import { default as ArgumentError } from './argument-error';
  * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
  * @see {@link ArgumentEmptyStringError}
- * @see {@link verifyNonEmpty}
+ * @see {@link verifyNonempty}
  * @see {@link verifyNotWhitespace}
  * @see {@link verifyTruthy}
  * @public

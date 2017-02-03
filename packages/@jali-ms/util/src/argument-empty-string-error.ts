@@ -13,7 +13,7 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
  * @see {@link ArgumentWhitespaceStringError}
- * @see {@link verifyNonEmpty}
+ * @see {@link verifyNonempty}
  * @see {@link verifyTruthy}
  * @see {@link verifyNotWhitespace}
  * @public

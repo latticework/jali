@@ -12,7 +12,7 @@ import { default as ArgumentFalsyError } from './argument-falsy-error';
  *    package <code>@jali-ms/util</code></a>
  * @see <a href="manual/overview.html#module-jali-ms-util-errors">
  *    module <code>@jali-ms/util/errors</code></a>
- * @see {@link verifyNonZero}
+ * @see {@link verifyNonzero}
  * @see {@link verifyTruthy}
  * @public
  * @since 0.0.1
