@@ -20,9 +20,14 @@ onboarding information.
 >   - [Triage](#triage)
 >   - [Emoji](#emoji)
 >   - [Commit message guidelines](#commit-message-guidelines)
-> - [Issue states](#issue-states)
-> - [Pull Request type](#pull-request-type)
-> - [Pull Request states](#pull-request-states)
+>   - [Commit types](#commit-types)
+>   - [Feature types](#feature-types)
+>   - [Issue types](#issue-types)
+>   - [Issue states](#issue-states)
+>   - [Pull Request types](#pull-request-types)
+>   - [Pull Request states](#pull-request-states)
+>   - [Task types](#task-types)
+>   - [Closure reasons](#closure-reasons)
 
 <!-- markdownlint-enable ul-style -->
 
@@ -152,16 +157,51 @@ Unicode character by viewing the raw version of this markdown document.
 
 ### Commit types
 
+<!--
+  Note that the perf emoji includes the VARIATION SELECTOR-16 (VS16)
+  so it is actually two characters. See: https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)
+  for more information on variation selectors.
+-->
+
 | Commit Type Code | GitHub Shortcode     | Unicode Emoji |
 |:-----------------|:---------------------|:-------------:|
-| feat             | `:sparkles:`         | ✨             |
+| feat             | `:sparkles:`         | ✨            |
+| change           | `:tada:`             | 🎉            |
 | fix              | `:wrench:`           | 🔧            |
 | docs             | `:page_facing_up:`   | 📄            |
 | style            | `:lipstick:`         | 💄            |
 | refactor         | `:triangular_ruler:` | 📐            |
-| perf             | `:running:`          | 🏃            |
+| perf             | N/A                  | ⏱️            |
 | test             | `:microscope:`       | 🔬            |
 | chore            | `:hammer:`           | 🔨            |
+| bot              | `:rocket:`           | 🚀            |
+
+### Feature types
+
+| Feature Category        | Code      | GitHub Shortcode       | Unicode Emoji |
+|:------------------------|:----------|:-----------------------|:-------------:|
+| Software Package        | *various* | N/A                    | 𝍖            |
+| Documentation           | doc       | `:page_facing_up:`     | 📄            |
+| Development Tools       | dev       | N/A                    | 🛠️           |
+| Development Environment | devenv    | `:hammer:`             | 🔨            |
+| Dependency Updates      | packages  | `:package:`            | 📦            |
+
+### Issue types
+
+<!--
+  Note that the Enhancement emoji includes the VARIATION SELECTOR-16 (VS16)
+  so it is actually two characters. See: https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)
+  for more information on variation selectors.
+-->
+
+| Issue Type  | GitHub Shortcode          | Unicode Emoji |
+|:------------|:--------------------------|:-------------:|
+| Question    | `:question:`              | ❓            |
+| Idea        | `:bulb:`                  | 💡            |
+| Bug         | `:beetle:`                | 🐞            |
+| Enhancement | `:arrow_forward:`         | ▶️️            |
+| Epic        | `:clapper:`               | 🎬            |
+| Task        | `:clipboard:`             | 📋            |
 
 ### Issue states
 
@@ -170,27 +210,58 @@ Unicode character by viewing the raw version of this markdown document.
 | New         | `:gift:`                  | 🎁            |
 | Icebox      | `:zzz:`                   | 💤            |
 | Backlog     | N/A                       | ☰             |
-| In Progress | `:walking:`               | 🚶            |
+| In Progress | `:walking:`               | 🚶             |
 | Review/QA   | N/A                       | ⚖             |
-| Done        | `:ballot_box_with_check:` | ☑️            |
-| Closed      | TBD                       | TBD           |
+| Done        | `:white_check_mark:`      | ✅             |
+| Canceled    | `:x:`                     | ❌             |
+| Removed     | `:no_entry_sign:`         | 🚫            |
 
-### Pull Request type
+### Pull Request types
+
+<!--
+  Note that the revert emoji includes the VARIATION SELECTOR-16 (VS16)
+  so it is actually two characters. See: https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)
+  for more information on variation selectors.
+-->
 
 | PR Type      | GitHub Shortcode              | Unicode Emoji |
 |:-------------|:------------------------------|:-------------:|
 | fast-forward | `:arrows_clockwise:`          | 🔃            |
 | merge        | `:twisted_rightwards_arrows:` | 🔀            |
-| revert       | `:arrows_counterclockwise:`   | 🔄            |
+| revert       | `:leftwards_arrow_with_hook:` | ↩️️           |
+
+### Closure reasons
+
+| Reason    | Label                | Item State | GitHub Shortcode     | Unicode Emoji |
+|:----------|:---------------------|:-----------|:---------------------|:-------------:|
+| Committed | zzz-closed_committed | Done       | `:white_check_mark:` | ✅            |
+| Committed | zzz-closed_committed | Merged     | `:kiss:`             | 💋            |
+| Canceled  | zzz-closed_canceled  | Canceled   | `:x:`                | ❌            |
+| Removed   | zzz-closed_removed   | Removed    | `:no_entry_sign:`    | 🚫            |
+
+### Task types
+
+| Task Type    | GitHub Shortcode              | Unicode Emoji |
+|:-------------|:------------------------------|:-------------:|
+| Work         | `:nut_and_bolt:`              | 🔩            |
+| Test         | `:microscope:`                | 🔬            |
+
 
 ### Pull Request states
 
-| PR State  | GitHub Shortcode  | Unicode Emoji |
+<!--
+  Note that the perf emoji includes the VARIATION SELECTOR-16 (VS16)
+  so it is actually two characters. See: https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)
+  for more information on variation selectors.
+-->
+
+| Reason    | GitHub Shortcode  | Unicode Emoji |
 |:----------|:------------------|:-------------:|
 | New       | `:gift:`          | 🎁            |
 | Review/QA | N/A               | ⚖             |
 | Merged    | `:kiss:`          | 💋            |
-| Closed    | `:no_entry_sign:` | 🚫            |
+| Canceled  | `:no_entry_sign:` | ❌            |
+| Removed   | `:no_entry_sign:` | 🚫            |
 
 [chef-dev-kit-download]: https://downloads.chef.io/chef-dk/
 [mary-poppins]: https://github.com/btford/mary-poppins

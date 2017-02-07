@@ -1,18 +1,19 @@
 # [Jali GitHub Issue Template][jali-issue-template] Instructions
 
-<!-- markdownlint-disable -->
-<!-- cSpell:ignore -->
-
 [//]: # (Keep lines to 72 characters to leave room for the preview     )
 [//]: # (pane.                                                         )
 [//]: # (Note: Comment format explained by:                            )
 [//]: # (http://stackoverflow.com/a/32190021                           )
+
+<!-- cSpell:ignore -->
 
 This template supports five types of issues: **Question**, **Idea**,
 **Bug**, **Enhancement**, and **Epic**. Review [§ General Instructions](#general-instructions),
 then use the [§ Template Form Decision Tree](#template-form-decision-tree)
 to chose the correct form. Please fill out the appropriate template and
 remove others.
+
+<!-- markdownlint-disable ul-style -->
 
 > ## Table Of Contents
 > - [General Instructions](#general-instructions)
@@ -24,7 +25,10 @@ remove others.
 >   - [Idea](#idea)
 >   - [Bug](#bug)
 >   - [Enhancement](#enhancement)
+>   - [Task](#task)
 >   - [Epic](#epic)
+
+<!-- markdownlint-enable ul-style -->
 
 ## General Instructions
 
@@ -67,7 +71,7 @@ Use the following decision tree to choose the appropriate form:
 1. **(E)** You are a `contributor` asking a question. Go to **(J)**.
 1. **(F)** Do you have enough details to complete the `Bug` form? If
    yes, go to **(G)**; otherwise, go to **(J)**.
-1. **(G)** You are a `contributor` entering a bug report. If you are a 
+1. **(G)** You are a `contributor` entering a bug report. If you are a
    `core-contributor` go to **(L)**; otherwise, go to **(J)**.
 1. **(H)** You are a `contributor` wanting an enhancement. Do you you
    have enough information to fill out the `Enhancement` form? If yes,
@@ -84,7 +88,6 @@ Use the following decision tree to choose the appropriate form:
 1. **(L)** Create a [Bug](#bug). ❌
 1. **(M)** Create an [Enhancement](#enhancement). ❌
 1. **(N)** Create an [Epic](#epic). ❌
-
 
 ## Template Forms
 
@@ -106,7 +109,8 @@ form. If you are a non-`core-contributor`, enter a `Bug` using the
 - **Title**
   - Use a short interrogative sentence, i.e. a question, that
     should be under 120 characters in length.
-  - End with the emoji sequence: `❓` `<`[commit-type-emoji][commit-types]`>` `🎁`
+  - End with the emoji sequence:
+    `❓` `<`[commit-type-emoji][commit-types]`>` `🎁`
 - **Commit Type**
   - Use the commit types most closely related to your question.
 - **Question Details**
@@ -137,13 +141,14 @@ an `Idea` issue first, then reference the Idea from the PR. A
 - **Title**
   - Use a short imperative verb phrase. It should be under 120
     characters in length.
-  - End with the emoji sequence: `💡` `<`[commit-type-emoji][commit-types]`>` `🎁`
+  - End with the emoji sequence:
+    `💡` `<`[commit-type-emoji][commit-types]`>` `🎁`
 - **Commit Type**
   - Use the commit types most closely related to your question.
-* **Idea details**
+- **Idea details**
   - Feel free to add formatting and images. For log dumps and other
     large data, attach documents. If you have created a PR or are a
-    non-core contributor, keep the **Idea** header but include the 
+    non-core contributor, keep the **Idea** header but include the
     the `Enhancement` form body.
 
 ```markdown
@@ -159,10 +164,10 @@ an `Idea` issue first, then reference the Idea from the PR. A
 > Emoji: 🐞 `:beetle:`
 
 The `Bug` form should only be used by `core-contributors`; others should
-use the `Idea` form. A `Bug` is a defect of the intended function of the product.
-If you are formally suggesting a change to the behavior of the product,
-use the `Enhancement` form; otherwise, use the `Idea` form. Bugs are
-formal issues. Please fill the form out completely.
+use the `Idea` form. A `Bug` is a defect of the intended function of the
+product. If you are formally suggesting a change to the behavior of the
+product, use the `Enhancement` form; otherwise, use the `Idea` form.
+Bugs are formal issues. Please fill the form out completely.
 
 #### Bug Instructions
 
@@ -233,7 +238,7 @@ formal issues. Please fill the form out completely.
 
 The `Enhancement` form should only be used by `core-contributors`;
 others should use the `Idea` form. An `Enhancement` represents a change
-to the product. Every change must be formally introduced as an
+to the product. Every feature change must be formally introduced as an
 `Enhancement` before a PR can be triaged.
 
 #### Enhancement Instructions
@@ -242,24 +247,66 @@ to the product. Every change must be formally introduced as an
   - Use a very short imperative verb phrase since the title is used in
     the feature branch for the issue.
   - End with the emoji sequence:
-    `▶️️` `<`[commit-type-emoji][commit-types]`>` `🎁`
+    `▶️️` `<`[feature-type-emoji][feature-types]`>` `🎁`
+- **Links**
+  - The **Replaces**, **Completed by**, and **Replaced by**
+    bulleted list items are links that represent long term relationship
+    between GitHub items. When a Replacement Enhancement issue is
+    created, then the replaced Enhancement should add a **Replaced by**
+    link, and the replacing Enhancement should add a **Replaces** link.
+    In addition, when a PR is created for an Enhancement, a
+    **Completed by** link should be added to the Enhancement and a
+    **Completes** link added to the PR.
+    > Note: While ZenHub supports connecting Issues and PRs, that
+    > connection only lasts while the issue is not closed. These links
+    > are intended to be permanent.
 - **Definition**
-  - Use "In order to, As a, I want to" format for new features. For  )
-    changes to existing features, include the "Whereas" clause. If   )
-    the format is too cumbersome, Start with "In order to" but       )
-    include a different subsequent clause that somehow includes a    )
-    Jali product role an an action performed.                        )
+  - For user features, use the *In order to, As a, I want to* format.If
+    the format is too cumbersome, Start with "In order to" but
+    include a different subsequent clause that somehow includes a
+    Jali product role an an action performed.
+  - For system features such as background processes, use *In order to,
+    When, The system should* format.
+  - For changes to existing features, include the "Whereas" clause.
+- **Features**
+  - This section is a succinct bulleted list of features. For Original
+    Enhancements this list should include GitHub issue task check boxes
+    and are included in the CHANGELOG and Release Notes, so it is
+    important that the feature list is succinct and clear. In Replacement
+    Enhancements, remove any check boxes and modify freely but make sure
+    to catalog any changes in the **New Features** and
+    **Changed Features** sections.
+- **New Features**
+  - This section is included in a Replacement Enhancement and performs
+    the same function of the **Features** section in an Original
+    Enhancement. As such, a list item in this section will often be a
+    verbatim copy of a list item in the **Features** section, but with a
+    GitHub task check box. For Replacement Enhancements, this section is
+    included in the CHANGELOG and Release Notes.
+- **Changed Features**
+  - This section is included in a Replacement Enhancement and catalogs
+    feature updates or removals. Using list items with GitHub check
+    boxes, be sure to describe, succinctly, how a feature is changed or
+    that it is removed. For Replacement Enhancements, this section is
+    included in the CHANGELOG and Release Notes.
 - **Tasks**
-  - Use a markdown task list to itemize the development tasks that   )
-    contribute toward completion of the Enhancement.                 )
+  - Use a markdown task list to itemize the development tasks that
+    contribute toward completion of the Enhancement. Always include at
+    least one task. If details are needed, create a Task Issue and link
+    to in in parenthesis
 - **Acceptance criteria**
-  - Include a task list of detailed tests that will be performed to  )
-    verify that the Enhancement works.                               )
+  - Include a task list of detailed tests that will be performed to
+    verify that the Enhancement works.
 
 ```markdown
 # Enhancement `<commit-type-name>`
 
+- Replaces #678
+- Completed by #789
+- Replaced by #890
+
 ## Definition
+
 [//]: # ( Format follows http://blog.crisp.se/2014/09/25/david-evans/as-a-i-want-so-that-considered-harmful)
 In order to ...,
 
@@ -269,21 +316,74 @@ I want to ...(,
 
 Whereas currently ...).
 
+## Features
+
+- Feature 1
+- Feature 2
+
+## New Features [feat]
+
+- [ ] Feature 1
+
+## Changed Features [change]
+
+- [ ] Changed Feature 2
+- [ ] Removed Feature 3
+
+
 ## Tasks
 
-- [ ] Task 1.
-- [ ] Task 2.
+- [ ] Task 1
+- [ ] Task 2 (#123)
 
 ## Acceptance Criteria
 
-- [ ] Criterion 1.
-- [ ] Criterion 2.
+- [ ] Criterion 1
+- [ ] Criterion 2 (#456)
+
+```
+
+### Task
+
+> Emoji: 📋 `*clipboard*`
+
+If a Bug test, Enhancement task, or Enhancement acceptance criterion
+cannot be described easily within a few lines or in a
+[`<details/>` element][github-markdown-details], add a **Task** issue.
+
+After you add a Task Issue for an Enhancement task, you should reference
+the task number. For example for Enhancement task `Task 2`, the the
+developer added Task `#123`, then referenced it in the Enhancement:
+
+```markdown
+- [ ] Task 2 (#123)
+```
+
+#### Task Instructions
+
+- **Title**
+  - Use a very short verb phrase, such as `Document feature` or `Test
+    feature`.
+  - End with the emoji sequence:
+    `📋` `<`[task-type-emoji][task-types]`>` `🎁`
+- **Description**
+  - Include what ever detail necessary for a `contributor` to complete
+    the task. This may include test steps or work check list, diagrams,
+    or document links.
+
+```markdown
+# Task `task-type-name`
+
+- Parent: #123 (▶️️|🐞)
+
+## Description
+
 
 ```
 
 ### Epic
 
-> Emoji: 🎥 `:movie_camera:`
+> Emoji: 🎬 `*clapper*`
 
 In Jali, a [ZenHub][zen-hub] *Epic* associates related `Enhancement`
 issues into a feature requirement category.
@@ -293,9 +393,9 @@ issues into a feature requirement category.
 - **Title**
   - Use a very short noun phrase, such as `User Management`.
   - End with the emoji sequence:
-    `🎥` `<`[commit-type-emoji][commit-types]`>` `🎁`
-- **Title**
-  - Clearly, but succinctly, define which would constitute an 
+    `🎬` `<`[feature-type-emoji][feature-types]`>` `🎁`
+- **Description**
+  - Clearly, but succinctly, define which would constitute an
     `Enhancement` that would fit in this `Epic` and which would not.
 
 ```markdown
@@ -308,6 +408,10 @@ issues into a feature requirement category.
 
 [CONTRIBUTING.md]: ./CONTRIBUTING.md
 [commit-types]: ./CONTRIBUTING.md#commit-types
+[feature-types]: ./CONTRIBUTING.md#feature-types
+[github-markdown-details]: https://github.com/dear-github/dear-github/issues/166#issuecomment-236342209
+[issue-types]: ./CONTRIBUTING.md#issue-types
 [jali-issue-template]: https://github.com/latticework/jali/issues/new
 [stack-overflow-jali]: http://stackoverflow.com/questions/tagged/jali
+[task-types]: ./CONTRIBUTING.md#task-types
 [zen-hub]: https://www.zenhub.com/

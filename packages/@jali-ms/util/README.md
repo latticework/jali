@@ -11,9 +11,9 @@ Utilities include:
 
 - function argument [`Error`][mdn-error] types
 - argument validator functions
-- [`iteration`][mdn-iteration] functions that covers most `Array`
+- [`iteration`][mdn-iteration] functions that cover most `Array`
   iteration functions and more.
-- *TypeScript* [user-defined type guard][ts-typeguard] functions for
+- **TypeScript** [user-defined type guard][ts-typeguard] functions for
   fundamental JavaScript types.
 
 ## Getting Started
@@ -26,7 +26,7 @@ npm install --save @jali-ms/util
 
 ## Usage
 
-As a utility package many kinds of functions are provided by a few
+As a utility package, many kinds of functions are provided by a few
 modules. Major function types are mentioned below. For detailed
 information see the Jali [docs][jali-docs-util].
 
@@ -87,10 +87,10 @@ function processException(err: any): void {
 ## Contribute
 
 This package is part of the [monorepo][desc-monorepo]
-[jali-srcs][jali-repo]. Please refer to that GitHub repository on how to
+[jali][jali-repo]. Please refer to that GitHub repository on how to
 contribute to the Jali project.
 
-[jali-docs-util]: http://jali-ms.io/docs/api/util
+[jali-docs-util]: http://jali-ms.io/reference/0.1/manual/overview.html#package-jali-ms-util
 [jali-repo]: https://github.com/latticework/jali
 [jali-site]: http://jali-ms.io/
 [mdn-error]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error

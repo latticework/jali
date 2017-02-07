@@ -1,7 +1,10 @@
 # Jali Repository Design
-
 [//]: # (Keep lines to 72 characters to leave room for the preview     )
-[//]: # (pane.                                                         )
+[//]: # (pane while editing.                                           )
+[//]: # (Note: Comment format explained by:                            )
+[//]: # (http://stackoverflow.com/a/32190021                           )
+
+<!-- cSpell:ignore -->
 
 The **Jali** repository is designed to provide a uniform development
 and execution environment for polyglot development of Jali packages

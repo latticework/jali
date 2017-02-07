@@ -59,12 +59,12 @@ To learn more about developing and managing microservices with Jali,
 
 ## Project Design
 
-*See [DESIGN.md](./DESIGN.md).*
+*See [DESIGN.md](./project/DESIGN.md).*
 
 ## Technologies Demonstrated
 
-See [CREDITS.md](./CREDITS.md) for instructions or examples how to use
-some of these technologies.
+See [CREDITS.md](./project/CREDITS.md) for instructions or examples how
+to use some of these technologies.
 
 ### Development environment
 
