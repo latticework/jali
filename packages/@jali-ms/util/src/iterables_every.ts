@@ -19,7 +19,7 @@ import * as ArgumentVerifiers from './argument-verifiers';
  * @since 0.0.1
  */
 export default function every<T>(
-    sequence: Iterable<T>, test: (value: T, index?: number, sequence?: Iterable<T>) => boolean) {
+    sequence: Iterable<T>, test: (value: T, index: number, sequence: Iterable<T>) => boolean) {
 /* tslint:enable:max-line-length */
   ArgumentVerifiers.verifyIterable('sequence', sequence);
   ArgumentVerifiers.verifyFunction('test', test);

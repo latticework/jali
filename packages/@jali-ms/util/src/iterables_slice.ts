@@ -37,12 +37,13 @@ export default function* slice<T>(sequence: Iterable<T>, begin?: number, end?: n
 
   if (Array.isArray(sequence)) { return yield * (sequence as T[]).slice(begin, end); }
 
-  if (begin < 0 || end < 0) { return yield * [...sequence].slice(begin, end); }
-
+  if (begin != undefined && begin < 0 || end != undefined && end < 0) {
+    return yield * [...sequence].slice(begin, end);
+  }
 
   let index = 0;
   for (const element of sequence) {
-    if (index >= begin || 0) {
+    if (index >= (begin || 0)) {
       if (end != undefined && index === end) { break; }
       yield element;
     }
