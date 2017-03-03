@@ -1,6 +1,9 @@
 # Jali design credits
 [//]: # (Keep lines to 72 characters to leave room for the preview     )
-[//]: # (pane.                                                         )
+[//]: # (pane while editing.                                           )
+[//]: # (Note: Comment format explained by:                            )
+[//]: # (http://stackoverflow.com/a/32190021                           )
+
 <!-- cSpell:ignore ality -->
 
 Sources for `Jali` project design
