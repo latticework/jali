@@ -135,7 +135,7 @@
     "sanitize-filename": "^1.6.1",
     "tmp": "^0.0.31",
     "ts-node": "^2.1.0",
-    "tslint": "^4.5.0",
+    "tslint": "^5.0.0",
     "typedoc": "^0.5.7",
     "typescript": "^2.2.1",
     "webpack": "^2.2.1",
