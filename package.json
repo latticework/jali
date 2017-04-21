@@ -111,7 +111,7 @@
     "app-root-path": "^2.0.1",
     "awesome-typescript-loader": "^3.0.8",
     "ava": "^0.18.2",
-    "babel-loader": "^6.3.2",
+    "babel-loader": "^7.0.0",
     "babel-plugin-espower": "^2.3.2",
     "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
