@@ -24,9 +24,10 @@ onboarding information.
 >   - [Feature types](#feature-types)
 >   - [Issue types](#issue-types)
 >   - [Issue states](#issue-states)
+>   - [Task types](#task-types)
+>   - [Bug severities](#bug-severities)
 >   - [Pull Request types](#pull-request-types)
 >   - [Pull Request states](#pull-request-states)
->   - [Task types](#task-types)
 >   - [Closure reasons](#closure-reasons)
 
 <!-- markdownlint-enable ul-style -->
@@ -216,6 +217,26 @@ Unicode character by viewing the raw version of this markdown document.
 | Canceled    | `:x:`                     | ❌             |
 | Removed     | `:no_entry_sign:`         | 🚫            |
 
+### Task types
+
+| Task Type    | GitHub Shortcode              | Unicode Emoji |
+|:-------------|:------------------------------|:-------------:|
+| Work         | `:nut_and_bolt:`              | 🔩            |
+| Test         | `:microscope:`                | 🔬            |
+
+### Bug severities
+
+| Severity               | Description                               |
+|:-----------------------|:------------------------------------------|
+| 0 Corrupts Data        | Causes persistent data corruption         |
+| 1 Crashes Product      | Causes application failure                |
+| 2 Blocks Functionality | Error keeps other functions from being used|
+| 3 Incorrect Behavior   | Component does not function as designed   |
+| 4 Incorrect Display    | Use when display issues affect application function|
+| 5 Documentation Error  | Use when the documentation is incomplete, incorrect, or unclear|
+| 6 Cosmetic Defect      | Use for visual aberrations that do not affect application function|
+
+
 ### Pull Request types
 
 <!--
@@ -229,23 +250,6 @@ Unicode character by viewing the raw version of this markdown document.
 | fast-forward | `:arrows_clockwise:`          | 🔃            |
 | merge        | `:twisted_rightwards_arrows:` | 🔀            |
 | revert       | `:leftwards_arrow_with_hook:` | ↩️️           |
-
-### Closure reasons
-
-| Reason    | Label                | Item State | GitHub Shortcode     | Unicode Emoji |
-|:----------|:---------------------|:-----------|:---------------------|:-------------:|
-| Committed | zzz-closed_committed | Done       | `:white_check_mark:` | ✅            |
-| Committed | zzz-closed_committed | Merged     | `:kiss:`             | 💋            |
-| Canceled  | zzz-closed_canceled  | Canceled   | `:x:`                | ❌            |
-| Removed   | zzz-closed_removed   | Removed    | `:no_entry_sign:`    | 🚫            |
-
-### Task types
-
-| Task Type    | GitHub Shortcode              | Unicode Emoji |
-|:-------------|:------------------------------|:-------------:|
-| Work         | `:nut_and_bolt:`              | 🔩            |
-| Test         | `:microscope:`                | 🔬            |
-
 
 ### Pull Request states
 
@@ -262,6 +266,15 @@ Unicode character by viewing the raw version of this markdown document.
 | Merged    | `:kiss:`          | 💋            |
 | Canceled  | `:no_entry_sign:` | ❌            |
 | Removed   | `:no_entry_sign:` | 🚫            |
+
+### Closure reasons
+
+| Reason    | Label                | Item State | GitHub Shortcode     | Unicode Emoji |
+|:----------|:---------------------|:-----------|:---------------------|:-------------:|
+| Committed | zzz-closed_committed | Done       | `:white_check_mark:` | ✅            |
+| Committed | zzz-closed_committed | Merged     | `:kiss:`             | 💋            |
+| Canceled  | zzz-closed_canceled  | Canceled   | `:x:`                | ❌            |
+| Removed   | zzz-closed_removed   | Removed    | `:no_entry_sign:`    | 🚫            |
 
 [chef-dev-kit-download]: https://downloads.chef.io/chef-dk/
 [mary-poppins]: https://github.com/btford/mary-poppins

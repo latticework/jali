@@ -3,26 +3,29 @@
 <!-- cSpell:ignore ality lookbehind -->
 <!-- markdownlint-disable no-inline-html -->
 
+## Table
+
 Table of EcmaScript proposals and their usage in **Jail**.
 
 | Proposal                             | Status      | Information       | Jali | Polyfill | TypeScript   | Babel Plugin                        | Babel Preset   | [Node][NodeESNext]| Comment                                            |
 |:-------------------------------------|-------------|:-----------------:|:----:|:---------|:------------:|:------------------------------------|:---------------|:-------------|:--------------------------------------------------------|
+| [builtin-extend][MDN14]              | ES2015      | [MDN14]           | Yes  |          | Yes          | [transform-builtin-extend]          |                | 6 LTS        |  |
 | [modules][1]                         | ES2015      | [MDN01]<br>[MDN02]| Yes  |          | Yes          | [transform-es2015-modules-commonjs] | [es2015-node6]<br>[node6]|    | Babel transform not used as modules are supported by Webpack 2.<br>Used by AVA based unit testing |
 | [function.name property][2]          | ES2015      | [MDN03]           | Yes  |          | Yes          | [transform-es2015-function-name]    | [es2015-node6] | 6 LTS        | Transform used for browser.                             |
 | [exponentiation operator][3]         | ES2016      | [MDN04]           | Yes  |          | Yes          | [transform-exponentiation-operator] | [es2016]       | 7            |                                                         |
 | [Array#includes][42]                 | ES2016      | [MDN05]           | Yes  | core.js  | Yes          |                                     | [es2016]       | 6 LTS        |                                                         |
-| [Object.{values,entries}][4]         | ES2017      | [MDN06]<br>[MDN07]| Yes  | core.js  | Yes          |                                     |                | 7            |                                                         |
+| Object.{[values][4],[entries][44]}   | ES2017      | [MDN06]<br>[MDN07]| Yes  | core.js  | Yes          |                                     |                | 7            |                                                         |
 | [String#{padStart,padEnd}][5]        | ES2017      | [MDN08]<br>[MDN09]| Yes  | core.js  | Yes          |                                     |                |              |                                                         |
-| [Object.getOwnPropertyDescriptors][6]| ES2017      | [MDN10]           | Yes  | core.js  | Yes          |                                     |                |              |                                                         |
+| [Object.getOwnPropertyDescriptors][6]| ES2017      | [MDN10]           | Yes  | core.js  | Yes          |                                     |                | 7            |                                                         |
 | [trailing commas from function calls][9]| ES2017   | [2ality00]        | Yes  |          | Yes          | [syntax-trailing-function-commas]   | [node6]        |              |                                                         |
-| [Async Functions][8]                 | ES2017      | [MDN11]           | Yes  |          | Yes          | [transform-async-to-generator]      |                |              |                                                         |
+| [Async Functions][8] \([await][45])  | ES2017      | [MDN11]<br>[2ality07]| Yes|         | Yes          | [transform-async-to-generator]      |                | 7            |                                                         |
+| [Shared memory and atomics][14]      | ES2017      | [MDN13]           |      |          |              |                                     |                |              | Nope.                                                   |
 | [SIMD][7]                            | Stage 3     | [MDN12]           |      |          |              |                                     |                |              | Not included.<br>Can use [polyfill](https://www.npmjs.com/package/simd). |
 | [Function#toString revision][10]     | Stage 3     | [2ality01]        |      |          |              |                                     |                |              | ???                                                     |
 | [Lifting Template Literal Restriction][24]| Stage 3| [2ality02]        |      |          | #[12700]     |                                     |                |              |                                                         |
 | [global][15]                         | Stage 3     | [2ality03]        |      |          | #[12902]     |                                     |                |              | core.js implementation still has System.global          |
 | [Rest/Spread Properties][13]         | Stage 3     | [2ality04]        | Yes  |          | Yes          | [transform-object-rest-spread]      |                |              | Introduced in TypeScript [2.1][ts21]                    |
 | [Asynchronous Iteration][11]         | Stage 3     | [2ality05]        |      |          | 2.2 #[11326] | [transform-async-to-generator]      |                |              |                                                         |
-| [Shared memory and atomics][14]      | Stage 3     | [MDN13]           |      |          |              |                                     |                |              | Nope.                                                   |
 | [import()][34]                       | Stage 3     | [2ality06]        |      |          | #[12364]     |                                     |                |              | Webpack 2 [supports it][code-splitting-with-es2015]     |
 | [function.sent metaproperty][12]     | Stage 2     |                   | Yes  |          |              | [transform-function-sent]           |                |              |                                                         |
 | [String.prototype.{trimStart,trimEnd}][17]| Stage 2|                   | Yes  | core.js  |              |                                     |                |              |                                                         |
@@ -34,6 +37,7 @@ Table of EcmaScript proposals and their usage in **Jail**.
 | [RegExp Unicode Property Escapes][23]| Stage 2     |                   |      |          |              |                                     |                |              |                                                         |
 | [Private Fields][28]                 | Stage 2     |                   |      |          | #[9950]      | PR #[260]                           |                |              |                                                         |
 | [Intl.Segmenter][36]                 | Stage 2     |                   |      |          |              |                                     |                |              |                                                         |
+| [RegExp named capture groups][35]    | Stage 2     |                   |      |          |              |                                     |                |              |                                                         |
 | [Date.parse fallback semantics][25]  | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
 | [export ns from][26]                 | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
 | [export default from][27]            | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
@@ -44,21 +48,36 @@ Table of EcmaScript proposals and their usage in **Jail**.
 | [Math Extensions][22]                | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
 | [`of` and `from` on collection constructors][33]| Stage 1|             |      |          |              |                                     |                |              |                                                         |
 | Generator arrow functions            | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
-| [RegExp named capture groups][35]    | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
 | [`s` (`dotAll`) flag for regular expressions][37]| Stage1|             |      |          |              |                                     |                |              |                                                         |
 | [`Promise.try`][38]                  | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
 | [64-Bit Integer Operations][40]      | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
+| [Dynamic Module Reform][46]          | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
+| [Null propagation][47]               | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
+| [Math.signbit][48]                   | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
+| [Error#stack][49]                    | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
+| [do expressions][50]                 | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
+| [Realms][51]                         | Stage 1     |                   |      |          |              |                                     |                |              |                                                         |
 | [String.prototype.at][21]            | Stage 0     |                   | Yes  | core.js  |              |                                     |                |              |                                                         |
+
+## Node Support
+
+- [ES2015](http://node.green/#ES2015)
+- [ES2016](http://node.green/#ES2016)
+- [ES2017](http://node.green/#ES2017)
+
+## Meetings
+
+- [2017-01](https://github.com/tc39/proposals/compare/02d6b2c...master)
 
 [1]:  http://www.ecma-international.org/ecma-262/6.0/#sec-modules
 [2]:  http://www.ecma-international.org/ecma-262/6.0/#sec-setfunctionname
-[3]:  https://github.com/rwaldron/exponentiation-operator
-[4]:  https://github.com/tc39/proposal-object-values-entries
+[3]:  http://www.ecma-international.org/ecma-262/7.0/index.html#sec-exp-operator
+[4]:  https://tc39.github.io/ecma262/#sec-object.values
 [5]:  https://github.com/tc39/proposal-string-pad-start-end
-[6]:  https://github.com/ljharb/proposal-object-getownpropertydescriptors
+[6]:  https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptors
 [7]:  https://docs.google.com/presentation/d/1MY9NHrHmL7ma7C8dyNXvmYNNGgVmmxXk8ZIiQtPlfH4/edit?usp=sharing
-[8]:  https://github.com/tc39/ecmascript-asyncawait
-[9]:  https://jeffmo.github.io/es-trailing-function-commas/
+[8]:  https://tc39.github.io/ecma262/#sec-async-function-definitions
+[9]:  https://tc39.github.io/ecma262/#prod-Arguments
 [10]: https://tc39.github.io/Function-prototype-toString-revision
 [11]: https://github.com/tc39/proposal-async-iteration
 [12]: https://github.com/allenwb/ESideas/blob/master/Generator%20metaproperty.md
@@ -90,10 +109,19 @@ Table of EcmaScript proposals and their usage in **Jail**.
 [39]: https://github.com/tc39/proposal-regexp-lookbehind
 [40]: https://gist.github.com/BrendanEich/4294d5c212a6d2254703
 [41]: https://github.com/tc39/String.prototype.matchAll
-[42]: https://github.com/tc39/Array.prototype.includes/
+[42]: http://www.ecma-international.org/ecma-262/7.0/index.html#sec-array.prototype.includes
+[44]: https://tc39.github.io/ecma262/#sec-object.entries
+[45]: https://tc39.github.io/ecma262/#prod-AwaitExpression
+[46]: https://github.com/caridy/proposal-dynamic-modules
+[47]: https://docs.google.com/presentation/d/11O_wIBBbZgE1bMVRJI8kGnmC6dWCBOwutbN9SWOK0fU/view
+[48]: http://jfbastien.github.io/papers/Math.signbit.html
+[49]: https://github.com/ljharb/proposal-error-stacks
+[50]: https://gist.github.com/dherman/1c97dfb25179fa34a41b5fff040f9879
+[51]: https://github.com/caridy/proposal-realms
 
 [syntax-trailing-function-commas]:   https://babeljs.io/docs/plugins/syntax-trailing-function-commas/
 [transform-async-to-generator]:      http://babeljs.io/docs/plugins/transform-async-to-generator/
+[transform-builtin-extend]:          https://www.npmjs.com/package/babel-plugin-transform-builtin-extend
 [transform-class-properties]:        https://babeljs.io/docs/plugins/transform-class-properties/
 [transform-decorators-legacy]:       https://babeljs.io/docs/plugins/transform-decorators/
 [transform-es2015-modules-commonjs]: https://babeljs.io/docs/plugins/transform-es2015-modules-commonjs/
@@ -124,6 +152,7 @@ Table of EcmaScript proposals and their usage in **Jail**.
 [2ality04]: http://www.2ality.com/2016/10/rest-spread-properties.html
 [2ality05]: http://www.2ality.com/2016/10/asynchronous-iteration.html
 [2ality06]: http://www.2ality.com/2017/01/import-operator.html
+[2ality07]: http://www.2ality.com/2017/01/shared-array-buffer.html
 [babel-2016-12-07]: https://babeljs.io/blog/2016/12/07/the-state-of-babel
 [MDN01]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 [MDN02]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
@@ -138,6 +167,7 @@ Table of EcmaScript proposals and their usage in **Jail**.
 [MDN11]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 [MDN12]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD
 [MDN13]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
+[MDN14]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends#Using_extends_with_built-in_objects
 [NodeESNext]: http://node.green/
 [promise.prototype.finally]: https://www.npmjs.com/package/promise.prototype.finally
 [ts21]: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html

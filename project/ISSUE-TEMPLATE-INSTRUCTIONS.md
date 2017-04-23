@@ -35,10 +35,11 @@ remove others.
 ### Issue workflow
 
 The Jali repository uses [ZenHub][zen-hub] for project management. See
-[CONTRIBUTING.md] for the proper workflow for Jali GitHub issues. If
-you are a `non-contributor`, please enter your issue using the
-`Question` or `Idea` form. See the [§ Template Form Decision Tree](#template-form-decision-tree)
-for exact instructions.
+[CONTRIBUTING.md][contributing.md] for the proper workflow for Jali
+GitHub issues. If you are a `non-contributor`, please enter your issue
+using the `Question` or `Idea` form. See the
+[§ Template Form Decision Tree](#template-form-decision-tree) for exact
+instructions.
 
 ### Commit types
 
@@ -183,14 +184,8 @@ Bugs are formal issues. Please fill the form out completely.
   - Specify the `semver` version of the project that is exhibiting the
     incorrect behavior.
 - **Severity**
-  - Specify the bug's severity. Include the number and name. Use one of:
-    - `0 Corrupts Data`
-    - `1 Crashes Product`
-    - `2 Blocks Functionality`
-    - `3 Incorrect Behavior`
-    - `4 Incorrect Display`
-    - `5 Documentation Error`
-    - `6 Cosmetic Defect`
+  - Specify the bug's [severity][bug-severity]. Include the number and
+    name.
 - **Bug Description**
   - Feel free to add formatting and an image. For many images, details,
     or logs, add attachments in the **Defective Behavior** section,
@@ -406,9 +401,10 @@ issues into a feature requirement category.
 
 ```
 
-[CONTRIBUTING.md]: ./CONTRIBUTING.md
-[commit-types]: ./CONTRIBUTING.md#commit-types
-[feature-types]: ./CONTRIBUTING.md#feature-types
+[bug-severity]: /CONTRIBUTING.md#bug-severities
+[contributing.md]: /CONTRIBUTING.md
+[commit-types]: /CONTRIBUTING.md#commit-types
+[feature-types]: /CONTRIBUTING.md#feature-types
 [github-markdown-details]: https://github.com/dear-github/dear-github/issues/166#issuecomment-236342209
 [issue-types]: ./CONTRIBUTING.md#issue-types
 [jali-issue-template]: https://github.com/latticework/jali/issues/new

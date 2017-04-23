@@ -5,17 +5,48 @@
 [//]: # (Note: Comment format explained by:                            )
 [//]: # (http://stackoverflow.com/a/32190021                           )
 
+<!-- markdownlint-disable no-inline-html -->
 <!-- cSpell:ignore -->
 
 <!-- markdownlint-disable ul-style -->
 
 > ## Table of Contents
 >
+> - [Bump Version Procedure](#bump-version-procedure)
 > - [Create Release Procedure](#create-release-procedure)
 > - [Release Procedure](#release-procedure)
 > - [Update Change Log Procedure](#update-change-log-procedure)
 
 <!-- markdownlint-enable ul-style -->
+
+## Bump Version Procedure
+
+1. For each `project.json` file within the [packages](../packages)
+   folder, for the `version` property, increase the version number
+   according to the maximum change type of any change in the repository
+   that will be merged into the `master` branch.
+1. Append the prerelease version indicated on [README.md](../README.md).
+   If the prerelease version has not changed, increment the prerelease
+   version number.
+
+**EXAMPLE 1**<br>
+Only non-breaking feature enhancements and patch level bug fixes
+have been performed since the last version `v1.2.3-beta.7`. The
+`README.md` indicates that the project is at the `beta` stage.
+Since the version number already indicates beta, increment the
+prerelease version number.<br>
+
+```json
+"version": "1.3.0-beta.8",
+```
+
+> ### Bump Version Procedure Notes
+>
+> When the build process merges the `@jali-ms` folder
+> [package.json](../packages/@jali-ms/package.json) file with each
+> packages file, only that file will be updates.
+>
+> In the future a utility may perform the **Bump version procedure**.
 
 ## Create Release Procedure
 

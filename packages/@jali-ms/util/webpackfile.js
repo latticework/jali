@@ -42,6 +42,11 @@ module.exports = function(options) {
             plugins: [
               'syntax-trailing-function-commas',
               'transform-async-to-generator',
+              [
+                'transform-builtin-extend', {
+                  globals: [ 'Error', 'Array']
+                }
+              ],
               'transform-class-properties',
               'transform-decorators-legacy',
               'transform-es2015-function-name',
