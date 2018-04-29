@@ -126,7 +126,7 @@
     "babel-register": "^6.23.0",
     "copy-webpack-plugin": "^4.0.1",
     "cpy-cli": "^1.0.1",
-    "esdoc": "^0.5.2",
+    "esdoc": "^1.1.0",
     "eslint": "^3.16.1",
     "mkdirp": "^0.5.1",
     "glob-fs": "^0.1.6",
