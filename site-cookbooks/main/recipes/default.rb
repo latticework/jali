@@ -45,12 +45,14 @@ package 'git' do
 end
 
 # Install Node
+# https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+# However consider nvm http://www.hostingadvice.com/how-to/update-node-js-latest-version/
 if ::Dir.exist?('/usr/bin/node')
   Chef::Log.info('(up to date)')
 else
-  bash 'prep_for_node_6_x' do
+  bash 'prep_for_node_8_x' do
     code <<-EOH
-      curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+      curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     EOH
   end
 

@@ -12,6 +12,6 @@
   // "files.trimTrailingWhitespace": true,
   "files.encoding": "utf8",
   "git.enabled": true,
-  "git.enableLongCommitWarning": true,
+  "npm.enableScriptExplorer": true,
   "typescript.tsdk": "node_modules/typescript/lib"
 }
