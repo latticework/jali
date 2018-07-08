@@ -41,20 +41,31 @@ module.exports = function(options) {
             cacheDirectory: true,
             plugins: [
               'syntax-trailing-function-commas',
+              "transform-async-generator-functions",
               'transform-async-to-generator',
               'transform-class-properties',
               'transform-decorators-legacy',
               'transform-es2015-function-name',
-              'transform-es2015-modules-commonjs',
-              'transform-function-sent',
               'transform-exponentiation-operator',
+              'transform-function-sent',
               [
-                'transform-runtime',
+                "transform-modern-regexp",
                 {
-                  polyfill: false,
-                  regenerator: false,
+                  "features": [
+                    "namedCapturingGroups",
+                    "dotAll"
+                  ]
                 }
-              ]
+              ],
+              "transform-numeric-separator",
+              [
+                "transform-runtime",
+                {
+                  "polyfill": false,
+                  "regenerator": false
+                }
+              ],
+              "transform-unicode-property-regex"
             ],
             presets: []
           },

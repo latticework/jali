@@ -40,7 +40,7 @@
     "url": "https://github.com/latticework/jali.git"
   },
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">= 8.9.0"
   },
   "preferGlobal": false,
   "private": false,
