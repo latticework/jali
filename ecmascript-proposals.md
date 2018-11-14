@@ -35,30 +35,31 @@ Table of ECMAScript proposals and their usage in **Jail**.
 | [Object.getOwnPropertyDescriptors][6]| ES2017      | [mdn10]           | Yes  | core.js  | Yes          | NA                                  | 8 LTS        |                                                         |
 | [trailing commas from function calls][9]| ES2017   | [2ality00]        | Yes  |          | Yes          | [syntax-trailing-function-commas]   | 8 LTS        |                                                         |
 | [Async Functions][8]                 | ES2017      | [mdn11]           | Yes  |          | Yes          | [transform-async-to-generator]      | 8 LTS        |                                                         |
-| [Shared memory and atomics][14]      | ES2017      | [mdn13]           | See notes|      | [2.6][ts26] #[15753]|                              | 9            | Typescript supports the syntax. Implementation support javascript runtime and version|
-| [Lifting Template Literal Restriction][24]| ES2018 | [mdn14]<br>[2ality02]|   |          | #[12700]     | V7 Core See PR #[274]               | 9            |                                                         |
+| [Shared memory and atomics][14]      | ES2017      | [mdn13]           | See notes|      | Yes          |                                     | 9            | Typescript supports the syntax. Implementation support javascript runtime and version|
+| [Lifting Template Literal Restriction][24]| ES2018 | [mdn14]<br>[2ality02]|   |          | #[12700]     | V7 Core See PR #[274]               | 9            | On TypeScript 3.2 roadmap                               |
 | [`s` (`dotAll`) flag for regular expressions][37]| ES2018| [2ality10]  | Yes  |          |              | [transform-modern-regexp]           | 9            |                                                         |
 | [RegExp named capture groups][35]    | ES2018      | [2ality09]        | Yes  |          |              | [transform-modern-regexp]           | 10           | Babel may also support through regexpu See [babel proposals #35][babel-proposals-35]|
 | [RegExp Lookbehind Assertions][39]   | ES2018      | [2ality07]        |      |          |              | No. See [transform-modern-regexp #5][transform-modern-regexp5]| 9|                                           |
 | [RegExp Unicode Property Escapes][23]| ES2018      | [2ality08]        | Yes  |          |              | [transform-unicode-property-regex]  | 10           |                                                         |
-| [Rest/Spread Properties][13]         | ES2018      | [2ality04]        | Yes  |          | [2.1][ts21]] | [transform-object-rest-spread]      | 8 LTS        |                                                         |
-| [Promise#finally][16]                | ES2018      | [2ality11]        | Yes  | core.js  |              |                                     | 10           | [promise.prototype.finally][promise.prototype.finally]  |
-| [Asynchronous Iteration][11]         | ES2018      | [2ality05]        | Yes  |          | [2.3][ts23] #[11326]| [transform-async-generator-functions]| 10   |                                                         |
-| [Optional catch binding][44]         | ES2019      | [2ality14]        | Yes  |          | [2.5][ts25] #[17467]| [transform-optional-catch-binding]|         | [Added to chrome codebase 2018-01-19](https://bugs.chromium.org/p/v8/issues/detail?id=6889)|
-| [JSON superset][65]                  | ES2019      |                   |      |          |              | PR #[#7985]                         |              |                                                         |
+| [Rest/Spread Properties][13]         | ES2018      | [2ality04]        | Yes  |          | Yes          | [transform-object-rest-spread]      | 8 LTS        |                                                         |
+| [Promise#finally][16]                | ES2018      | [2ality11]        | Yes  | core.js  | Yes          |                                     | 10           | [promise.prototype.finally][promise.prototype.finally]  |
+| [Asynchronous Iteration][11]         | ES2018      | [2ality05]        | Yes  |          | Yes          | [transform-async-generator-functions]| 10          |                                                         |
+| [Optional catch binding][44]         | ES2019      | [2ality14]        | Yes  |          | Yes          | [transform-optional-catch-binding]  |              | [Added to chrome codebase 2018-01-19](https://bugs.chromium.org/p/v8/issues/detail?id=6889)|
+| [JSON superset][65]                  | ES2019      |                   |      |          |              | [proposal-json-strings ]            |              |                                                         |
 | [Function#toString revision][10]     | Stage 3     | [2ality01]        |      |          |              |                                     | 10. 6 LTS (Partial)|                                                   |
-| [global][15]                         | Stage 3     | [2ality03]        | Yes  | core.js  | #[12902]     |                                     |              | core.js v2.5.0                                          |
-| [import()][34]                       | Stage 3     | [2ality06]        | Yes  |          | [2.4][ts24] #[14495]| [syntax-dynamic-import]      |              | Babel syntax/transform not used as dynamic modules are [supported by Webpack 2][code-splitting-with-es2015].<br>Used by AVA based unit testing|
+| [global][15]                         | Stage 3     | [2ality03]        | Yes  | core.js  | #[12902]     |                                     |              |                                                         |
+| [import()][34]                       | Stage 3     | [2ality06]        | Yes  |          | Yes          | [syntax-dynamic-import]             |              | Babel syntax/transform not used as dynamic modules are [supported by Webpack 2][code-splitting-with-es2015].<br>Used by AVA based unit testing|
 | [Legacy RegExp features in JavaScript][32]| Stage 3|                   |      |          |              |                                     |              |                                                         |
-| [BigInt][43]                         | Stage 3     | [2ality12]        |      |          | #[15096]     | PR #[6015]                          |              |                                                         |
-| [`import.meta`][45]                  | Stage 3     | [2ality15]        |      |          |              |                                     |              |                                                         |
+| [BigInt][43]                         | Stage 3     | [2ality12]        |      |          | #[15096]     | PR #[6015]                          |              | On TypeScript 3.2 roadmap                               |
+| [`import.meta`][45]                  | Stage 3     | [2ality15]        | Partial|        | Yes          |                                     | 10.           | See Typescript PR #[23327] for instructions how to use  |
 | [Private instance methods and accessors][46]| Stage 3|[2ality13]       |      |          | #[9950]      | V7 [transform-class-properties]     |              | See #[7842] Merged 2018-05-18 for 7.0.0-beta.48         |
-| [Array#{flat,flatMap}][49]           | Stage 3     |                   | Yes  | core.js  |              |                                     |              |                                                         |
+| [Array#{flat,flatMap}][49]           | Stage 3     |                   | Yes  | core.sj  |              |                                     |              |                                                         |
 | [Instance class fields and methods][47]| Stage 3   | [2ality13]        | Yes  |          | Yes. See comment| [transform-class-properties]     |              | Bug in TypeScript #[12212] does not pass through to Babel|
 | [Static class fields and methods][75]| Stage 3     | [2ality13]        | Yes  |          | Yes. See comment| [transform-class-properties]     |              | Bug in TypeScript #[12212] does not pass through to Babel|
 | [String#{trimStart,trimEnd}][17]     | Stage 3     |                   | Yes  | core.js  |              |                                     |              |                                                         |
 | [String#matchAll][41]                | Stage 3     |                   | Yes  | core.js  |              |                                     |              |                                                         |
-| [Symbol#description][60]             | Stage 3     |                   | Yes  | core.js  |              |                                     |              |                                                         |
+| [Symbol#description][60]             | Stage 3     |                   |      | core.js  |              |                                     |              |                                                         |
+| [Object.fromEntries][84]             | Stage 3     |                   |      | core.js  | PR #[26149]  |                                     |              |                                                         |
 | [Numeric separators][48]             | Stage 2     |                   |      |          | *2.7* #[20582]| [transform-numeric-separator]      |              |                                                         |
 | [function.sent metaproperty][12]     | Stage 2     |                   | Yes  |          |              | [transform-function-sent]           |              |                                                         |
 | [Decorators][18]                     | Stage 2     |                   | Yes  |          | Yes          | [transform-decorators-legacy]       |              | [Needs write in Babel][babel-2016-12-07]                |
@@ -66,15 +67,18 @@ Table of ECMAScript proposals and their usage in **Jail**.
 | [Atomics.waitAsync][59]              | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [Hashbang Grammar][85]               | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [WeakRefs][29]                       | Stage 2     |                   |      |          |              |                                     |              |                                                         |
-| [Object.fromEntries][84]             | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [Top-level await][79]                | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [New Set methods][82]                | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [Well-formed `JSON.stringify`][90]   | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [Function#toString() censorship][78] | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [Realms][56]                         | Stage 2     |                   |      |          |              |                                     |              |                                                         |
-| [Date.parse fallback semantics][25]  | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+| [ArrayBuffer#transfer][96]           | Stage 2     |                   |      |          |              |                                     |              |                                                         |
+| [RegExp Match array offsets][95]     | Stage 2     |                   |      |          |              |                                     |              |                                                         |
+| [Sequence properties in Unicode property escapes][88]| Stage 2|        |      |          |              |                                     |              |                                                         |
+| [InterpreterDirective][68]           | Stage 2     |                   |      |          |              |                                     |              |                                                         |
+| [Temporal][57]                       | Stage 2     |                   |      |          |              |                                     |              |                                                         |
 | [export v from "mod"; statements][27]| Stage 1     |                   |      |          |              |                                     |              |                                                         |
-| [Observable][19]                     | Stage 1     |                   | Yes  | core.js  |              |                                     |              |                                                         |
+| [Observable][19]                     | Stage 1     |                   | Yes  | core.js  |              |                                     |              | core-js/fn/observable                                   |
 | [Frozen Realms][30]                  | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Math Extensions][22]                | Stage 1     |                   | Yes  | core.js  |              |                                     |              |                                                         |
 | [`of` and `from` on collection constructors][33]| Stage 1|             | Yes  | core.js  |              |                                     |              |                                                         |
@@ -84,7 +88,6 @@ Table of ECMAScript proposals and their usage in **Jail**.
 | [Math.signbit: IEEE-754 sign bit][53]| Stage 1     |                   | Yes  | core.js  |              |                                     |              |                                                         |
 | [Error stacks][54]                   | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [do expressions][55]                 | Stage 1     |                   |      |          |              |                                     |              |                                                         |
-| [Temporal][57]                       | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Float16 on TypedArrays, DataView, Math.hfround][58]| Stage 1|         |      |          |              |                                     |              |                                                         |
 | [Number.{parseInt,parseFloat} changes| Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Binary AST][61]                     | Stage 1     |                   |      |          |              |                                     |              |                                                         |
@@ -94,7 +97,6 @@ Table of ECMAScript proposals and their usage in **Jail**.
 | [Nullary coalescing operator][66]    | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Partial application][67]            | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Cancellation  API][74]              | Stage 1     |                   |      |          |              |                                     |              |                                                         |
-| [InterpreterDirective][68]           | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [String#replaceAll][69]              | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [String#codePoints][70]              | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Distinguishing literal strings][71] | Stage 1     |                   |      |          |              |                                     |              |                                                         |
@@ -108,23 +110,43 @@ Table of ECMAScript proposals and their usage in **Jail**.
 | [Richer Keys][86]                    | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Slice notation][87]                 | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Logical Assignment Operators][88]   | Stage 1     |                   |      |          |              |                                     |              |                                                         |
-| [Sequence properties in Unicode property escapes][88]| Stage 1|        |      |          |              |                                     |              |                                                         |
 | [Module Keys][91]                    | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Class Static Block][92]             | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [class Access Expressions][93]       | Stage 1     |                   |      |          |              |                                     |              |                                                         |
 | [Pattern Matching][94]               | Stage 1     |                   |      |          |              |                                     |              |                                                         |
-| [RegExp Match array offsets][95]     | Stage 1     |                   |      |          |              |                                     |              |                                                         |
-| [String.prototype.at][21]            | Stage 0     |                   | Yes  | core.js  |              |                                     |              |                                                         |
+| [Explicit Resource Management][97]   | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+| [Dynamic Modules][98]                | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+| [JavaScript Standard Library][99]    | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+| ["use modules"][100]                 | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+| [for-in mechanics][101]              | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+| [Uniform Date.parse][102]            | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+| [JSON.parse source text access][103] | Stage 1     |                   |      |          |              |                                     |              |                                                         |
+
+### Core-js imports
+
+| Proposal                             | Imports |
+|:-------------------------------------|:-------|
+| [global][15]                         | core-js/fn/global |
+| [Array#{flat,flatMap}][49]           | core-js/fn/array/flat-map<br/>core-js/fn/array/flatten (but renamed v. > 2.5.7!)|
+| [String#{trimStart,trimEnd}][17]     | core-js/fn/string/trim-left<br/>core-js/fn/string/trim-right|
+| [String#matchAll][41]                | core-js/fn/string/match-all |
+| [Symbol#description][60]             | v > 2.5.7, core-js/fn/symbol/description                |
+| [Object.fromEntries][84]             | v > 2.5.7, core-js/fn/object/fromEntries                |
+| [Observable][19]                     | core-js/fn/observable                                   |
+| [Math Extensions][22]                |
 
 ## Document Workflow
 
-Next update to process for meeting **TC39 2018-05** from TC39 Proposals
-README document is 83f2325 on 2018-05-22.
+Processed update for meeting *TC39 2018-09* from TC39 Proposals
+Processed README document through commit 1626c4b on 2018-09-27.
 
 ### Process Status
 
-- Looking at **TC39 2018-05**
+- Looked at *TC39 2018-09*
 - Add [transform-optional-catch-binding]
+- Investigate support for Object.fromEntries
+- Upgrade to Babel 7 [Upgrade doc](https://babeljs.io/docs/en/v7-migration)
+- Include core-js proposals directly. See [this Babel issue comment](https://github.com/babel/babel/pull/8440#issuecomment-414705718)
 
 [1]:  http://www.ecma-international.org/ecma-262/6.0/#sec-modules
 [2]:  http://www.ecma-international.org/ecma-262/6.0/#sec-setfunctionname
@@ -149,7 +171,6 @@ README document is 83f2325 on 2018-05-22.
 [22]: https://github.com/rwaldron/proposal-math-extensions
 [23]: https://github.com/tc39/proposal-regexp-unicode-property-escapes
 [24]: https://github.com/tc39/proposal-template-literal-revision
-[25]: https://github.com/tc39/proposal-date-time-string-format
 [26]: https://github.com/leebyron/ecmascript-export-ns-from
 [27]: https://github.com/leebyron/ecmascript-export-default-from
 [29]: https://github.com/tc39/proposal-weakrefs
@@ -184,7 +205,7 @@ README document is 83f2325 on 2018-05-22.
 [60]: https://github.com/tc39/proposal-Symbol-description
 [61]: https://github.com/syg/ecmascript-binary-ast
 [62]: https://github.com/tc39/proposal-pipeline-operator
-[63]: https://github.com/littledan/proposal-extensible-numeric-literals
+[63]: https://github.com/tc39/proposal-extended-numeric-literals
 [64]: https://github.com/michaelficarra/proposal-first-class-protocols
 [65]: https://github.com/tc39/proposal-json-superset
 [66]: https://github.com/tc39-transfer/proposal-nullish-coalescing
@@ -217,6 +238,14 @@ README document is 83f2325 on 2018-05-22.
 [93]: https://github.com/rbuckton/proposal-class-access-expressions
 [94]: https://github.com/tc39/proposal-pattern-matching
 [95]: https://github.com/rbuckton/proposal-regexp-match-offsets
+[96]: https://github.com/domenic/proposal-arraybuffer-transfer
+[97]: https://github.com/rbuckton/proposal-using-statement
+[98]: https://github.com/guybedford/proposal-dynamic-modules
+[99]: https://github.com/msaboff/JavaScript-Standard-Library
+[100]: https://github.com/tc39/proposal-modules-pragma
+[101]: https://github.com/bakkot/for-in-exploration
+[102]: https://github.com/gibson042/ecma262-proposal-uniform-interchange-date-parsing
+[103]: https://github.com/gibson042/ecma262-proposal-JSON-parse-with-source
 
 [syntax-trailing-function-commas]:   https://babeljs.io/docs/plugins/syntax-trailing-function-commas/
 [syntax-dynamic-import]:             https://babeljs.io/docs/plugins/syntax-dynamic-import/
@@ -238,7 +267,6 @@ README document is 83f2325 on 2018-05-22.
 [4576]: https://github.com/babel/babel/pull/4576
 [6015]: https://github.com/babel/babel/pull/6015
 [7842]: https://github.com/babel/babel/pull/7842
-[7985]: https://github.com/babel/babel/pull/7985
 [transform-modern-regexp5]: https://github.com/DmitrySoshnikov/babel-plugin-transform-modern-regexp/issues/5
 [babel-proposals-35]: https://github.com/babel/proposals/issues/35#issuecomment-392068353
 
@@ -252,6 +280,8 @@ README document is 83f2325 on 2018-05-22.
 [15753]: https://github.com/Microsoft/TypeScript/issues/15753
 [17467]: https://github.com/Microsoft/TypeScript/issues/17467
 [20582]: https://github.com/Microsoft/TypeScript/issues/20582
+[23327]: https://github.com/Microsoft/TypeScript/pull/23327
+[26149]: https://github.com/Microsoft/TypeScript/pull/26149
 
 [code-splitting-with-es2015]: https://webpack.js.org/guides/migrating/#code-splitting-with-es2015
 
