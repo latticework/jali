@@ -33,7 +33,7 @@ onboarding information.
 
 This document explains how to contribute to the Jali project. For an
 introduction to Jali, see [README.md](./README.md). To understand the
-design of the Jali project, see [DESIGN.md](./DESIGN.md).
+design of the Jali project, see [DESIGN.md](./project/DESIGN.md).
 
 ## Getting Started
 
@@ -116,9 +116,9 @@ To contribute you must sign the
 For `non-contributors` and `contributors`, Jali issues consist of
 `Questions` and `Ideas`. Only a `core-contributor` should create a
 `Bug`, `Enhancement`, or `Epic`. Please follow
-[ISSUE-TEMPLATE-INSTRUCTIONS.md](./ISSUE-TEMPLATE-INSTRUCTIONS.md) when
+[ISSUE-TEMPLATE-INSTRUCTIONS.md](./project/ISSUE-TEMPLATE-INSTRUCTIONS.md) when
 creating a Jali issue. It provides detailed instructions and a
-systematic [decision tree](./ISSUE-TEMPLATE-INSTRUCTIONS.md#template-form-decision-tree)
+systematic [decision tree](./project/ISSUE-TEMPLATE-INSTRUCTIONS.md#template-form-decision-tree)
 to determine which issue form you should create.
 
 ### Triage
