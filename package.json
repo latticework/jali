@@ -101,7 +101,7 @@
   },
   "homepage": "http://jali-ms.io/",
   "dependencies": {
-    "reflect-metadata": "^0.1.10"
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/mkdirp": "^0.3.29",
