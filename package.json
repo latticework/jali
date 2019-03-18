@@ -131,7 +131,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cpy-cli": "^1.0.1",
     "esdoc": "^0.5.2",
-    "eslint": "^3.16.1",
+    "eslint": "^5.15.3",
     "mkdirp": "^0.5.1",
     "glob-fs": "^0.1.6",
     "nyc": "^10.1.2",
