@@ -107,7 +107,7 @@
     "@types/mkdirp": "^0.3.29",
     "@types/node": "^8.0.51",
     "@types/sanitize-filename": "^1.1.28",
-    "@types/tmp": "^0.0.32",
+    "@types/tmp": "^0.1.0",
     "app-root-path": "^2.0.1",
     "awesome-typescript-loader": "^3.0.8",
     "ava": "^0.18.2",
