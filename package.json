@@ -109,7 +109,7 @@
     "@types/sanitize-filename": "^1.1.28",
     "@types/tmp": "^0.0.32",
     "app-root-path": "^2.0.1",
-    "awesome-typescript-loader": "^3.0.8",
+    "awesome-typescript-loader": "^5.2.1",
     "ava": "^0.18.2",
     "babel-loader": "^6.3.2",
     "babel-plugin-espower": "^2.3.2",
