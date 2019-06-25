@@ -123,7 +123,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
     "babel-plugin-transform-exponentiation-operator": "^6.22.0",
     "babel-plugin-transform-function-sent": "^1.0.1",
-    "babel-plugin-transform-modern-regexp": "^0.0.4",
+    "babel-plugin-transform-modern-regexp": "^0.0.6",
     "babel-plugin-transform-numeric-separator": "^7.0.0-alpha.11",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-unicode-property-regex": "^2.0.5",
