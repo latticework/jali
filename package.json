@@ -136,7 +136,7 @@
     "glob-fs": "^0.1.6",
     "nyc": "^10.1.2",
     "rimraf": "^2.6.1",
-    "sanitize-filename": "^1.6.1",
+    "sanitize-filename": "^1.6.2",
     "tmp": "^0.0.31",
     "ts-node": "^3.3.0",
     "tslint": "^4.5.0",
