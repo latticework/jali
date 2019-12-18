@@ -105,7 +105,7 @@
   },
   "devDependencies": {
     "@types/mkdirp": "^0.3.29",
-    "@types/node": "^8.0.51",
+    "@types/node": "^12.12.21",
     "@types/sanitize-filename": "^1.1.28",
     "@types/tmp": "^0.0.32",
     "app-root-path": "^2.0.1",
