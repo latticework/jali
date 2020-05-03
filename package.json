@@ -138,7 +138,7 @@
     "rimraf": "^2.6.1",
     "sanitize-filename": "^1.6.1",
     "tmp": "^0.0.31",
-    "ts-node": "^3.3.0",
+    "ts-node": "^8.10.1",
     "tslint": "^4.5.0",
     "typedoc": "^0.5.7",
     "typescript": "^2.2.1",
